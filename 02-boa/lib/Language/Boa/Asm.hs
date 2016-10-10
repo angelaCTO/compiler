@@ -32,22 +32,24 @@ instrAsm (IAdd dst val) = printf "  add %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (ISub dst val) = printf "  sub %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (IMul dst val) = printf "  imul %s, %s" (argAsm dst) (argAsm val)
 
---instrAsm (ICmp a1 a2)  = error "TBD:instrAsm:cmp"
-instrAsm (ICmp a1 a2)    = printf " cmp %d, %d" (regAsm a1) (regAsm a2)
 
---instrAsm (ILabel l)    = error "TBD:instrAsm:label"
-instrAsm (ILabel l)      = printf " %s" (argAsm l)
+instrAsm (ICmp a1 a2)  = error "TBD:instrAsm:cmp"
+--instrAsm (ICmp a1 a2)    = printf " cmp %d, %d" (regAsm a1) (regAsm a2)
 
---instrAsm (IJe  l)      = error "TBD:instrAsm:je"
-instrAsm (IJe  l)        = error "TBD:instrAsm:je"
+instrAsm (ILabel l)    = error "TBD:instrAsm:label"
+--instrAsm (ILabel l)      = printf " %s" (argAsm l)
 
---instrAsm (IJne  l)     = error "TBD:instrAsm:jne"
-instrAsm (IJne  l)       = error "TBD:instrAsm:jne"
+instrAsm (IJe  l)      = error "TBD:instrAsm:je"
+--instrAsm (IJe  l)        = error "TBD:instrAsm:je"
 
---instrAsm (IJmp l)      = error "TBD:instrAsm:jmp"
-instrAsm (IJmp l)        = error "TBD:instrAsm:jmp"
+instrAsm (IJne  l)     = error "TBD:instrAsm:jne"
+--instrAsm (IJne  l)       = error "TBD:instrAsm:jne"
 
-instrAsm IRet            =        "  ret"
+instrAsm (IJmp l)      = error "TBD:instrAsm:jmp"
+--instrAsm (IJmp l)        = error "TBD:instrAsm:jmp"
+
+instrAsm IRet          =        "  ret"
+
 
 regAsm :: Reg -> Text
 regAsm EAX = "eax"
