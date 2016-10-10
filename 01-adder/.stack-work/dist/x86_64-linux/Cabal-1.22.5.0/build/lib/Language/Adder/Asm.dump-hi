@@ -1,0 +1,226 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-09 22:21:40.527804 UTC
+
+interface adder_8gYqoSYdNBL6C1378XpiQz:Language.Adder.Asm 7103
+  interface hash: a3b5ef891875d5b4c10635364ab25869
+  ABI hash: aa793167a10fae438d868f7fd4ee44e6
+  export-list hash: c783e0410677b648b0dafcb151ee574f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 4e3f317f324da19a4ce32fc62498bece
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Adder.Asm.asm
+module dependencies: Language.Adder.Types Language.Adder.UX
+                     Language.Adder.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 megaparsec-4.3.0@megap_2MxbqZgb09cFfls6a9pQ0W
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+import  -/  Language.Adder.Types 75ddac4d2d744e9c604a5ebf627125b2
+  exports: 5a7b014fb95c376220c086451b2acc2e
+  Arg 1e5d3ebd446a39aff89c5fb73d8f76e5
+  Const 592f2825fd307b5fef9c1dba9dc4d4cf
+  EAX befc1bf85d83c1a022b5e9b31912b459
+  ESP fa4a1fcd5dfb024e8ae2abf8342fa4bd
+  IAdd e9a5cffbae733d86578674bdb675c106
+  IMov 61abead58261f71440385b5e463ba071
+  IRet 3c08b50c3e469ad6647c53ffa3165e22
+  Instruction 04660e099435d8605067070060f6c1de
+  Reg 37054e76cdddf66cab6287c562ce9fb3
+  Reg 6b00898ccba1996da07fa744dcddd20f
+  RegOffset 21cf8d4b6f130a054eb74b7912fa6f6c
+import  -/  Language.Adder.UX 4d5401a1b7c37a7688766be48e90656c
+  Text 6ea4ea9c50d27cd8ac8de3a29ed2e877
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Monoid 85b292b52bfd80ed619cddb767d638d3
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+0773f25c270f89962039aa2d6059e3d7
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+1193413406f0d0890b015432155d8106
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+818b0b5131ef8b112a44cd9ad577d899
+  $sprintf6 ::
+    GHC.Base.String
+    -> [Text.Printf.UPrintf]
+    -> [GHC.Types.Char]
+    -> GHC.Types.Int
+    -> [GHC.Types.Char]
+  {- Arity: 4, Strictness: <S,1*U><L,U><L,U><L,U(U)>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf]
+                   a1 :: [GHC.Types.Char]
+                   eta :: GHC.Types.Int ->
+                 Language.Adder.Asm.$sprintf3
+                   fmts
+                   (GHC.Types.:
+                      @ Text.Printf.UPrintf
+                      (Text.Printf.$w$sparseIntFormat,
+                       Text.Printf.$fPrintfArgInt_$sformatInt eta)
+                      (GHC.Types.:
+                         @ Text.Printf.UPrintf
+                         (Language.Adder.Asm.$s$fPrintfArg[]1 a1,
+                          \ w2 :: Text.Printf.FieldFormat ->
+                          case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                          case ww7 of ww8 { GHC.Types.C# ww9 ->
+                          Text.Printf.$wformatString
+                            @ GHC.Types.Char
+                            Text.Printf.$fIsCharChar
+                            a1
+                            ww1
+                            ww2
+                            ww3
+                            ww9 } })
+                         args))) -}
+1f5740a397713eb7a4a4cb05f4e4624f
+  asm :: [Language.Adder.Types.Instruction] -> Language.Adder.UX.Text
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ instrs :: [Language.Adder.Types.Instruction] ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.Adder.Asm.header
+                   (case GHC.Base.map
+                           @ Language.Adder.Types.Instruction
+                           @ [GHC.Types.Char]
+                           Language.Adder.Asm.instrAsm
+                           instrs of wild {
+                      [] -> Language.Adder.Asm.asm1
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Language.Adder.Asm.asm1
+                                 xs1))
+                           Language.Adder.Asm.asm1 })) -}
+5bb3604620dbf8c0c4b019080e99cb32
+  asm1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+430730109b6237f4e4fbd21503baa78b
+  asm10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern error"#) -}
+6f7b35bff8fb80587e416e5b2ae49a14
+  asm11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "section .text"#) -}
+34762317edcda039e491f681e200efb1
+  asm2 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Adder.Asm.asm11
+                   Language.Adder.Asm.asm3) -}
+835ea95fe592c2391119d810e9e0f5a7
+  asm3 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Adder.Asm.asm10
+                   Language.Adder.Asm.asm4) -}
+02d9298f63c46195cdae4d995a45f1ba
+  asm4 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Adder.Asm.asm9
+                   Language.Adder.Asm.asm5) -}
+606a80a041072bdf69f80bbd3ecd96eb
+  asm5 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Adder.Asm.asm8
+                   Language.Adder.Asm.asm6) -}
+1ab818bf1364b9234d121f367488a7cf
+  asm6 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Adder.Asm.asm7
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+cbac8be17d3ddec262ae45c143997356
+  asm7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "our_code_starts_here:"#) -}
+f76a42cf01842f843e26add0d5364cda
+  asm8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "global our_code_starts_here"#) -}
+3ffcc977834d66d1b8382e0411994f76
+  asm9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern print"#) -}
+86a17087309ae780affd2bc7950dc8c8
+  header :: Language.Adder.UX.Text
+  {- Unfolding: (Data.OldList.unlines Language.Adder.Asm.asm2) -}
+fa255bda2955b57d8290531d0dbfd05e
+  instrAsm ::
+    Language.Adder.Types.Instruction -> Language.Adder.UX.Text
+  {- Arity: 1, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,913 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-09 22:21:37.783216 UTC
+
+interface adder_8gYqoSYdNBL6C1378XpiQz:Language.Adder.Types 7103
+  interface hash: 147845ae8e1531e30450d80e12e3462a
+  ABI hash: 75ddac4d2d744e9c604a5ebf627125b2
+  export-list hash: 5a7b014fb95c376220c086451b2acc2e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: dba32a1b1b63348ae542ceda9eb70972
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Adder.Types.bindId
+  Language.Adder.Types.bindsExpr
+  Language.Adder.Types.emptyEnv
+  Language.Adder.Types.exprBinds
+  Language.Adder.Types.ext
+  Language.Adder.Types.lookupEnv
+  Language.Adder.Types.pushEnv
+  Language.Adder.UX.abort
+  Language.Adder.UX.junkSpan
+  Language.Adder.UX.mkError
+  Language.Adder.UX.panic
+  Language.Adder.UX.posSpan
+  Language.Adder.UX.readFileSpan
+  Language.Adder.UX.renderErrors
+  Language.Adder.Types.Arg{Language.Adder.Types.Const Language.Adder.Types.Reg Language.Adder.Types.RegOffset}
+  Language.Adder.Types.Bare
+  Language.Adder.Types.BareBind
+  Language.Adder.Types.Bind{Language.Adder.Types.Bind}
+  Language.Adder.Types.Env
+  Language.Adder.Types.Expr{Language.Adder.Types.Id Language.Adder.Types.Let Language.Adder.Types.Number Language.Adder.Types.Prim1}
+  Language.Adder.Types.Ext{Language.Adder.Types.Asm Language.Adder.Types.Exe Language.Adder.Types.Log Language.Adder.Types.Res Language.Adder.Types.Src}
+  Language.Adder.Types.Id
+  Language.Adder.Types.Instruction{Language.Adder.Types.IAdd Language.Adder.Types.IMov Language.Adder.Types.IRet}
+  Language.Adder.Types.Prim1{Language.Adder.Types.Add1 Language.Adder.Types.Sub1}
+  Language.Adder.Types.Reg{Language.Adder.Types.EAX Language.Adder.Types.ESP}
+  Language.Adder.UX.Located{Language.Adder.UX.sourceSpan}
+  Language.Adder.UX.PPrint{Language.Adder.UX.pprint}
+  Language.Adder.UX.Result
+  Language.Adder.UX.SourceSpan{Language.Adder.UX.SS Language.Adder.UX.ssBegin Language.Adder.UX.ssEnd}
+  Language.Adder.UX.Text
+  Language.Adder.UX.UserError{Language.Adder.UX.eMsg Language.Adder.UX.eSpan}
+module dependencies: Language.Adder.UX Language.Adder.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0 megaparsec-4.3.0@megap_2MxbqZgb09cFfls6a9pQ0W
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+import  -/  Language.Adder.UX 4d5401a1b7c37a7688766be48e90656c
+  exports: 3da4af0c742a5c7933677b4856e8b5e8
+  Located d9bdd0bb7d9baf62dd6f23ba00be30be
+  PPrint 625085aee0ffac9f73aac734822aaaf0
+  Result 7ff4944ceab420c77ccae34fa57520ff
+  SS 90b2a4c3cd5bafb0e48c858d56cb915c
+  SourceSpan 548d85876fc265c37e2c493f5b3e685a
+  Text 6ea4ea9c50d27cd8ac8de3a29ed2e877
+  UserError cb3bab263d879853333361a7f54ea988
+  abort e42608d7e1fdc5e427693e053e0d1f84
+  eMsg a205d13507b4b7eb6add6a089d2cfd8c
+  eSpan 5acede49bfb564e86e74ecc14c992e1a
+  junkSpan 548d85876fc265c37e2c493f5b3e685a
+  mkError 0c86b8017803b03136b817788c817b9d
+  panic 663fb5b9d1f3d79442db4cc859508413
+  posSpan 802a08b7df64409be579145fcdbf89e8
+  pprint 1aa549e6b5aca445a7ecad05a102e3ad
+  readFileSpan c0109056a2ff7d78099e9716298f76d5
+  renderErrors 460ae71049cf601f02ab1d6a54c891b9
+  sourceSpan 1b096d940a7099ce10e9f5299e8cca32
+  ssBegin d6f08a8556c033276383574b5482afc8
+  ssEnd e8d3501c4d1213ea2cc06b2087ee462d
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+35f9c8642103532e60f13a7b99df71e4
+  $fFunctorBind :: GHC.Base.Functor Language.Adder.Types.Bind
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Adder.Types.Bind
+                  Language.Adder.Types.$fFunctorBind_$cfmap
+                  Language.Adder.Types.$fFunctorBind_$c<$ -}
+35f9c8642103532e60f13a7b99df71e4
+  $fFunctorBind_$c<$ ::
+    a -> Language.Adder.Types.Bind b -> Language.Adder.Types.Bind a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(U,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a ds :: Language.Adder.Types.Bind b ->
+                 case ds of wild { Language.Adder.Types.Bind a1 a2 ->
+                 Language.Adder.Types.Bind @ a a1 eta }) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fFunctorBind_$cfmap ::
+    (a -> b)
+    -> Language.Adder.Types.Bind a -> Language.Adder.Types.Bind b
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*C1(U)><S(SL),1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b f :: a -> b ds :: Language.Adder.Types.Bind a ->
+                 case ds of wild { Language.Adder.Types.Bind a1 a2 ->
+                 Language.Adder.Types.Bind @ b a1 (f a2) }) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fFunctorExpr :: GHC.Base.Functor Language.Adder.Types.Expr
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Adder.Types.Expr
+                  Language.Adder.Types.$fFunctorExpr_$cfmap
+                  Language.Adder.Types.$fFunctorExpr_$c<$ -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fFunctorExpr_$c<$ ::
+    a -> Language.Adder.Types.Expr b -> Language.Adder.Types.Expr a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a eta1 :: Language.Adder.Types.Expr b ->
+                 Language.Adder.Types.$fFunctorExpr_$cfmap
+                   @ b
+                   @ a
+                   (\ ds :: b -> eta)
+                   eta1) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fFunctorExpr_$cfmap ::
+    (a -> b)
+    -> Language.Adder.Types.Expr a -> Language.Adder.Types.Expr b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+35f9c8642103532e60f13a7b99df71e4
+  $fLocatedBind ::
+    Language.Adder.UX.Located Language.Adder.Types.BareBind
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Adder.Types.$fLocatedBind_$csourceSpan
+                  `cast`
+                (Sym (Language.Adder.UX.NTCo:Located[0]
+                          <Language.Adder.Types.BareBind>_N)) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fLocatedBind_$csourceSpan ::
+    Language.Adder.Types.BareBind -> Language.Adder.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Bind Language.Adder.UX.SourceSpan ->
+                 case ds of wild { Language.Adder.Types.Bind ds1 l -> l }) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fLocatedExpr ::
+    Language.Adder.UX.Located Language.Adder.Types.Bare
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Adder.Types.$fLocatedExpr_$csourceSpan
+                  `cast`
+                (Sym (Language.Adder.UX.NTCo:Located[0]
+                          <Language.Adder.Types.Bare>_N)) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fLocatedExpr_$csourceSpan ::
+    Language.Adder.Types.Bare -> Language.Adder.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Expr Language.Adder.UX.SourceSpan ->
+                 case ds of wild {
+                   Language.Adder.Types.Number ds1 l -> l
+                   Language.Adder.Types.Prim1 ds1 ds2 l -> l
+                   Language.Adder.Types.Let ds1 ds2 ds3 l -> l
+                   Language.Adder.Types.Id ds1 l -> l }) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fPPrintBind ::
+    Language.Adder.UX.PPrint (Language.Adder.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Adder.Types.bindId
+                  `cast`
+                (forall a.
+                 Sym (Language.Adder.UX.NTCo:PPrint[0]
+                          <Language.Adder.Types.Bind a>_N)) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fPPrintExpr ::
+    Language.Adder.UX.PPrint (Language.Adder.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Adder.Types.$fPPrintExpr_$cpprint
+                  `cast`
+                (forall a.
+                 Sym (Language.Adder.UX.NTCo:PPrint[0]
+                          <Language.Adder.Types.Expr a>_N)) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fPPrintExpr_$cpprint ::
+    Language.Adder.Types.Expr a -> Language.Adder.UX.Text
+  {- Arity: 1, Strictness: <S,1*U> -}
+29e70768629d41ded0a20f887fc80de6
+  $fPPrintPrim1 ::
+    Language.Adder.UX.PPrint Language.Adder.Types.Prim1
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Adder.Types.$fPPrintPrim1_$cpprint
+                  `cast`
+                (Sym (Language.Adder.UX.NTCo:PPrint[0]
+                          <Language.Adder.Types.Prim1>_N)) -}
+29e70768629d41ded0a20f887fc80de6
+  $fPPrintPrim1_$cpprint ::
+    Language.Adder.Types.Prim1 -> Language.Adder.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Prim1 ->
+                 case ds of wild {
+                   Language.Adder.Types.Add1 -> Language.Adder.Types.$fPPrintPrim3
+                   Language.Adder.Types.Sub1
+                   -> Language.Adder.Types.$fPPrintPrim2 }) -}
+ecf5c893c7ba586715bce18d6d646789
+  $fPPrintPrim2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sub1"#) -}
+c0e98f463ed9fae04d4439360627512a
+  $fPPrintPrim3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "add1"#) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fShowBind ::
+    GHC.Show.Show a => GHC.Show.Show (Language.Adder.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.Adder.Types.Bind a)
+                  (Language.Adder.Types.$fShowBind_$cshowsPrec @ a $dShow)
+                  (Language.Adder.Types.$fShowBind_$cshow @ a $dShow)
+                  (Language.Adder.Types.$fShowBind_$cshowList @ a $dShow) -}
+e4cb4f590a15f1c627b14007e8721f2d
+  $fShowBind1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+ef340ed20e945abc9ba590000a673433
+  $fShowBind2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bind "#) -}
+ef5ae5a9b0e069d9443ec7fb0e23fa4c
+  $fShowBind3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fShowBind_$cshow ::
+    GHC.Show.Show a => Language.Adder.Types.Bind a -> GHC.Base.String
+  {- Arity: 2,
+     Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a w :: GHC.Show.Show a w1 :: Language.Adder.Types.Bind a ->
+                 case w1 of ww { Language.Adder.Types.Bind ww1 ww2 ->
+                 Language.Adder.Types.$w$cshow @ a w ww1 ww2 }) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fShowBind_$cshowList ::
+    GHC.Show.Show a => [Language.Adder.Types.Bind a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.Adder.Types.Bind a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.Adder.Types.Bind a)
+                   (Language.Adder.Types.$fShowBind_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.Adder.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+35f9c8642103532e60f13a7b99df71e4
+  $fShowBind_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.Adder.Types.Bind a -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,1*U(1*C1(C1(U)),A,A)><S,1*U(U)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.Adder.Types.Bind a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 case w2 of ww2 { Language.Adder.Types.Bind ww3 ww4 ->
+                 Language.Adder.Types.$w$cshowsPrec @ a w ww1 ww3 ww4 } }) -}
+fd8ee6e2f07db4432d95a2954e6773a6
+  $fShowEnv :: GHC.Show.Show Language.Adder.Types.Env
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Adder.Types.Env
+                  Language.Adder.Types.$fShowEnv_$cshowsPrec
+                  Language.Adder.Types.$fShowEnv_$cshow
+                  Language.Adder.Types.$fShowEnv_$cshowList -}
+fd8ee6e2f07db4432d95a2954e6773a6
+  $fShowEnv1 :: Language.Adder.Types.Env -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Adder.Types.Env
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Adder.Types.Env ww1 ww2 ->
+                 Language.Adder.Types.$w$cshowsPrec1 0 ww1 ww2 w1 }) -}
+fd8ee6e2f07db4432d95a2954e6773a6
+  $fShowEnv_$cshow :: Language.Adder.Types.Env -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Adder.Types.Env ->
+                 Language.Adder.Types.$fShowEnv_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+fd8ee6e2f07db4432d95a2954e6773a6
+  $fShowEnv_$cshowList ::
+    [Language.Adder.Types.Env] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Adder.Types.Env
+                   Language.Adder.Types.$fShowEnv1) -}
+fd8ee6e2f07db4432d95a2954e6773a6
+  $fShowEnv_$cshowsPrec ::
+    GHC.Types.Int -> Language.Adder.Types.Env -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Adder.Types.Env
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Adder.Types.Env ww3 ww4 ->
+                 Language.Adder.Types.$w$cshowsPrec1 ww1 ww3 ww4 w2 } }) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fShowExpr ::
+    GHC.Show.Show a => GHC.Show.Show (Language.Adder.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.Adder.Types.Expr a)
+                  (Language.Adder.Types.$fShowExpr_$cshowsPrec @ a $dShow)
+                  (Language.Adder.Types.$fShowExpr_$cshow @ a $dShow)
+                  (Language.Adder.Types.$fShowExpr_$cshowList @ a $dShow) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fShowExpr_$cshow ::
+    GHC.Show.Show a => Language.Adder.Types.Expr a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   x :: Language.Adder.Types.Expr a ->
+                 Language.Adder.Types.$fShowExpr_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fShowExpr_$cshowList ::
+    GHC.Show.Show a => [Language.Adder.Types.Expr a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.Adder.Types.Expr a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.Adder.Types.Expr a)
+                   (Language.Adder.Types.$fShowExpr_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.Adder.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $fShowExpr_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.Adder.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.Adder.Types.Expr a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Language.Adder.Types.$w$cshowsPrec2 @ a w ww1 w2 }) -}
+2651cdf6550b7eda8a919a429829ebcd
+  $fShowExt :: GHC.Show.Show Language.Adder.Types.Ext
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Adder.Types.Ext
+                  Language.Adder.Types.$fShowExt_$cshowsPrec
+                  Language.Adder.Types.$fShowExt_$cshow
+                  Language.Adder.Types.$fShowExt_$cshowList -}
+fa31a9948fc3c2677e7d1f972078a3f1
+  $fShowExt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "log"#) -}
+c7166320fc7661f9de5d872020b9daf7
+  $fShowExt2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "result"#) -}
+696f7ffca0758335cee1be1f045e72ef
+  $fShowExt3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "run"#) -}
+9df20202df8026c74f9ac00a4208ef56
+  $fShowExt4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
+f4ddad521c6f3fb477acd58fa6b5d155
+  $fShowExt5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "adder"#) -}
+2651cdf6550b7eda8a919a429829ebcd
+  $fShowExt_$cshow :: Language.Adder.Types.Ext -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Ext ->
+                 case ds of wild {
+                   Language.Adder.Types.Src -> Language.Adder.Types.$fShowExt5
+                   Language.Adder.Types.Asm -> Language.Adder.Types.$fShowExt4
+                   Language.Adder.Types.Exe -> Language.Adder.Types.$fShowExt3
+                   Language.Adder.Types.Res -> Language.Adder.Types.$fShowExt2
+                   Language.Adder.Types.Log -> Language.Adder.Types.$fShowExt1 }) -}
+2651cdf6550b7eda8a919a429829ebcd
+  $fShowExt_$cshowList ::
+    [Language.Adder.Types.Ext] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ls :: [Language.Adder.Types.Ext] s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ Language.Adder.Types.Ext
+                   (Language.Adder.Types.$fShowExt_$cshowsPrec GHC.Show.shows18)
+                   ls
+                   s) -}
+2651cdf6550b7eda8a919a429829ebcd
+  $fShowExt_$cshowsPrec ::
+    GHC.Types.Int -> Language.Adder.Types.Ext -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Adder.Types.Ext
+                   w2 :: GHC.Base.String ->
+                 Language.Adder.Types.$w$cshowsPrec3 w1 w2) -}
+29e70768629d41ded0a20f887fc80de6
+  $fShowPrim1 :: GHC.Show.Show Language.Adder.Types.Prim1
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Adder.Types.Prim1
+                  Language.Adder.Types.$fShowPrim1_$cshowsPrec
+                  Language.Adder.Types.$fShowPrim1_$cshow
+                  Language.Adder.Types.$fShowPrim1_$cshowList -}
+29e70768629d41ded0a20f887fc80de6
+  $fShowPrim1_$cshow :: Language.Adder.Types.Prim1 -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Adder.Types.Prim1 ->
+                 case x of wild {
+                   Language.Adder.Types.Add1 -> Language.Adder.Types.$fShowPrim4
+                   Language.Adder.Types.Sub1 -> Language.Adder.Types.$fShowPrim3 }) -}
+29e70768629d41ded0a20f887fc80de6
+  $fShowPrim1_$cshowList ::
+    [Language.Adder.Types.Prim1] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Adder.Types.Prim1
+                   Language.Adder.Types.$fShowPrim2) -}
+29e70768629d41ded0a20f887fc80de6
+  $fShowPrim1_$cshowsPrec ::
+    GHC.Types.Int -> Language.Adder.Types.Prim1 -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ ds :: GHC.Types.Int
+                   ds1 :: Language.Adder.Types.Prim1
+                   eta :: GHC.Base.String ->
+                 case ds1 of wild {
+                   Language.Adder.Types.Add1
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Adder.Types.$fShowPrim4)
+                        eta
+                   Language.Adder.Types.Sub1
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Adder.Types.$fShowPrim3)
+                        eta }) -}
+29e70768629d41ded0a20f887fc80de6
+  $fShowPrim2 :: Language.Adder.Types.Prim1 -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Language.Adder.Types.Prim1 eta :: GHC.Base.String ->
+                 case ds of wild {
+                   Language.Adder.Types.Add1
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Adder.Types.$fShowPrim4)
+                        eta
+                   Language.Adder.Types.Sub1
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Adder.Types.$fShowPrim3)
+                        eta }) -}
+31766b20394090cb1a78f2f5fba38b72
+  $fShowPrim3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Sub1"#) -}
+d60fc8c28e316e6468ac48690746cd14
+  $fShowPrim4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add1"#) -}
+42b31e6d2d730cf45108c589bebb6fb7
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+a1c72d47052445caf42a97b21b3b023b
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+e1d896ecc938d4c5952a0ad5be14da89
+  $w$cshow ::
+    GHC.Show.Show a => Language.Adder.Types.Id -> a -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: Language.Adder.Types.Id
+                   ww1 :: a ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.Adder.Types.$fShowBind2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (GHC.Show.showLitString
+                         ww
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showSpace1
+                               (GHC.Show.showsPrec
+                                  @ a
+                                  w
+                                  Language.Adder.Types.$fShowBind3
+                                  ww1
+                                  (GHC.Types.[] @ GHC.Types.Char))))))) -}
+6f04f686ae41175ae9949806c9516015
+  $w$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.Adder.Types.Id -> a -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <L,1*U(1*C1(C1(U)),A,A)><L,U><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: GHC.Prim.Int#
+                   ww1 :: Language.Adder.Types.Id
+                   ww2 :: a ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w Language.Adder.Types.$fShowBind3 ww2
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ x :: GHC.Base.String ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Adder.Types.$fShowBind2
+                       (GHC.Types.:
+                          @ GHC.Types.Char
+                          GHC.Show.shows6
+                          (GHC.Show.showLitString
+                             ww1
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows6
+                                (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ x :: GHC.Base.String ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 x)) }) -}
+e10f743c3ae5f23dca72038569524941
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> [(Language.Adder.Types.Id, GHC.Types.Int)]
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U>, Inline: [0] -}
+332400b95c0bde8b0491733cdcf5d9cb
+  $w$cshowsPrec2 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.Adder.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,U><S,1*U>,
+     Inline: [0] -}
+2651cdf6550b7eda8a919a429829ebcd
+  $w$cshowsPrec3 ::
+    Language.Adder.Types.Ext -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Adder.Types.Ext
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.Adder.Types.Src
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Adder.Types.$fShowExt5 w1
+                   Language.Adder.Types.Asm
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Adder.Types.$fShowExt4 w1
+                   Language.Adder.Types.Exe
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Adder.Types.$fShowExt3 w1
+                   Language.Adder.Types.Res
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Adder.Types.$fShowExt2 w1
+                   Language.Adder.Types.Log
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Adder.Types.$fShowExt1
+                        w1 }) -}
+f958ae16de8cd7919b06a5e8c3a5ca1e
+  $wexprBinds ::
+    Language.Adder.Types.Expr a
+    -> (# [(Language.Adder.Types.Bind a, Language.Adder.Types.Expr a)],
+          Language.Adder.Types.Expr a #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+1e5d3ebd446a39aff89c5fb73d8f76e5
+  data Arg
+    = Const GHC.Types.Int
+    | Reg Language.Adder.Types.Reg
+    | RegOffset Language.Adder.Types.Nat Language.Adder.Types.Reg
+332400b95c0bde8b0491733cdcf5d9cb
+  type Bare = Language.Adder.Types.Expr Language.Adder.UX.SourceSpan
+35f9c8642103532e60f13a7b99df71e4
+  type BareBind =
+    Language.Adder.Types.Bind Language.Adder.UX.SourceSpan
+35f9c8642103532e60f13a7b99df71e4
+  data Bind a = Bind !Language.Adder.Types.Id a
+fd8ee6e2f07db4432d95a2954e6773a6
+  data Env
+    = Env {envBinds :: [(Language.Adder.Types.Id, GHC.Types.Int)],
+           _envMax :: {-# UNPACK #-}GHC.Types.Int}
+332400b95c0bde8b0491733cdcf5d9cb
+  data Expr a
+    = Number !GHC.Integer.Type.Integer a
+    | Prim1 !Language.Adder.Types.Prim1
+            !(Language.Adder.Types.Expr a)
+            a
+    | Let !(Language.Adder.Types.Bind a)
+          !(Language.Adder.Types.Expr a)
+          !(Language.Adder.Types.Expr a)
+          a
+    | Id !Language.Adder.Types.Id a
+2651cdf6550b7eda8a919a429829ebcd
+  data Ext = Src | Asm | Exe | Res | Log
+    Promotable
+4bf92ada981cc192176c76e0a31f9ff3
+  type Id = Language.Adder.UX.Text
+04660e099435d8605067070060f6c1de
+  data Instruction
+    = IMov Language.Adder.Types.Arg Language.Adder.Types.Arg
+    | IAdd Language.Adder.Types.Arg Language.Adder.Types.Arg
+    | IRet
+dfcdb32fd3fc2e5166ab3458bf011bd2
+  type Nat = GHC.Types.Int
+29e70768629d41ded0a20f887fc80de6
+  data Prim1 = Add1 | Sub1
+    Promotable
+6b00898ccba1996da07fa744dcddd20f
+  data Reg = EAX | ESP
+    Promotable
+15f7be939223e8a76cd49177c972d2ff
+  _envMax :: Language.Adder.Types.Env -> GHC.Types.Int
+  RecSel Language.Adder.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Env ->
+                 case ds of wild { Language.Adder.Types.Env ds1 dt ->
+                 GHC.Types.I# dt }) -}
+35f9c8642103532e60f13a7b99df71e4
+  bindId :: Language.Adder.Types.Bind a -> Language.Adder.Types.Id
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ds :: Language.Adder.Types.Bind a ->
+                 case ds of wild { Language.Adder.Types.Bind x ds1 -> x }) -}
+95b4cbfd2e961a91b0921ecb54fa911b
+  bindsExpr ::
+    [(Language.Adder.Types.Bind a, Language.Adder.Types.Expr a)]
+    -> Language.Adder.Types.Expr a -> a -> Language.Adder.Types.Expr a
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><S,U><L,U>,
+     Unfolding: (\ @ a
+                   bs :: [(Language.Adder.Types.Bind a, Language.Adder.Types.Expr a)]
+                   e :: Language.Adder.Types.Expr a
+                   l :: a ->
+                 letrec {
+                   go :: [(Language.Adder.Types.Bind a, Language.Adder.Types.Expr a)]
+                         -> Language.Adder.Types.Expr a
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ ds :: [(Language.Adder.Types.Bind a,
+                               Language.Adder.Types.Expr a)] ->
+                     case ds of wild {
+                       [] -> e
+                       : y ys
+                       -> case y of wild1 { (,) x e1 ->
+                          case x of dt { Language.Adder.Types.Bind ipv ipv1 ->
+                          case e1 of dt1 { DEFAULT ->
+                          case go ys of dt2 { DEFAULT ->
+                          Language.Adder.Types.Let @ a dt dt1 dt2 l } } } } }
+                 } in
+                 go bs) -}
+7cfde1310a8c5b0ff13b5b890e314adc
+  emptyEnv :: Language.Adder.Types.Env
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Language.Adder.Types.Env
+                   (GHC.Types.[] @ (Language.Adder.Types.Id, GHC.Types.Int))
+                   0) -}
+145022e64e9f68b1d6ac38b937adc449
+  envBinds ::
+    Language.Adder.Types.Env
+    -> [(Language.Adder.Types.Id, GHC.Types.Int)]
+  RecSel Language.Adder.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Adder.Types.Env ->
+                 case ds of wild { Language.Adder.Types.Env ds1 dt -> ds1 }) -}
+e24195f8bd8ba1cbb092545f8f778dd9
+  exprBinds ::
+    Language.Adder.Types.Expr a
+    -> ([(Language.Adder.Types.Bind a, Language.Adder.Types.Expr a)],
+        Language.Adder.Types.Expr a)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a w :: Language.Adder.Types.Expr a ->
+                 case Language.Adder.Types.$wexprBinds
+                        @ a
+                        w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+00b78546dc40f43ca132382b28127c6d
+  ext ::
+    GHC.IO.FilePath -> Language.Adder.Types.Ext -> GHC.IO.FilePath
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ f :: GHC.IO.FilePath e :: Language.Adder.Types.Ext ->
+                 case e of wild {
+                   Language.Adder.Types.Src
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Adder.Types.$fShowExt5
+                   Language.Adder.Types.Asm
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Adder.Types.$fShowExt4
+                   Language.Adder.Types.Exe
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Adder.Types.$fShowExt3
+                   Language.Adder.Types.Res
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Adder.Types.$fShowExt2
+                   Language.Adder.Types.Log
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Adder.Types.$fShowExt1 }) -}
+13ff63836f70023d165ced652ca4b31c
+  lookupEnv ::
+    Language.Adder.Types.Id
+    -> Language.Adder.Types.Env -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ k :: Language.Adder.Types.Id env :: Language.Adder.Types.Env ->
+                 case env of wild { Language.Adder.Types.Env ds dt ->
+                 GHC.List.lookup
+                   @ Language.Adder.Types.Id
+                   @ GHC.Types.Int
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   k
+                   ds }) -}
+ceb72fec1dcd65625411e6e4dc7741b9
+  pushEnv ::
+    Language.Adder.Types.Bind a
+    -> Language.Adder.Types.Env
+    -> (GHC.Types.Int, Language.Adder.Types.Env)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,A)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   x :: Language.Adder.Types.Bind a
+                   ds :: Language.Adder.Types.Env ->
+                 case ds of wild { Language.Adder.Types.Env bs dt ->
+                 let {
+                   a1 :: GHC.Prim.Int# = GHC.Prim.+# 1 dt
+                 } in
+                 let {
+                   n' :: GHC.Types.Int = GHC.Types.I# a1
+                 } in
+                 (n',
+                  Language.Adder.Types.Env
+                    (GHC.Types.:
+                       @ (Language.Adder.Types.Id, GHC.Types.Int)
+                       (case x of wild1 { Language.Adder.Types.Bind x1 ds1 -> x1 }, n')
+                       bs)
+                    a1) }) -}
+instance GHC.Base.Functor [Language.Adder.Types.Bind]
+  = Language.Adder.Types.$fFunctorBind
+instance GHC.Base.Functor [Language.Adder.Types.Expr]
+  = Language.Adder.Types.$fFunctorExpr
+instance Language.Adder.UX.Located [Language.Adder.Types.Bind]
+  = Language.Adder.Types.$fLocatedBind
+instance Language.Adder.UX.Located [Language.Adder.Types.Expr]
+  = Language.Adder.Types.$fLocatedExpr
+instance Language.Adder.UX.PPrint [Language.Adder.Types.Bind]
+  = Language.Adder.Types.$fPPrintBind
+instance Language.Adder.UX.PPrint [Language.Adder.Types.Expr]
+  = Language.Adder.Types.$fPPrintExpr
+instance Language.Adder.UX.PPrint [Language.Adder.Types.Prim1]
+  = Language.Adder.Types.$fPPrintPrim1
+instance GHC.Show.Show [Language.Adder.Types.Bind]
+  = Language.Adder.Types.$fShowBind
+instance GHC.Show.Show [Language.Adder.Types.Env]
+  = Language.Adder.Types.$fShowEnv
+instance GHC.Show.Show [Language.Adder.Types.Expr]
+  = Language.Adder.Types.$fShowExpr
+instance GHC.Show.Show [Language.Adder.Types.Ext]
+  = Language.Adder.Types.$fShowExt
+instance GHC.Show.Show [Language.Adder.Types.Prim1]
+  = Language.Adder.Types.$fShowPrim1
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
