@@ -32,24 +32,20 @@ instrAsm (IAdd dst val) = printf "  add %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (ISub dst val) = printf "  sub %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (IMul dst val) = printf "  imul %s, %s" (argAsm dst) (argAsm val)
 
-
+{-
 instrAsm (ICmp a1 a2)  = error "TBD:instrAsm:cmp"
---instrAsm (ICmp a1 a2)    = printf " cmp %d, %d" (regAsm a1) (regAsm a2)
-
 instrAsm (ILabel l)    = error "TBD:instrAsm:label"
---instrAsm (ILabel l)      = printf " %s" (argAsm l)
-
 instrAsm (IJe  l)      = error "TBD:instrAsm:je"
---instrAsm (IJe  l)        = error "TBD:instrAsm:je"
-
 instrAsm (IJne  l)     = error "TBD:instrAsm:jne"
---instrAsm (IJne  l)       = error "TBD:instrAsm:jne"
-
 instrAsm (IJmp l)      = error "TBD:instrAsm:jmp"
---instrAsm (IJmp l)        = error "TBD:instrAsm:jmp"
+-}
 
-instrAsm IRet          =        "  ret"
-
+instrAsm (ICmp a1 a2)    = printf " cmp %s, %s" (argAsm a1) (argAsm a2)
+instrAsm (ILabel l)      = printf " %s" (labelAsm l)
+instrAsm (IJe l)         = printf " je %s" (labelAsm l)
+instrAsm (IJne l)        = printf " jne %s" (labelAsm l)
+instrAsm (IJmp l)        = printf " jmp %s" (labelAsm l)
+instrAsm IRet            =        "  ret"
 
 regAsm :: Reg -> Text
 regAsm EAX = "eax"
