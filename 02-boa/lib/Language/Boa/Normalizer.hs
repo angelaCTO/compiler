@@ -74,11 +74,13 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 --------------------------------------------------------------------------------
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
--- TODO
-imm i (Number n l)      = error "TBD:imm:Number"
+-- TODO check
+--imm i (Number n l)      = error "TBD:imm:Number"
+imm i (Number n l)      = (i, [], Number n l)
 
--- TODO
-imm i (Id x l)          = error "TBD:imm:Id"
+-- TODO check
+--imm i (Id x l)          = error "TBD:imm:Id"
+imm i (Id x l)          = (i, [], Id x l)
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
   where
