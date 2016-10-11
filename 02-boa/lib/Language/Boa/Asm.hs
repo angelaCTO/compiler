@@ -41,10 +41,10 @@ instrAsm (IJmp l)      = error "TBD:instrAsm:jmp"
 -}
 
 instrAsm (ICmp a1 a2)    = printf " cmp %s, %s" (argAsm a1) (argAsm a2)
-instrAsm (ILabel l)      = printf " %s" (labelAsm l)
-instrAsm (IJe l)         = printf " je %s" (labelAsm l)
-instrAsm (IJne l)        = printf " jne %s" (labelAsm l)
-instrAsm (IJmp l)        = printf " jmp %s" (labelAsm l)
+instrAsm (ILabel l)      = printf " %s"         (labelAsm l)
+instrAsm (IJe l)         = printf " je %s"      (labelAsm l)
+instrAsm (IJne l)        = printf " jne %s"     (labelAsm l)
+instrAsm (IJmp l)        = printf " jmp %s"     (labelAsm l)
 instrAsm IRet            =        "  ret"
 
 regAsm :: Reg -> Text
