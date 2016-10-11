@@ -32,7 +32,7 @@ instrAsm (IAdd dst val) = printf "  add %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (ISub dst val) = printf "  sub %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (IMul dst val) = printf "  imul %s, %s" (argAsm dst) (argAsm val)
 
-{-
+{- TODO check again, but I think file is done
 instrAsm (ICmp a1 a2)  = error "TBD:instrAsm:cmp"
 instrAsm (ILabel l)    = error "TBD:instrAsm:label"
 instrAsm (IJe  l)      = error "TBD:instrAsm:je"

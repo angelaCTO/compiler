@@ -28,19 +28,17 @@ anf i (Number n l)      = (i, Number n l)
 
 anf i (Id     x l)      = (i, Id     x l)
 
-anf i (Let x e b l)     = error "TBD:anf:let"
+-- TODO
+--Need to check this again, but I think a "let" expressions are in ANF form ...
+--anf i (Let x e b l)     = error "TBD:anf:let"
+anf i (Let x e b l)     = (i, Let x e b l)
 
 anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
+-- TODO
 anf i (Prim2 o e1 e2 l) = error "TBD:anf:prim2"
-
-anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
-  where
-    (i'  , bs, c')      = imm i   c
-    (i'' ,     e1')     = anf i'  e1
-    (i''',     e2')     = anf i'' e2
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
@@ -76,8 +74,10 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 --------------------------------------------------------------------------------
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
+-- TODO
 imm i (Number n l)      = error "TBD:imm:Number"
 
+-- TODO
 imm i (Id x l)          = error "TBD:imm:Id"
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
@@ -86,6 +86,7 @@ imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
     (i'', v)            = fresh l i'
     bs                  = (v, (Prim1 o v1 l, l)) : b1s
 
+-- TODO
 imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"
 
 imm i e@(If _ _ _  l)   = immExp i e l

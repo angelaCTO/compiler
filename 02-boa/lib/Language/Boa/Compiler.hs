@@ -76,7 +76,7 @@ compileEnv env (Prim1 o v l)     = compilePrim1 l env o v
 compileEnv env (Prim2 o v1 v2 l) = compilePrim2 l env o v1 v2
 
 
--- ####################################################################
+-- TODO check again
 --compileEnv env (If v e1 e2 l)    = error "TBD:compileEnv:If"
 compileEnv env (If eCond eTrue eFalse l)    =
     compileEnv env eCond
@@ -89,7 +89,6 @@ compileEnv env (If eCond eTrue eFalse l)    =
        ]
     ++ compileEnv env eTrue
     ++ [ILabel (BranchDone (snd l))]
--- ####################################################################
 
 
 compileImm :: Env -> IExp -> Instruction
@@ -111,7 +110,8 @@ compileBind env (x, e) = (env', is)
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
 
--- ####################################################################
+
+-- TODO
 immArg env e@(Id x _)    = error "TBD:immArg:Id"
  {-
 immArg env e@(Id x _)    = case e of
@@ -120,7 +120,7 @@ immArg env e@(Id x _)    = case e of
   where
     err                  = abort (errUnboundVar (sourceSpan e) x)
  -}
--- ####################################################################
+
 
 immArg _   e             = panic msg (sourceSpan e)
   where
@@ -132,13 +132,26 @@ errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 --------------------------------------------------------------------------------
 -- | Compiling Primitive Operations
 --------------------------------------------------------------------------------
+-- Prim1 are are UNARY operators
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
+
+-- TODO
 compilePrim1 l env Add1 v = error "TBD:compilePrim1:Add1"
+--compilePrim1 l env Add1 v =
+
+-- TODO
 compilePrim1 l env Sub1 v = error "TBD:compilePrim1:Sub1"
 
+-- Prim2 are BINARY operators
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+
+-- TODO
 compilePrim2 l env Plus  v1 v2 = error "TBD:compilePrim2:Plus"
+
+-- TODO
 compilePrim2 l env Minus v1 v2 = error "TBD:compilePrim2:Minus"
+
+-- TODO
 compilePrim2 l env Times v1 v2 = error "TBD:compilePrim2:Times"
 
 --------------------------------------------------------------------------------
