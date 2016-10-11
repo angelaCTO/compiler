@@ -81,7 +81,7 @@ compileEnv env (Prim2 o v1 v2 l) = compilePrim2 l env o v1 v2
 compileEnv env (If eCond eTrue eFalse l)    =
     compileEnv env eCond
     ++ [ICmp (Reg EAX) (Const 0),
-        IJne (BranchTrue (snd l))
+        IJne (BranchTrue (snd l))  --l=label (fst l =sourcespan, snd l =tag)
        ]
     ++ compileEnv env eFalse
     ++ [IJmp (BranchDone (snd l)),
@@ -110,9 +110,18 @@ compileBind env (x, e) = (env', is)
 
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
+
+-- ####################################################################
 immArg env e@(Id x _)    = error "TBD:immArg:Id"
+ {-
+immArg env e@(Id x _)    = case e of
+                           ?         ->
+                           otherwise -> err
   where
     err                  = abort (errUnboundVar (sourceSpan e) x)
+ -}
+-- ####################################################################
+
 immArg _   e             = panic msg (sourceSpan e)
   where
     msg                  = "Unexpected non-immExpr in immArg: " ++ show (void e)
