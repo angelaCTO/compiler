@@ -90,6 +90,8 @@ imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
 
 -- TODO
 imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"
+--imm i (Prim2 o e1 e2 l) =
+
 
 imm i e@(If _ _ _  l)   = immExp i e l
 
@@ -114,3 +116,4 @@ fresh :: a -> Int -> (Int, Bind a)
 fresh l i = (i + 1, Bind x l)
   where
     x     = "anf" ++ show i
+

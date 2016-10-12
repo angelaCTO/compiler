@@ -78,16 +78,16 @@ compileEnv env (Prim2 o v1 v2 l) = compilePrim2 l env o v1 v2
 
 -- TODO check again
 --compileEnv env (If v e1 e2 l)    = error "TBD:compileEnv:If"
-compileEnv env (If eCond eTrue eFalse l)    =
-    compileEnv env eCond
+compileEnv env (If v e1 e2 l)    =
+    compileEnv env v
     ++ [ICmp (Reg EAX) (Const 0),
         IJne (BranchTrue (snd l))  --l=label (fst l =sourcespan, snd l =tag)
        ]
-    ++ compileEnv env eFalse
+    ++ compileEnv env e2
     ++ [IJmp (BranchDone (snd l)),
         ILabel (BranchTrue (snd l))
        ]
-    ++ compileEnv env eTrue
+    ++ compileEnv env e1
     ++ [ILabel (BranchDone (snd l))]
 
 
@@ -138,6 +138,7 @@ compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 -- TODO
 compilePrim1 l env Add1 v = error "TBD:compilePrim1:Add1"
 --compilePrim1 l env Add1 v =
+
 
 -- TODO
 compilePrim1 l env Sub1 v = error "TBD:compilePrim1:Sub1"
