@@ -107,22 +107,17 @@ compileBind env (x, e) = (env', is)
                       ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
 
+
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
 
 
--- TODO
-immArg env e@(Id x _)    = error "TBD:immArg:Id"
- {-
-immArg env e@(Id x _)    = case e of
-                           ?         ->
-                           otherwise -> err
-  where
-    err                  = abort (errUnboundVar (sourceSpan e) x)
- -}
+immArg env e@(Id x _)    = case lookupEnv x env of
+    Just i  -> stackVar i
+    Nothing -> abort (errUnboundVar( sourceSpan e) x)
 
 
-immArg _   e             = panic msg (sourceSpan e)
+immArg _   e             = panic msg    (sourceSpan e)
   where
     msg                  = "Unexpected non-immExpr in immArg: " ++ show (void e)
 
@@ -135,25 +130,39 @@ errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 -- Prim1 are are UNARY operators
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 
--- TODO
-compilePrim1 l env Add1 v = error "TBD:compilePrim1:Add1"
+-- {-
+compilePrim1 l env Add1 v =
+    [ IMov (Reg EAX) (immArg env v),
+      IAdd (Reg EAX) (Const 1)
+    ]
+-- -}
+
 --compilePrim1 l env Add1 v =
 
 
--- TODO
-compilePrim1 l env Sub1 v = error "TBD:compilePrim1:Sub1"
 
--- Prim2 are BINARY operators
+compilePrim1 l env Sub1 v =
+    [ IMov (Reg EAX) (immArg env v),
+      ISub (Reg EAX) (Const 1)
+    ]
+
+
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 
--- TODO
-compilePrim2 l env Plus  v1 v2 = error "TBD:compilePrim2:Plus"
+compilePrim2 l env Plus  v1 v2 =
+    [ IMov (Reg EAX) (immArg env v1),
+      IAdd (Reg EAX) (immArg env v2)
+    ]
 
--- TODO
-compilePrim2 l env Minus v1 v2 = error "TBD:compilePrim2:Minus"
+compilePrim2 l env Minus v1 v2 =
+    [ IMov (Reg EAX) (immArg env v1),
+      ISub (Reg EAX) (immArg env v2)
+    ]
 
--- TODO
-compilePrim2 l env Times v1 v2 = error "TBD:compilePrim2:Times"
+compilePrim2 l env Times v1 v2 =
+    [ IMov (Reg EAX) (immArg env v1),
+      IMul (Reg EAX) (immArg env v2)
+    ]
 
 --------------------------------------------------------------------------------
 -- | Local Variables

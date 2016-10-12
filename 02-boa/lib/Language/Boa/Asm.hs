@@ -31,12 +31,12 @@ instrAsm (IMov dst val) = printf "  mov %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (IAdd dst val) = printf "  add %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (ISub dst val) = printf "  sub %s, %s"  (argAsm dst) (argAsm val)
 instrAsm (IMul dst val) = printf "  imul %s, %s" (argAsm dst) (argAsm val)
-instrAsm (ICmp a1 a2)    = printf " cmp %s, %s" (argAsm a1) (argAsm a2)
-instrAsm (ILabel l)      = printf " %s"         (labelAsm l)
-instrAsm (IJe l)         = printf " je %s"      (labelAsm l)
-instrAsm (IJne l)        = printf " jne %s"     (labelAsm l)
-instrAsm (IJmp l)        = printf " jmp %s"     (labelAsm l)
-instrAsm IRet            =        "  ret"
+instrAsm (ICmp a1 a2)    = printf " cmp %s, %s"  (argAsm a1) (argAsm a2)
+instrAsm (ILabel l)      = printf " %s"          (labelAsm l)
+instrAsm (IJe l)         = printf " je %s"       (labelAsm l)
+instrAsm (IJne l)        = printf " jne %s"      (labelAsm l)
+instrAsm (IJmp l)        = printf " jmp %s"      (labelAsm l)
+instrAsm IRet            = printf "  ret"
 
 regAsm :: Reg -> Text
 regAsm EAX = "eax"
