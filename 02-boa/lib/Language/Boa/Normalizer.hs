@@ -42,7 +42,12 @@ anf i (Prim2 o e1 e2 l) = (i2, stitch bs2 (Prim2 o ae be l))
     (i1, bs1, ae)       = imm i  e1
     (i2, bs2, be)       = imm i1 e2 
 
-anf i (If e1 e2 e3 l) = (i, If e1 e2 e3 l)
+--anf i (If e1 e2 e3 l) = (i, If e1 e2 e3 l)
+anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
+  where
+    (i'  , bs, c')      = imm i   c
+    (i'' ,     e1')     = anf i'  e1
+    (i''',     e2')     = anf i'' e2
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
