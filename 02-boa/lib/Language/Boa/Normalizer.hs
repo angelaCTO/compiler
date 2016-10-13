@@ -40,7 +40,7 @@ anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
 anf i (Prim2 o e1 e2 l) = (i2, stitch bs2 (Prim2 o ae be l))
   where 
     (i1, bs1, ae)       = imm i  e1
-    (i2, bs2, be)      = imm i1 e2 
+    (i2, bs2, be)       = imm i1 e2 
 
 anf i (If e1 e2 e3 l) = (i, If e1 e2 e3 l)
 
