@@ -25,20 +25,24 @@ anormal e = snd (anf 0 e)
 anf :: Int -> Expr a -> (Int, AnfExpr a)
 --------------------------------------------------------------------------------
 anf i (Number n l)      = (i, Number n l)
-
 anf i (Id     x l)      = (i, Id     x l)
 
--- TODO
---Need to check this again, but I think a "let" expressions are in ANF form ...
---anf i (Let x e b l)     = error "TBD:anf:let"
+-- TODO, only works for lets already in ANF
 anf i (Let x e b l)     = (i, Let x e b l)
 
+-- TODO ASK! (Office Hours)
 anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
 -- TODO
-anf i (Prim2 o e1 e2 l) = error "TBD:anf:prim2"
+--anf i (Prim2 o e1 e2 l) = error "TBD:anf:prim2"
+anf i (Prim2 o e1 e2 l) = (i2, stitch bs2 (Prim2 o ae be l))
+  where 
+    (i1, bs1, ae)       = imm i  e1
+    (i2, bs2, be)      = imm i1 e2 
+
+anf i (If e1 e2 e3 l) = (i, If e1 e2 e3 l)
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
@@ -75,11 +79,9 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
 -- TODO check
---imm i (Number n l)      = error "TBD:imm:Number"
 imm i (Number n l)      = (i, [], Number n l)
 
 -- TODO check
---imm i (Id x l)          = error "TBD:imm:Id"
 imm i (Id x l)          = (i, [], Id x l)
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
@@ -90,9 +92,15 @@ imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
 
 -- TODO
 imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"
---imm i (Prim2 o e1 e2 l) =
-
-
+{-
+imm i (Prim2 o e1 e2 l) = (i1, bs, mkId v1' l)
+  where
+    (i1, bls1, v1) = imm i e1
+    (i2, bls2, v2) = imm i e2
+    (i1', v1')     = fresh l i1
+    (i2', v2')     = fresh l i2
+    bs             = (v1', (Prim2 o v1 v2 l), l):bls1 ++ bls2
+-}
 imm i e@(If _ _ _  l)   = immExp i e l
 
 imm i e@(Let _ _ _ l)   = immExp i e l
