@@ -28,16 +28,14 @@ anf i (Number n l)      = (i, Number n l)
 
 anf i (Id     x l)      = (i, Id     x l)
 
--- TODO, only works for lets already in ANF
-anf i (Let x e b l)     = (i, Let x e b l)
+anf i (Let x e b l)     = (i, Let x e b l)			-- TODO complete
 
 anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
--- TODO Check?
-anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l))  --Unreverse stitch bs list reversal
-   where 
+anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l)) -- TODO (check)
+   where 						-- Unreverse stitch bs list reversal	
     (i1, bs1, ae)       = imm i  e1
     (i2, bs2, be)       = imm i1 e2 
 
@@ -81,11 +79,9 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 --------------------------------------------------------------------------------
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
--- TODO Check
-imm i (Number n l)      = (i, [], Number n l)
+imm i (Number n l)      = (i, [], Number n l)			-- TODO (check)
 
--- TODO Check
-imm i (Id x l)          = (i, [], Id x l)
+imm i (Id x l)          = (i, [], Id x l)			-- TODO (check)
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
   where
@@ -93,8 +89,7 @@ imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
     (i'', v)            = fresh l i'
     bs                  = (v, (Prim1 o v1 l, l)) : b1s
 
--- TODO
-imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"
+imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"			-- TODO
 {-
 imm i (Prim2 o e1 e2 l) = (i1, bs, mkId v1' l)
   where
@@ -104,10 +99,10 @@ imm i (Prim2 o e1 e2 l) = (i1, bs, mkId v1' l)
     (i2', v2')     = fresh l i2
     bs             = (v1', (Prim2 o v1 v2 l), l):bls1 ++ bls2
 -}
+
 imm i e@(If _ _ _  l)   = immExp i e l
 
 imm i e@(Let _ _ _ l)   = immExp i e l
-
 
 immExp :: Int -> AnfExpr a -> a -> (Int, Binds a, ImmExpr a)
 immExp i e l  = (i'', bs, mkId v l)
