@@ -25,6 +25,7 @@ anormal e = snd (anf 0 e)
 anf :: Int -> Expr a -> (Int, AnfExpr a)
 --------------------------------------------------------------------------------
 anf i (Number n l)      = (i, Number n l)
+
 anf i (Id     x l)      = (i, Id     x l)
 
 -- TODO, only works for lets already in ANF
@@ -35,16 +36,13 @@ anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
-
--- TODO Work in progress, passing more Prim2 cases but a Prim2 test still not passing
-anf i (Prim2 o e1 e2 l) = (i2, stitch (bs1++bs2) (Prim2 o ae be l))
-  where 
+-- TODO Check?
+--anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l))
+anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l))  --Unreverse stitch bs list reversal
+   where 
     (i1, bs1, ae)       = imm i  e1
     (i2, bs2, be)       = imm i1 e2 
 
-
-
---anf i (If e1 e2 e3 l) = (i, If e1 e2 e3 l)
 anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
   where
     (i'  , bs, c')      = imm i   c
