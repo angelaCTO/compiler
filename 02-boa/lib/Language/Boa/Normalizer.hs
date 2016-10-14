@@ -31,13 +31,11 @@ anf i (Id     x l)      = (i, Id     x l)
 -- TODO, only works for lets already in ANF
 anf i (Let x e b l)     = (i, Let x e b l)
 
-
 anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
 -- TODO Check?
---anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l))
 anf i (Prim2 o e1 e2 l) = (i2, stitch (bs2++bs1) (Prim2 o ae be l))  --Unreverse stitch bs list reversal
    where 
     (i1, bs1, ae)       = imm i  e1
@@ -83,10 +81,10 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 --------------------------------------------------------------------------------
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
--- TODO check
+-- TODO Check
 imm i (Number n l)      = (i, [], Number n l)
 
--- TODO check
+-- TODO Check
 imm i (Id x l)          = (i, [], Id x l)
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
