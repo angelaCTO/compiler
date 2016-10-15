@@ -30,13 +30,21 @@ anf i (Boolean b l)     = (i, Boolean b l)
 
 anf i (Id     x l)      = (i, Id     x l)
 
-anf i (Let x e b l)     = error "TBD:anf:let"
+--anf i (Let x e b l)     = error "TBD:anf:let"         --TODO, check later
+anf i (Let x e1 e2 l)     = (i'',  (Let x e1' e2' l))
+  where
+    (i', e1')      = anf i e1
+    (i'', e2')     = anf i' e2
 
 anf i (Prim1 o e l)     = (i', stitch bs  (Prim1 o ae l))
   where
     (i', bs, ae)        = imm i e
 
-anf i (Prim2 o e1 e2 l) = error "TBD:anf:prim2"
+--anf i (Prim2 o e1 e2 l) = error "TBD:anf:prim2"       --TODO, check later
+anf i (Prim2 o e1 e2 l) = (i'', stitch(bs2 ++ bs1) (Prim2 o v1 v2 l))
+  where
+  (i',  bs1, v1)        = imm i e1
+  (i'', bs2, v2)        = imm i' e2
 
 anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
   where
@@ -77,12 +85,14 @@ imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
 --------------------------------------------------------------------------------
 imm :: Int -> AnfExpr a -> (Int, Binds a, ImmExpr a)
 --------------------------------------------------------------------------------
-imm i (Number n l)      = error "TBD:imm:Number"
+--imm i (Number n l)      = error "TBD:imm:Number"      --TODO, check later
+imm i (Number n l)      = (i, [], Number n l)
 
-imm i (Id x l)          = error "TBD:imm:Id"
+--imm i (Id x l)          = error "TBD:imm:Id"          --TODO, check later
+imm i (Id x l)          = (i, [], Id x l)
 
-imm i (Boolean b  l)    = error "TBD:imm:Number" 
-
+imm i (Boolean b  l)    = error "TBD:imm:Number"        --TODO
+--imm i (Boolean b  l)    = (i, , )
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
   where
@@ -90,7 +100,14 @@ imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
     (i'', v)            = fresh l i'
     bs                  = (v, (Prim1 o v1 l, l)) : b1s
 
-imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"
+--imm i (Prim2 o e1 e2 l) = error "TBD:imm:prim2"       --TODO check later
+imm i (Prim2 o e1 e2 l) = (i''', bs, mkId v l)
+  where
+  (i',  b1s, i1) = imm i e1
+  (i'', b2s, i2) = imm i' e2
+  (i''', v) = fresh l i''
+  bs = [(v, (Prim2 o i1 i2 l, l))] ++ b2s ++ b1s
+
 
 imm i e@(If _ _ _  l)   = immExp i e l
 

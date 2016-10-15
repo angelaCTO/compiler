@@ -57,11 +57,11 @@ compile e = funInstrs (countVars e) (compileEnv emptyEnv e)
 funInstrs :: Int -> [Instruction] -> [Instruction]
 funInstrs n instrs = funEntry n ++ instrs ++ funExit
 
--- | TBD: insert instructions for setting up stack-frame for `n` local vars
+--TODO | TBD:insert instructions for setting up stack-frame for `n` local vars
 funEntry :: Int -> [Instruction]
 funEntry n  = error "TBD:funEntry"
 
--- | TBD: cleaning up stack-frame after function finishes
+--TODO | TBD: cleaning up stack-frame after function finishes
 funExit :: [Instruction]
 funExit   = error "TBD:funExit"
 
@@ -111,15 +111,15 @@ compileBind env (x, e) = (env', is)
                       ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
 
--- | TBD: Implement code for `Prim1` with appropriate type checking
+--TODO | TBD: Implement code for `Prim1` with appropriate type checking
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 compilePrim1 l env op v = error "TBD:compilePrim1"
 
--- | TBD: Implement code for `Prim2` with appropriate type checking
+--TODO | TBD: Implement code for `Prim2` with appropriate type checking
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 compilePrim2 l env op = error "TBD:compilePrim2"
 
--- | TBD: Implement code for `If` with appropriate type checking
+--TODO | TBD: Implement code for `If` with appropriate type checking
 compileIf :: Tag -> Env -> IExp -> AExp -> AExp -> [Instruction]
 compileIf l env v e1 e2 = error "TBD:compileIf"
 
