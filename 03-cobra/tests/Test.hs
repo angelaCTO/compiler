@@ -103,6 +103,7 @@ dynamicTests sc =
 
 yourTests sc =
   [
+    --Cummulative Tests From Past
     mkTest sc "badVar" File (Left (unboundVarString "x")),
     mkTest sc "badLet" File (Left (unboundVarString "y")),
     mkTest sc "fiveLets" File (Right "5"),
@@ -120,6 +121,8 @@ yourTests sc =
     mkTest sc "longAdd" File (Right "36"),
     mkTest sc "longSub" File (Right "36"),
     mkTest sc "longAddMult" File (Right "0")
+
+    --New Tests
   ]
 
 unboundVarString :: String -> String

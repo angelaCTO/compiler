@@ -122,4 +122,6 @@ yourTests sc =
     mkTest sc "longAddMult" File (Right "0")
   ]
 
-
+unboundVarString :: String -> String
+unboundVarString var = printf "Unbound variable '%s'" var
+undefinedString = error "Test Invalid: Tester must fill in the correct string here!"

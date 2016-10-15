@@ -57,11 +57,11 @@ compile e = funInstrs (countVars e) (compileEnv emptyEnv e)
 funInstrs :: Int -> [Instruction] -> [Instruction]
 funInstrs n instrs = funEntry n ++ instrs ++ funExit
 
--- | TBD: insert instructions for setting up stack-frame for `n` local vars
+--TODO | TBD:insert instructions for setting up stack-frame for `n` local vars
 funEntry :: Int -> [Instruction]
 funEntry n  = error "TBD:funEntry"
 
--- | TBD: cleaning up stack-frame after function finishes
+--TODO | TBD: cleaning up stack-frame after function finishes
 funExit :: [Instruction]
 funExit   = error "TBD:funExit"
 
@@ -111,15 +111,55 @@ compileBind env (x, e) = (env', is)
                       ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
 
--- | TBD: Implement code for `Prim1` with appropriate type checking
-compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
-compilePrim1 l env op v = error "TBD:compilePrim1"
+--TODO | TBD: Implement code for `Prim1` with appropriate type checking
+{-
+-- | `Prim1` are unary operations
+data Prim1
+  = Add1
+  | Sub1
+  | Print
+  | IsNum
+  | IsBool
+  deriving (Show)
+-}
 
--- | TBD: Implement code for `Prim2` with appropriate type checking
+compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
+--compilePrim1 l env op v = error "TBD:compilePrim1"
+compilePrim1 l env op v = case (l, env, op, v) of
+    (l, env, Add1, v)   -> (compileEnv env v) ++
+                         [ IAdd (Reg EAX) (Const 1) ]
+    (l, env, Sub1, v)   -> (compileEnv env v) ++
+                         [ ISub (Reg EAX) (Const 1) ]
+--    (l, env, Print, v)  ->
+--    (l, env, IsNum, v)  ->
+--    (l, env, IsBool, v) ->
+
+
+--TODO | TBD: Implement code for `Prim2` with appropriate type checking
+{-
+-- | `Prim2` are binary operations
+data Prim2
+  = Plus
+  | Minus
+  | Times
+  | Less
+  | Greater
+  | Equal
+  deriving (Show)
+-}
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 compilePrim2 l env op = error "TBD:compilePrim2"
+{- how to extract v1, v2?
+compilePrim2 l env op = case (l, env, op) of
+    (l, env, Plus)    ->
+    (l, env, Minus)   ->
+    (l, env, Times)   ->
+    (l, env, Less)    ->
+    (l, env, Greater) ->
+    (l, env, Equal)   ->
+-}
 
--- | TBD: Implement code for `If` with appropriate type checking
+--TODO | TBD: Implement code for `If` with appropriate type checking
 compileIf :: Tag -> Env -> IExp -> AExp -> AExp -> [Instruction]
 compileIf l env v e1 e2 = error "TBD:compileIf"
 

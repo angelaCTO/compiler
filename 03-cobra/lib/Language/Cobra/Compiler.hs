@@ -112,12 +112,52 @@ compileBind env (x, e) = (env', is)
     (i, env')          = pushEnv x env
 
 --TODO | TBD: Implement code for `Prim1` with appropriate type checking
+{-
+-- | `Prim1` are unary operations
+data Prim1
+  = Add1
+  | Sub1
+  | Print
+  | IsNum
+  | IsBool
+  deriving (Show)
+-}
+
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
-compilePrim1 l env op v = error "TBD:compilePrim1"
+--compilePrim1 l env op v = error "TBD:compilePrim1"
+compilePrim1 l env op v = case (l, env, op, v) of
+    (l, env, Add1, v)   -> (compileEnv env v) ++
+                         [ IAdd (Reg EAX) (Const 1) ]
+    (l, env, Sub1, v)   -> (compileEnv env v) ++
+                         [ ISub (Reg EAX) (Const 1) ]
+--    (l, env, Print, v)  ->
+--    (l, env, IsNum, v)  ->
+--    (l, env, IsBool, v) ->
+
 
 --TODO | TBD: Implement code for `Prim2` with appropriate type checking
+{-
+-- | `Prim2` are binary operations
+data Prim2
+  = Plus
+  | Minus
+  | Times
+  | Less
+  | Greater
+  | Equal
+  deriving (Show)
+-}
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 compilePrim2 l env op = error "TBD:compilePrim2"
+{- how to extract v1, v2?
+compilePrim2 l env op = case (l, env, op) of
+    (l, env, Plus)    ->
+    (l, env, Minus)   ->
+    (l, env, Times)   ->
+    (l, env, Less)    ->
+    (l, env, Greater) ->
+    (l, env, Equal)   ->
+-}
 
 --TODO | TBD: Implement code for `If` with appropriate type checking
 compileIf :: Tag -> Env -> IExp -> AExp -> AExp -> [Instruction]

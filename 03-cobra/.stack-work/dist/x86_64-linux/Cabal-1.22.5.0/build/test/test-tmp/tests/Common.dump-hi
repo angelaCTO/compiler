@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:08:32.831376 UTC
+2016-10-15 22:42:45.072789 UTC
 
 interface main@main:Common 7103
-  interface hash: 11d562d83f71c3db3922b8d51d1dd6a6
-  ABI hash: f2f722bbe33883c9ac5a3c8c6b4b44b6
+  interface hash: 91531272a25bfa3751e1561bab8f5d99
+  ABI hash: 48e4931ca5843ff6f4def2d220c01809
   export-list hash: e33fcf8924cbc6e884e8682e260984b2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 4e3b7035bfcdc42bd01ed35bfb0b7fa2
@@ -125,7 +125,7 @@ import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
-import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Normalizer d470c3fcdc78c22d19e34cb40e3c38c3
+import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Normalizer eb954d8db7ce9f2e38642d5041730726
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Parser 919e92496240f9c8b4a42fa4d7675225
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 6501190077841e1c46a81f384291fed3
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
@@ -174,7 +174,7 @@ da363835fadce7e1b31cd23db59850e5
                         GHC.Types.True -> 1 } }
                    GHC.Types.True
                    -> case Common.$s^1 ret_ty GHC.Prim.Int# of {} } }) -}
-db316b9e56abba4f0c4d0f565797daf9
+ed434570ed873ee996222453e925dd87
   $wanfRun :: Language.Cobra.UX.Text -> (# Language.Cobra.UX.Text #)
   {- Arity: 1, Strictness: <L,U>, Inline: [0],
      Unfolding: (\ w :: Language.Cobra.UX.Text ->
@@ -283,7 +283,7 @@ c86d4b34c331b6a81dcc9c6afae4ce10
     Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
 478a229b0e495505a46abb6231777e96
   type Score = GHC.IORef.IORef (GHC.Types.Int, GHC.Types.Int)
-77d4e370eb812125a138eeba3f0fe010
+16d1b0bed8450219b35c77f6fc1198c3
   anfRun :: Language.Cobra.UX.Text -> Common.Result
   {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -300,7 +300,7 @@ c86d4b34c331b6a81dcc9c6afae4ce10
                    (GHC.Types.[] @ GHC.Types.Char)
                    1
                    1) -}
-3acd152860aba21cbca8091ff6c573a1
+25bcef178739bc561e2ab09b12d2691b
   anfTest ::
     Common.Score
     -> GHC.Base.String

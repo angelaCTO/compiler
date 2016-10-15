@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:08:56.416543 UTC
+2016-10-15 22:42:45.337874 UTC
 
 interface main@main:Main 7103
-  interface hash: 9eb16b068047ca92e1016bc8e89eb6cb
-  ABI hash: bdc08bafec2edf97f122b5de80561b86
+  interface hash: e94b383551dca5c4df0d0906a137f17a
+  ABI hash: 9cf4be54a34251c358f049c1e5251507
   export-list hash: 4837337b7a1c63da2dc4eb29875fe473
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: db1f3b930a6f3af76dab17c1bff7aadc
@@ -106,12 +106,12 @@ import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 6501190077841e1c46a81f384291fed3
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-import  -/  Common f2f722bbe33883c9ac5a3c8c6b4b44b6
+import  -/  Common 48e4931ca5843ff6f4def2d220c01809
   exports: e33fcf8924cbc6e884e8682e260984b2
   Code ae7c344e12fa46b5e3ac4e9f60e8e4d8
   File ae56eec8dcc5c346c330b742587d5c8b
   Score 478a229b0e495505a46abb6231777e96
-  anfTest 3acd152860aba21cbca8091ff6c573a1
+  anfTest 25bcef178739bc561e2ab09b12d2691b
   dynamicError d7a3aae8e4809bd33042de71a79d37fb
   getTotal 3bdaefce13cce0ffb14e163d073a9e21
   initScore 9cc9515489bbb1759599617d39011a1b
@@ -224,7 +224,7 @@ b873187dc66ea04c31350f6ad9e9846f
                                         (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
                                         Main.adderTests1)
                                      (GHC.Types.[] @ Test.Tasty.Core.TestTree)))))) #)) -}
-5ea5e50c42f2ce1b283c8e1fd89e539b
+6d79e14dfd030c8ab7bd8a3de2dec166
   $wanfTests ::
     Common.Score
     -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
@@ -310,7 +310,7 @@ ffccc0cc162c19a2a55b270ea9762f87
     Common.Score
     -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
   {- Arity: 1, Strictness: <L,U(U)>, Inline: [0] -}
-cb121ed773385960d538ee9304847cf5
+2b4cb23325dfddcd2753c15e6aac7377
   $wtests ::
     Common.Score
     -> (# Test.Tasty.Core.TestName, [Test.Tasty.Core.TestTree] #)
@@ -486,7 +486,7 @@ c9028829c771bd6f9ae1082246e0b735
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
   {- Arity: 1,
      Unfolding: (Common.mkTest1 Main.adderTests10 Common.File) -}
-aafc911a40156377675edacc8d85b805
+b3d3703f1173deb9789ea632cc826752
   anfTests :: Common.Score -> [Test.Tasty.Core.TestTree]
   {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -647,12 +647,12 @@ b6dca9ff3f08b01324b617e06f6824ca
                 (\ w :: Common.Score ->
                  case Main.$wdynamicTests w of ww { (#,#) ww1 ww2 ->
                  GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
-52caec87af1afe8f56d73702dac0f887
+54ddea00c483c843ac06ac1f0cfc535b
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-9ce207ffc25d3b060c7b64a7d3b2f338
+5ddd94cb8aa0051d54565056cdad416f
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -736,7 +736,7 @@ b6dca9ff3f08b01324b617e06f6824ca
 2cdcb5afde74543b0f40d6dabefa99e4
   main10 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0) -}
-9dbc876debca3ae2b31d06f6e5e046ad
+1d1bd29bf73a773a7d0054dfc19ed8ca
   main11 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -768,7 +768,7 @@ d6f73be52d7dd824d3fc6ab1e6b029d6
 417236339f938f659ec9cd45a132d4f7
   main9 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Unfolding: ((Main.main10, Main.main10)) -}
-0759e6917fb13d7970513a4280afdc83
+bc9f24d475e2054112fb2e84c1fa647f
   tests :: Common.Score -> Test.Tasty.Core.TestTree
   {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)

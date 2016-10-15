@@ -91,8 +91,8 @@ imm i (Number n l)      = (i, [], Number n l)
 --imm i (Id x l)          = error "TBD:imm:Id"          --TODO, check later
 imm i (Id x l)          = (i, [], Id x l)
 
-imm i (Boolean b  l)    = error "TBD:imm:Number"        --TODO
---imm i (Boolean b  l)    = (i, , )
+imm i (Boolean b  l)    = (i, [], Boolean b l)          --TODO, check later
+--imm i (Boolean b  l)    = (depends on how Boolean type is implemente ...)
 
 imm i (Prim1 o e1 l)    = (i'', bs, mkId v l)
   where

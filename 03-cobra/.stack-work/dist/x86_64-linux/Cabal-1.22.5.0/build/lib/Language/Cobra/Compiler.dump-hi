@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:08:31.129617 UTC
+2016-10-15 22:42:43.70701 UTC
 
 interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler [orphan module] 7103
-  interface hash: e35de69c4f82fe65337dbd9ee2593053
+  interface hash: 1674035b7da444274f24fbdbaa4df4a9
   ABI hash: a2ca5b4e561a6d350b6b943fe304ebe0
   export-list hash: 69e2521eebc6882ef1c6502321312240
   orphan hash: a928b99bb5708eb07548ded42bf614b0
@@ -83,14 +83,15 @@ import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
 import  -/  Language.Cobra.Asm da50623211b6e82697aa30738bbc06c2
   exports: 9e33783fa46f655b7a78c1321e0ed439
   asm dd99a29f5b285b0f0e4d3cf0b68e3cfc
-import  -/  Language.Cobra.Normalizer d470c3fcdc78c22d19e34cb40e3c38c3
+import  -/  Language.Cobra.Normalizer eb954d8db7ce9f2e38642d5041730726
   exports: 29892b7325712c75406197c96105f482
-  anormal 869f2cc4444d924f629c0cc0d3cec064
+  anormal 3f128caecac772a0a5c5a0b591ccbb12
 import  -/  Language.Cobra.Parser 919e92496240f9c8b4a42fa4d7675225
   exports: c6c66b5657a5aeb9512f0057cdb43976
   parse fc84be4401e9e5ebabc6bf751a6b5156
 import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   exports: 5bc450ebd8a44f3953138ffc7a7c569a
+  Add1 ee5fdde90c81ddcd53463c26d1099499
   AnfExpr c89cdf11c1ad8eca86776c71435df1fb
   Arg df60fd07719303c58112db65512abc38
   Bare c8b4fb45ff6a16459f96ee258a7382fb
@@ -101,7 +102,9 @@ import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   EBP 907efc676ff308d03d6b4e5df0bd7af3
   Env 48495f57b9b9180fca8e44d25bb75678
   HexConst 9ea99502b6f4960a49da97d068b7893a
+  IAdd 9a486f698a9e8efa81d8321d3af16cd0
   IMov ccee73fe6f18b592cbee7c2d2c2bbc46
+  ISub a422e42fdb9c86ae0a5fa6d374e94cf1
   Id ce60f5b319535afe9880f9ea90dd4e1a
   Id 1f30d5b0ee0d282456dd8be18fc6a85c
   If 4bd38bcb67fd571b0b93ba8a997f5ffd
@@ -115,6 +118,7 @@ import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   Prim2 38b83beb328447eeba225078a0a8e1b6
   Reg 7bf694a221957eeb64e4490ebebcf1d5
   RegOffset 30e5a428e8927016d8716f8e5562921c
+  Sub1 a78de054ce88a5a6c3a4f6dc6946cc7a
   TBoolean 9047e26c12b3af89d9d42fb7e1c587af
   TNumber 96210d2f2fa418de505795b6e910fd86
   Ty ede2152307b53dacbd1528b013fbdb19
