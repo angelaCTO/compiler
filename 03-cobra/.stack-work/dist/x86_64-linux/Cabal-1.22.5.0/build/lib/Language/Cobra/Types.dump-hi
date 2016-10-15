@@ -1,0 +1,1499 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-15 22:08:28.996697 UTC
+
+interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 7103
+  interface hash: ab5f9c416d55f2a3594e160018b80217
+  ABI hash: 6501190077841e1c46a81f384291fed3
+  export-list hash: 5bc450ebd8a44f3953138ffc7a7c569a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9fa4f70b2e172d00450828877322388b
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Cobra.Types.addEnv
+  Language.Cobra.Types.bindId
+  Language.Cobra.Types.bindsExpr
+  Language.Cobra.Types.emptyEnv
+  Language.Cobra.Types.exprBinds
+  Language.Cobra.Types.ext
+  Language.Cobra.Types.fromListEnv
+  Language.Cobra.Types.getLabel
+  Language.Cobra.Types.isAnf
+  Language.Cobra.Types.label
+  Language.Cobra.Types.lookupEnv
+  Language.Cobra.Types.memberEnv
+  Language.Cobra.Types.pushEnv
+  Language.Cobra.UX.abort
+  Language.Cobra.UX.junkSpan
+  Language.Cobra.UX.mkError
+  Language.Cobra.UX.panic
+  Language.Cobra.UX.posSpan
+  Language.Cobra.UX.readFileSpan
+  Language.Cobra.UX.renderErrors
+  Language.Cobra.Types.AnfExpr
+  Language.Cobra.Types.Arg{Language.Cobra.Types.Const Language.Cobra.Types.HexConst Language.Cobra.Types.Reg Language.Cobra.Types.RegIndex Language.Cobra.Types.RegOffset Language.Cobra.Types.Sized}
+  Language.Cobra.Types.Bare
+  Language.Cobra.Types.BareBind
+  Language.Cobra.Types.Bind{Language.Cobra.Types.Bind}
+  Language.Cobra.Types.DynError{Language.Cobra.Types.ArithOverflow Language.Cobra.Types.TypeError}
+  Language.Cobra.Types.Env{Language.Cobra.Types.envMax}
+  Language.Cobra.Types.Expr{Language.Cobra.Types.Boolean Language.Cobra.Types.Id Language.Cobra.Types.If Language.Cobra.Types.Let Language.Cobra.Types.Number Language.Cobra.Types.Prim1 Language.Cobra.Types.Prim2}
+  Language.Cobra.Types.Ext{Language.Cobra.Types.Asm Language.Cobra.Types.Exe Language.Cobra.Types.Log Language.Cobra.Types.Res Language.Cobra.Types.Src}
+  Language.Cobra.Types.Id
+  Language.Cobra.Types.ImmExpr
+  Language.Cobra.Types.Instruction{Language.Cobra.Types.IAdd Language.Cobra.Types.IAnd Language.Cobra.Types.ICall Language.Cobra.Types.ICmp Language.Cobra.Types.IJe Language.Cobra.Types.IJg Language.Cobra.Types.IJl Language.Cobra.Types.IJmp Language.Cobra.Types.IJne Language.Cobra.Types.IJo Language.Cobra.Types.ILabel Language.Cobra.Types.IMov Language.Cobra.Types.IMul Language.Cobra.Types.IOr Language.Cobra.Types.IPop Language.Cobra.Types.IPush Language.Cobra.Types.IRet Language.Cobra.Types.ISar Language.Cobra.Types.IShl Language.Cobra.Types.IShr Language.Cobra.Types.ISub Language.Cobra.Types.IXor}
+  Language.Cobra.Types.Label{Language.Cobra.Types.BranchDone Language.Cobra.Types.BranchTrue Language.Cobra.Types.Builtin Language.Cobra.Types.DynamicErr}
+  Language.Cobra.Types.Prim1{Language.Cobra.Types.Add1 Language.Cobra.Types.IsBool Language.Cobra.Types.IsNum Language.Cobra.Types.Print Language.Cobra.Types.Sub1}
+  Language.Cobra.Types.Prim2{Language.Cobra.Types.Equal Language.Cobra.Types.Greater Language.Cobra.Types.Less Language.Cobra.Types.Minus Language.Cobra.Types.Plus Language.Cobra.Types.Times}
+  Language.Cobra.Types.Reg{Language.Cobra.Types.EAX Language.Cobra.Types.EBP Language.Cobra.Types.EBX Language.Cobra.Types.ESI Language.Cobra.Types.ESP}
+  Language.Cobra.Types.Size{Language.Cobra.Types.BytePtr Language.Cobra.Types.DWordPtr Language.Cobra.Types.WordPtr}
+  Language.Cobra.Types.Tag
+  Language.Cobra.Types.Ty{Language.Cobra.Types.TBoolean Language.Cobra.Types.TNumber}
+  Language.Cobra.UX.Located{Language.Cobra.UX.sourceSpan}
+  Language.Cobra.UX.PPrint{Language.Cobra.UX.pprint}
+  Language.Cobra.UX.Result
+  Language.Cobra.UX.SourceSpan{Language.Cobra.UX.SS Language.Cobra.UX.ssBegin Language.Cobra.UX.ssEnd}
+  Language.Cobra.UX.Text
+  Language.Cobra.UX.UserError{Language.Cobra.UX.eMsg Language.Cobra.UX.eSpan}
+module dependencies: Language.Cobra.UX Language.Cobra.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
+  exports: f257388cf09bfb1ea54c06d145c2c392
+  Located 4ec9b6ba1b719b6660b2a0baf2ef21cd
+  PPrint a72865c2f5506a7bfe37f334af5862a9
+  Result b5c1662d81d3be45540949b74c81eacb
+  SS 43ef9ecbb25d2afa9395516dcec5efc6
+  SourceSpan 375782125f32f89149a428b25439ec42
+  Text 2455eb3b3f2de6579a4619ee9e444403
+  UserError 6062d0f74183b9a6b4dcf6e859962c8b
+  abort 1de66182ecac69013f8c9a3de9597176
+  eMsg f9821ef96e69454b629dd4cfa411ba01
+  eSpan 0873428380bc2f3e22241c24535d8013
+  junkSpan 375782125f32f89149a428b25439ec42
+  mkError abae45c32b692ede157d1976ba697189
+  panic c0fd83511028abe514eb7539447c2ad9
+  posSpan 5ddd247df7887b8b31729724e5ad6269
+  pprint c97af7ee2acd81f9b14a61581940b3f6
+  readFileSpan c680ed70039f710138d438e6358c4aac
+  renderErrors 399108a3dd40a61b6b30fd3f954014a2
+  sourceSpan 06aff49318c32d74335603df24f5b38f
+  ssBegin 2e2d44266db69b3a00e69b247bdf6380
+  ssEnd b71852061e0f020577e6dd4218f7bd32
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+e1d61bffe263d57b21d6ba031332921c
+  $fFunctorBind :: GHC.Base.Functor Language.Cobra.Types.Bind
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Bind
+                  Language.Cobra.Types.$fFunctorBind_$cfmap
+                  Language.Cobra.Types.$fFunctorBind_$c<$ -}
+e1d61bffe263d57b21d6ba031332921c
+  $fFunctorBind_$c<$ ::
+    a -> Language.Cobra.Types.Bind b -> Language.Cobra.Types.Bind a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(U,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a ds :: Language.Cobra.Types.Bind b ->
+                 case ds of wild { Language.Cobra.Types.Bind a1 a2 ->
+                 Language.Cobra.Types.Bind @ a a1 eta }) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fFunctorBind_$cfmap ::
+    (a -> b)
+    -> Language.Cobra.Types.Bind a -> Language.Cobra.Types.Bind b
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*C1(U)><S(SL),1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b f :: a -> b ds :: Language.Cobra.Types.Bind a ->
+                 case ds of wild { Language.Cobra.Types.Bind a1 a2 ->
+                 Language.Cobra.Types.Bind @ b a1 (f a2) }) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fFunctorExpr :: GHC.Base.Functor Language.Cobra.Types.Expr
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Expr
+                  Language.Cobra.Types.$fFunctorExpr_$cfmap
+                  Language.Cobra.Types.$fFunctorExpr_$c<$ -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fFunctorExpr_$c<$ ::
+    a -> Language.Cobra.Types.Expr b -> Language.Cobra.Types.Expr a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a eta1 :: Language.Cobra.Types.Expr b ->
+                 Language.Cobra.Types.$fFunctorExpr_$cfmap
+                   @ b
+                   @ a
+                   (\ ds :: b -> eta)
+                   eta1) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fFunctorExpr_$cfmap ::
+    (a -> b)
+    -> Language.Cobra.Types.Expr a -> Language.Cobra.Types.Expr b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+e1d61bffe263d57b21d6ba031332921c
+  $fLocatedBind ::
+    Language.Cobra.UX.Located Language.Cobra.Types.BareBind
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fLocatedBind_$csourceSpan
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:Located[0]
+                          <Language.Cobra.Types.BareBind>_N)) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fLocatedBind_$csourceSpan ::
+    Language.Cobra.Types.BareBind -> Language.Cobra.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Bind Language.Cobra.UX.SourceSpan ->
+                 case ds of wild { Language.Cobra.Types.Bind ds1 l -> l }) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fLocatedExpr ::
+    Language.Cobra.UX.Located Language.Cobra.Types.Bare
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                (Language.Cobra.Types.getLabel @ Language.Cobra.UX.SourceSpan)
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:Located[0]
+                          <Language.Cobra.Types.Bare>_N)) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fLocatedExpr0 ::
+    Language.Cobra.UX.Located a =>
+    Language.Cobra.UX.Located (Language.Cobra.Types.Expr a)
+  DFunId[0]
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U(U,U))><L,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fLocatedExpr0_$csourceSpan
+                  `cast`
+                (forall a.
+                 <Language.Cobra.UX.Located a>_R
+                 ->_R Sym (Language.Cobra.UX.NTCo:Located[0]
+                               <Language.Cobra.Types.Expr a>_N)) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fLocatedExpr0_$csourceSpan ::
+    Language.Cobra.UX.Located a =>
+    Language.Cobra.Types.Expr a -> Language.Cobra.UX.SourceSpan
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U(U,U))><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   $dLocated :: Language.Cobra.UX.Located a
+                   eta :: Language.Cobra.Types.Expr a ->
+                 $dLocated `cast` (Language.Cobra.UX.NTCo:Located[0] <a>_N)
+                   (Language.Cobra.Types.getLabel @ a eta)) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fPPrintBind ::
+    Language.Cobra.UX.PPrint (Language.Cobra.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.bindId
+                  `cast`
+                (forall a.
+                 Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.Types.Bind a>_N)) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fPPrintExpr ::
+    Language.Cobra.UX.PPrint (Language.Cobra.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fPPrintExpr_$cpprint
+                  `cast`
+                (forall a.
+                 Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.Types.Expr a>_N)) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fPPrintExpr_$cpprint ::
+    Language.Cobra.Types.Expr a -> Language.Cobra.UX.Text
+  {- Arity: 1, Strictness: <S,1*U> -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fPPrintPrim1 ::
+    Language.Cobra.UX.PPrint Language.Cobra.Types.Prim1
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fPPrintPrim1_$cpprint
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.Types.Prim1>_N)) -}
+772fee6109d0672ab8a179aa3dd97ac7
+  $fPPrintPrim10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ">"#) -}
+ec2419592bf124d9e1b927103dc5a552
+  $fPPrintPrim11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "<"#) -}
+04f5808f58077b0bf0d162c8db346875
+  $fPPrintPrim12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "*"#) -}
+47d13f02623b224e478904952961d34d
+  $fPPrintPrim13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "-"#) -}
+2a15e1f46396d048c2802c9ffdd4fd0a
+  $fPPrintPrim14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "+"#) -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fPPrintPrim1_$cpprint ::
+    Language.Cobra.Types.Prim1 -> Language.Cobra.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Prim1 ->
+                 case ds of wild {
+                   Language.Cobra.Types.Add1 -> Language.Cobra.Types.$fPPrintPrim8
+                   Language.Cobra.Types.Sub1 -> Language.Cobra.Types.$fPPrintPrim7
+                   Language.Cobra.Types.Print -> Language.Cobra.Types.$fPPrintPrim6
+                   Language.Cobra.Types.IsNum -> Language.Cobra.Types.$fPPrintPrim5
+                   Language.Cobra.Types.IsBool
+                   -> Language.Cobra.Types.$fPPrintPrim4 }) -}
+38b83beb328447eeba225078a0a8e1b6
+  $fPPrintPrim2 ::
+    Language.Cobra.UX.PPrint Language.Cobra.Types.Prim2
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fPPrintPrim2_$cpprint
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.Types.Prim2>_N)) -}
+38b83beb328447eeba225078a0a8e1b6
+  $fPPrintPrim2_$cpprint ::
+    Language.Cobra.Types.Prim2 -> Language.Cobra.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Prim2 ->
+                 case ds of wild {
+                   Language.Cobra.Types.Plus -> Language.Cobra.Types.$fPPrintPrim14
+                   Language.Cobra.Types.Minus -> Language.Cobra.Types.$fPPrintPrim13
+                   Language.Cobra.Types.Times -> Language.Cobra.Types.$fPPrintPrim12
+                   Language.Cobra.Types.Less -> Language.Cobra.Types.$fPPrintPrim11
+                   Language.Cobra.Types.Greater -> Language.Cobra.Types.$fPPrintPrim10
+                   Language.Cobra.Types.Equal
+                   -> Language.Cobra.Types.$fPPrintPrim9 }) -}
+85a8e824b8e3363e3fb31aba91fbb994
+  $fPPrintPrim4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "isBool"#) -}
+eef3d861d4ccbe969ea7441587954471
+  $fPPrintPrim5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "isNum"#) -}
+bd9f8abb9637037f293b657a4bc5f1c5
+  $fPPrintPrim6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "print"#) -}
+f1b1837b3b1ed049791fa838e1a5a573
+  $fPPrintPrim7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sub1"#) -}
+67ab945db28893ecf481ec11b15956da
+  $fPPrintPrim8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "add1"#) -}
+cf871add0fd0a754ead41704edc35016
+  $fPPrintPrim9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "=="#) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fPPrintTy :: Language.Cobra.UX.PPrint Language.Cobra.Types.Ty
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Types.$fPPrintTy_$cpprint
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.Types.Ty>_N)) -}
+26aeb54e509a652fa7252776d109fd77
+  $fPPrintTy1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "boolean"#) -}
+396bf187c370b31f1b81d1138f7d19f3
+  $fPPrintTy2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "number"#) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fPPrintTy_$cpprint ::
+    Language.Cobra.Types.Ty -> Language.Cobra.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Ty ->
+                 case ds of wild {
+                   Language.Cobra.Types.TNumber -> Language.Cobra.Types.$fPPrintTy2
+                   Language.Cobra.Types.TBoolean
+                   -> Language.Cobra.Types.$fPPrintTy1 }) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fShowBind ::
+    GHC.Show.Show a => GHC.Show.Show (Language.Cobra.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.Cobra.Types.Bind a)
+                  (Language.Cobra.Types.$fShowBind_$cshowsPrec @ a $dShow)
+                  (Language.Cobra.Types.$fShowBind_$cshow @ a $dShow)
+                  (Language.Cobra.Types.$fShowBind_$cshowList @ a $dShow) -}
+043923afd52bd52c312a0d6ee56752eb
+  $fShowBind1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+108cd4ffb9723c95a8d835ca11356884
+  $fShowBind2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bind "#) -}
+500f1a7ce6bd54882f70f288d3bd507a
+  $fShowBind3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fShowBind_$cshow ::
+    GHC.Show.Show a => Language.Cobra.Types.Bind a -> GHC.Base.String
+  {- Arity: 2,
+     Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a w :: GHC.Show.Show a w1 :: Language.Cobra.Types.Bind a ->
+                 case w1 of ww { Language.Cobra.Types.Bind ww1 ww2 ->
+                 Language.Cobra.Types.$w$cshow @ a w ww1 ww2 }) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fShowBind_$cshowList ::
+    GHC.Show.Show a => [Language.Cobra.Types.Bind a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.Cobra.Types.Bind a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.Cobra.Types.Bind a)
+                   (Language.Cobra.Types.$fShowBind_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.Cobra.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+e1d61bffe263d57b21d6ba031332921c
+  $fShowBind_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.Cobra.Types.Bind a -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,1*U(1*C1(C1(U)),A,A)><S,1*U(U)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.Cobra.Types.Bind a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 case w2 of ww2 { Language.Cobra.Types.Bind ww3 ww4 ->
+                 Language.Cobra.Types.$w$cshowsPrec @ a w ww1 ww3 ww4 } }) -}
+ca47df652dda1f32d3e279a6339e160b
+  $fShowDynError :: GHC.Show.Show Language.Cobra.Types.DynError
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.DynError
+                  Language.Cobra.Types.$fShowDynError_$cshowsPrec
+                  Language.Cobra.Types.$fShowDynError_$cshow
+                  Language.Cobra.Types.$fShowDynError_$cshowList -}
+ca47df652dda1f32d3e279a6339e160b
+  $fShowDynError1 :: Language.Cobra.Types.DynError -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Language.Cobra.Types.$fShowDynError_$cshowsPrec
+                   Language.Cobra.Types.$fShowBind1) -}
+e6bd4014fedce797905ae9a609cfec87
+  $fShowDynError2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ArithOverflow"#) -}
+d19775a265c53150e774a15d22ceb4a5
+  $fShowDynError3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TBoolean"#) -}
+efe86feeefaafc83c53a7e7e93146746
+  $fShowDynError4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TNumber"#) -}
+e07d7bd82ceea4294146e5ae371f0927
+  $fShowDynError5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TypeError "#) -}
+ca47df652dda1f32d3e279a6339e160b
+  $fShowDynError_$cshow ::
+    Language.Cobra.Types.DynError -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.DynError ->
+                 Language.Cobra.Types.$fShowDynError_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+ca47df652dda1f32d3e279a6339e160b
+  $fShowDynError_$cshowList ::
+    [Language.Cobra.Types.DynError] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.DynError
+                   Language.Cobra.Types.$fShowDynError1) -}
+ca47df652dda1f32d3e279a6339e160b
+  $fShowDynError_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.DynError -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
+     Unfolding: (\ a :: GHC.Types.Int
+                   ds :: Language.Cobra.Types.DynError
+                   eta :: GHC.Base.String ->
+                 case ds of wild {
+                   Language.Cobra.Types.TypeError b1
+                   -> case a of wild1 { GHC.Types.I# x ->
+                      let {
+                        p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                        = \ x1 :: GHC.Base.String[OneShot] ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            Language.Cobra.Types.$fShowDynError5
+                            (case b1 of wild2 {
+                               Language.Cobra.Types.TNumber
+                               -> GHC.Base.++
+                                    @ GHC.Types.Char
+                                    Language.Cobra.Types.$fShowDynError4
+                                    x1
+                               Language.Cobra.Types.TBoolean
+                               -> GHC.Base.++
+                                    @ GHC.Types.Char
+                                    Language.Cobra.Types.$fShowDynError3
+                                    x1 })
+                      } in
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x 11) of wild2 {
+                        GHC.Types.False -> p eta
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows9
+                             (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 eta)) } }
+                   Language.Cobra.Types.ArithOverflow
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowDynError2
+                        eta }) -}
+48495f57b9b9180fca8e44d25bb75678
+  $fShowEnv :: GHC.Show.Show Language.Cobra.Types.Env
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Env
+                  Language.Cobra.Types.$fShowEnv_$cshowsPrec
+                  Language.Cobra.Types.$fShowEnv_$cshow
+                  Language.Cobra.Types.$fShowEnv_$cshowList -}
+48495f57b9b9180fca8e44d25bb75678
+  $fShowEnv1 :: Language.Cobra.Types.Env -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Cobra.Types.Env
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Cobra.Types.Env ww1 ww2 ->
+                 Language.Cobra.Types.$w$cshowsPrec1 0 ww1 ww2 w1 }) -}
+48495f57b9b9180fca8e44d25bb75678
+  $fShowEnv_$cshow :: Language.Cobra.Types.Env -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.Env ->
+                 Language.Cobra.Types.$fShowEnv_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+48495f57b9b9180fca8e44d25bb75678
+  $fShowEnv_$cshowList ::
+    [Language.Cobra.Types.Env] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.Env
+                   Language.Cobra.Types.$fShowEnv1) -}
+48495f57b9b9180fca8e44d25bb75678
+  $fShowEnv_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Env -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.Types.Env
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Cobra.Types.Env ww3 ww4 ->
+                 Language.Cobra.Types.$w$cshowsPrec1 ww1 ww3 ww4 w2 } }) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fShowExpr ::
+    GHC.Show.Show a => GHC.Show.Show (Language.Cobra.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.Cobra.Types.Expr a)
+                  (Language.Cobra.Types.$fShowExpr_$cshowsPrec @ a $dShow)
+                  (Language.Cobra.Types.$fShowExpr_$cshow @ a $dShow)
+                  (Language.Cobra.Types.$fShowExpr_$cshowList @ a $dShow) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fShowExpr_$cshow ::
+    GHC.Show.Show a => Language.Cobra.Types.Expr a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   x :: Language.Cobra.Types.Expr a ->
+                 Language.Cobra.Types.$fShowExpr_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fShowExpr_$cshowList ::
+    GHC.Show.Show a => [Language.Cobra.Types.Expr a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.Cobra.Types.Expr a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.Cobra.Types.Expr a)
+                   (Language.Cobra.Types.$fShowExpr_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.Cobra.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $fShowExpr_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.Cobra.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.Cobra.Types.Expr a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Language.Cobra.Types.$w$cshowsPrec2 @ a w ww1 w2 }) -}
+b0ff8294483e4c693ed2f435f408e7f3
+  $fShowExt :: GHC.Show.Show Language.Cobra.Types.Ext
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Ext
+                  Language.Cobra.Types.$fShowExt_$cshowsPrec
+                  Language.Cobra.Types.$fShowExt_$cshow
+                  Language.Cobra.Types.$fShowExt_$cshowList -}
+c1a700dad747af65bf12d0c4a0c21fa1
+  $fShowExt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "log"#) -}
+12e298245985edc311d13709f7abbc6e
+  $fShowExt2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "result"#) -}
+91ff8ae03ef31a169d4996ab11748b81
+  $fShowExt3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "run"#) -}
+ac36918afd3f518f904bfcff73fcfa1b
+  $fShowExt4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
+c6a07999538c6a2ef6366c47b60d8fd1
+  $fShowExt5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "cobra"#) -}
+b0ff8294483e4c693ed2f435f408e7f3
+  $fShowExt_$cshow :: Language.Cobra.Types.Ext -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Ext ->
+                 case ds of wild {
+                   Language.Cobra.Types.Src -> Language.Cobra.Types.$fShowExt5
+                   Language.Cobra.Types.Asm -> Language.Cobra.Types.$fShowExt4
+                   Language.Cobra.Types.Exe -> Language.Cobra.Types.$fShowExt3
+                   Language.Cobra.Types.Res -> Language.Cobra.Types.$fShowExt2
+                   Language.Cobra.Types.Log -> Language.Cobra.Types.$fShowExt1 }) -}
+b0ff8294483e4c693ed2f435f408e7f3
+  $fShowExt_$cshowList ::
+    [Language.Cobra.Types.Ext] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ls :: [Language.Cobra.Types.Ext] s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ Language.Cobra.Types.Ext
+                   (Language.Cobra.Types.$fShowExt_$cshowsPrec GHC.Show.shows18)
+                   ls
+                   s) -}
+b0ff8294483e4c693ed2f435f408e7f3
+  $fShowExt_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Ext -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.Types.Ext
+                   w2 :: GHC.Base.String ->
+                 Language.Cobra.Types.$w$cshowsPrec3 w1 w2) -}
+3aa24428ba8da98c2492be526971ae71
+  $fShowLabel :: GHC.Show.Show Language.Cobra.Types.Label
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Label
+                  Language.Cobra.Types.$fShowLabel_$cshowsPrec
+                  Language.Cobra.Types.$fShowLabel_$cshow
+                  Language.Cobra.Types.$fShowLabel_$cshowList -}
+3aa24428ba8da98c2492be526971ae71
+  $fShowLabel1 :: Language.Cobra.Types.Label -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Cobra.Types.Label
+                   w1 :: GHC.Base.String ->
+                 Language.Cobra.Types.$w$cshowsPrec4 0 w w1) -}
+3aa24428ba8da98c2492be526971ae71
+  $fShowLabel_$cshow :: Language.Cobra.Types.Label -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.Label ->
+                 Language.Cobra.Types.$fShowLabel_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+3aa24428ba8da98c2492be526971ae71
+  $fShowLabel_$cshowList ::
+    [Language.Cobra.Types.Label] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.Label
+                   Language.Cobra.Types.$fShowLabel1) -}
+3aa24428ba8da98c2492be526971ae71
+  $fShowLabel_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Label -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.Types.Label
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Language.Cobra.Types.$w$cshowsPrec4 ww1 w1 w2 }) -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fShowPrim1 :: GHC.Show.Show Language.Cobra.Types.Prim1
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Prim1
+                  Language.Cobra.Types.$fShowPrim1_$cshowsPrec
+                  Language.Cobra.Types.$fShowPrim1_$cshow
+                  Language.Cobra.Types.$fShowPrim1_$cshowList -}
+2ef807560d80558ee049120897b17955
+  $fShowPrim10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Greater"#) -}
+82bd3af254d1946aea2d60a2b534df73
+  $fShowPrim11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Less"#) -}
+72a9c46ad354c700b7c1fd945d960c6e
+  $fShowPrim12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Times"#) -}
+fd1a222b37313ac751bc8c6aed696e24
+  $fShowPrim13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Minus"#) -}
+90979a355420408b193284df580b2a6d
+  $fShowPrim14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Plus"#) -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fShowPrim1_$cshow :: Language.Cobra.Types.Prim1 -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.Prim1 ->
+                 Language.Cobra.Types.$fShowPrim1_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fShowPrim1_$cshowList ::
+    [Language.Cobra.Types.Prim1] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.Prim1
+                   Language.Cobra.Types.$w$cshowsPrec5) -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $fShowPrim1_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Prim1 -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.Types.Prim1
+                   w2 :: GHC.Base.String ->
+                 Language.Cobra.Types.$w$cshowsPrec5 w1 w2) -}
+38b83beb328447eeba225078a0a8e1b6
+  $fShowPrim2 :: GHC.Show.Show Language.Cobra.Types.Prim2
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Prim2
+                  Language.Cobra.Types.$fShowPrim2_$cshowsPrec
+                  Language.Cobra.Types.$fShowPrim2_$cshow
+                  Language.Cobra.Types.$fShowPrim2_$cshowList -}
+38b83beb328447eeba225078a0a8e1b6
+  $fShowPrim2_$cshow :: Language.Cobra.Types.Prim2 -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.Prim2 ->
+                 Language.Cobra.Types.$fShowPrim2_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+38b83beb328447eeba225078a0a8e1b6
+  $fShowPrim2_$cshowList ::
+    [Language.Cobra.Types.Prim2] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.Prim2
+                   Language.Cobra.Types.$w$cshowsPrec6) -}
+38b83beb328447eeba225078a0a8e1b6
+  $fShowPrim2_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Prim2 -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.Types.Prim2
+                   w2 :: GHC.Base.String ->
+                 Language.Cobra.Types.$w$cshowsPrec6 w1 w2) -}
+53e4bd4565b8de158b9ef3f8e2d00ee6
+  $fShowPrim4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IsBool"#) -}
+1e7754bdd33ffcc206542f6c8008586e
+  $fShowPrim5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IsNum"#) -}
+049f41fa0b280b85c2e6a48380260d56
+  $fShowPrim6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Print"#) -}
+e355ea3c76c79af3f8f645d025b6a51a
+  $fShowPrim7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Sub1"#) -}
+bcc54403e4191d0d7b74f7187e982b7e
+  $fShowPrim8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add1"#) -}
+7384059f81b8747a00a58b2a1168f813
+  $fShowPrim9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Equal"#) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fShowTy :: GHC.Show.Show Language.Cobra.Types.Ty
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.Types.Ty
+                  Language.Cobra.Types.$fShowTy_$cshowsPrec
+                  Language.Cobra.Types.$fShowTy_$cshow
+                  Language.Cobra.Types.$fShowTy_$cshowList -}
+ede2152307b53dacbd1528b013fbdb19
+  $fShowTy1 :: Language.Cobra.Types.Ty -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds :: Language.Cobra.Types.Ty eta :: GHC.Base.String ->
+                 case ds of wild {
+                   Language.Cobra.Types.TNumber
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Cobra.Types.$fShowDynError4)
+                        eta
+                   Language.Cobra.Types.TBoolean
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Cobra.Types.$fShowDynError3)
+                        eta }) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fShowTy_$cshow :: Language.Cobra.Types.Ty -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.Types.Ty ->
+                 case x of wild {
+                   Language.Cobra.Types.TNumber
+                   -> Language.Cobra.Types.$fShowDynError4
+                   Language.Cobra.Types.TBoolean
+                   -> Language.Cobra.Types.$fShowDynError3 }) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fShowTy_$cshowList :: [Language.Cobra.Types.Ty] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.Types.Ty
+                   Language.Cobra.Types.$fShowTy1) -}
+ede2152307b53dacbd1528b013fbdb19
+  $fShowTy_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.Types.Ty -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ ds :: GHC.Types.Int
+                   ds1 :: Language.Cobra.Types.Ty
+                   eta :: GHC.Base.String ->
+                 case ds1 of wild {
+                   Language.Cobra.Types.TNumber
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Cobra.Types.$fShowDynError4)
+                        eta
+                   Language.Cobra.Types.TBoolean
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                         GHC.Base.foldr
+                           @ GHC.Types.Char
+                           @ b
+                           c
+                           n
+                           Language.Cobra.Types.$fShowDynError3)
+                        eta }) -}
+2714a66fb076263cd363acbaa37402d6
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+c441e6bfd5ad9b8ba1a2aa72d82f564b
+  $sprintf4 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+00cd71517485804c9a1d2a51df175c76
+  $w$cshow ::
+    GHC.Show.Show a => Language.Cobra.Types.Id -> a -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: Language.Cobra.Types.Id
+                   ww1 :: a ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.Cobra.Types.$fShowBind2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (GHC.Show.showLitString
+                         ww
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showSpace1
+                               (GHC.Show.showsPrec
+                                  @ a
+                                  w
+                                  Language.Cobra.Types.$fShowBind3
+                                  ww1
+                                  (GHC.Types.[] @ GHC.Types.Char))))))) -}
+8ea590822d0a595f0089189b3fdf140a
+  $w$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.Cobra.Types.Id -> a -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <L,1*U(1*C1(C1(U)),A,A)><L,U><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: GHC.Prim.Int#
+                   ww1 :: Language.Cobra.Types.Id
+                   ww2 :: a ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w Language.Cobra.Types.$fShowBind3 ww2
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ x :: GHC.Base.String ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Cobra.Types.$fShowBind2
+                       (GHC.Types.:
+                          @ GHC.Types.Char
+                          GHC.Show.shows6
+                          (GHC.Show.showLitString
+                             ww1
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows6
+                                (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ x :: GHC.Base.String ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 x)) }) -}
+0aaa4a86ec55aff394de0628fb68c2df
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> [(Language.Cobra.Types.Id, GHC.Types.Int)]
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U>, Inline: [0] -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  $w$cshowsPrec2 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.Cobra.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,U><S,1*U>,
+     Inline: [0] -}
+b0ff8294483e4c693ed2f435f408e7f3
+  $w$cshowsPrec3 ::
+    Language.Cobra.Types.Ext -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Cobra.Types.Ext
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.Cobra.Types.Src
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowExt5 w1
+                   Language.Cobra.Types.Asm
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowExt4 w1
+                   Language.Cobra.Types.Exe
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowExt3 w1
+                   Language.Cobra.Types.Res
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowExt2 w1
+                   Language.Cobra.Types.Log
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowExt1
+                        w1 }) -}
+3aa24428ba8da98c2492be526971ae71
+  $w$cshowsPrec4 ::
+    GHC.Prim.Int#
+    -> Language.Cobra.Types.Label -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>, Inline: [0] -}
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  $w$cshowsPrec5 ::
+    Language.Cobra.Types.Prim1 -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Cobra.Types.Prim1
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.Cobra.Types.Add1
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowPrim8 w1
+                   Language.Cobra.Types.Sub1
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowPrim7 w1
+                   Language.Cobra.Types.Print
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowPrim6 w1
+                   Language.Cobra.Types.IsNum
+                   -> GHC.Base.++ @ GHC.Types.Char Language.Cobra.Types.$fShowPrim5 w1
+                   Language.Cobra.Types.IsBool
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim4
+                        w1 }) -}
+38b83beb328447eeba225078a0a8e1b6
+  $w$cshowsPrec6 ::
+    Language.Cobra.Types.Prim2 -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Cobra.Types.Prim2
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.Cobra.Types.Plus
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim14
+                        w1
+                   Language.Cobra.Types.Minus
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim13
+                        w1
+                   Language.Cobra.Types.Times
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim12
+                        w1
+                   Language.Cobra.Types.Less
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim11
+                        w1
+                   Language.Cobra.Types.Greater
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim10
+                        w1
+                   Language.Cobra.Types.Equal
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.Cobra.Types.$fShowPrim9
+                        w1 }) -}
+6d64af618990fd04de86eef59d52a779
+  $wexprBinds ::
+    Language.Cobra.Types.Expr a
+    -> (# [(Language.Cobra.Types.Bind a, Language.Cobra.Types.Expr a)],
+          Language.Cobra.Types.Expr a #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+36f3f09766e09e460b62e8d51ff5f1cc
+  $wgo ::
+    Language.Cobra.Types.Tag
+    -> Language.Cobra.Types.Expr a1
+    -> (# Language.Cobra.Types.Tag,
+          Language.Cobra.Types.Expr (a1, Language.Cobra.Types.Tag) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U>,
+     Inline: [0] -}
+c89cdf11c1ad8eca86776c71435df1fb
+  type AnfExpr = Language.Cobra.Types.Expr
+df60fd07719303c58112db65512abc38
+  data Arg
+    = Const GHC.Types.Int
+    | HexConst GHC.Types.Int
+    | Reg Language.Cobra.Types.Reg
+    | RegOffset Language.Cobra.Types.Nat Language.Cobra.Types.Reg
+    | RegIndex Language.Cobra.Types.Reg Language.Cobra.Types.Reg
+    | Sized Language.Cobra.Types.Size Language.Cobra.Types.Arg
+c8b4fb45ff6a16459f96ee258a7382fb
+  type Bare = Language.Cobra.Types.Expr Language.Cobra.UX.SourceSpan
+e1d61bffe263d57b21d6ba031332921c
+  type BareBind =
+    Language.Cobra.Types.Bind Language.Cobra.UX.SourceSpan
+e1d61bffe263d57b21d6ba031332921c
+  data Bind a = Bind !Language.Cobra.Types.Id a
+ca47df652dda1f32d3e279a6339e160b
+  data DynError = TypeError Language.Cobra.Types.Ty | ArithOverflow
+    Promotable
+48495f57b9b9180fca8e44d25bb75678
+  data Env
+    = Env {envBinds :: [(Language.Cobra.Types.Id, GHC.Types.Int)],
+           envMax :: {-# UNPACK #-}GHC.Types.Int}
+c8b4fb45ff6a16459f96ee258a7382fb
+  data Expr a
+    = Number !GHC.Integer.Type.Integer a
+    | Boolean !GHC.Types.Bool a
+    | Id !Language.Cobra.Types.Id a
+    | Prim1 !Language.Cobra.Types.Prim1
+            !(Language.Cobra.Types.Expr a)
+            a
+    | Prim2 !Language.Cobra.Types.Prim2
+            !(Language.Cobra.Types.Expr a)
+            !(Language.Cobra.Types.Expr a)
+            a
+    | Let !(Language.Cobra.Types.Bind a)
+          !(Language.Cobra.Types.Expr a)
+          !(Language.Cobra.Types.Expr a)
+          a
+    | If !(Language.Cobra.Types.Expr a)
+         !(Language.Cobra.Types.Expr a)
+         !(Language.Cobra.Types.Expr a)
+         a
+b0ff8294483e4c693ed2f435f408e7f3
+  data Ext = Src | Asm | Exe | Res | Log
+    Promotable
+1f30d5b0ee0d282456dd8be18fc6a85c
+  type Id = Language.Cobra.UX.Text
+f83ee73138b97d7a9216c782ad0e9d05
+  type ImmExpr = Language.Cobra.Types.Expr
+d566f29add184772008fea5f841bb09f
+  data Instruction
+    = IMov Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IAdd Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | ISub Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IMul Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IShr Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | ISar Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IShl Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IAnd Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IOr Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IXor Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | ILabel Language.Cobra.Types.Label
+    | IPush Language.Cobra.Types.Arg
+    | IPop Language.Cobra.Types.Arg
+    | ICmp Language.Cobra.Types.Arg Language.Cobra.Types.Arg
+    | IJe Language.Cobra.Types.Label
+    | IJne Language.Cobra.Types.Label
+    | IJg Language.Cobra.Types.Label
+    | IJl Language.Cobra.Types.Label
+    | IJo Language.Cobra.Types.Label
+    | IJmp Language.Cobra.Types.Label
+    | ICall Language.Cobra.Types.Label
+    | IRet
+3aa24428ba8da98c2492be526971ae71
+  data Label
+    = BranchTrue Language.Cobra.Types.Tag
+    | BranchDone Language.Cobra.Types.Tag
+    | DynamicErr Language.Cobra.Types.DynError
+    | Builtin Language.Cobra.UX.Text
+2a9face098ce4a3abc5aa56777f723bd
+  type Nat = GHC.Types.Int
+ee98ec080c6ca4ab7545d041ecb0c1a2
+  data Prim1 = Add1 | Sub1 | Print | IsNum | IsBool
+    Promotable
+38b83beb328447eeba225078a0a8e1b6
+  data Prim2 = Plus | Minus | Times | Less | Greater | Equal
+    Promotable
+5b477f55310dd4ecb0337d5ec7fba8a2
+  data Reg = EAX | EBX | ESP | EBP | ESI
+    Promotable
+6fce060eef6725df244f44c2e346781d
+  data Size = DWordPtr | WordPtr | BytePtr
+    Promotable
+d5c10293a903fe6609f2c88434b53108
+  type Tag = GHC.Types.Int
+ede2152307b53dacbd1528b013fbdb19
+  data Ty = TNumber | TBoolean
+    Promotable
+57a6d6cce49be7198bea647e87ffd48b
+  addEnv ::
+    Language.Cobra.Types.Bind a
+    -> Language.Cobra.Types.Env -> Language.Cobra.Types.Env
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,A)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   x :: Language.Cobra.Types.Bind a
+                   env :: Language.Cobra.Types.Env ->
+                 case env of wild { Language.Cobra.Types.Env bs dt ->
+                 let {
+                   a1 :: GHC.Prim.Int# = GHC.Prim.+# 1 dt
+                 } in
+                 Language.Cobra.Types.Env
+                   (GHC.Types.:
+                      @ (Language.Cobra.Types.Id, GHC.Types.Int)
+                      (case x of wild1 { Language.Cobra.Types.Bind x1 ds -> x1 },
+                       GHC.Types.I# a1)
+                      bs)
+                   a1 }) -}
+e1d61bffe263d57b21d6ba031332921c
+  bindId :: Language.Cobra.Types.Bind a -> Language.Cobra.Types.Id
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ds :: Language.Cobra.Types.Bind a ->
+                 case ds of wild { Language.Cobra.Types.Bind x ds1 -> x }) -}
+34c50a44f2e731296d4247e8e9e09ab4
+  bindsExpr ::
+    [(Language.Cobra.Types.Bind a, Language.Cobra.Types.Expr a)]
+    -> Language.Cobra.Types.Expr a -> a -> Language.Cobra.Types.Expr a
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><S,U><L,U>,
+     Unfolding: (\ @ a
+                   bs :: [(Language.Cobra.Types.Bind a, Language.Cobra.Types.Expr a)]
+                   e :: Language.Cobra.Types.Expr a
+                   l :: a ->
+                 letrec {
+                   go :: [(Language.Cobra.Types.Bind a, Language.Cobra.Types.Expr a)]
+                         -> Language.Cobra.Types.Expr a
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ ds :: [(Language.Cobra.Types.Bind a,
+                               Language.Cobra.Types.Expr a)] ->
+                     case ds of wild {
+                       [] -> e
+                       : y ys
+                       -> case y of wild1 { (,) x e1 ->
+                          case x of dt { Language.Cobra.Types.Bind ipv ipv1 ->
+                          case e1 of dt1 { DEFAULT ->
+                          case go ys of dt2 { DEFAULT ->
+                          Language.Cobra.Types.Let @ a dt dt1 dt2 l } } } } }
+                 } in
+                 go bs) -}
+ed5853955bebd7eeb537aec20f92d6bf
+  emptyEnv :: Language.Cobra.Types.Env
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Language.Cobra.Types.Env
+                   (GHC.Types.[] @ (Language.Cobra.Types.Id, GHC.Types.Int))
+                   0) -}
+9c1b7bc193627b66c8d9ce99bedb7511
+  envBinds ::
+    Language.Cobra.Types.Env
+    -> [(Language.Cobra.Types.Id, GHC.Types.Int)]
+  RecSel Language.Cobra.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Env ->
+                 case ds of wild { Language.Cobra.Types.Env ds1 dt -> ds1 }) -}
+e4a54ffb35f37823f3611bb50bdcdac8
+  envMax :: Language.Cobra.Types.Env -> GHC.Types.Int
+  RecSel Language.Cobra.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.Types.Env ->
+                 case ds of wild { Language.Cobra.Types.Env ds1 dt ->
+                 GHC.Types.I# dt }) -}
+1c2dd4710bcaca254a4abd78fbc6ac72
+  exprBinds ::
+    Language.Cobra.Types.Expr a
+    -> ([(Language.Cobra.Types.Bind a, Language.Cobra.Types.Expr a)],
+        Language.Cobra.Types.Expr a)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a w :: Language.Cobra.Types.Expr a ->
+                 case Language.Cobra.Types.$wexprBinds
+                        @ a
+                        w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+679eed140dda2a3f9b9050d352a348ba
+  ext ::
+    GHC.IO.FilePath -> Language.Cobra.Types.Ext -> GHC.IO.FilePath
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ f :: GHC.IO.FilePath e :: Language.Cobra.Types.Ext ->
+                 case e of wild {
+                   Language.Cobra.Types.Src
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Cobra.Types.$fShowExt5
+                   Language.Cobra.Types.Asm
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Cobra.Types.$fShowExt4
+                   Language.Cobra.Types.Exe
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Cobra.Types.$fShowExt3
+                   Language.Cobra.Types.Res
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Cobra.Types.$fShowExt2
+                   Language.Cobra.Types.Log
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.Cobra.Types.$fShowExt1 }) -}
+62d50ed55b5270372ff1e461ec69e369
+  fromListEnv ::
+    [(Language.Cobra.Types.Id, GHC.Types.Int)]
+    -> Language.Cobra.Types.Env
+  {- Arity: 1, Strictness: <L,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [(Language.Cobra.Types.Id, GHC.Types.Int)] ->
+                 case GHC.List.strictMaximum
+                        @ GHC.Types.Int
+                        GHC.Classes.$fOrdInt
+                        (GHC.Types.:
+                           @ GHC.Types.Int
+                           Language.Cobra.Types.$fShowBind1
+                           (Language.Cobra.Types.fromListEnv_go
+                              w)) of dt { GHC.Types.I# dt1 ->
+                 Language.Cobra.Types.Env w dt1 }) -}
+b8e6c1e70d4e639b1cc927ab4a9d4b03
+  fromListEnv_go ::
+    [(Language.Cobra.Types.Id, GHC.Types.Int)] -> [GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+c8b4fb45ff6a16459f96ee258a7382fb
+  getLabel :: Language.Cobra.Types.Expr a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ds :: Language.Cobra.Types.Expr a ->
+                 case ds of wild {
+                   Language.Cobra.Types.Number ds1 l -> l
+                   Language.Cobra.Types.Boolean ds1 l -> l
+                   Language.Cobra.Types.Id ds1 l -> l
+                   Language.Cobra.Types.Prim1 ds1 ds2 l -> l
+                   Language.Cobra.Types.Prim2 ds1 ds2 ds3 l -> l
+                   Language.Cobra.Types.Let ds1 ds2 ds3 l -> l
+                   Language.Cobra.Types.If ds1 ds2 ds3 l -> l }) -}
+e17bfaa9b69220ef14bd5d9be8aabb02
+  isAnf :: Language.Cobra.Types.Expr a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+fbf36340baaf7df3e7a61a2411e91cfe
+  label ::
+    Language.Cobra.Types.Expr a
+    -> Language.Cobra.Types.Expr (a, Language.Cobra.Types.Tag)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a x :: Language.Cobra.Types.Expr a ->
+                 case Language.Cobra.Types.label_go
+                        @ a
+                        @ a
+                        Language.Cobra.Types.$fShowBind1
+                        x of wild { (,) ds1 y ->
+                 y }) -}
+8b0dd16f9508abd4c07763d2b8071d88
+  label_go ::
+    Language.Cobra.Types.Tag
+    -> Language.Cobra.Types.Expr a1
+    -> (Language.Cobra.Types.Tag,
+        Language.Cobra.Types.Expr (a1, Language.Cobra.Types.Tag))
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U)><S,1*U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ a1
+                   w :: Language.Cobra.Types.Tag
+                   w1 :: Language.Cobra.Types.Expr a1 ->
+                 case Language.Cobra.Types.$wgo
+                        @ a
+                        @ a1
+                        w
+                        w1 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+755082c01ec006ac795d534cf14fa67a
+  lookupEnv ::
+    Language.Cobra.Types.Id
+    -> Language.Cobra.Types.Env -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ k :: Language.Cobra.Types.Id env :: Language.Cobra.Types.Env ->
+                 case env of wild { Language.Cobra.Types.Env ds dt ->
+                 GHC.List.lookup
+                   @ Language.Cobra.Types.Id
+                   @ GHC.Types.Int
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   k
+                   ds }) -}
+f5bbfbc6bcd1ab1247c83079a569ab44
+  memberEnv ::
+    Language.Cobra.Types.Id
+    -> Language.Cobra.Types.Env -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ k :: Language.Cobra.Types.Id env :: Language.Cobra.Types.Env ->
+                 case env of wild { Language.Cobra.Types.Env ds dt ->
+                 case GHC.List.lookup
+                        @ Language.Cobra.Types.Id
+                        @ GHC.Types.Int
+                        GHC.Classes.$fEq[]_$s$fEq[]1
+                        k
+                        ds of wild1 {
+                   GHC.Base.Nothing -> GHC.Types.False
+                   GHC.Base.Just ipv -> GHC.Types.True } }) -}
+a7baef76ea608137dff93a1d3216c356
+  pushEnv ::
+    Language.Cobra.Types.Bind a
+    -> Language.Cobra.Types.Env
+    -> (GHC.Types.Int, Language.Cobra.Types.Env)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,A)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   x :: Language.Cobra.Types.Bind a
+                   ds :: Language.Cobra.Types.Env ->
+                 case ds of wild { Language.Cobra.Types.Env bs dt ->
+                 let {
+                   a1 :: GHC.Prim.Int# = GHC.Prim.+# 1 dt
+                 } in
+                 let {
+                   n' :: GHC.Types.Int = GHC.Types.I# a1
+                 } in
+                 (n',
+                  Language.Cobra.Types.Env
+                    (GHC.Types.:
+                       @ (Language.Cobra.Types.Id, GHC.Types.Int)
+                       (case x of wild1 { Language.Cobra.Types.Bind x1 ds1 -> x1 }, n')
+                       bs)
+                    a1) }) -}
+instance GHC.Base.Functor [Language.Cobra.Types.Bind]
+  = Language.Cobra.Types.$fFunctorBind
+instance GHC.Base.Functor [Language.Cobra.Types.Expr]
+  = Language.Cobra.Types.$fFunctorExpr
+instance Language.Cobra.UX.Located [Language.Cobra.Types.Bind]
+  = Language.Cobra.Types.$fLocatedBind
+instance Language.Cobra.UX.Located [Language.Cobra.Types.Expr]
+  = Language.Cobra.Types.$fLocatedExpr
+instance Language.Cobra.UX.Located [Language.Cobra.Types.Expr]
+  = Language.Cobra.Types.$fLocatedExpr0
+instance Language.Cobra.UX.PPrint [Language.Cobra.Types.Bind]
+  = Language.Cobra.Types.$fPPrintBind
+instance Language.Cobra.UX.PPrint [Language.Cobra.Types.Expr]
+  = Language.Cobra.Types.$fPPrintExpr
+instance Language.Cobra.UX.PPrint [Language.Cobra.Types.Prim1]
+  = Language.Cobra.Types.$fPPrintPrim1
+instance Language.Cobra.UX.PPrint [Language.Cobra.Types.Prim2]
+  = Language.Cobra.Types.$fPPrintPrim2
+instance Language.Cobra.UX.PPrint [Language.Cobra.Types.Ty]
+  = Language.Cobra.Types.$fPPrintTy
+instance GHC.Show.Show [Language.Cobra.Types.Bind]
+  = Language.Cobra.Types.$fShowBind
+instance GHC.Show.Show [Language.Cobra.Types.DynError]
+  = Language.Cobra.Types.$fShowDynError
+instance GHC.Show.Show [Language.Cobra.Types.Env]
+  = Language.Cobra.Types.$fShowEnv
+instance GHC.Show.Show [Language.Cobra.Types.Expr]
+  = Language.Cobra.Types.$fShowExpr
+instance GHC.Show.Show [Language.Cobra.Types.Ext]
+  = Language.Cobra.Types.$fShowExt
+instance GHC.Show.Show [Language.Cobra.Types.Label]
+  = Language.Cobra.Types.$fShowLabel
+instance GHC.Show.Show [Language.Cobra.Types.Prim1]
+  = Language.Cobra.Types.$fShowPrim1
+instance GHC.Show.Show [Language.Cobra.Types.Prim2]
+  = Language.Cobra.Types.$fShowPrim2
+instance GHC.Show.Show [Language.Cobra.Types.Ty]
+  = Language.Cobra.Types.$fShowTy
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,265 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-15 22:08:31.129617 UTC
+
+interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler [orphan module] 7103
+  interface hash: e35de69c4f82fe65337dbd9ee2593053
+  ABI hash: a2ca5b4e561a6d350b6b943fe304ebe0
+  export-list hash: 69e2521eebc6882ef1c6502321312240
+  orphan hash: a928b99bb5708eb07548ded42bf614b0
+  flag hash: 4551607f6216aab46db8345a91e09854
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Cobra.Compiler.compile
+  Language.Cobra.Compiler.compiler
+module dependencies: Language.Cobra.Asm Language.Cobra.Normalizer
+                     Language.Cobra.Parser Language.Cobra.Types Language.Cobra.UX
+                     Language.Cobra.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Arrow ab7f126fed349de468f94ac777dc8f4e
+import  -/  base-4.8.2.0:Control.Category 99263bd976f974ec28d3d82cdd4ec538
+import  -/  base-4.8.2.0:Control.Monad 480c5067477275068c9b98be08410df9
+import  -/  base-4.8.2.0:Data.Bits 87551525e7ef366d0fc4cad44e8b1bfc
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.Cobra.Asm da50623211b6e82697aa30738bbc06c2
+  exports: 9e33783fa46f655b7a78c1321e0ed439
+  asm dd99a29f5b285b0f0e4d3cf0b68e3cfc
+import  -/  Language.Cobra.Normalizer d470c3fcdc78c22d19e34cb40e3c38c3
+  exports: 29892b7325712c75406197c96105f482
+  anormal 869f2cc4444d924f629c0cc0d3cec064
+import  -/  Language.Cobra.Parser 919e92496240f9c8b4a42fa4d7675225
+  exports: c6c66b5657a5aeb9512f0057cdb43976
+  parse fc84be4401e9e5ebabc6bf751a6b5156
+import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
+  exports: 5bc450ebd8a44f3953138ffc7a7c569a
+  AnfExpr c89cdf11c1ad8eca86776c71435df1fb
+  Arg df60fd07719303c58112db65512abc38
+  Bare c8b4fb45ff6a16459f96ee258a7382fb
+  Bind e1d61bffe263d57b21d6ba031332921c
+  Boolean 266748511551c0b9082f0d2ccaabebd7
+  Const 459527a939707c56a99248f53d0f0f3e
+  EAX 564ef73b7f57b3b803212e2136b81441
+  EBP 907efc676ff308d03d6b4e5df0bd7af3
+  Env 48495f57b9b9180fca8e44d25bb75678
+  HexConst 9ea99502b6f4960a49da97d068b7893a
+  IMov ccee73fe6f18b592cbee7c2d2c2bbc46
+  Id ce60f5b319535afe9880f9ea90dd4e1a
+  Id 1f30d5b0ee0d282456dd8be18fc6a85c
+  If 4bd38bcb67fd571b0b93ba8a997f5ffd
+  ImmExpr f83ee73138b97d7a9216c782ad0e9d05
+  Instruction d566f29add184772008fea5f841bb09f
+  Let 17a17cd3612157967de629e795faa26c
+  Number 9f195f305d6975bae2b643d9e30a311c
+  Prim1 8b2251733c4ccb09a2fa56ff9ac4add8
+  Prim1 ee98ec080c6ca4ab7545d041ecb0c1a2
+  Prim2 93907089c2c9d0265d69b23f51acee40
+  Prim2 38b83beb328447eeba225078a0a8e1b6
+  Reg 7bf694a221957eeb64e4490ebebcf1d5
+  RegOffset 30e5a428e8927016d8716f8e5562921c
+  TBoolean 9047e26c12b3af89d9d42fb7e1c587af
+  TNumber 96210d2f2fa418de505795b6e910fd86
+  Ty ede2152307b53dacbd1528b013fbdb19
+  emptyEnv ed5853955bebd7eeb537aec20f92d6bf
+  exprBinds 1c2dd4710bcaca254a4abd78fbc6ac72
+  label fbf36340baaf7df3e7a61a2411e91cfe
+  lookupEnv 755082c01ec006ac795d534cf14fa67a
+  pushEnv a7baef76ea608137dff93a1d3216c356
+import  -/  Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
+  Located 4ec9b6ba1b719b6660b2a0baf2ef21cd
+  SourceSpan 375782125f32f89149a428b25439ec42
+  Text 2455eb3b3f2de6579a4619ee9e444403
+  UserError 6062d0f74183b9a6b4dcf6e859962c8b
+  abort 1de66182ecac69013f8c9a3de9597176
+  mkError abae45c32b692ede157d1976ba697189
+  panic c0fd83511028abe514eb7539447c2ad9
+  sourceSpan 06aff49318c32d74335603df24f5b38f
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+3c61baccece5bfdbad75c8fba9463844
+  $fLocated(,) ::
+    Language.Cobra.UX.Located Language.Cobra.Compiler.Tag
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                (Data.Tuple.fst @ Language.Cobra.UX.SourceSpan @ GHC.Types.Int)
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:Located[0]
+                          <Language.Cobra.Compiler.Tag>_N)) -}
+c0df6bf8c844e9b20b861387c9333e51
+  $fReprBool :: Language.Cobra.Compiler.Repr GHC.Types.Bool
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Compiler.$fReprBool_$crepr
+                  `cast`
+                (Sym (Language.Cobra.Compiler.NTCo:Repr[0] <GHC.Types.Bool>_N)) -}
+bf9f6d5e8be5e87bc585455416f192b1
+  $fReprBool1 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Cobra.Types.HexConst
+                   Language.Cobra.Compiler.$fReprBool2) -}
+42f16de20c4881416a6eeee62129a8c7
+  $fReprBool2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.I# 4294967295) -}
+d9680e869d80fa6198d3ba0ae99e0a38
+  $fReprBool3 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Cobra.Types.HexConst
+                   Language.Cobra.Compiler.$fReprBool4) -}
+8c8813d0f9242d202c8a68f216d4e7e6
+  $fReprBool4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.I# 2147483647) -}
+70c64d9c318024474fd67fb3732007f7
+  $fReprBool_$crepr :: GHC.Types.Bool -> Language.Cobra.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GHC.Types.Bool ->
+                 case ds of wild {
+                   GHC.Types.False -> Language.Cobra.Compiler.$fReprBool3
+                   GHC.Types.True -> Language.Cobra.Compiler.$fReprBool1 }) -}
+c0df6bf8c844e9b20b861387c9333e51
+  $fReprInt :: Language.Cobra.Compiler.Repr GHC.Types.Int
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U(U)>m1,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Compiler.$fReprInt_$crepr
+                  `cast`
+                (Sym (Language.Cobra.Compiler.NTCo:Repr[0] <GHC.Types.Int>_N)) -}
+f4fe9f551504d3c045b920b9309e11f4
+  $fReprInt_$crepr :: GHC.Types.Int -> Language.Cobra.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U(U)>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ n :: GHC.Types.Int ->
+                 Language.Cobra.Types.Const
+                   (case n of wild { GHC.Types.I# x# ->
+                    GHC.Types.I# (GHC.Prim.uncheckedIShiftL# x# 1) })) -}
+c0df6bf8c844e9b20b861387c9333e51
+  $fReprInteger ::
+    Language.Cobra.Compiler.Repr GHC.Integer.Type.Integer
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,1*U>m1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.Compiler.$fReprInteger_$crepr
+                  `cast`
+                (Sym (Language.Cobra.Compiler.NTCo:Repr[0]
+                          <GHC.Integer.Type.Integer>_N)) -}
+aa9f2df9d426bccd6e9b02bb64b70f62
+  $fReprInteger_$crepr ::
+    GHC.Integer.Type.Integer -> Language.Cobra.Types.Arg
+  {- Arity: 1, Strictness: <L,1*U>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ n :: GHC.Integer.Type.Integer ->
+                 Language.Cobra.Types.Const
+                   (case GHC.Integer.Type.integerToInt
+                           (GHC.Integer.Type.shiftLInteger n 1) of wild { DEFAULT ->
+                    GHC.Types.I# wild })) -}
+07e8ad121ad9642090af022cc1711855
+  type ABind = Language.Cobra.Types.Bind Language.Cobra.Compiler.Tag
+df801828979bd1f1df32f7a165284394
+  type AExp =
+    Language.Cobra.Types.AnfExpr Language.Cobra.Compiler.Tag
+086056c4aaa45d094c78f35692fc716b
+  type IExp =
+    Language.Cobra.Types.ImmExpr Language.Cobra.Compiler.Tag
+c0df6bf8c844e9b20b861387c9333e51
+  class Repr a where
+    repr :: a -> Language.Cobra.Types.Arg
+08ff54b62925c0bc31979765d921e3b7
+  type Tag = (Language.Cobra.UX.SourceSpan, GHC.Types.Int)
+dd3060e6726fc840a571094f868d6cbc
+  compile ::
+    Language.Cobra.Compiler.AExp -> [Language.Cobra.Types.Instruction]
+  {- Arity: 1, Strictness: <B,A>b,
+     Unfolding: InlineRule (1, True, True)
+                (\ e :: Language.Cobra.Compiler.AExp ->
+                 Language.Cobra.Compiler.compile1) -}
+1fac8a4ff308427d1059c4e818b7b3e0
+  compile1 :: [Language.Cobra.Types.Instruction]
+  {- Strictness: b -}
+d87d75ae724adc9aae095345e618ee4d
+  compiler ::
+    GHC.IO.FilePath -> Language.Cobra.UX.Text -> Language.Cobra.UX.Text
+  {- Arity: 2, Strictness: <L,A><L,A>,
+     Unfolding: InlineRule (2, True, True)
+                (\ f :: GHC.IO.FilePath x :: Language.Cobra.UX.Text ->
+                 Language.Cobra.Asm.asm Language.Cobra.Compiler.compile1) -}
+instance Language.Cobra.UX.Located [(,)]
+  = Language.Cobra.Compiler.$fLocated(,)
+instance Language.Cobra.Compiler.Repr [GHC.Types.Bool]
+  = Language.Cobra.Compiler.$fReprBool
+instance Language.Cobra.Compiler.Repr [GHC.Types.Int]
+  = Language.Cobra.Compiler.$fReprInt
+instance Language.Cobra.Compiler.Repr [GHC.Integer.Type.Integer]
+  = Language.Cobra.Compiler.$fReprInteger
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,272 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-15 22:08:30.909148 UTC
+
+interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Asm 7103
+  interface hash: ad030678553ce2b05f64194ad8c801e9
+  ABI hash: da50623211b6e82697aa30738bbc06c2
+  export-list hash: 9e33783fa46f655b7a78c1321e0ed439
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: fcd74a0d83410922f8d238838ea898e5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Cobra.Asm.asm
+module dependencies: Language.Cobra.Types Language.Cobra.UX
+                     Language.Cobra.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Monoid 85b292b52bfd80ed619cddb767d638d3
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
+  exports: 5bc450ebd8a44f3953138ffc7a7c569a
+  Arg df60fd07719303c58112db65512abc38
+  ArithOverflow 43fc2fcaafc15de6fd5d5242bdfbfa04
+  BranchDone 6b5ac43e09001bd06019a832580560b2
+  BranchTrue 9fcd08f9d4251e34d0629f3058db8eb7
+  Builtin dc73f0627d5b36feb30e056f523be236
+  BytePtr be21e4659ee621758c7ec3d5b0b78fde
+  Const 459527a939707c56a99248f53d0f0f3e
+  DWordPtr 255bc5a6e9b90e7975791024237f8cbd
+  DynError ca47df652dda1f32d3e279a6339e160b
+  DynamicErr f45efc5fbef07095efbc1a719a7c0790
+  EAX 564ef73b7f57b3b803212e2136b81441
+  EBP 907efc676ff308d03d6b4e5df0bd7af3
+  EBX 84f08f5add96fe4bb4534071493313ce
+  ESI 9a92e013b881bbb53bc2a79328e81787
+  ESP 65ac0772f6431be63252275a906390bd
+  HexConst 9ea99502b6f4960a49da97d068b7893a
+  IAdd 9a486f698a9e8efa81d8321d3af16cd0
+  IAnd 878bb9579ae2e3be9f11eefba301f3db
+  ICall 3f343acb48e6ec8859bd550306fb79b1
+  ICmp 91177362c4cd5af3554f7d9328e3034c
+  IJe e277f7fe8ccd58569e71fc8d64c50a7a
+  IJg b9f32930f15ed7e8cda22dee3232221e
+  IJl ea7573b1fd68b90bc080efd342e28f03
+  IJmp ade1c822af6b3fe5c0e96dea26f8aa71
+  IJne feaa4925d8d84adc8ec10a656c769716
+  IJo 7308887d548465d33743694967c4fc22
+  ILabel 053905cbd0c2e408b2373171b1603249
+  IMov ccee73fe6f18b592cbee7c2d2c2bbc46
+  IMul 68c8db6ea003a1423a0df31d370dc9ff
+  IOr 1d468ca673a74bcc5478331095747816
+  IPop 214e7488de335c29d8f899266d966f73
+  IPush 7fdd1bf1e151dc9dcabbef460df6470a
+  IRet e580d928fbabf095d25f32b51db79f73
+  ISar ee0c81f53b3222a11a9cb9fea3e125a8
+  IShl 7919c0dfe32d7255f7c3012d255c0af8
+  IShr 6b767ee6e899f123d9d53e4e6eae04eb
+  ISub a422e42fdb9c86ae0a5fa6d374e94cf1
+  IXor dba5005ad15efe515ff95e4338f956bd
+  Instruction d566f29add184772008fea5f841bb09f
+  Label 3aa24428ba8da98c2492be526971ae71
+  Reg 7bf694a221957eeb64e4490ebebcf1d5
+  Reg 5b477f55310dd4ecb0337d5ec7fba8a2
+  RegIndex 4b7a8708e42c342a2da45a13a6cc62d0
+  RegOffset 30e5a428e8927016d8716f8e5562921c
+  Size 6fce060eef6725df244f44c2e346781d
+  Sized 13ddad24aaedd2ec23e69a5c13d7218f
+  TypeError 24a76d0cabedab8d3469ca1612c7a375
+  WordPtr 73c20f13700962e05bcbc226a2a7a012
+import  -/  Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
+  Text 2455eb3b3f2de6579a4619ee9e444403
+  pprint c97af7ee2acd81f9b14a61581940b3f6
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+e1b2d7a7e691935721174707b90375ae
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+605f9df4be7dbe1a79719284b0850f96
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+649e98c06c6839cd924055d883b1f54a
+  $sprintf9 ::
+    GHC.Base.String
+    -> [Text.Printf.UPrintf]
+    -> [GHC.Types.Char]
+    -> GHC.Types.Int
+    -> [GHC.Types.Char]
+  {- Arity: 4, Strictness: <S,1*U><L,U><L,U><L,U(U)>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf]
+                   a1 :: [GHC.Types.Char]
+                   eta :: GHC.Types.Int ->
+                 Language.Cobra.Asm.$sprintf3
+                   fmts
+                   (GHC.Types.:
+                      @ Text.Printf.UPrintf
+                      (Text.Printf.$w$sparseIntFormat,
+                       Text.Printf.$fPrintfArgInt_$sformatInt eta)
+                      (GHC.Types.:
+                         @ Text.Printf.UPrintf
+                         (Language.Cobra.Asm.$s$fPrintfArg[]1 a1,
+                          \ w2 :: Text.Printf.FieldFormat ->
+                          case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                          case ww7 of ww8 { GHC.Types.C# ww9 ->
+                          Text.Printf.$wformatString
+                            @ GHC.Types.Char
+                            Text.Printf.$fIsCharChar
+                            a1
+                            ww1
+                            ww2
+                            ww3
+                            ww9 } })
+                         args))) -}
+dd99a29f5b285b0f0e4d3cf0b68e3cfc
+  asm :: [Language.Cobra.Types.Instruction] -> Language.Cobra.UX.Text
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ instrs :: [Language.Cobra.Types.Instruction] ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.Cobra.Asm.header
+                   (case Language.Cobra.Asm.asm_go instrs of wild {
+                      [] -> Language.Cobra.Asm.asm1
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Language.Cobra.Asm.asm1
+                                 xs1))
+                           Language.Cobra.Asm.asm1 })) -}
+c82ef8ebaa59fec59465321e1386680b
+  asm1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+571937aed73ff2772130990f210ce66a
+  asm10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern error"#) -}
+7d73e173b5624c104577ccd8356391ec
+  asm11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "section .text"#) -}
+dbcc5333808cf43e51a3abfbe312e943
+  asm2 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Cobra.Asm.asm11
+                   Language.Cobra.Asm.asm3) -}
+1f746c24dc1a2e84c068acbd5f380beb
+  asm3 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Cobra.Asm.asm10
+                   Language.Cobra.Asm.asm4) -}
+5dd99f0ac68becbde5beb57777ec3f6f
+  asm4 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Cobra.Asm.asm9
+                   Language.Cobra.Asm.asm5) -}
+b2e0ce44733f7b291af6ab576e7e1601
+  asm5 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Cobra.Asm.asm8
+                   Language.Cobra.Asm.asm6) -}
+96155408d13f4ee13c72d1c13f461288
+  asm6 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.Cobra.Asm.asm7
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+b3a3454a8f7e35d3db01a01c1c986735
+  asm7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "our_code_starts_here:"#) -}
+72c20f59f8b5104b8bd3ac89efef1301
+  asm8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "global our_code_starts_here"#) -}
+47e3a2ec4b9f5a9df1442b0a123f47a6
+  asm9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern print"#) -}
+52cfc16c05e01efc22261747cc098a65
+  asm_go :: [Language.Cobra.Types.Instruction] -> [[GHC.Types.Char]]
+  {- Arity: 1, Strictness: <S,1*U> -}
+3b9be1dc21c185f7406fcd1b62ee0d1a
+  header :: Language.Cobra.UX.Text
+  {- Unfolding: (Data.OldList.unlines Language.Cobra.Asm.asm2) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

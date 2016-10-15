@@ -31,7 +31,7 @@ header = unlines
 --   for jumping to and calling `error` here.
 
 postlude :: [Instruction]
-postlude = error "TBD:postlude"     --TODO
+postlude = error "TBD:postlude"                 --TODO
 
 --------------------------------------------------------------------------------
 instrAsm :: Instruction -> Text

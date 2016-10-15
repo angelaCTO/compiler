@@ -1,0 +1,1478 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-15 22:08:28.363857 UTC
+
+interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.UX 7103
+  interface hash: e9aba5a60d1f9cbea46eaa94bf57d891
+  ABI hash: 4b4da32136992b8b2109201702a5467f
+  export-list hash: f257388cf09bfb1ea54c06d145c2c392
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 4551607f6216aab46db8345a91e09854
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Cobra.UX.abort
+  Language.Cobra.UX.junkSpan
+  Language.Cobra.UX.mkError
+  Language.Cobra.UX.panic
+  Language.Cobra.UX.posSpan
+  Language.Cobra.UX.readFileSpan
+  Language.Cobra.UX.renderErrors
+  Language.Cobra.UX.Located{Language.Cobra.UX.sourceSpan}
+  Language.Cobra.UX.PPrint{Language.Cobra.UX.pprint}
+  Language.Cobra.UX.Result
+  Language.Cobra.UX.SourceSpan{Language.Cobra.UX.SS Language.Cobra.UX.ssBegin Language.Cobra.UX.ssEnd}
+  Language.Cobra.UX.Text
+  Language.Cobra.UX.UserError{Language.Cobra.UX.eMsg Language.Cobra.UX.eSpan}
+module dependencies: Language.Cobra.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Data.Either e8724afd65fd432cfe9a54014f5f762d
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Typeable c3fcb0780ec05399195ad3277b18d294
+import  -/  base-4.8.2.0:Data.Typeable.Internal 76b09e88499fa4ff7869a34e89976afb
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Exception 18c46fe9c5c0c3a120035f264ef32d41
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.Cobra.Utils 3529c57a970a1787f01a8af8ea2f5d7f
+  exports: 5d5a2e1651555074b3edef94092500b8
+  getRange a580a0b5dbcf12069cb088651aa5dd24
+  safeHead edff4b9bb0be57fb47b12f41d86e3e8c
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec 57878a9baf8576ebbee675ee635c1996
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Pos 2540586b968ba7421c57baf3e3177662
+375782125f32f89149a428b25439ec42
+  $fEqSourceSpan :: GHC.Classes.Eq Language.Cobra.UX.SourceSpan
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.UX.SourceSpan
+                  Language.Cobra.UX.$fEqSourceSpan_$c==
+                  Language.Cobra.UX.$fEqSourceSpan_$c/= -}
+375782125f32f89149a428b25439ec42
+  $fEqSourceSpan_$c/= ::
+    Language.Cobra.UX.SourceSpan
+    -> Language.Cobra.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Cobra.UX.SourceSpan
+                   w1 :: Language.Cobra.UX.SourceSpan ->
+                 case w of ww { Language.Cobra.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Cobra.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.True
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True
+                                       -> case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.==# ww10 ww21) of wild5 {
+                                            GHC.Types.False -> GHC.Types.True
+                                            GHC.Types.True
+                                            -> GHC.Types.False } } } } } } } } } } } }) -}
+375782125f32f89149a428b25439ec42
+  $fEqSourceSpan_$c== ::
+    Language.Cobra.UX.SourceSpan
+    -> Language.Cobra.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Cobra.UX.SourceSpan
+                   w1 :: Language.Cobra.UX.SourceSpan ->
+                 case w of ww { Language.Cobra.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Cobra.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.False
+                                       GHC.Types.True
+                                       -> GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww10 ww21) } } } } } } } } } } }) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[] ::
+    GHC.Exception.Exception [Language.Cobra.UX.UserError]
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.Cobra.UX.UserError]
+                  Language.Cobra.UX.$fException[]21
+                  Language.Cobra.UX.$fException[]20
+                  Language.Cobra.UX.$fException[]_$ctoException
+                  Language.Cobra.UX.$fException[]_$cfromException
+                  Language.Cobra.UX.$fException[]_$cdisplayException -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]1 :: Language.Cobra.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Cobra.UX.UserError
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Cobra.UX.Error ww1 ww2 ->
+                 case ww2 of ww3 { Language.Cobra.UX.SS ww4 ww5 ->
+                 Language.Cobra.UX.$w$cshowsPrec 0 ww1 ww4 ww5 w1 } }) -}
+7adad912af86837caecac5d9f3228489
+  $fException[]10 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (case Language.Cobra.UX.$fException[]_w1 of wild2 {
+                   []
+                   -> Data.Typeable.Internal.TypeRep
+                        __word 17730107610217102821
+                        __word 9866972337190828755
+                        Language.Cobra.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   : ipv ipv1
+                   -> case GHC.Fingerprint.fingerprintFingerprints
+                             Language.Cobra.UX.$fException[]11 of dt { GHC.Fingerprint.Type.Fingerprint dt1 dt2 ->
+                      Data.Typeable.Internal.TypeRep
+                        dt1
+                        dt2
+                        Language.Cobra.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        wild2 } }) -}
+4864a7c5d39736e861073c566841f834
+  $fException[]11 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Fingerprint.Type.Fingerprint
+                   Language.Cobra.UX.$fException[]13
+                   Language.Cobra.UX.$fException[]12) -}
+f2b8fff9dcc73e275a864f519bcf90f1
+  $fException[]12 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (Language.Cobra.UX.$fException[]_go
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)) -}
+92388dd0387f7daded5f0f6b95f4279f
+  $fException[]13 :: GHC.Fingerprint.Type.Fingerprint
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Fingerprint.Type.Fingerprint
+                   __word 17730107610217102821
+                   __word 9866972337190828755) -}
+72eecc69f154835ad611d8855d6ea213
+  $fException[]14 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Types.:
+                   @ Data.Typeable.Internal.TypeRep
+                   Language.Cobra.UX.$fException[]15
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+b8a83c699b113a8c5b797c2aad91d146
+  $fException[]15 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (Data.Typeable.Internal.TypeRep
+                   __word 4283853626230677408
+                   __word 17054998555575988869
+                   Language.Cobra.UX.$fException[]16
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+1231914d9140fb582baa426e6685f9f8
+  $fException[]16 :: Data.Typeable.Internal.TyCon
+  {- Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 4283853626230677408
+                   __word 17054998555575988869
+                   Language.Cobra.UX.$fException[]19
+                   Language.Cobra.UX.$fException[]18
+                   Language.Cobra.UX.$fException[]17) -}
+fba4a467206783439c9714aece303339
+  $fException[]17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "UserError"#) -}
+1988b9435973d42499fad540e6f24f5f
+  $fException[]18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Language.Cobra.UX"#) -}
+5a3d849987a6d9176989e7fb3f8e51fe
+  $fException[]19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "cobra_EKL0N6fpBAe9qPzAnX96E1"#) -}
+7f4f4463749145ce106a63bb01ccb256
+  $fException[]2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]20 :: GHC.Show.Show [Language.Cobra.UX.UserError]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Language.Cobra.UX.$fException[]_$s$fShow[] -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]21 ::
+    Data.Typeable.Internal.Typeable [Language.Cobra.UX.UserError]
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Cobra.UX.$fException[]22
+                  `cast`
+                (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                          <*>_N <[Language.Cobra.UX.UserError]>_N)) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]22 ::
+    GHC.Prim.Proxy# [Language.Cobra.UX.UserError]
+    -> Data.Typeable.Internal.TypeRep
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ wild :: GHC.Prim.Proxy# [Language.Cobra.UX.UserError] ->
+                 Language.Cobra.UX.$fException[]10) -}
+ff04757e073e64e46421f3b3c54ffa07
+  $fException[]3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssEnd = "#) -}
+5e769939f2bceeb330eb94a344f2a055
+  $fException[]4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+606dfb663f4469604ba9989f61b67c0a
+  $fException[]5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssBegin = "#) -}
+12645efb6e41c7b785ad71da8d1d418e
+  $fException[]6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SS {"#) -}
+dd97da0a67444e0795e6f73ed47c1493
+  $fException[]7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eSpan = "#) -}
+46d3fff1c3c5e4ae7473d9a8241fb06d
+  $fException[]8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eMsg = "#) -}
+a4cd76165c1d7a408b97bf19898d0a20
+  $fException[]9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Error {"#) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$cdisplayException ::
+    [Language.Cobra.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Cobra.UX.$fException[]_$s$fShow[]_$cshow -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$cfromException ::
+    GHC.Exception.SomeException
+    -> GHC.Base.Maybe [Language.Cobra.UX.UserError]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ eta :: GHC.Exception.SomeException ->
+                 case eta of wild { GHC.Exception.SomeException e10 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e10 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e10>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e10) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case Language.Cobra.UX.$fException[]10 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds5 ds6 ds7 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqWord# dt dt2) of wild3 {
+                   GHC.Types.False -> GHC.Base.Nothing @ [Language.Cobra.UX.UserError]
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqWord# dt1 dt3) of wild4 {
+                        GHC.Types.False -> GHC.Base.Nothing @ [Language.Cobra.UX.UserError]
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ [Language.Cobra.UX.UserError]
+                             e2
+                               `cast`
+                             (UnivCo mkUnsafeCo representational e10 [Language.Cobra.UX.UserError]) } } } } }) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$cshowList ::
+    [Language.Cobra.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.UX.UserError
+                   Language.Cobra.UX.$fException[]1) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$ctoException ::
+    [Language.Cobra.UX.UserError] -> GHC.Exception.SomeException
+  {- Arity: 1 -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$s$fShow[] ::
+    GHC.Show.Show [Language.Cobra.UX.UserError]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.Cobra.UX.UserError]
+                  Language.Cobra.UX.$fException[]_$s$fShow[]_$cshowsPrec
+                  Language.Cobra.UX.$fException[]_$s$fShow[]_$cshow
+                  Language.Cobra.UX.$fException[]_$s$fShow[]_$cshowList -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$s$fShow[]_$cshow ::
+    [Language.Cobra.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [Language.Cobra.UX.UserError] ->
+                 Language.Cobra.UX.$fException[]_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$s$fShow[]_$cshowList ::
+    [[Language.Cobra.UX.UserError]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[Language.Cobra.UX.UserError]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [Language.Cobra.UX.UserError]
+                   Language.Cobra.UX.$fException[]_$cshowList
+                   eta
+                   eta1) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fException[]_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int -> [Language.Cobra.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [Language.Cobra.UX.UserError]
+                   eta1 :: GHC.Base.String ->
+                 Language.Cobra.UX.$fException[]_$cshowList eta eta1) -}
+6909f6dde9da5da71ee2812d230e6a3b
+  $fException[]_go ::
+    [Data.Typeable.Internal.TypeRep]
+    -> [GHC.Fingerprint.Type.Fingerprint]
+  {- Arity: 1, Strictness: <S,1*U> -}
+878b7e5aacf806c960e5333143c32d9e
+  $fException[]_w1 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Base.++
+                   @ Data.Typeable.Internal.TypeRep
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   Language.Cobra.UX.$fException[]14) -}
+34e41912d15af9ea023b4ece1c693d51
+  $fException[]_wild :: Data.Typeable.Internal.TyCon
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 17730107610217102821
+                   __word 9866972337190828755
+                   Language.Cobra.UX.$fException[]_ww2
+                   Language.Cobra.UX.$fException[]_ww3
+                   Language.Cobra.UX.$fException[]_ww4) -}
+b24a694b12c006fa82694436d883c5e8
+  $fException[]_ww2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "ghc-prim"#) -}
+b91c2b1479eeb4998545a78db85ffcd8
+  $fException[]_ww3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "GHC.Types"#) -}
+eb5de97e166d44539aa046003f62500d
+  $fException[]_ww4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[]"#) -}
+4ec9b6ba1b719b6660b2a0baf2ef21cd
+  $fLocatedUserError ::
+    Language.Cobra.UX.Located Language.Cobra.UX.UserError
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.UX.eSpan
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:Located[0]
+                          <Language.Cobra.UX.UserError>_N)) -}
+375782125f32f89149a428b25439ec42
+  $fMonoidSourceSpan :: GHC.Base.Monoid Language.Cobra.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.UX.SourceSpan
+                  Language.Cobra.UX.junkSpan
+                  Language.Cobra.UX.$fMonoidSourceSpan_$cmappend
+                  Language.Cobra.UX.$fMonoidSourceSpan_$cmconcat -}
+375782125f32f89149a428b25439ec42
+  $fMonoidSourceSpan_$cmappend ::
+    Language.Cobra.UX.SourceSpan
+    -> Language.Cobra.UX.SourceSpan -> Language.Cobra.UX.SourceSpan
+  {- Arity: 2,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S,1*U(U(U,U,U),U(U,U,U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Cobra.UX.SourceSpan
+                   w1 :: Language.Cobra.UX.SourceSpan ->
+                 case w of ww { Language.Cobra.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Cobra.UX.SS ww12 ww13 ->
+                 case GHC.Base.eqString
+                        ww4
+                        Language.Cobra.UX.$fMonoidSourceSpan_dt of wild {
+                   GHC.Types.False
+                   -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                      case GHC.Base.eqString
+                             ww15
+                             Language.Cobra.UX.$fMonoidSourceSpan_dt of wild1 {
+                        GHC.Types.False
+                        -> Language.Cobra.UX.SS
+                             (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                             ww13
+                        GHC.Types.True
+                        -> case ww16 of wild2 {
+                             DEFAULT
+                             -> Language.Cobra.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                  ww13
+                             1
+                             -> case ww17 of wild3 {
+                                  DEFAULT
+                                  -> Language.Cobra.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                       ww13
+                                  1
+                                  -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                     case GHC.Base.eqString
+                                            ww19
+                                            Language.Cobra.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.Cobra.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                            ww18
+                                       GHC.Types.True
+                                       -> case ww20 of wild5 {
+                                            DEFAULT
+                                            -> Language.Cobra.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                 ww18
+                                            1
+                                            -> case ww21 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      ww18
+                                                 1
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      (Text.Megaparsec.Pos.SourcePos
+                                                         ww8
+                                                         ww9
+                                                         ww10) } } } } } } } }
+                   GHC.Types.True
+                   -> case ww5 of wild1 {
+                        DEFAULT
+                        -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                           case GHC.Base.eqString
+                                  ww15
+                                  Language.Cobra.UX.$fMonoidSourceSpan_dt of wild2 {
+                             GHC.Types.False
+                             -> Language.Cobra.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                  ww13
+                             GHC.Types.True
+                             -> case ww16 of wild3 {
+                                  DEFAULT
+                                  -> Language.Cobra.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                       ww13
+                                  1
+                                  -> case ww17 of wild4 {
+                                       DEFAULT
+                                       -> Language.Cobra.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                            ww13
+                                       1
+                                       -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                          case GHC.Base.eqString
+                                                 ww19
+                                                 Language.Cobra.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.Cobra.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                 ww18
+                                            GHC.Types.True
+                                            -> case ww20 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                      ww18
+                                                 1
+                                                 -> case ww21 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           ww18
+                                                      1
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww8
+                                                              ww9
+                                                              ww10) } } } } } } } }
+                        1
+                        -> case ww6 of wild2 {
+                             DEFAULT
+                             -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                case GHC.Base.eqString
+                                       ww15
+                                       Language.Cobra.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> Language.Cobra.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                       ww13
+                                  GHC.Types.True
+                                  -> case ww16 of wild4 {
+                                       DEFAULT
+                                       -> Language.Cobra.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                            ww13
+                                       1
+                                       -> case ww17 of wild5 {
+                                            DEFAULT
+                                            -> Language.Cobra.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                 ww13
+                                            1
+                                            -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                               case GHC.Base.eqString
+                                                      ww19
+                                                      Language.Cobra.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                      ww18
+                                                 GHC.Types.True
+                                                 -> case ww20 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              1
+                                                              wild2)
+                                                           ww18
+                                                      1
+                                                      -> case ww21 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Cobra.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                ww18
+                                                           1
+                                                           -> Language.Cobra.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww8
+                                                                   ww9
+                                                                   ww10) } } } } } } } }
+                             1
+                             -> case GHC.Base.eqString
+                                       ww8
+                                       Language.Cobra.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                     case GHC.Base.eqString
+                                            ww15
+                                            Language.Cobra.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.Cobra.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                            ww13
+                                       GHC.Types.True
+                                       -> case ww16 of wild5 {
+                                            DEFAULT
+                                            -> Language.Cobra.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            1
+                                            -> case ww17 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                    case GHC.Base.eqString
+                                                           ww19
+                                                           Language.Cobra.UX.$fMonoidSourceSpan_dt of wild7 {
+                                                      GHC.Types.False
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww18
+                                                      GHC.Types.True
+                                                      -> case ww20 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Cobra.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           1
+                                                           -> case ww21 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.Cobra.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> Language.Cobra.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww8
+                                                                        ww9
+                                                                        ww10) } } } } } } } }
+                                  GHC.Types.True
+                                  -> case ww9 of wild4 {
+                                       DEFAULT
+                                       -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                          case GHC.Base.eqString
+                                                 ww15
+                                                 Language.Cobra.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.Cobra.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            GHC.Types.True
+                                            -> case ww16 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww17 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                         case GHC.Base.eqString
+                                                                ww19
+                                                                Language.Cobra.UX.$fMonoidSourceSpan_dt of wild8 {
+                                                           GHC.Types.False
+                                                           -> Language.Cobra.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           GHC.Types.True
+                                                           -> case ww20 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.Cobra.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> case ww21 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.Cobra.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> Language.Cobra.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww8
+                                                                             wild4
+                                                                             ww10) } } } } } } } }
+                                       1
+                                       -> case ww10 of wild5 {
+                                            DEFAULT
+                                            -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                               case GHC.Base.eqString
+                                                      ww15
+                                                      Language.Cobra.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.Cobra.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 GHC.Types.True
+                                                 -> case ww16 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Cobra.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww17 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Cobra.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww13
+                                                           1
+                                                           -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                              case GHC.Base.eqString
+                                                                     ww19
+                                                                     Language.Cobra.UX.$fMonoidSourceSpan_dt of wild9 {
+                                                                GHC.Types.False
+                                                                -> Language.Cobra.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                GHC.Types.True
+                                                                -> case ww20 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.Cobra.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> case ww21 of wild11 {
+                                                                          DEFAULT
+                                                                          -> Language.Cobra.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               ww18
+                                                                          1
+                                                                          -> Language.Cobra.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww8
+                                                                                  1
+                                                                                  wild5) } } } } } } } }
+                                            1
+                                            -> Language.Cobra.UX.SS
+                                                 ww12
+                                                 ww13 } } } } } } } } } }) -}
+375782125f32f89149a428b25439ec42
+  $fMonoidSourceSpan_$cmconcat ::
+    [Language.Cobra.UX.SourceSpan] -> Language.Cobra.UX.SourceSpan
+  {- Arity: 1, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [Language.Cobra.UX.SourceSpan] ->
+                 case Language.Cobra.UX.$wgo w of ww { (#,#) ww1 ww2 ->
+                 Language.Cobra.UX.SS ww1 ww2 }) -}
+9552d3a9e467502fb008062807ab0183
+  $fMonoidSourceSpan_dt :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "unknown"#) -}
+a72865c2f5506a7bfe37f334af5862a9
+  $fPPrintSourceSpan ::
+    Language.Cobra.UX.PPrint Language.Cobra.UX.SourceSpan
+  DFunId[0]
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Cobra.UX.$fPPrintSourceSpan_$cpprint
+                  `cast`
+                (Sym (Language.Cobra.UX.NTCo:PPrint[0]
+                          <Language.Cobra.UX.SourceSpan>_N)) -}
+520a66d9adceb29ebbdaa4bb180bb699
+  $fPPrintSourceSpan_$cpprint ::
+    Language.Cobra.UX.SourceSpan -> Language.Cobra.UX.Text
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.Cobra.UX.SourceSpan ->
+                 case w of ww { Language.Cobra.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.Cobra.UX.$w$cpprint ww4 ww5 ww6 ww8 ww9 ww10 } } }) -}
+375782125f32f89149a428b25439ec42
+  $fShowSourceSpan :: GHC.Show.Show Language.Cobra.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.UX.SourceSpan
+                  Language.Cobra.UX.$fShowSourceSpan_$cshowsPrec
+                  Language.Cobra.UX.$fShowSourceSpan_$cshow
+                  Language.Cobra.UX.$fShowSourceSpan_$cshowList -}
+375782125f32f89149a428b25439ec42
+  $fShowSourceSpan1 :: Language.Cobra.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Cobra.UX.SourceSpan
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Cobra.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.Cobra.UX.$w$cshowsPrec1
+                   0
+                   ww4
+                   ww5
+                   ww6
+                   ww8
+                   ww9
+                   ww10
+                   w1 } } }) -}
+375782125f32f89149a428b25439ec42
+  $fShowSourceSpan_$cshow ::
+    Language.Cobra.UX.SourceSpan -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U(U,U,U),U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.UX.SourceSpan ->
+                 Language.Cobra.UX.$fShowSourceSpan_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+375782125f32f89149a428b25439ec42
+  $fShowSourceSpan_$cshowList ::
+    [Language.Cobra.UX.SourceSpan] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Cobra.UX.SourceSpan
+                   Language.Cobra.UX.$fShowSourceSpan1) -}
+375782125f32f89149a428b25439ec42
+  $fShowSourceSpan_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U(U,U,U),U(U,U,U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.UX.SourceSpan
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Cobra.UX.SS ww3 ww4 ->
+                 case ww3 of ww5 { Text.Megaparsec.Pos.SourcePos ww6 ww7 ww8 ->
+                 case ww4 of ww9 { Text.Megaparsec.Pos.SourcePos ww10 ww11 ww12 ->
+                 Language.Cobra.UX.$w$cshowsPrec1
+                   ww1
+                   ww6
+                   ww7
+                   ww8
+                   ww10
+                   ww11
+                   ww12
+                   w2 } } } }) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fShowUserError :: GHC.Show.Show Language.Cobra.UX.UserError
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Cobra.UX.UserError
+                  Language.Cobra.UX.$fShowUserError_$cshowsPrec
+                  Language.Cobra.UX.$fShowUserError_$cshow
+                  Language.Cobra.UX.$fException[]_$cshowList -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fShowUserError_$cshow ::
+    Language.Cobra.UX.UserError -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Cobra.UX.UserError ->
+                 Language.Cobra.UX.$fShowUserError_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6062d0f74183b9a6b4dcf6e859962c8b
+  $fShowUserError_$cshowsPrec ::
+    GHC.Types.Int -> Language.Cobra.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Cobra.UX.UserError
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Cobra.UX.Error ww3 ww4 ->
+                 case ww4 of ww5 { Language.Cobra.UX.SS ww6 ww7 ->
+                 Language.Cobra.UX.$w$cshowsPrec ww1 ww3 ww6 ww7 w2 } } }) -}
+04c518a3795fb93d074a0f0ad8017c11
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+a74e6f9bda14497041fe9e1ec2e46942
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+3cde291ec581a0464e94cd3bbeca73b3
+  $w$cpprint ::
+    GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <S,U><L,U><L,U><S,1*H><L,U><L,U>,
+     Inline: [0] -}
+328eec6387c9fd29bfdf91fee4308eea
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Language.Cobra.UX.Text
+    -> Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5, Strictness: <L,U><S,U><L,U(U,U,U)><L,U(U,U,U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: Language.Cobra.UX.Text
+                   ww2 :: Text.Megaparsec.Pos.SourcePos
+                   ww3 :: Text.Megaparsec.Pos.SourcePos
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Cobra.UX.$fException[]9
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.Cobra.UX.$fException[]8
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Language.Cobra.UX.$fException[]4
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.Cobra.UX.$fException[]7
+                                         (case ww2 of ww4 { Text.Megaparsec.Pos.SourcePos ww5 ww6 ww7 ->
+                                          case ww3 of ww8 { Text.Megaparsec.Pos.SourcePos ww9 ww10 ww11 ->
+                                          Language.Cobra.UX.$w$cshowsPrec1
+                                            0
+                                            ww5
+                                            ww6
+                                            ww7
+                                            ww9
+                                            ww10
+                                            ww11
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Language.Cobra.UX.$fException[]2
+                                               x) } })))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+efb9a5ff7170e20206a1fc553899e73f
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 8, Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Prim.Int#
+                   ww3 :: GHC.Prim.Int#
+                   ww4 :: GHC.Base.String
+                   ww5 :: GHC.Prim.Int#
+                   ww6 :: GHC.Prim.Int#
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Cobra.UX.$fException[]6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.Cobra.UX.$fException[]5
+                          (GHC.Base.++
+                             @ GHC.Types.Char
+                             (Text.Megaparsec.Pos.$w$cshow ww1 ww2 ww3)
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Language.Cobra.UX.$fException[]4
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Language.Cobra.UX.$fException[]3
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      (Text.Megaparsec.Pos.$w$cshow ww4 ww5 ww6)
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.Cobra.UX.$fException[]2
+                                         x))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+375782125f32f89149a428b25439ec42
+  $wgo ::
+    [Language.Cobra.UX.SourceSpan]
+    -> (# Text.Megaparsec.Pos.SourcePos,
+          Text.Megaparsec.Pos.SourcePos #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+5dd0f70d35c88a8b6d2b3190ffd33ce9
+  $wxs :: GHC.Prim.Int# -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+4ec9b6ba1b719b6660b2a0baf2ef21cd
+  class Located a where
+    sourceSpan :: a -> Language.Cobra.UX.SourceSpan
+a72865c2f5506a7bfe37f334af5862a9
+  class PPrint a where
+    pprint :: a -> Language.Cobra.UX.Text
+b5c1662d81d3be45540949b74c81eacb
+  type Result a = Data.Either.Either [Language.Cobra.UX.UserError] a
+375782125f32f89149a428b25439ec42
+  data SourceSpan
+    = SS {ssBegin :: !Text.Megaparsec.Pos.SourcePos,
+          ssEnd :: !Text.Megaparsec.Pos.SourcePos}
+2455eb3b3f2de6579a4619ee9e444403
+  type Text = GHC.Base.String
+6062d0f74183b9a6b4dcf6e859962c8b
+  data UserError
+    = Error {eMsg :: !Language.Cobra.UX.Text,
+             eSpan :: !Language.Cobra.UX.SourceSpan}
+1de66182ecac69013f8c9a3de9597176
+  abort :: Language.Cobra.UX.UserError -> b
+  {- Arity: 1, Strictness: <L,U>b -}
+59ad0cac52733f8da3e7d1e2fac33342
+  cursorLine :: GHC.Types.Int -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U(U)><L,U>,
+     Unfolding: (\ l :: GHC.Types.Int s :: GHC.Base.String ->
+                 let {
+                   a1 :: [GHC.Types.Char]
+                   = case l of ww2 { GHC.Types.I# ww3 ->
+                     case GHC.Show.$wshowSignedInt
+                            0
+                            ww3
+                            (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                     let {
+                       nS :: GHC.Base.String = GHC.Types.: @ GHC.Types.Char ww5 ww6
+                     } in
+                     case GHC.List.$wlenAcc @ GHC.Types.Char nS 0 of ww1 { DEFAULT ->
+                     let {
+                       y :: GHC.Prim.Int# = GHC.Prim.-# 10 ww1
+                     } in
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<# 0 y) of wild {
+                       GHC.Types.False -> nS
+                       GHC.Types.True
+                       -> let {
+                            lvl8 :: [GHC.Types.Char]
+                            = GHC.Types.: @ GHC.Types.Char Language.Cobra.UX.readFileSpan2 nS
+                          } in
+                          letrec {
+                            $wxs1 :: GHC.Prim.Int# -> [GHC.Types.Char]
+                              {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                            = \ ww :: GHC.Prim.Int# ->
+                              case ww of ds1 {
+                                DEFAULT
+                                -> GHC.Types.:
+                                     @ GHC.Types.Char
+                                     Language.Cobra.UX.readFileSpan2
+                                     ($wxs1 (GHC.Prim.-# ds1 1))
+                                1 -> lvl8 }
+                          } in
+                          $wxs1 y } } } }
+                 } in
+                 Language.Cobra.UX.$sprintf3
+                   Language.Cobra.UX.readFileSpan3
+                   (GHC.Types.:
+                      @ Text.Printf.UPrintf
+                      (Language.Cobra.UX.$s$fPrintfArg[]1 s,
+                       \ w2 :: Text.Printf.FieldFormat ->
+                       case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                       case ww7 of ww8 { GHC.Types.C# ww9 ->
+                       Text.Printf.$wformatString
+                         @ GHC.Types.Char
+                         Text.Printf.$fIsCharChar
+                         s
+                         ww1
+                         ww2
+                         ww3
+                         ww9 } })
+                      (GHC.Types.:
+                         @ Text.Printf.UPrintf
+                         (Language.Cobra.UX.$s$fPrintfArg[]1 a1,
+                          \ w2 :: Text.Printf.FieldFormat ->
+                          case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                          case ww7 of ww8 { GHC.Types.C# ww9 ->
+                          Text.Printf.$wformatString
+                            @ GHC.Types.Char
+                            Text.Printf.$fIsCharChar
+                            a1
+                            ww1
+                            ww2
+                            ww3
+                            ww9 } })
+                         (GHC.Types.[] @ Text.Printf.UPrintf)))) -}
+f9821ef96e69454b629dd4cfa411ba01
+  eMsg :: Language.Cobra.UX.UserError -> Language.Cobra.UX.Text
+  RecSel Language.Cobra.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U,1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.UX.UserError ->
+                 case ds of wild { Language.Cobra.UX.Error ds1 ds2 -> ds1 }) -}
+0873428380bc2f3e22241c24535d8013
+  eSpan ::
+    Language.Cobra.UX.UserError -> Language.Cobra.UX.SourceSpan
+  RecSel Language.Cobra.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.UX.UserError ->
+                 case ds of wild { Language.Cobra.UX.Error ds1 ds2 -> ds2 }) -}
+375782125f32f89149a428b25439ec42
+  junkSpan :: Language.Cobra.UX.SourceSpan
+  {- Strictness: m,
+     Unfolding: (Language.Cobra.UX.SS
+                   Language.Cobra.UX.junkSpan1
+                   Language.Cobra.UX.junkSpan1) -}
+92df8c44670dac27f51cc2490c63a68c
+  junkSpan1 :: Text.Megaparsec.Pos.SourcePos
+  {- Strictness: m,
+     Unfolding: (Text.Megaparsec.Pos.SourcePos
+                   Language.Cobra.UX.$fMonoidSourceSpan_dt
+                   1
+                   1) -}
+abae45c32b692ede157d1976ba697189
+  mkError ::
+    Language.Cobra.UX.Text
+    -> Language.Cobra.UX.SourceSpan -> Language.Cobra.UX.UserError
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>m,
+     Unfolding: InlineRule (0, True, True) Language.Cobra.UX.$WError -}
+c0fd83511028abe514eb7539447c2ad9
+  panic :: GHC.Base.String -> Language.Cobra.UX.SourceSpan -> a
+  {- Arity: 2, Strictness: <L,U><L,U>b -}
+5ddd247df7887b8b31729724e5ad6269
+  posSpan ::
+    Text.Megaparsec.Pos.SourcePos -> Language.Cobra.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ p :: Text.Megaparsec.Pos.SourcePos ->
+                 Language.Cobra.UX.$WSS p p) -}
+c680ed70039f710138d438e6358c4aac
+  readFileSpan ::
+    Language.Cobra.UX.SourceSpan -> GHC.Types.IO GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Cobra.UX.readFileSpan1
+                  `cast`
+                (<Language.Cobra.UX.SourceSpan>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R)) -}
+d5db5b7d3c2646d072fe5e7fae1094a2
+  readFileSpan1 ::
+    Language.Cobra.UX.SourceSpan
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U>,
+     Unfolding: (\ sp :: Language.Cobra.UX.SourceSpan
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        (case sp of wild { Language.Cobra.UX.SS ds ds1 ->
+                         case ds of wild1 { Text.Megaparsec.Pos.SourcePos ds2 dt dt1 ->
+                         ds2 } })
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds { (#,#) ipv2 ipv3 ->
+                 (# ipv2,
+                    case sp of wild { Language.Cobra.UX.SS ds2 ds3 ->
+                    case ds2 of wild1 { Text.Megaparsec.Pos.SourcePos ds4 dt dt1 ->
+                    case ds3 of wild2 { Text.Megaparsec.Pos.SourcePos ds5 dt2 dt3 ->
+                    case GHC.Prim.tagToEnum#
+                           @ GHC.Types.Bool
+                           (GHC.Prim.==# dt dt2) of wild3 {
+                      GHC.Types.False
+                      -> Data.OldList.unlines
+                           (Language.Cobra.UX.readFileSpan_go
+                              dt
+                              (Language.Cobra.Utils.$wgetRange
+                                 @ GHC.Base.String
+                                 dt
+                                 dt2
+                                 (Data.OldList.lines ipv3)))
+                      GHC.Types.True
+                      -> Data.OldList.unlines
+                           (GHC.Types.:
+                              @ GHC.Base.String
+                              (Language.Cobra.UX.cursorLine
+                                 (GHC.Types.I# dt)
+                                 (case Language.Cobra.Utils.$wgetRange
+                                         @ GHC.Base.String
+                                         dt
+                                         dt
+                                         (Data.OldList.lines ipv3) of wild4 {
+                                    [] -> GHC.Types.[] @ GHC.Types.Char : x ds6 -> x }))
+                              (GHC.Types.:
+                                 @ GHC.Base.String
+                                 (let {
+                                    y :: GHC.Prim.Int# = GHC.Prim.+# 12 dt1
+                                  } in
+                                  let {
+                                    n :: [GHC.Types.Char]
+                                    = let {
+                                        y1 :: GHC.Prim.Int# = GHC.Prim.-# dt3 dt1
+                                      } in
+                                      case GHC.Prim.tagToEnum#
+                                             @ GHC.Types.Bool
+                                             (GHC.Prim.<# 0 y1) of wild4 {
+                                        GHC.Types.False -> GHC.Types.[] @ GHC.Types.Char
+                                        GHC.Types.True -> Language.Cobra.UX.$wxs y1 }
+                                  } in
+                                  case GHC.Prim.tagToEnum#
+                                         @ GHC.Types.Bool
+                                         (GHC.Prim.<# 0 y) of wild4 {
+                                    GHC.Types.False -> n
+                                    GHC.Types.True
+                                    -> let {
+                                         lvl8 :: [GHC.Types.Char]
+                                         = GHC.Types.:
+                                             @ GHC.Types.Char
+                                             Language.Cobra.UX.readFileSpan2
+                                             n
+                                       } in
+                                       letrec {
+                                         $wxs1 :: GHC.Prim.Int# -> [GHC.Types.Char]
+                                           {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+                                         = \ ww :: GHC.Prim.Int# ->
+                                           case ww of ds6 {
+                                             DEFAULT
+                                             -> GHC.Types.:
+                                                  @ GHC.Types.Char
+                                                  Language.Cobra.UX.readFileSpan2
+                                                  ($wxs1 (GHC.Prim.-# ds6 1))
+                                             1 -> lvl8 }
+                                       } in
+                                       $wxs1 y })
+                                 (GHC.Types.[] @ GHC.Base.String))) } } } } #) } }) -}
+90e6b7c13131f15c8af551448d6d7a24
+  readFileSpan2 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# ' ') -}
+1fb5f1f3974831526ea2a11c3a7c0a46
+  readFileSpan3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "%s|  %s"#) -}
+a93baece162e47b77ce4ba90e92c3371
+  readFileSpan_go ::
+    GHC.Prim.Int# -> [[GHC.Types.Char]] -> [[GHC.Types.Char]]
+  {- Arity: 2, Strictness: <L,U><S,1*U> -}
+399108a3dd40a61b6b30fd3f954014a2
+  renderErrors ::
+    [Language.Cobra.UX.UserError]
+    -> GHC.Types.IO Language.Cobra.UX.Text
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Cobra.UX.renderErrors1
+                  `cast`
+                (<[Language.Cobra.UX.UserError]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Language.Cobra.UX.Text>_R)) -}
+78888a47077949db0fb04fad8058f02b
+  renderErrors1 ::
+    [Language.Cobra.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Language.Cobra.UX.Text #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ es :: [Language.Cobra.UX.UserError]
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Language.Cobra.UX.renderErrors4
+                        es
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    Data.OldList.intercalate_$spoly_go
+                      @ GHC.Types.Char
+                      Language.Cobra.UX.renderErrors3
+                      (Data.OldList.prependToAll
+                         @ [GHC.Types.Char]
+                         Language.Cobra.UX.renderErrors2
+                         ipv1) #) }) -}
+fa98ddc40a17e7f6a19d2ef372393fdb
+  renderErrors2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+291d257488c505990146de364529dfcd
+  renderErrors3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Errors found!"#) -}
+0a4c452ae4bf17be645c2bbda722245d
+  renderErrors4 ::
+    [Language.Cobra.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          [Language.Cobra.UX.Text] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+2e2d44266db69b3a00e69b247bdf6380
+  ssBegin ::
+    Language.Cobra.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.Cobra.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U(U,U,U),1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.UX.SourceSpan ->
+                 case ds of wild { Language.Cobra.UX.SS ds1 ds2 -> ds1 }) -}
+b71852061e0f020577e6dd4218f7bd32
+  ssEnd ::
+    Language.Cobra.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.Cobra.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Cobra.UX.SourceSpan ->
+                 case ds of wild { Language.Cobra.UX.SS ds1 ds2 -> ds2 }) -}
+instance GHC.Classes.Eq [Language.Cobra.UX.SourceSpan]
+  = Language.Cobra.UX.$fEqSourceSpan
+instance GHC.Exception.Exception [[]]
+  = Language.Cobra.UX.$fException[]
+instance Language.Cobra.UX.Located [Language.Cobra.UX.UserError]
+  = Language.Cobra.UX.$fLocatedUserError
+instance GHC.Base.Monoid [Language.Cobra.UX.SourceSpan]
+  = Language.Cobra.UX.$fMonoidSourceSpan
+instance Language.Cobra.UX.PPrint [Language.Cobra.UX.SourceSpan]
+  = Language.Cobra.UX.$fPPrintSourceSpan
+instance GHC.Show.Show [Language.Cobra.UX.SourceSpan]
+  = Language.Cobra.UX.$fShowSourceSpan
+instance GHC.Show.Show [Language.Cobra.UX.UserError]
+  = Language.Cobra.UX.$fShowUserError
+"SPEC/Language.Cobra.UX $fShow[] @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                          Language.Cobra.UX.UserError
+  GHC.Show.$fShow[] @ Language.Cobra.UX.UserError $dShow
+  = Language.Cobra.UX.$fException[]_$s$fShow[]
+"SPEC/Language.Cobra.UX $fShow[]_$cshow @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                 Language.Cobra.UX.UserError
+  GHC.Show.$fShow[]_$cshow @ Language.Cobra.UX.UserError $dShow
+  = Language.Cobra.UX.$fException[]_$s$fShow[]_$cshow
+"SPEC/Language.Cobra.UX $fShow[]_$cshowList @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                     Language.Cobra.UX.UserError
+  GHC.Show.$fShow[]_$cshowList @ Language.Cobra.UX.UserError $dShow
+  = Language.Cobra.UX.$fException[]_$s$fShow[]_$cshowList
+"SPEC/Language.Cobra.UX $fShow[]_$cshowsPrec @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                      Language.Cobra.UX.UserError
+  GHC.Show.$fShow[]_$cshowsPrec @ Language.Cobra.UX.UserError $dShow
+  = Language.Cobra.UX.$fException[]_$s$fShow[]_$cshowsPrec
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

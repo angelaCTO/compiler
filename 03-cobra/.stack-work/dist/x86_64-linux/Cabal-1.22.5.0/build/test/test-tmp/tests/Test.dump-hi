@@ -1,0 +1,820 @@
+
+==================== FINAL INTERFACE ====================
+2016-10-15 22:08:56.416543 UTC
+
+interface main@main:Main 7103
+  interface hash: 9eb16b068047ca92e1016bc8e89eb6cb
+  ABI hash: bdc08bafec2edf97f122b5de80561b86
+  export-list hash: 4837337b7a1c63da2dc4eb29875fe473
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: db1f3b930a6f3af76dab17c1bff7aadc
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.adderTests
+  Main.anfTests
+  Main.boaTests
+  Main.cobraTests
+  Main.dynamicTests
+  Main.main
+  Main.tests
+  Main.unboundVarString
+  Main.undefinedString
+  Main.yourTests
+module dependencies: Common
+package dependencies: ansi-terminal-0.6.2.3@ansit_BDlVdfJGo3VHCIHxPTNjH1
+                      ansi-wl-pprint-0.6.7.3@ansiw_KTAhiPa3RNI09mbeoAwSSX
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      async-2.1.0@async_KuqnF1GrhHK5nNp6Zzm3jy base-4.8.2.0
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      clock-0.7.2@clock_25jKxsKUfKCI5az98RdfRZ
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      optparse-applicative-0.12.1.0@optpa_FpNJ7fLofFNEy3rK4ZnBoD
+                      parsec-3.1.11@parse_AtBt9uDOS2NCyWnucTHV3y
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP
+                      regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV
+                      tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unbounded-delays-0.1.0.9@unbou_GvUJpzHeuHuHPAHITwhpe4
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP:Text.Regex.Base.Context
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.ByteString
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.ByteString.Lazy
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.Sequence
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.String
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         clock-0.7.2@clock_25jKxsKUfKCI5az98RdfRZ:System.Clock
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty.Core
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Control.Exception.Base b99410eaf0cc6bb119b1d45a497c1b10
+import  -/  base-4.8.2.0:Data.Either e8724afd65fd432cfe9a54014f5f762d
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.IO.Exception e38c1261b70caecb7af416b94c82c925
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 6501190077841e1c46a81f384291fed3
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  Common f2f722bbe33883c9ac5a3c8c6b4b44b6
+  exports: e33fcf8924cbc6e884e8682e260984b2
+  Code ae7c344e12fa46b5e3ac4e9f60e8e4d8
+  File ae56eec8dcc5c346c330b742587d5c8b
+  Score 478a229b0e495505a46abb6231777e96
+  anfTest 3acd152860aba21cbca8091ff6c573a1
+  dynamicError d7a3aae8e4809bd33042de71a79d37fb
+  getTotal 3bdaefce13cce0ffb14e163d073a9e21
+  initScore 9cc9515489bbb1759599617d39011a1b
+  mkTest 2a0a6b9dfdb208e4cf5960f08ac1f28b
+  overflowError 7979fd3d80bb8a93b0d75e9d787c5025
+  rLines e53e1a6e9322edb2ed999445519bfc99
+import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty 266ce6e6070347ec182262566a5e6075
+import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty.Core b94dda12df45b3281c2386eb541c4af9
+b873187dc66ea04c31350f6ad9e9846f
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+3ac038fdaa5d9e2394a3728772bf8a32
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+92c04ca45be5bd40b66be9a300884f69
+  $wadderTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0],
+     Unfolding: (\ w :: Common.Score ->
+                 (# Common.mkTest'
+                      w
+                      Common.anfTest1
+                      Main.adderTests29
+                      Main.adderTests27
+                        `cast`
+                      (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                      Main.adderTests25,
+                    GHC.Types.:
+                      @ Test.Tasty.Core.TestTree
+                      (Common.mkTest'
+                         w
+                         Common.anfTest1
+                         Main.adderTests24
+                         Main.adderTests21
+                           `cast`
+                         (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                         Main.adderTests19)
+                      (GHC.Types.:
+                         @ Test.Tasty.Core.TestTree
+                         (Common.mkTest'
+                            w
+                            Common.anfTest1
+                            Main.adderTests18
+                            Main.adderTests17
+                              `cast`
+                            (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                            Main.adderTests15)
+                         (GHC.Types.:
+                            @ Test.Tasty.Core.TestTree
+                            (Common.mkTest'
+                               w
+                               Common.anfTest1
+                               Main.adderTests14
+                               Main.adderTests13
+                                 `cast`
+                               (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                               Main.adderTests11)
+                            (GHC.Types.:
+                               @ Test.Tasty.Core.TestTree
+                               (Common.mkTest'
+                                  w
+                                  Common.anfTest1
+                                  Main.adderTests10
+                                  Main.adderTests9
+                                    `cast`
+                                  (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                                  Main.adderTests11)
+                               (GHC.Types.:
+                                  @ Test.Tasty.Core.TestTree
+                                  (Common.mkTest'
+                                     w
+                                     Common.anfTest1
+                                     Main.adderTests8
+                                     Main.adderTests7
+                                       `cast`
+                                     (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                                     Main.adderTests5)
+                                  (GHC.Types.:
+                                     @ Test.Tasty.Core.TestTree
+                                     (Common.mkTest'
+                                        w
+                                        Common.anfTest1
+                                        Main.adderTests4
+                                        Main.adderTests3
+                                          `cast`
+                                        (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                                        Main.adderTests1)
+                                     (GHC.Types.[] @ Test.Tasty.Core.TestTree)))))) #)) -}
+5ea5e50c42f2ce1b283c8e1fd89e539b
+  $wanfTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0],
+     Unfolding: (\ w :: Common.Score ->
+                 (# Common.anfTest
+                      w
+                      Main.anfTests12
+                      Main.anfTests11
+                      Main.anfTests10,
+                    GHC.Types.:
+                      @ Test.Tasty.Core.TestTree
+                      (Common.anfTest w Main.anfTests9 Main.anfTests8 Main.anfTests7)
+                      (GHC.Types.:
+                         @ Test.Tasty.Core.TestTree
+                         (Common.anfTest w Main.anfTests6 Main.anfTests5 Main.anfTests4)
+                         (GHC.Types.:
+                            @ Test.Tasty.Core.TestTree
+                            (Common.anfTest w Main.anfTests3 Main.anfTests2 Main.anfTests1)
+                            (GHC.Types.[] @ Test.Tasty.Core.TestTree))) #)) -}
+49066968492352be78f63e88e0812f4b
+  $wboaTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0],
+     Unfolding: (\ w :: Common.Score ->
+                 (# Common.mkTest'
+                      w
+                      Common.anfTest1
+                      Main.boaTests18
+                      Main.boaTests17
+                        `cast`
+                      (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                      Main.boaTests15,
+                    GHC.Types.:
+                      @ Test.Tasty.Core.TestTree
+                      (Common.mkTest'
+                         w
+                         Common.anfTest1
+                         Main.boaTests14
+                         Main.boaTests13
+                           `cast`
+                         (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                         Main.boaTests11)
+                      (GHC.Types.:
+                         @ Test.Tasty.Core.TestTree
+                         (Common.mkTest'
+                            w
+                            Common.anfTest1
+                            Main.boaTests10
+                            Main.boaTests9
+                              `cast`
+                            (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                            Main.boaTests11)
+                         (GHC.Types.:
+                            @ Test.Tasty.Core.TestTree
+                            (Common.mkTest'
+                               w
+                               Common.anfTest1
+                               Main.boaTests8
+                               Main.boaTests7
+                                 `cast`
+                               (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                               Main.boaTests5)
+                            (GHC.Types.:
+                               @ Test.Tasty.Core.TestTree
+                               (Common.mkTest'
+                                  w
+                                  Common.anfTest1
+                                  Main.boaTests4
+                                  Main.boaTests3
+                                    `cast`
+                                  (Sym (GHC.Types.NTCo:IO[0] <Common.Result>_R))
+                                  Main.boaTests1)
+                               (GHC.Types.[] @ Test.Tasty.Core.TestTree)))) #)) -}
+de8b25dcbfc9f73ddf4dcb25660e1094
+  $wcobraTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0] -}
+ffccc0cc162c19a2a55b270ea9762f87
+  $wdynamicTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0] -}
+cb121ed773385960d538ee9304847cf5
+  $wtests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestName, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0],
+     Unfolding: (\ w :: Common.Score ->
+                 (# Main.main8,
+                    GHC.Types.:
+                      @ Test.Tasty.Core.TestTree
+                      (Test.Tasty.Core.TestGroup Main.main7 (Main.anfTests w))
+                      (GHC.Types.:
+                         @ Test.Tasty.Core.TestTree
+                         (Test.Tasty.Core.TestGroup Main.main6 (Main.adderTests w))
+                         (GHC.Types.:
+                            @ Test.Tasty.Core.TestTree
+                            (Test.Tasty.Core.TestGroup Main.main5 (Main.boaTests w))
+                            (GHC.Types.:
+                               @ Test.Tasty.Core.TestTree
+                               (Test.Tasty.Core.TestGroup Main.main4 (Main.cobraTests w))
+                               (GHC.Types.:
+                                  @ Test.Tasty.Core.TestTree
+                                  (Test.Tasty.Core.TestGroup Main.main3 (Main.dynamicTests w))
+                                  (GHC.Types.:
+                                     @ Test.Tasty.Core.TestTree
+                                     (Test.Tasty.Core.TestGroup Main.main2 (Main.yourTests w))
+                                     (GHC.Types.[] @ Test.Tasty.Core.TestTree)))))) #)) -}
+fcd97003ce22270ac47e8e894ead277a
+  $wyourTests ::
+    Common.Score
+    -> (# Test.Tasty.Core.TestTree, [Test.Tasty.Core.TestTree] #)
+  {- Arity: 1, Strictness: <L,U(U)>, Inline: [0] -}
+e92984fcc191a46004de4402e0d57f6e
+  adderTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wadderTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+036991b71621a1e46e97b9faa854032e
+  adderTests1 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests2) -}
+bd4dbc6f7931171336e71d078d722bf8
+  adderTests10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "subs"#) -}
+7f2fd101f401b6797a2af405ba6beb4f
+  adderTests11 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests12) -}
+fc1cfcf0b3f50391192d95c725ce9251
+  adderTests12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "8"#) -}
+416306a162acab556049a3d54dbf5e9e
+  adderTests13 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests14 Common.File) -}
+c2ce83e7854e69bbb915a763d6c5d000
+  adderTests14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "adds"#) -}
+5ec5d684d52fdcc3b6854defdc73c808
+  adderTests15 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests16) -}
+40f69500ca33f9440ada2c156a03ca75
+  adderTests16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "5"#) -}
+b015bfd870baf56aea94f61ad36a0b9a
+  adderTests17 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests18 Common.File) -}
+61792154aebd18fe20856004bb125b4a
+  adderTests18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "five"#) -}
+f4a4f23450cfe996771f475fc5116b91
+  adderTests19 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests20) -}
+b8ba362cc67a0c9cad724cf25c367763
+  adderTests2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "600"#) -}
+65a32d7d0776a4bcb7d707ef84dbfc16
+  adderTests20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "10"#) -}
+49e27738af320f9b310af7604f09679c
+  adderTests21 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests24 Main.adderTests22) -}
+6e1fb1a1708f5922041b29bfc478722a
+  adderTests22 :: Common.Program
+  {- Strictness: m2, Unfolding: (Common.Code Main.adderTests23) -}
+07920ef8475e87a81c0566040a463c06
+  adderTests23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "let x = 10 in x"#) -}
+1071d88b8519550bb25815c2928293b7
+  adderTests24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "nyi"#) -}
+424291a94a96dec72f26160c8246728e
+  adderTests25 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests26) -}
+6bfe88e711486cc5f60fc7d34c25c9f5
+  adderTests26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "41"#) -}
+9052f43c06d4359ee21983f781d15e0d
+  adderTests27 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests29 Main.adderTests28) -}
+f93c606208f377ccae6f1035b1095f7f
+  adderTests28 :: Common.Program
+  {- Strictness: m2, Unfolding: (Common.Code Main.adderTests26) -}
+2d2d511f201538ea3375195121205d82
+  adderTests29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "forty_one"#) -}
+0290265f0cb44ae1fde56d7c78cca5ea
+  adderTests3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests4 Common.File) -}
+c06bdf07a5f97e7786ab2bb4076fede9
+  adderTests4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "expr0"#) -}
+cc9415e17aa4fa9f32ca8c909ee0192f
+  adderTests5 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.adderTests6) -}
+c9028829c771bd6f9ae1082246e0b735
+  adderTests6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "14"#) -}
+8a5b6efb2704ef55cda15817384a0793
+  adderTests7 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests8 Common.File) -}
+07c5e566dec688cbe05c9abc894b55c1
+  adderTests8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "lets"#) -}
+44324a2e9e409883610f6ac40a7cdb0b
+  adderTests9 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.adderTests10 Common.File) -}
+aafc911a40156377675edacc8d85b805
+  anfTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wanfTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+2fb17d6a6815ae7824cb53a98e8f719e
+  anfTests1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(let anf0 = (if x: y + 1 else: z + 1) in anf0 + 12)"#) -}
+f83086f6e161980758a1c2789a2a47cf
+  anfTests10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(let anf0 = add1(x), anf1 = add1(anf0), anf2 = add1(anf1) in add1(anf2))"#) -}
+87cadd7021f17ca722a71e1748445fa7
+  anfTests11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "add1(add1(add1(add1(x))))"#) -}
+604fdac5cd7aac4d970dc9ffb5823079
+  anfTests12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prim1"#) -}
+12c93916fcabf57c17ec57028cba0c55
+  anfTests2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(if x: y + 1 else: z + 1) + 12"#) -}
+5f5b565ec357991594313fa0098a234e
+  anfTests3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "if-1"#) -}
+eaae2825935028253f68bd614dccb5bb
+  anfTests4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(let anf0 = (let x = 10 in x + 5), anf1 = (let y = 20 in y - 5) in anf0 + anf1)"#) -}
+a63d0ea99953e90f246cddfef0af7f06
+  anfTests5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(let x = 10 in x + 5) + (let y = 20 in y - 5)"#) -}
+ead8285516699201dc5fa1298f6ed7ea
+  anfTests6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "let-1"#) -}
+13aece6b62db374f1ef3368897c99fda
+  anfTests7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "(let anf0 = 2 + 3, anf1 = 12 - 4, anf2 = anf0 * anf1, anf3 = 7 + 8 in anf2 * anf3)"#) -}
+0e7f1f2e80525d9e740de2dc5211b673
+  anfTests8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "((2 + 3) * (12 - 4)) * (7 + 8)"#) -}
+88f45da000899640acc6754dfade16d2
+  anfTests9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "prim2"#) -}
+dac8487cfa0445071847ab3f228ade46
+  boaTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wboaTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+d08daad1c32605109cb0389a322cd9dd
+  boaTests1 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.boaTests2) -}
+acd47e66f35853a5c1edb3d496f3e8e7
+  boaTests10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "expr3"#) -}
+dc25b085cdccaf8073b9868447bfbe15
+  boaTests11 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.boaTests12) -}
+5438cf9e04f854328b9a86b10c37db8d
+  boaTests12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "20"#) -}
+940c23fefaaa6205bb1abf0bd5216bcc
+  boaTests13 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.boaTests14 Common.File) -}
+5300178d4e169868d334154abd80518c
+  boaTests14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "expr2"#) -}
+2b85281a85772c93e7df9fe771888480
+  boaTests15 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.boaTests16) -}
+cd72a606662513991ec1615bd2f87a62
+  boaTests16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "30"#) -}
+ebf62b92663b601da664cd630702623a
+  boaTests17 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.boaTests18 Common.File) -}
+54734af5304aea6773da27874ec3dedc
+  boaTests18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "expr1"#) -}
+a8616da3b1c5dfa14bf0a8f769111d9c
+  boaTests2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "65536"#) -}
+e30cb3029a206a816b5758bb3001f8ba
+  boaTests3 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.boaTests4 Common.File) -}
+eaf434799a7d00fd7e5d04a269c2c639
+  boaTests4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "exp00"#) -}
+757fa18146931e2dc088979b6bf0fc75
+  boaTests5 ::
+    Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
+  {- Strictness: m2,
+     Unfolding: (Data.Either.Right
+                   @ Language.Cobra.UX.Text
+                   @ Language.Cobra.UX.Text
+                   Main.boaTests6) -}
+7db30cbdfaff90bbb1f1e9f68df3a48a
+  boaTests6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "-8"#) -}
+dc59df87bd2683984596a3ef78a5e666
+  boaTests7 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.boaTests8 Common.File) -}
+76de0052d99f5d4824e32ab53b863644
+  boaTests8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "expr4"#) -}
+b6dca9ff3f08b01324b617e06f6824ca
+  boaTests9 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Common.Result #)
+  {- Arity: 1,
+     Unfolding: (Common.mkTest1 Main.boaTests10 Common.File) -}
+16ba99204c698b8549a65e6703015d44
+  cobraTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wcobraTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+1f384be3812ab8288a819f7a120d5582
+  dynamicTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wdynamicTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+52caec87af1afe8f56d73702dac0f887
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+9ce207ffc25d3b060c7b64a7d3b2f338
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Prim.newMutVar#
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        @ GHC.Prim.RealWorld
+                        Main.main9
+                        s of ds { (#,#) ipv ipv1 ->
+                 GHC.Prim.catch#
+                   @ ()
+                   @ GHC.Exception.SomeException
+                   (Test.Tasty.CmdLine.defaultMainWithIngredients1
+                      Test.Tasty.defaultIngredients
+                      (case Main.$wtests
+                              (GHC.STRef.STRef
+                                 @ GHC.Prim.RealWorld
+                                 @ (GHC.Types.Int, GHC.Types.Int)
+                                 ipv1)
+                                `cast`
+                              (Sym (GHC.IORef.NTCo:IORef[0]) <(GHC.Types.Int,
+                                                               GHC.Types.Int)>_N) of ww { (#,#) ww1 ww2 ->
+                       Test.Tasty.Core.TestGroup ww1 ww2 }))
+                   (\ e1 :: GHC.Exception.SomeException[OneShot]
+                      eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                    case (GHC.Exception.$p1Exception @ e100 $dException1)
+                           `cast`
+                         (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                           (GHC.Prim.proxy#
+                              @ *
+                              @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                    case dt of wild2 {
+                      DEFAULT
+                      -> GHC.Prim.raiseIO# @ GHC.Exception.SomeException @ () wild eta
+                      __word 18054912791698259390
+                      -> case dt1 of wild3 {
+                           DEFAULT
+                           -> GHC.Prim.raiseIO# @ GHC.Exception.SomeException @ () wild eta
+                           __word 13527009272941855853
+                           -> case GHC.Prim.readMutVar#
+                                     @ GHC.Prim.RealWorld
+                                     @ (GHC.Types.Int, GHC.Types.Int)
+                                     ipv1
+                                     eta of ds1 { (#,#) ipv2 ipv3 ->
+                              case ipv3 of wild4 { (,) n tot ->
+                              case GHC.IO.Handle.Text.hPutStr2
+                                     GHC.IO.Handle.FD.stdout
+                                     (GHC.CString.unpackAppendCString#
+                                        "OVERALL SCORE = "#
+                                        (case n of ww2 { GHC.Types.I# ww3 ->
+                                         case GHC.Show.$wshowSignedInt
+                                                0
+                                                ww3
+                                                (GHC.Types.[]
+                                                   @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                                         GHC.Base.++
+                                           @ GHC.Types.Char
+                                           (GHC.Types.: @ GHC.Types.Char ww5 ww6)
+                                           (GHC.CString.unpackAppendCString#
+                                              " / "#
+                                              (case tot of ww1 { GHC.Types.I# ww8 ->
+                                               case GHC.Show.$wshowSignedInt
+                                                      0
+                                                      ww8
+                                                      (GHC.Types.[]
+                                                         @ GHC.Types.Char) of ww9 { (#,#) ww10 ww11 ->
+                                               GHC.Types.: @ GHC.Types.Char ww10 ww11 } })) } }))
+                                     GHC.Types.True
+                                     ipv2 of ds7 { (#,#) ipv4 ipv5 ->
+                              GHC.Prim.raiseIO#
+                                @ GHC.Exception.SomeException
+                                @ ()
+                                (GHC.IO.Exception.$fExceptionExitCode_$ctoException
+                                   e2
+                                     `cast`
+                                   (UnivCo mkUnsafeCo representational e100 GHC.IO.Exception.ExitCode))
+                                ipv4 } } } } } } })
+                   ipv }) -}
+2cdcb5afde74543b0f40d6dabefa99e4
+  main10 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0) -}
+9dbc876debca3ae2b31d06f6e5e046ad
+  main11 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+d3db4aa85943c37c9af7bafbb9e24f57
+  main2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Your-Tests"#) -}
+9117892ff39c592777f8c22c5108a8bf
+  main3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Dynamic-Errors"#) -}
+d6f73be52d7dd824d3fc6ab1e6b029d6
+  main4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Cobra"#) -}
+6c3e5a4166af94a504fd432caf8283ad
+  main5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Boa"#) -}
+062ea2c103bd88fe6d6e40891d360bfc
+  main6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Adder"#) -}
+9aa2659637a171624c1e131ef2199f10
+  main7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Normalizer"#) -}
+7a4a1e475af4bb7af3a901ddfe6b3408
+  main8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Tests"#) -}
+417236339f938f659ec9cd45a132d4f7
+  main9 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main10, Main.main10)) -}
+0759e6917fb13d7970513a4280afdc83
+  tests :: Common.Score -> Test.Tasty.Core.TestTree
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wtests w of ww { (#,#) ww1 ww2 ->
+                 Test.Tasty.Core.TestGroup ww1 ww2 }) -}
+b50a86481574822edfa112948c0760c8
+  unboundVarString :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ var :: GHC.Base.String ->
+                 Main.$sprintf3
+                   Main.unboundVarString1
+                   (GHC.Types.:
+                      @ Text.Printf.UPrintf
+                      (Main.$s$fPrintfArg[]1 var,
+                       \ w2 :: Text.Printf.FieldFormat ->
+                       case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                       case ww7 of ww8 { GHC.Types.C# ww9 ->
+                       Text.Printf.$wformatString
+                         @ GHC.Types.Char
+                         Text.Printf.$fIsCharChar
+                         var
+                         ww1
+                         ww2
+                         ww3
+                         ww9 } })
+                      (GHC.Types.[] @ Text.Printf.UPrintf))) -}
+a9fc4e41a8babe9166694c26fdd29096
+  unboundVarString1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Unbound variable '%s'"#) -}
+65485e8b4aeaf36171c38e891e05fd64
+  undefinedString :: t
+  {- Strictness: b -}
+c8db041d435133e643ab35547fa99e0a
+  yourTests :: Common.Score -> [Test.Tasty.Core.TestTree]
+  {- Arity: 1, Strictness: <L,U(U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Common.Score ->
+                 case Main.$wyourTests w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Test.Tasty.Core.TestTree ww1 ww2 }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
