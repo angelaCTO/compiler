@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:42:43.70701 UTC
+2016-10-16 23:16:32.116758 UTC
 
 interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler [orphan module] 7103
-  interface hash: 1674035b7da444274f24fbdbaa4df4a9
-  ABI hash: a2ca5b4e561a6d350b6b943fe304ebe0
+  interface hash: dfc041eda5d7dc2ffa35980688dfe836
+  ABI hash: 32a67a8dcff5b2bf98a32074823dbfe8
   export-list hash: 69e2521eebc6882ef1c6502321312240
   orphan hash: a928b99bb5708eb07548ded42bf614b0
   flag hash: 4551607f6216aab46db8345a91e09854
@@ -80,15 +80,15 @@ import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
-import  -/  Language.Cobra.Asm da50623211b6e82697aa30738bbc06c2
+import  -/  Language.Cobra.Asm 4eb7d7c2003bf6a29dd784e8d6d7f07f
   exports: 9e33783fa46f655b7a78c1321e0ed439
-  asm dd99a29f5b285b0f0e4d3cf0b68e3cfc
+  asm fbcb126db34bd6b5b54341f48c1c14b5
 import  -/  Language.Cobra.Normalizer eb954d8db7ce9f2e38642d5041730726
   exports: 29892b7325712c75406197c96105f482
   anormal 3f128caecac772a0a5c5a0b591ccbb12
-import  -/  Language.Cobra.Parser 919e92496240f9c8b4a42fa4d7675225
-  exports: c6c66b5657a5aeb9512f0057cdb43976
-  parse fc84be4401e9e5ebabc6bf751a6b5156
+import  -/  Language.Cobra.Parser adff671825d38bed73c9fec70a834811
+  exports: 0ed541b834f2ab987486864818a7a328
+  parse f28b17189ff3c8624b5341e92789aedb
 import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   exports: 5bc450ebd8a44f3953138ffc7a7c569a
   Add1 ee5fdde90c81ddcd53463c26d1099499
@@ -100,10 +100,14 @@ import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   Const 459527a939707c56a99248f53d0f0f3e
   EAX 564ef73b7f57b3b803212e2136b81441
   EBP 907efc676ff308d03d6b4e5df0bd7af3
+  ESP 65ac0772f6431be63252275a906390bd
   Env 48495f57b9b9180fca8e44d25bb75678
   HexConst 9ea99502b6f4960a49da97d068b7893a
   IAdd 9a486f698a9e8efa81d8321d3af16cd0
   IMov ccee73fe6f18b592cbee7c2d2c2bbc46
+  IPop 214e7488de335c29d8f899266d966f73
+  IPush 7fdd1bf1e151dc9dcabbef460df6470a
+  IRet e580d928fbabf095d25f32b51db79f73
   ISub a422e42fdb9c86ae0a5fa6d374e94cf1
   Id ce60f5b319535afe9880f9ea90dd4e1a
   Id 1f30d5b0ee0d282456dd8be18fc6a85c
@@ -221,6 +225,35 @@ aa9f2df9d426bccd6e9b02bb64b70f62
                    (case GHC.Integer.Type.integerToInt
                            (GHC.Integer.Type.shiftLInteger n 1) of wild { DEFAULT ->
                     GHC.Types.I# wild })) -}
+26243c4053cabda527fdc9079ce0b2ca
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+81ceaff57e6850306c3602481f09e006
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
 07e8ad121ad9642090af022cc1711855
   type ABind = Language.Cobra.Types.Bind Language.Cobra.Compiler.Tag
 df801828979bd1f1df32f7a165284394
@@ -234,23 +267,137 @@ c0df6bf8c844e9b20b861387c9333e51
     repr :: a -> Language.Cobra.Types.Arg
 08ff54b62925c0bc31979765d921e3b7
   type Tag = (Language.Cobra.UX.SourceSpan, GHC.Types.Int)
-dd3060e6726fc840a571094f868d6cbc
+03846fe4e8478aa62ac4f5c0a1f1cf1b
   compile ::
     Language.Cobra.Compiler.AExp -> [Language.Cobra.Types.Instruction]
-  {- Arity: 1, Strictness: <B,A>b,
-     Unfolding: InlineRule (1, True, True)
-                (\ e :: Language.Cobra.Compiler.AExp ->
-                 Language.Cobra.Compiler.compile1) -}
-1fac8a4ff308427d1059c4e818b7b3e0
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ e :: Language.Cobra.Compiler.AExp ->
+                 let {
+                   n :: [Language.Cobra.Types.Instruction]
+                   = GHC.Base.++
+                       @ Language.Cobra.Types.Instruction
+                       (Language.Cobra.Compiler.compileEnv
+                          Language.Cobra.Types.emptyEnv
+                          e)
+                       Language.Cobra.Compiler.funExit
+                 } in
+                 letrec {
+                   go :: [Language.Cobra.Types.Instruction]
+                         -> [Language.Cobra.Types.Instruction]
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ ds :: [Language.Cobra.Types.Instruction] ->
+                     case ds of wild {
+                       [] -> n
+                       : y ys
+                       -> GHC.Types.: @ Language.Cobra.Types.Instruction y (go ys) }
+                 } in
+                 go Language.Cobra.Compiler.compile1) -}
+16de964d1eefb8d5edfeccbd7e8b83ab
   compile1 :: [Language.Cobra.Types.Instruction]
-  {- Strictness: b -}
-d87d75ae724adc9aae095345e618ee4d
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Language.Cobra.Types.Instruction
+                   Language.Cobra.Compiler.compile6
+                   Language.Cobra.Compiler.compile2) -}
+996718bee43415ed8649e3a6ca77e32e
+  compile10 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Cobra.Types.IMov
+                   Language.Cobra.Compiler.compile4
+                   Language.Cobra.Compiler.compile5) -}
+1b189196e099dbc0173f40cb6f67078e
+  compile2 :: [Language.Cobra.Types.Instruction]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Language.Cobra.Types.Instruction
+                   Language.Cobra.Compiler.compile3
+                   (GHC.Types.[] @ Language.Cobra.Types.Instruction)) -}
+b2b4d74173e050aacc7dcb6bd841cc58
+  compile3 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs,
+     Unfolding: (Language.Cobra.Types.IMov
+                   Language.Cobra.Compiler.compile5
+                   Language.Cobra.Compiler.compile4) -}
+59af79f1365560d15943650f4e48071b
+  compile4 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.ESP) -}
+201cce9934f1c3ee9edd3ba1e242f935
+  compile5 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.EBP) -}
+5ab899274e77de8c2e9d769ad4c20f22
+  compile6 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs,
+     Unfolding: (Language.Cobra.Types.IPush
+                   Language.Cobra.Compiler.compile5) -}
+8396ac0f6d3af81f929629c1f1061563
+  compile7 :: [Language.Cobra.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Cobra.Types.Instruction
+                   Language.Cobra.Compiler.compile9
+                   Language.Cobra.Compiler.compile8) -}
+cf2a5419c84889563a40ebea90aa2055
+  compile8 :: [Language.Cobra.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Cobra.Types.Instruction
+                   Language.Cobra.Types.IRet
+                   (GHC.Types.[] @ Language.Cobra.Types.Instruction)) -}
+551d8db827d04839cd87bd29ae49f27a
+  compile9 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs, Strictness: m13,
+     Unfolding: (Language.Cobra.Types.IPop
+                   Language.Cobra.Compiler.compile5) -}
+99e91cd946b13ae0fa0301a762218836
+  compileEnv ::
+    Language.Cobra.Types.Env
+    -> Language.Cobra.Compiler.AExp
+    -> [Language.Cobra.Types.Instruction]
+  {- Arity: 2, Strictness: <L,U(U,U)><S,1*U> -}
+603828bfcb5365e9863831bd8c6d541a
   compiler ::
     GHC.IO.FilePath -> Language.Cobra.UX.Text -> Language.Cobra.UX.Text
-  {- Arity: 2, Strictness: <L,A><L,A>,
-     Unfolding: InlineRule (2, True, True)
-                (\ f :: GHC.IO.FilePath x :: Language.Cobra.UX.Text ->
-                 Language.Cobra.Asm.asm Language.Cobra.Compiler.compile1) -}
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ f :: GHC.IO.FilePath x :: Language.Cobra.UX.Text ->
+                 Language.Cobra.Asm.asm
+                   (let {
+                      n :: [Language.Cobra.Types.Instruction]
+                      = case Language.Cobra.Normalizer.$wanf
+                               @ Language.Cobra.UX.SourceSpan
+                               Language.Cobra.Normalizer.anormal1
+                               (Language.Cobra.Parser.parse f x) of ww { (#,#) ww1 ww2 ->
+                        case Language.Cobra.Types.$wgo
+                               @ Language.Cobra.UX.SourceSpan
+                               @ Language.Cobra.UX.SourceSpan
+                               Language.Cobra.Types.$fShowBind1
+                               ww2 of ww4 { (#,#) ww5 ww6 ->
+                        GHC.Base.++
+                          @ Language.Cobra.Types.Instruction
+                          (Language.Cobra.Compiler.compileEnv
+                             Language.Cobra.Types.emptyEnv
+                             ww6)
+                          Language.Cobra.Compiler.funExit } }
+                    } in
+                    letrec {
+                      go :: [Language.Cobra.Types.Instruction]
+                            -> [Language.Cobra.Types.Instruction]
+                        {- Arity: 1, Strictness: <S,1*U> -}
+                      = \ ds :: [Language.Cobra.Types.Instruction] ->
+                        case ds of wild {
+                          [] -> n
+                          : y ys
+                          -> GHC.Types.: @ Language.Cobra.Types.Instruction y (go ys) }
+                    } in
+                    go Language.Cobra.Compiler.compile1)) -}
+d482a394adf0690c9ad953236a7280d2
+  funExit :: [Language.Cobra.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Cobra.Types.Instruction
+                   Language.Cobra.Compiler.compile10
+                   Language.Cobra.Compiler.compile7) -}
 instance Language.Cobra.UX.Located [(,)]
   = Language.Cobra.Compiler.$fLocated(,)
 instance Language.Cobra.Compiler.Repr [GHC.Types.Bool]

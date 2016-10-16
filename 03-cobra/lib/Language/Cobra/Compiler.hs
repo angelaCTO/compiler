@@ -59,11 +59,11 @@ funInstrs n instrs = funEntry n ++ instrs ++ funExit
 
 --TODO | TBD:insert instructions for setting up stack-frame for `n` local vars
 funEntry :: Int -> [Instruction]
-funEntry n  = error "TBD:funEntry"
+funEntry n  = [ IPush (Reg EBP){-,  ISub (Reg ESP) (repr (4*n))-}, IMov (Reg EBP) ( Reg ESP)]
 
 --TODO | TBD: cleaning up stack-frame after function finishes
 funExit :: [Instruction]
-funExit   = error "TBD:funExit"
+funExit   = [ IMov ( Reg ESP ) ( Reg EBP ), IPop ( Reg EBP), IRet]
 
 --------------------------------------------------------------------------------
 -- | @countVars e@ returns the maximum stack-size needed to evaluate e,
@@ -127,9 +127,9 @@ compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 --compilePrim1 l env op v = error "TBD:compilePrim1"
 compilePrim1 l env op v = case (l, env, op, v) of
     (l, env, Add1, v)   -> (compileEnv env v) ++
-                         [ IAdd (Reg EAX) (Const 1) ]
+                         [ IAdd (Reg EAX) (Const 2) ]
     (l, env, Sub1, v)   -> (compileEnv env v) ++
-                         [ ISub (Reg EAX) (Const 1) ]
+                         [ ISub (Reg EAX) (Const 2) ]
 --    (l, env, Print, v)  ->
 --    (l, env, IsNum, v)  ->
 --    (l, env, IsBool, v) ->

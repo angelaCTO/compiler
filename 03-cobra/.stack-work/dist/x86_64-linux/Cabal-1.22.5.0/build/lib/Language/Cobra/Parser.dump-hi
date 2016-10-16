@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:08:30.127647 UTC
+2016-10-16 22:35:48.264119 UTC
 
 interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Parser 7103
-  interface hash: 824eb7e09b57422be84c6c55e727063d
-  ABI hash: 919e92496240f9c8b4a42fa4d7675225
-  export-list hash: c6c66b5657a5aeb9512f0057cdb43976
-  orphan hash: 57d9420e5459fb87ef1669156e53ae41
+  interface hash: 4e0f72393a3938e0e693f9d40dd30a44
+  ABI hash: adff671825d38bed73c9fec70a834811
+  export-list hash: 0ed541b834f2ab987486864818a7a328
+  orphan hash: 005df8a9525557f335db8b484afd23e6
   flag hash: fcd74a0d83410922f8d238838ea898e5
   sig of: Nothing
   used TH splices: False
@@ -109,14 +109,14 @@ import  -/  Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
 import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec 57878a9baf8576ebbee675ee635c1996
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Char 7e21ef0a5d0b3eed7ccb8dbb2cded8b6
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Char 46565a72b525647407b865477645e5fc
 import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Combinator 03e6d5bf9f7bd3df5eda3c28eb644290
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Error 5b3d90a5a66124ea9b58373951cc4869
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Expr 6b5d0e2629d5ab4b960604f38203ec3d
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Lexer dff7937cd15531e2f75e8cea5464c706
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Prim 341880cf4d2d51ddf46f204050c86407
-import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String 48175b2e13f37b3a323c47b6776846ad
-7f3076b21b61276b6fa91be376222c7b
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Error 47339bc0171b1def9d4616089ead1177
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Expr 711688e08862b7a0bbb4a870f6eb89db
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Lexer f406f9dc610e5071cdd67f24fba84387
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Prim 0a314a4dcbb135c9136206c7231dbeaf
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String 070f20f5e010b803fe683ba4b7eaf263
+f3d2228caef05b00e15a8c502eb56fc2
   $s$fAlternativeParsecT ::
     GHC.Base.Alternative
       (Text.Megaparsec.Prim.ParsecT
@@ -142,7 +142,7 @@ import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String
                      @ [GHC.Types.Char]
                      @ Data.Functor.Identity.Identity
                      Language.Cobra.Parser.$s$fAlternativeParsecT1) -}
-5e1b6830aa0c3197932712a4fd1bcae2
+c5e37b8a9c355b7f4e72a29a0be0d604
   $s$fAlternativeParsecT1 ::
     GHC.Base.Applicative
       (Text.Megaparsec.Prim.ParsecT
@@ -150,7 +150,7 @@ import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Language.Cobra.Parser.$s$fAlternativeParsecT_$s$fApplicativeParsecT -}
-439aa64256210a0d1a1a8615985fa024
+0d751daf81a3e94402d594fef902bc67
   $s$fAlternativeParsecT_$s$fApplicativeParsecT ::
     GHC.Base.Applicative
       (Text.Megaparsec.Prim.ParsecT
@@ -186,7 +186,7 @@ import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String
                      (Text.Megaparsec.Prim.$fFunctorParsecT
                         @ [GHC.Types.Char]
                         @ Data.Functor.Identity.Identity)) -}
-33db203f9954039bf77906a835e1b12a
+9863885499d79b7acbf2632f30bfbc43
   $s$fMonadParsecT ::
     GHC.Base.Monad
       (Text.Megaparsec.Prim.ParsecT
@@ -209,7 +209,7 @@ import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.String
                      @ [GHC.Types.Char]
                      @ Data.Functor.Identity.Identity
                      Language.Cobra.Parser.$s$fAlternativeParsecT1) -}
-dbc44f8a1cf5e2cfabac642992ca02f7
+17e6e7d5115695ede66d8d3556e271e8
   $s$fMonadParsecT_$s$fMonadParsecT_$creturn ::
     a
     -> Text.Megaparsec.Prim.ParsecT
@@ -225,7 +225,7 @@ dbc44f8a1cf5e2cfabac642992ca02f7
                       @ [GHC.Types.Char]
                       @ Data.Functor.Identity.Identity)
                    @ a89) -}
-d6a7040791b1c1f9338fc9d74f7198f0
+e4dda1c4624d482c638b33fc9ef816cd
   $s$fMonadParsecsParsecTt ::
     Text.Megaparsec.Prim.MonadParsec
       [GHC.Types.Char]
@@ -307,7 +307,7 @@ d6a7040791b1c1f9338fc9d74f7198f0
                      Language.Cobra.Parser.$s$fMonadParsecsParsecTt7
                      Language.Cobra.Parser.$s$fMonadParsecsParsecTt5
                      Language.Cobra.Parser.$s$fMonadParsecsParsecTt4) -}
-b4892d87a85660ee9b8dd4167c21aa16
+4c543f2507f3437e3e88d065a703b6e3
   $s$fMonadParsecsParsecTt1 ::
     Text.Megaparsec.Prim.ParsecT
       [GHC.Types.Char] Data.Functor.Identity.Identity ()
@@ -322,7 +322,7 @@ b4892d87a85660ee9b8dd4167c21aa16
                              <[GHC.Types.Char]>_R
                              <Data.Functor.Identity.Identity>_R
                              <()>_R))) -}
-caf32e356556cbbf4744239ed3b5a5aa
+5094e9beabc057975f30286671478f80
   $s$fMonadParsecsParsecTt2 ::
     Text.Megaparsec.Prim.State [GHC.Types.Char]
     -> (()
@@ -377,7 +377,7 @@ caf32e356556cbbf4744239ed3b5a5aa
                                    @ Text.Megaparsec.Error.Message) of ww3 { (#,#) ww4 ww5 ->
                          Text.Megaparsec.Error.ParseError ww4 ww5 })
                         wild } }) -}
-780f80d696e520e3f8d8ac9bed042a46
+048f120fbdb25b52d0e15d1cf21a7442
   $s$fMonadParsecsParsecTt3 ::
     Text.Megaparsec.Prim.ParsecT
       [GHC.Types.Char] Data.Functor.Identity.Identity a
@@ -394,13 +394,13 @@ caf32e356556cbbf4744239ed3b5a5aa
                    @ a89
                    (GHC.Types.[] @ GHC.Types.Char)
                    eta) -}
-76f2923bb313ea1dc19e95a8cb562f61
+49c570c2411788d2592fd5021a707880
   $s$fMonadParsecsParsecTt4 ::
     Text.Megaparsec.Prim.Stream [GHC.Types.Char] GHC.Types.Char
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Text.Megaparsec.Prim.$fStorableStream[]Char_$s$fStream[]t -}
-304da767f1aa61219f1bb1332c60d0f9
+dc5db5ab9cff01adb11ff6bfddd24faf
   $s$fMonadParsecsParsecTt5 ::
     GHC.Base.MonadPlus
       (Text.Megaparsec.Prim.ParsecT
@@ -408,7 +408,7 @@ caf32e356556cbbf4744239ed3b5a5aa
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Language.Cobra.Parser.$s$fMonadParsecsParsecTt_$s$fMonadPlusParsecT -}
-d64ec595d741d7125022fa547d82c255
+6956acbba3abbaed5ca08c9b02b75065
   $s$fMonadParsecsParsecTt6 ::
     GHC.Base.Monad
       (Text.Megaparsec.Prim.ParsecT
@@ -416,7 +416,7 @@ d64ec595d741d7125022fa547d82c255
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Language.Cobra.Parser.$s$fMonadParsecT -}
-327102c44ac0e4198266eef9edc510a2
+73355c4525904ac39f0a64a1da2aa755
   $s$fMonadParsecsParsecTt7 ::
     GHC.Base.Alternative
       (Text.Megaparsec.Prim.ParsecT
@@ -424,7 +424,7 @@ d64ec595d741d7125022fa547d82c255
   {- Strictness: m,
      Unfolding: InlineRule (0, True, True)
                 Language.Cobra.Parser.$s$fAlternativeParsecT -}
-6a351b9b8d59e5813c80bb81196cf805
+2d15ad0103517691b0e595bb0ec73ba7
   $s$fMonadParsecsParsecTt_$s$fMonadParsecsParsecTt_$clabel ::
     GHC.Base.String
     -> Text.Megaparsec.Prim.ParsecT
@@ -436,7 +436,7 @@ d64ec595d741d7125022fa547d82c255
                 (Text.Megaparsec.Prim.pLabel
                    @ [GHC.Types.Char]
                    @ Data.Functor.Identity.Identity) -}
-92eb87a7d084c72123339f9e877ce04e
+c1ceae6ca900a048f61c21b43979c449
   $s$fMonadParsecsParsecTt_$s$fMonadPlusParsecT ::
     GHC.Base.MonadPlus
       (Text.Megaparsec.Prim.ParsecT
@@ -457,7 +457,7 @@ d64ec595d741d7125022fa547d82c255
                      @ Data.Functor.Identity.Identity
                      Language.Cobra.Parser.$s$fMonadParsecsParsecTt7
                      Language.Cobra.Parser.$s$fMonadParsecsParsecTt6) -}
-ba6dcafec52885d262d12812f3f751fe
+f4f6f5840e88110b67a1f052a86f9b9a
   $sinteger ::
     Text.Megaparsec.Prim.ParsecT
       GHC.Base.String
@@ -472,7 +472,7 @@ ba6dcafec52885d262d12812f3f751fe
                            GHC.Base.String Data.Functor.Identity.Identity)
                       @ GHC.Base.String
                       Language.Cobra.Parser.$sinteger1)) -}
-9028c5551d595678ac64b4cf607c7f99
+8f590d3840a0668c60a143b6672750a9
   $sinteger1 ::
     Text.Megaparsec.Prim.MonadParsec
       GHC.Base.String
@@ -481,9 +481,9 @@ ba6dcafec52885d262d12812f3f751fe
       GHC.Types.Char
   {- Unfolding: InlineRule (0, True, True)
                 Language.Cobra.Parser.$s$fMonadParsecsParsecTt -}
-6e081e68f829dbf2d2c0cb10b293ce51
+f61f6145c130586c6369f7db170fc6de
   expr :: Text.Megaparsec.String.Parser Language.Cobra.Types.Bare
-fc84be4401e9e5ebabc6bf751a6b5156
+f28b17189ff3c8624b5341e92789aedb
   parse ::
     GHC.IO.FilePath
     -> Language.Cobra.UX.Text -> Language.Cobra.Types.Bare
@@ -510,7 +510,7 @@ fc84be4401e9e5ebabc6bf751a6b5156
                    Text.Megaparsec.Prim.OK x -> x
                    Text.Megaparsec.Prim.Error e
                    -> Language.Cobra.Parser.parse1 e } }) -}
-b4b0013265cbb65228c73e727cd3ee65
+27cc4ab2f65e8e25cb2429c260463fd8
   parse1 ::
     Text.Megaparsec.Error.ParseError -> Language.Cobra.Types.Bare
   {- Arity: 1, Strictness: <B,U(U(U,U,U),1*U)>b, Inline: INLINE[0],
@@ -519,7 +519,7 @@ b4b0013265cbb65228c73e727cd3ee65
                  case w19 of ww { Text.Megaparsec.Error.ParseError ww1 ww2 ->
                  case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
                  Language.Cobra.Parser.parse2 ww4 ww5 ww6 ww2 } }) -}
-bcc500a054975842d7ea0a4cafae0f07
+ed076c26bbf0860d7a83850cb86c36ca
   parse10 ::
     Text.Megaparsec.Prim.State [GHC.Types.Char]
     -> (()
@@ -576,7 +576,7 @@ bcc500a054975842d7ea0a4cafae0f07
                    eta4
                    (\ x :: GHC.Types.Char -> lvl54)
                    eta6) -}
-60b8d741907ad3736b939d6e5b83ad39
+abcd3f391f23ba6de7de7dd6cb0a211e
   parse11 ::
     Text.Megaparsec.Prim.State [GHC.Types.Char]
     -> (GHC.Types.Char
@@ -692,7 +692,7 @@ f0967c3a7f55cc1f6a485fbe552b88e8
     -> [Text.Megaparsec.Error.Message]
     -> Language.Cobra.Types.Bare
   {- Arity: 4, Strictness: <L,U><L,U><L,U><L,U>b -}
-d2d185ca6b6909cecd582f11cb228805
+3e02d0d09278533113e04984a4f8b558
   parse3 ::
     Text.Megaparsec.Prim.ParsecT
       [GHC.Types.Char]
@@ -713,7 +713,7 @@ d2d185ca6b6909cecd582f11cb228805
                              <Data.Functor.Identity.Identity>_R
                              <Language.Cobra.Types.Bare>_R))
                    Language.Cobra.Parser.$s$fMonadParsecsParsecTt1) -}
-299bb627ce4e33c563bde171199ac385
+ecaf2c9423a4e95521c9e7ef884abc33
   parse4 ::
     Text.Megaparsec.Prim.State [GHC.Types.Char]
     -> (Language.Cobra.Types.Bare
@@ -761,7 +761,7 @@ d2d185ca6b6909cecd582f11cb228805
                    w21
                    w22
                    w23) -}
-aa9476da04a8ff6488fe815c33798407
+e3089428ae99fedca76dc3af5dedc83d
   parse5 ::
     Text.Megaparsec.Prim.ParsecT
       GHC.Base.String Data.Functor.Identity.Identity ()
@@ -778,7 +778,7 @@ e1869d3e4acc807ff78ca5658f5b34a0
 070c288fe29e13d70c3d1b5d89c58f08
   parse7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "/*"#) -}
-93f320d67683218fd46771c3bc633bd5
+eaeec07ea8cc21dd0f5ddfcd1c55fff5
   parse8 ::
     Text.Megaparsec.Prim.ParsecT
       GHC.Base.String Data.Functor.Identity.Identity ()
@@ -791,7 +791,7 @@ e1869d3e4acc807ff78ca5658f5b34a0
 0ec272830e58d6d816174fe683cea916
   parse9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "//"#) -}
-c6006859439071ec8cf95aa3b9af7249
+eae941661a46b9ca7ba4266ead708cca
   parseFile ::
     GHC.IO.FilePath -> GHC.Types.IO (Language.Cobra.Types.Expr ())
   {- Arity: 2, Strictness: <L,U><L,U>,
@@ -801,7 +801,7 @@ c6006859439071ec8cf95aa3b9af7249
                 (<GHC.IO.FilePath>_R
                  ->_R Sym (GHC.Types.NTCo:IO[0]
                                <Language.Cobra.Types.Expr ()>_R)) -}
-7f052121453a59a81703fd1981617638
+7bf1e18c9645caa1927878e94fe78df5
   parseFile1 ::
     GHC.IO.FilePath
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -828,7 +828,7 @@ aaac355c0760f7df22578f9390bf3fe7
   {- Arity: 1, HasNoCafRefs,
      Unfolding: (\ ds :: Language.Cobra.UX.SourceSpan ->
                  GHC.Tuple.()) -}
-58c7c6c0b3c90726db4a89e17dee6c4c
+f6c089dfac4baf66d3f2dfac37c29bd3
   parse_eta1 ::
     Text.Megaparsec.Prim.ParsecT
       [GHC.Types.Char] Data.Functor.Identity.Identity GHC.Types.Char
@@ -843,7 +843,7 @@ aaac355c0760f7df22578f9390bf3fe7
                              <[GHC.Types.Char]>_R
                              <Data.Functor.Identity.Identity>_R
                              <GHC.Types.Char>_R))) -}
-f18c2a9381876a3e9376c26c196f85f5
+3392c8faff712518015e7df85ec7cee3
   sc :: Text.Megaparsec.String.Parser ()
   {- Unfolding: (Text.Megaparsec.Lexer.space
                    @ (Text.Megaparsec.Prim.ParsecT

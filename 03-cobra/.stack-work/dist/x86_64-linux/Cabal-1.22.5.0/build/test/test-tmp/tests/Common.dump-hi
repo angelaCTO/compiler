@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-15 22:42:45.072789 UTC
+2016-10-16 22:36:03.298066 UTC
 
 interface main@main:Common 7103
-  interface hash: 91531272a25bfa3751e1561bab8f5d99
-  ABI hash: 48e4931ca5843ff6f4def2d220c01809
+  interface hash: 14af5091e7ded83c497320b3e3922d90
+  ABI hash: add9e010dc745a63d05e0c915f8bdecf
   export-list hash: e33fcf8924cbc6e884e8682e260984b2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 4e3b7035bfcdc42bd01ed35bfb0b7fa2
@@ -126,7 +126,7 @@ import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Normalizer eb954d8db7ce9f2e38642d5041730726
-import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Parser 919e92496240f9c8b4a42fa4d7675225
+import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Parser adff671825d38bed73c9fec70a834811
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 6501190077841e1c46a81f384291fed3
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Utils 3529c57a970a1787f01a8af8ea2f5d7f
@@ -136,7 +136,7 @@ import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV:Test.Tasty.HUnit 559fe7fd7c8d423b34e073b1c48863c9
 import  -/  tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV:Test.Tasty.HUnit.Orig ac4bc7f1e6e232714ea5854d8b764667
-import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty 266ce6e6070347ec182262566a5e6075
+import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty abbde09ca8e64a0ee7c7cf8254d23309
 import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty.Core b94dda12df45b3281c2386eb541c4af9
 6ce393ccfb49fc522f6a03f568f69200
   $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
@@ -174,7 +174,7 @@ da363835fadce7e1b31cd23db59850e5
                         GHC.Types.True -> 1 } }
                    GHC.Types.True
                    -> case Common.$s^1 ret_ty GHC.Prim.Int# of {} } }) -}
-ed434570ed873ee996222453e925dd87
+5a222464c4f5ca68e83e782a2a524062
   $wanfRun :: Language.Cobra.UX.Text -> (# Language.Cobra.UX.Text #)
   {- Arity: 1, Strictness: <L,U>, Inline: [0],
      Unfolding: (\ w :: Language.Cobra.UX.Text ->
@@ -283,7 +283,7 @@ c86d4b34c331b6a81dcc9c6afae4ce10
     Data.Either.Either Language.Cobra.UX.Text Language.Cobra.UX.Text
 478a229b0e495505a46abb6231777e96
   type Score = GHC.IORef.IORef (GHC.Types.Int, GHC.Types.Int)
-16d1b0bed8450219b35c77f6fc1198c3
+0d7b06836301a0dae172ee29c9968b1d
   anfRun :: Language.Cobra.UX.Text -> Common.Result
   {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
@@ -300,7 +300,7 @@ c86d4b34c331b6a81dcc9c6afae4ce10
                    (GHC.Types.[] @ GHC.Types.Char)
                    1
                    1) -}
-25bcef178739bc561e2ab09b12d2691b
+a953c7847a35cf38bf2a3b1c23238866
   anfTest ::
     Common.Score
     -> GHC.Base.String

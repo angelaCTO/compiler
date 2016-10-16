@@ -78,7 +78,9 @@ yourTests sc =
     mkTest sc "multTest" File (Right "100"),
     mkTest sc "longAdd" File (Right "36"),
     mkTest sc "longSub" File (Right "36"),
-    mkTest sc "longAddMult" File (Right "0")
+    mkTest sc "longAddMult" File (Right "0"),
+    mkTest sc "ifinif" (Code "if 5: if 6: 1 else: 0 else: 4") ( Right "1" ),
+    mkTest sc "letInIf" (Code "if let x = 1, y = 1+2+3, z = x + y + 2 in z:let a = 2 + 2 + 2 in a + 2 else: let d = 3 in d") (Right "8")
   ]
 
 unboundVarString :: String -> String
