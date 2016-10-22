@@ -31,7 +31,9 @@ header = unlines
 --   for jumping to and calling `error` here.
 
 postlude :: [Instruction]
-postlude = [] {-error "TBD:postlude" -}                --TODO
+postlude = [ILabel (DynamicErr (TypeError TNumber)), IPush (Const 0), ICall (Builtin "error"), IRet  ]++
+           [ILabel (DynamicErr (TypeError TBoolean)), IPush (Const 1), ICall (Builtin "error"), IRet  ]++
+           [ILabel (DynamicErr (ArithOverflow)), IPush (Const 2), ICall (Builtin "error"), IRet  ] {-error "TBD:postlude" -}                --TODO
 
 --------------------------------------------------------------------------------
 instrAsm :: Instruction -> Text

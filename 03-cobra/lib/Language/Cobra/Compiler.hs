@@ -59,7 +59,7 @@ funInstrs n instrs = funEntry n ++ instrs ++ funExit
 
 --TODO | TBD:insert instructions for setting up stack-frame for `n` local vars
 funEntry :: Int -> [Instruction]
-funEntry n  = [ IPush (Reg EBP){-,  ISub (Reg ESP) (repr (4*n))-}, IMov (Reg EBP) ( Reg ESP)]
+funEntry n  = [ IPush (Reg EBP), IMov (Reg EBP) ( Reg ESP), ISub (Reg ESP) (Const (4*n))]
 
 --TODO | TBD: cleaning up stack-frame after function finishes
 funExit :: [Instruction]
@@ -126,14 +126,33 @@ data Prim1
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 --compilePrim1 l env op v = error "TBD:compilePrim1"
 compilePrim1 l env op v = case (l, env, op, v) of
-    (l, env, Add1, v)   -> (compileEnv env v) ++
+    (l, env, Add1, v)   ->( assertType TNumber 0 env v )++[compileImm env v]++
                          [ IAdd (Reg EAX) (Const 2) ]
-    (l, env, Sub1, v)   -> (compileEnv env v) ++
+    (l, env, Sub1, v)   -> (assertType TNumber 0 env v) ++[compileImm env v]++
                          [ ISub (Reg EAX) (Const 2) ]
---    (l, env, Print, v)  ->
---    (l, env, IsNum, v)  ->
---    (l, env, IsBool, v) ->
+    (l, env, Print, v)  -> [compileImm env v]++
+                         [ IPush (Reg EAX),
+			   ICall (Builtin "print"),
+			   IAdd (Reg ESP) (Const 4)
+			 ]
+    (l, env, IsNum, v)  -> compileIs l env v 0 
 
+    (l, env, IsBool, v) -> compileIs l env v 1
+
+compileIs l env v mask =  (compileEnv env v) ++
+                         [ IAnd (Reg EAX) (HexConst 1),
+			   ICmp (Reg EAX) (Const mask),
+			   IJe lTrue,
+			   IMov (Reg EAX) (repr False),
+			   IJmp lExit,
+			   ILabel lTrue,
+			   IMov (Reg EAX) (repr True),
+			   ILabel lExit
+			 ]
+			 where 
+			   lTrue = BranchTrue i
+			   lExit = BranchDone i
+			   i = snd l
 
 --TODO | TBD: Implement code for `Prim2` with appropriate type checking
 {-
@@ -148,20 +167,72 @@ data Prim2
   deriving (Show)
 -}
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
-compilePrim2 l env op = error "TBD:compilePrim2"
-{- how to extract v1, v2?
-compilePrim2 l env op = case (l, env, op) of
-    (l, env, Plus)    ->
-    (l, env, Minus)   ->
-    (l, env, Times)   ->
-    (l, env, Less)    ->
-    (l, env, Greater) ->
-    (l, env, Equal)   ->
--}
+--compilePrim2 l env op = error "TBD:compilePrim2"
+compilePrim2 l env op v1 v2 = case (l, env, op, v1, v2) of
+    (l, env, Plus,  v1, v2)    -> assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                  [IMov (Reg EAX) (immArg env v1),
+				  IAdd (Reg EAX) (immArg env v2),
+                                  IJo (DynamicErr (ArithOverflow))
+			          ]
+    (l, env, Minus, v1, v2)    ->  assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                  [IMov (Reg EAX) (immArg env v1),
+				   ISub (Reg EAX) (immArg env v2),
+                                   IJo (DynamicErr (ArithOverflow))
+				  ]
+
+    (l, env, Times, v1, v2)    ->  assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                  [IMov (Reg EAX) (immArg env v1),
+                                  IMul (Reg EAX) (immArg env v2),
+				  IJo (DynamicErr (ArithOverflow)),
+				  ISar (Reg EAX) (Const 1)
+			          ]
+
+ 
+    (l, env, Less,    v1, v2) -> assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                 compileCmp l env IJl v1 v2
+    (l, env, Greater, v1, v2) -> assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                 compileCmp l env IJg v1 v2
+    (l, env, Equal, v1, v2)   -> assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
+                                 compileCmp l env IJe  v1 v2
+
+assertType::Ty->Int->Env->IExp->[Instruction]
+assertType ty i env v = [ IMov (Reg EAX) (immArg env v),
+                       IAnd (Reg EAX) (Const 1),
+		       ICmp (Reg EAX) (Const i),
+                       IJne (DynamicErr (TypeError ty))
+	             ]
+
+--compileCmp :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+compileCmp l env op v1 v2 =
+              [ IMov (Reg EAX) (immArg env v1),
+	        ICmp (Reg EAX) (immArg env v2),
+		op lTrue,
+		IMov (Reg EAX) (repr False),
+		IJmp lExit,
+		ILabel lTrue,
+		IMov (Reg EAX) (repr True),
+		ILabel lExit
+	      ]
+	      where
+	        lTrue = BranchTrue i
+		lExit = BranchDone i
+		i = snd l
 
 --TODO | TBD: Implement code for `If` with appropriate type checking
 compileIf :: Tag -> Env -> IExp -> AExp -> AExp -> [Instruction]
-compileIf l env v e1 e2 = error "TBD:compileIf"
+compileIf l env v e1 e2    =
+    assertType TBoolean 1 env v ++ [compileImm env v]
+    ++ [ICmp (Reg EAX) (repr False),
+        IJne (BranchTrue (snd l))  --l=label (fst l =sourcespan, snd l =tag)
+       ]
+    ++ compileEnv env e2
+    ++ [IJmp (BranchDone (snd l)),
+        ILabel (BranchTrue (snd l))
+       ]
+    ++ compileEnv env e1
+    ++ [ILabel (BranchDone (snd l))]
+
+
 
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
