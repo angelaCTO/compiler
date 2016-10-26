@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-16 22:38:02.663803 UTC
+2016-10-26 00:55:10.271626 UTC
 
 interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Asm 7103
-  interface hash: 0b740a7ff58c67255e7d87858f5587b3
-  ABI hash: 4eb7d7c2003bf6a29dd784e8d6d7f07f
+  interface hash: a151bbfccf2c6051a431ff4b7c8ef640
+  ABI hash: da50623211b6e82697aa30738bbc06c2
   export-list hash: 9e33783fa46f655b7a78c1321e0ed439
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: fcd74a0d83410922f8d238838ea898e5
@@ -118,6 +118,8 @@ import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   RegOffset 30e5a428e8927016d8716f8e5562921c
   Size 6fce060eef6725df244f44c2e346781d
   Sized 13ddad24aaedd2ec23e69a5c13d7218f
+  TBoolean 9047e26c12b3af89d9d42fb7e1c587af
+  TNumber 96210d2f2fa418de505795b6e910fd86
   TypeError 24a76d0cabedab8d3469ca1612c7a375
   WordPtr 73c20f13700962e05bcbc226a2a7a012
 import  -/  Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
@@ -186,18 +188,14 @@ e1b2d7a7e691935721174707b90375ae
                             ww3
                             ww9 } })
                          args))) -}
-fbcb126db34bd6b5b54341f48c1c14b5
+dd99a29f5b285b0f0e4d3cf0b68e3cfc
   asm :: [Language.Cobra.Types.Instruction] -> Language.Cobra.UX.Text
   {- Arity: 1, Strictness: <L,1*U>,
      Unfolding: (\ instrs :: [Language.Cobra.Types.Instruction] ->
                  GHC.Base.++
                    @ GHC.Types.Char
                    Language.Cobra.Asm.header
-                   (case GHC.Base.map
-                           @ Language.Cobra.Types.Instruction
-                           @ [GHC.Types.Char]
-                           Language.Cobra.Asm.instrAsm
-                           instrs of wild {
+                   (case Language.Cobra.Asm.asm_go instrs of wild {
                       [] -> Language.Cobra.Asm.asm1
                       : x xs1
                       -> GHC.Base.++
@@ -260,13 +258,12 @@ b3a3454a8f7e35d3db01a01c1c986735
 47e3a2ec4b9f5a9df1442b0a123f47a6
   asm9 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "extern print"#) -}
+52cfc16c05e01efc22261747cc098a65
+  asm_go :: [Language.Cobra.Types.Instruction] -> [[GHC.Types.Char]]
+  {- Arity: 1, Strictness: <S,1*U> -}
 3b9be1dc21c185f7406fcd1b62ee0d1a
   header :: Language.Cobra.UX.Text
   {- Unfolding: (Data.OldList.unlines Language.Cobra.Asm.asm2) -}
-209bc212b74f5d91ca94d45657eac6f5
-  instrAsm ::
-    Language.Cobra.Types.Instruction -> Language.Cobra.UX.Text
-  {- Arity: 1, Strictness: <S,1*U> -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

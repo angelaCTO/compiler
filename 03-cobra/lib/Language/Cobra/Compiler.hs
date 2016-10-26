@@ -182,9 +182,9 @@ compilePrim2 l env op v1 v2 = case (l, env, op, v1, v2) of
 
     (l, env, Times, v1, v2)    ->  assertType TNumber 0 env v1 ++ assertType TNumber 0 env v2 ++
                                   [IMov (Reg EAX) (immArg env v1),
+				  ISar (Reg EAX) (Const 1),
                                   IMul (Reg EAX) (immArg env v2),
-				  IJo (DynamicErr (ArithOverflow)),
-				  ISar (Reg EAX) (Const 1)
+				  IJo (DynamicErr (ArithOverflow))
 			          ]
 
  
