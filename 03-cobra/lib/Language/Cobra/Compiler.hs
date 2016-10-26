@@ -127,9 +127,13 @@ compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 --compilePrim1 l env op v = error "TBD:compilePrim1"
 compilePrim1 l env op v = case (l, env, op, v) of
     (l, env, Add1, v)   ->( assertType TNumber 0 env v )++[compileImm env v]++
-                         [ IAdd (Reg EAX) (Const 2) ]
+                         [ IAdd (Reg EAX) (Const 2), 
+                           IJo (DynamicErr (ArithOverflow))
+			 ]
     (l, env, Sub1, v)   -> (assertType TNumber 0 env v) ++[compileImm env v]++
-                         [ ISub (Reg EAX) (Const 2) ]
+                         [ ISub (Reg EAX) (Const 2),
+			   IJo (DynamicErr (ArithOverflow))
+			 ]
     (l, env, Print, v)  -> [compileImm env v]++
                          [ IPush (Reg EAX),
 			   ICall (Builtin "print"),
