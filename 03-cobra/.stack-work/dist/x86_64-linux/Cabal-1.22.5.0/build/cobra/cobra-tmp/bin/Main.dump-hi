@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-16 23:16:33.492338 UTC
+2016-10-26 00:55:13.526183 UTC
 
 interface main@main:Main 7103
-  interface hash: d30c1f579d3e74bda275ad7d8fe81c51
-  ABI hash: 16b53b75d4c4000b78aa0338ef0af420
+  interface hash: 8efdba7acf8ec273758bf3a1210f3aab
+  ABI hash: cb416a379bd0473512c991530214ffe9
   export-list hash: ed38952629eca6f6abb744f091caaf2b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 72a93830d1c68fabea06eced3408c2ff
@@ -73,7 +73,7 @@ import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.Environment ba6e36000c8274703cf7786fbe8d0f6c
 import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
-import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler 32a67a8dcff5b2bf98a32074823dbfe8
+import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler 090f70c4080edf1085a85fbac77c3ceb
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Types 6501190077841e1c46a81f384291fed3
 import  -/  cobra-0.1.0.0@cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.UX 4b4da32136992b8b2109201702a5467f
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
@@ -82,12 +82,12 @@ a7d05d4facb00e328cf0ff7798c98628
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, Language.Cobra.UX.Text #)
   {- Arity: 1, Strictness: <B,A>b, Inline: [0] -}
-e92f4681bdb08904d51f90a4990e5735
+b32a8b77fa8d17fbb08fe4747ab3129e
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-0bc699159550b309f2c84cc3bc84dc9d
+60563819e0e5f0e4d834c8b50fe82b20
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -105,7 +105,7 @@ d3c30abfac2aac18a8d78c5acb718db4
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 2, Strictness: <L,U><L,U>b -}
-a8668578e416ce1e7d6795b289abb34a
+22cc81419550d333915d0b0b0afb8375
   main3 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -124,7 +124,7 @@ a8668578e416ce1e7d6795b289abb34a
                         -> case Main.$wa ipv
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {} } } }) -}
-022f7f370ed71ac631da1780e436ec14
+1aa2df6ec0e07c50b87d75590daa0ae8
   main4 ::
     Language.Cobra.UX.Text
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -145,7 +145,7 @@ a8668578e416ce1e7d6795b289abb34a
                         GHC.Types.True
                         ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  System.Exit.exitSuccess1 @ () ipv4 } } }) -}
-3053a54ae4f880e953ca72e4607d9039
+c493ec1a18a4992804f825ad59610270
   main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

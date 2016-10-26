@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-10-16 23:16:32.116758 UTC
+2016-10-26 00:55:11.046232 UTC
 
 interface cobra_EKL0N6fpBAe9qPzAnX96E1:Language.Cobra.Compiler [orphan module] 7103
-  interface hash: dfc041eda5d7dc2ffa35980688dfe836
-  ABI hash: 32a67a8dcff5b2bf98a32074823dbfe8
+  interface hash: 781ad9575ee2fc315ebfed2db0cf8cab
+  ABI hash: 090f70c4080edf1085a85fbac77c3ceb
   export-list hash: 69e2521eebc6882ef1c6502321312240
   orphan hash: a928b99bb5708eb07548ded42bf614b0
   flag hash: 4551607f6216aab46db8345a91e09854
@@ -80,9 +80,9 @@ import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
-import  -/  Language.Cobra.Asm 4eb7d7c2003bf6a29dd784e8d6d7f07f
+import  -/  Language.Cobra.Asm da50623211b6e82697aa30738bbc06c2
   exports: 9e33783fa46f655b7a78c1321e0ed439
-  asm fbcb126db34bd6b5b54341f48c1c14b5
+  asm dd99a29f5b285b0f0e4d3cf0b68e3cfc
 import  -/  Language.Cobra.Normalizer eb954d8db7ce9f2e38642d5041730726
   exports: 29892b7325712c75406197c96105f482
   anormal 3f128caecac772a0a5c5a0b591ccbb12
@@ -94,38 +94,65 @@ import  -/  Language.Cobra.Types 6501190077841e1c46a81f384291fed3
   Add1 ee5fdde90c81ddcd53463c26d1099499
   AnfExpr c89cdf11c1ad8eca86776c71435df1fb
   Arg df60fd07719303c58112db65512abc38
+  ArithOverflow 43fc2fcaafc15de6fd5d5242bdfbfa04
   Bare c8b4fb45ff6a16459f96ee258a7382fb
   Bind e1d61bffe263d57b21d6ba031332921c
   Boolean 266748511551c0b9082f0d2ccaabebd7
+  BranchDone 6b5ac43e09001bd06019a832580560b2
+  BranchTrue 9fcd08f9d4251e34d0629f3058db8eb7
+  Builtin dc73f0627d5b36feb30e056f523be236
   Const 459527a939707c56a99248f53d0f0f3e
+  DynamicErr f45efc5fbef07095efbc1a719a7c0790
   EAX 564ef73b7f57b3b803212e2136b81441
   EBP 907efc676ff308d03d6b4e5df0bd7af3
   ESP 65ac0772f6431be63252275a906390bd
   Env 48495f57b9b9180fca8e44d25bb75678
+  Equal 1faaf2a4565685f6f77732094699afc1
+  Greater 22629ab705aab2023ca66720abf6320b
   HexConst 9ea99502b6f4960a49da97d068b7893a
   IAdd 9a486f698a9e8efa81d8321d3af16cd0
+  IAnd 878bb9579ae2e3be9f11eefba301f3db
+  ICall 3f343acb48e6ec8859bd550306fb79b1
+  ICmp 91177362c4cd5af3554f7d9328e3034c
+  IJe e277f7fe8ccd58569e71fc8d64c50a7a
+  IJg b9f32930f15ed7e8cda22dee3232221e
+  IJl ea7573b1fd68b90bc080efd342e28f03
+  IJmp ade1c822af6b3fe5c0e96dea26f8aa71
+  IJne feaa4925d8d84adc8ec10a656c769716
+  IJo 7308887d548465d33743694967c4fc22
+  ILabel 053905cbd0c2e408b2373171b1603249
   IMov ccee73fe6f18b592cbee7c2d2c2bbc46
+  IMul 68c8db6ea003a1423a0df31d370dc9ff
   IPop 214e7488de335c29d8f899266d966f73
   IPush 7fdd1bf1e151dc9dcabbef460df6470a
   IRet e580d928fbabf095d25f32b51db79f73
+  ISar ee0c81f53b3222a11a9cb9fea3e125a8
   ISub a422e42fdb9c86ae0a5fa6d374e94cf1
   Id ce60f5b319535afe9880f9ea90dd4e1a
   Id 1f30d5b0ee0d282456dd8be18fc6a85c
   If 4bd38bcb67fd571b0b93ba8a997f5ffd
   ImmExpr f83ee73138b97d7a9216c782ad0e9d05
   Instruction d566f29add184772008fea5f841bb09f
+  IsBool 05a14cf3872b8a5329bf9f6027d6505b
+  IsNum 369ac8b628b80529d6e7a850c9046618
+  Less 114fa3ef9fd81e4b5e44d884a802cfda
   Let 17a17cd3612157967de629e795faa26c
+  Minus 377d8ee401de74c8a916a18ba929bbb9
   Number 9f195f305d6975bae2b643d9e30a311c
+  Plus 76d5bb7ae66563d621b4f9314335d5a7
   Prim1 8b2251733c4ccb09a2fa56ff9ac4add8
   Prim1 ee98ec080c6ca4ab7545d041ecb0c1a2
   Prim2 93907089c2c9d0265d69b23f51acee40
   Prim2 38b83beb328447eeba225078a0a8e1b6
+  Print 229609a379487c499c4b5ee111e1a992
   Reg 7bf694a221957eeb64e4490ebebcf1d5
   RegOffset 30e5a428e8927016d8716f8e5562921c
   Sub1 a78de054ce88a5a6c3a4f6dc6946cc7a
   TBoolean 9047e26c12b3af89d9d42fb7e1c587af
   TNumber 96210d2f2fa418de505795b6e910fd86
+  Times 439da51249e4c4837be100499e843baf
   Ty ede2152307b53dacbd1528b013fbdb19
+  TypeError 24a76d0cabedab8d3469ca1612c7a375
   emptyEnv ed5853955bebd7eeb537aec20f92d6bf
   exprBinds 1c2dd4710bcaca254a4abd78fbc6ac72
   label fbf36340baaf7df3e7a61a2411e91cfe
@@ -254,6 +281,54 @@ aa9f2df9d426bccd6e9b02bb64b70f62
                          args
                          (GHC.Types.[] @ Text.Printf.UPrintf))
                       (GHC.Types.[] @ GHC.Types.Char))) -}
+2bbd2e822f9f6256a9c60ba8bacec12e
+  $ssourceSpan2 ::
+    Language.Cobra.Types.Expr
+      (Language.Cobra.UX.SourceSpan, GHC.Types.Int)
+    -> Language.Cobra.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ eta :: Language.Cobra.Types.Expr
+                            (Language.Cobra.UX.SourceSpan, GHC.Types.Int) ->
+                 case eta of wild {
+                   Language.Cobra.Types.Number ds1 l
+                   -> case l of wild1 { (,) x ds2 -> x }
+                   Language.Cobra.Types.Boolean ds1 l
+                   -> case l of wild1 { (,) x ds2 -> x }
+                   Language.Cobra.Types.Id ds1 l -> case l of wild1 { (,) x ds2 -> x }
+                   Language.Cobra.Types.Prim1 ds1 ds2 l
+                   -> case l of wild1 { (,) x ds4 -> x }
+                   Language.Cobra.Types.Prim2 ds1 ds2 ds3 l
+                   -> case l of wild1 { (,) x ds4 -> x }
+                   Language.Cobra.Types.Let ds1 ds2 ds3 l
+                   -> case l of wild1 { (,) x ds4 -> x }
+                   Language.Cobra.Types.If ds1 ds2 ds3 l
+                   -> case l of wild1 { (,) x ds4 -> x } }) -}
+448390179649eb7cafb3292175857ae2
+  $wcompile ::
+    Language.Cobra.Compiler.AExp
+    -> (# Language.Cobra.Types.Instruction,
+          [Language.Cobra.Types.Instruction] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ w :: Language.Cobra.Compiler.AExp ->
+                 (# Language.Cobra.Compiler.compile8,
+                    GHC.Types.:
+                      @ Language.Cobra.Types.Instruction
+                      Language.Cobra.Compiler.compile7
+                      (GHC.Types.:
+                         @ Language.Cobra.Types.Instruction
+                         (Language.Cobra.Types.ISub
+                            Language.Cobra.Compiler.compile6
+                            (Language.Cobra.Types.Const
+                               (case Language.Cobra.Compiler.countVars
+                                       @ Language.Cobra.Compiler.Tag
+                                       w of wild1 { GHC.Types.I# y ->
+                                GHC.Types.I# (GHC.Prim.*# 4 y) })))
+                         (GHC.Base.++
+                            @ Language.Cobra.Types.Instruction
+                            (Language.Cobra.Compiler.compileEnv
+                               Language.Cobra.Types.emptyEnv
+                               w)
+                            Language.Cobra.Compiler.funExit)) #)) -}
 07e8ad121ad9642090af022cc1711855
   type ABind = Language.Cobra.Types.Bind Language.Cobra.Compiler.Tag
 df801828979bd1f1df32f7a165284394
@@ -267,137 +342,92 @@ c0df6bf8c844e9b20b861387c9333e51
     repr :: a -> Language.Cobra.Types.Arg
 08ff54b62925c0bc31979765d921e3b7
   type Tag = (Language.Cobra.UX.SourceSpan, GHC.Types.Int)
-03846fe4e8478aa62ac4f5c0a1f1cf1b
+463d46b3569b68ea8509e6ca35d45cd4
   compile ::
     Language.Cobra.Compiler.AExp -> [Language.Cobra.Types.Instruction]
-  {- Arity: 1, Strictness: <L,1*U>,
-     Unfolding: (\ e :: Language.Cobra.Compiler.AExp ->
-                 let {
-                   n :: [Language.Cobra.Types.Instruction]
-                   = GHC.Base.++
-                       @ Language.Cobra.Types.Instruction
-                       (Language.Cobra.Compiler.compileEnv
-                          Language.Cobra.Types.emptyEnv
-                          e)
-                       Language.Cobra.Compiler.funExit
-                 } in
-                 letrec {
-                   go :: [Language.Cobra.Types.Instruction]
-                         -> [Language.Cobra.Types.Instruction]
-                     {- Arity: 1, Strictness: <S,1*U> -}
-                   = \ ds :: [Language.Cobra.Types.Instruction] ->
-                     case ds of wild {
-                       [] -> n
-                       : y ys
-                       -> GHC.Types.: @ Language.Cobra.Types.Instruction y (go ys) }
-                 } in
-                 go Language.Cobra.Compiler.compile1) -}
-16de964d1eefb8d5edfeccbd7e8b83ab
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.Cobra.Compiler.AExp ->
+                 case Language.Cobra.Compiler.$wcompile w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Language.Cobra.Types.Instruction ww1 ww2 }) -}
+141a668eede4589dcbe460c90378ea34
   compile1 :: [Language.Cobra.Types.Instruction]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ Language.Cobra.Types.Instruction
-                   Language.Cobra.Compiler.compile6
-                   Language.Cobra.Compiler.compile2) -}
-996718bee43415ed8649e3a6ca77e32e
-  compile10 :: Language.Cobra.Types.Instruction
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (Language.Cobra.Types.IMov
-                   Language.Cobra.Compiler.compile4
-                   Language.Cobra.Compiler.compile5) -}
-1b189196e099dbc0173f40cb6f67078e
-  compile2 :: [Language.Cobra.Types.Instruction]
-  {- HasNoCafRefs,
-     Unfolding: (GHC.Types.:
-                   @ Language.Cobra.Types.Instruction
-                   Language.Cobra.Compiler.compile3
-                   (GHC.Types.[] @ Language.Cobra.Types.Instruction)) -}
-b2b4d74173e050aacc7dcb6bd841cc58
-  compile3 :: Language.Cobra.Types.Instruction
-  {- HasNoCafRefs,
-     Unfolding: (Language.Cobra.Types.IMov
-                   Language.Cobra.Compiler.compile5
-                   Language.Cobra.Compiler.compile4) -}
-59af79f1365560d15943650f4e48071b
-  compile4 :: Language.Cobra.Types.Arg
-  {- HasNoCafRefs, Strictness: m3,
-     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.ESP) -}
-201cce9934f1c3ee9edd3ba1e242f935
-  compile5 :: Language.Cobra.Types.Arg
-  {- HasNoCafRefs, Strictness: m3,
-     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.EBP) -}
-5ab899274e77de8c2e9d769ad4c20f22
-  compile6 :: Language.Cobra.Types.Instruction
-  {- HasNoCafRefs,
-     Unfolding: (Language.Cobra.Types.IPush
-                   Language.Cobra.Compiler.compile5) -}
-8396ac0f6d3af81f929629c1f1061563
-  compile7 :: [Language.Cobra.Types.Instruction]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Language.Cobra.Types.Instruction
-                   Language.Cobra.Compiler.compile9
-                   Language.Cobra.Compiler.compile8) -}
-cf2a5419c84889563a40ebea90aa2055
-  compile8 :: [Language.Cobra.Types.Instruction]
+                   Language.Cobra.Compiler.compile3
+                   Language.Cobra.Compiler.compile2) -}
+2fcafcfe3eec820c00daafc4d84fe08c
+  compile2 :: [Language.Cobra.Types.Instruction]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Language.Cobra.Types.Instruction
                    Language.Cobra.Types.IRet
                    (GHC.Types.[] @ Language.Cobra.Types.Instruction)) -}
-551d8db827d04839cd87bd29ae49f27a
-  compile9 :: Language.Cobra.Types.Instruction
+369c3f7cc6bee788e4e64370b655bc7d
+  compile3 :: Language.Cobra.Types.Instruction
   {- HasNoCafRefs, Strictness: m13,
      Unfolding: (Language.Cobra.Types.IPop
-                   Language.Cobra.Compiler.compile5) -}
+                   Language.Cobra.Compiler.compile4) -}
+13c2541e04d5620e717058cad98b3842
+  compile4 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.EBP) -}
+0ccecba8c434bfc12781e8b877a18373
+  compile5 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Cobra.Types.IMov
+                   Language.Cobra.Compiler.compile6
+                   Language.Cobra.Compiler.compile4) -}
+ef835d11cc7482feeaf7ce0f26449849
+  compile6 :: Language.Cobra.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Cobra.Types.Reg Language.Cobra.Types.ESP) -}
+7216f12dfe13aed0028ddc13a4481686
+  compile7 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Cobra.Types.IMov
+                   Language.Cobra.Compiler.compile4
+                   Language.Cobra.Compiler.compile6) -}
+dcdb2161709cbb3d2df7c77cf50717a0
+  compile8 :: Language.Cobra.Types.Instruction
+  {- HasNoCafRefs, Strictness: m12,
+     Unfolding: (Language.Cobra.Types.IPush
+                   Language.Cobra.Compiler.compile4) -}
 99e91cd946b13ae0fa0301a762218836
   compileEnv ::
     Language.Cobra.Types.Env
     -> Language.Cobra.Compiler.AExp
     -> [Language.Cobra.Types.Instruction]
   {- Arity: 2, Strictness: <L,U(U,U)><S,1*U> -}
-603828bfcb5365e9863831bd8c6d541a
+844699ba8a2d2990aa6f425800e8d790
   compiler ::
     GHC.IO.FilePath -> Language.Cobra.UX.Text -> Language.Cobra.UX.Text
   {- Arity: 2, Strictness: <L,1*U><L,U>,
      Unfolding: (\ f :: GHC.IO.FilePath x :: Language.Cobra.UX.Text ->
                  Language.Cobra.Asm.asm
-                   (let {
-                      n :: [Language.Cobra.Types.Instruction]
-                      = case Language.Cobra.Normalizer.$wanf
-                               @ Language.Cobra.UX.SourceSpan
-                               Language.Cobra.Normalizer.anormal1
-                               (Language.Cobra.Parser.parse f x) of ww { (#,#) ww1 ww2 ->
-                        case Language.Cobra.Types.$wgo
-                               @ Language.Cobra.UX.SourceSpan
-                               @ Language.Cobra.UX.SourceSpan
-                               Language.Cobra.Types.$fShowBind1
-                               ww2 of ww4 { (#,#) ww5 ww6 ->
-                        GHC.Base.++
-                          @ Language.Cobra.Types.Instruction
-                          (Language.Cobra.Compiler.compileEnv
-                             Language.Cobra.Types.emptyEnv
-                             ww6)
-                          Language.Cobra.Compiler.funExit } }
-                    } in
-                    letrec {
-                      go :: [Language.Cobra.Types.Instruction]
-                            -> [Language.Cobra.Types.Instruction]
-                        {- Arity: 1, Strictness: <S,1*U> -}
-                      = \ ds :: [Language.Cobra.Types.Instruction] ->
-                        case ds of wild {
-                          [] -> n
-                          : y ys
-                          -> GHC.Types.: @ Language.Cobra.Types.Instruction y (go ys) }
-                    } in
-                    go Language.Cobra.Compiler.compile1)) -}
-d482a394adf0690c9ad953236a7280d2
+                   (case Language.Cobra.Compiler.$wcompile
+                           (case Language.Cobra.Normalizer.$wanf
+                                   @ Language.Cobra.UX.SourceSpan
+                                   Language.Cobra.Normalizer.anormal1
+                                   (Language.Cobra.Parser.parse f x) of ww { (#,#) ww1 ww2 ->
+                            case Language.Cobra.Types.$wgo
+                                   @ Language.Cobra.UX.SourceSpan
+                                   @ Language.Cobra.UX.SourceSpan
+                                   Language.Cobra.Types.$fShowBind1
+                                   ww2 of ww4 { (#,#) ww5 ww6 ->
+                            ww6 } }) of ww { (#,#) ww1 ww2 ->
+                    GHC.Types.: @ Language.Cobra.Types.Instruction ww1 ww2 })) -}
+ba8138b3acd403d0e2d7837e21604c60
+  countVars :: Language.Cobra.Types.AnfExpr a -> GHC.Types.Int
+  {- Arity: 1, Strictness: <S,1*U> -}
+91b1f2b1983b3d53d114dfb0081544d4
   funExit :: [Language.Cobra.Types.Instruction]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Language.Cobra.Types.Instruction
-                   Language.Cobra.Compiler.compile10
-                   Language.Cobra.Compiler.compile7) -}
+                   Language.Cobra.Compiler.compile5
+                   Language.Cobra.Compiler.compile1) -}
 instance Language.Cobra.UX.Located [(,)]
   = Language.Cobra.Compiler.$fLocated(,)
 instance Language.Cobra.Compiler.Repr [GHC.Types.Bool]
