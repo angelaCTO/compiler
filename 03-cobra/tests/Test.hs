@@ -119,8 +119,9 @@ yourTests sc =
     mkTest sc "multTest" File (Right "100"),
     mkTest sc "longAdd" File (Right "36"),
     mkTest sc "longSub" File (Right "36"),
-    mkTest sc "longAddMult" File (Right "0")
-
+    mkTest sc "longAddMult" File (Right "0"),
+    mkTest sc "sub1under" File overflowError,
+    mkTest sc "add1over" File overflowError
     --New Tests
   ]
 
