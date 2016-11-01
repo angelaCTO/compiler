@@ -13,11 +13,16 @@ type Binds a = [(Bind a, (AnfExpr a, a))]
 --------------------------------------------------------------------------------
 anormal :: Program a -> AnfProgram a
 --------------------------------------------------------------------------------
+{-
 anormal (Prog ds e) = Prog (anfDecl <$> ds) (anfExpr e)
   where
     anfDecl d       = d { fBody = anfExpr (fBody d) }
     anfExpr         = snd . anf 0
-
+-}
+anormal (Prog ds e) = Prog (map anfDecl ds) (anfExpr e)
+  where
+    anfDecl d       = d { fBody = anfExpr (fBody d) }
+    anfExpr         = snd . anf 0
 --------------------------------------------------------------------------------
 -- | `anf i e` takes as input a "start" counter `i` and expression `e` and
 --   returns an output `(i', e')` where

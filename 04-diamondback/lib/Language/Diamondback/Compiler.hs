@@ -55,10 +55,14 @@ annTail = snd
 --------------------------------------------------------------------------------
 compile :: APgm -> [Instruction]
 --------------------------------------------------------------------------------
-compile (Prog ds e) = error "TBD:compile"
+--compile (Prog ds e) = error "TBD:compile"
+compile (Prog ds e) = compileBody emptyEnv e <> concatMap compileDecl ds
 
 compileDecl :: ADcl -> [Instruction]
-compileDecl (Decl f xs e l) = error "TBD:compileDecl"
+--compileDecl (Decl f xs e l) = error "TBD:compileDecl"
+compileDecl (Decl f xs e l) = ILabel (DefFun (bindId f) : compileBody env e
+    where env = fromListEnv (zip (bindId <$> xs) [-2, -3..])
+
 
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env e = funInstrs (countVars e) (compileEnv env e)
@@ -68,19 +72,26 @@ compileBody env e = funInstrs (countVars e) (compileEnv env e)
 --   and restores the callees stack prior to return.
 
 funInstrs :: Int -> [Instruction] -> [Instruction]
-funInstrs n instrs
-  = funEntry n
- ++ instrs
- ++ funExit
- ++ [IRet]
+funInstrs n instrs = funEntry n ++ 
+                     instrs     ++ 
+                     funExit    ++ 
+                     [IRet]
 
 -- FILL: insert instructions for setting up stack for `n` local vars
 funEntry :: Int -> [Instruction]
-funEntry n = error "TBD:funEntry"
+--funEntry n = error "TBD:funEntry"
+funEntry n  = [ IPush (Reg EBP), 
+                IMov  (Reg EBP) (Reg ESP), 
+                ISub  (Reg ESP) (Const (4 * n)) 
+              ]
 
 -- FILL: clean up stack & labels for jumping to error
 funExit :: [Instruction]
-funExit = error "TBD:funExit"
+--funExit = error "TBD:funExit"
+funExit = [ IMov (Reg ESP) (Reg EBP), 
+            IPop (Reg EBP), 
+            IRet
+          ]
 
 --------------------------------------------------------------------------------
 -- | @countVars e@ returns the maximum stack-size needed to evaluate e,
@@ -95,7 +106,17 @@ countVars _              = 0
 --------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
 --------------------------------------------------------------------------------
-compileEnv env e = error "TBD:compileEnv"
+--compileEnv env e = error "TBD:compileEnv"
+compileEnv env v@Number  {} 		= [ compileImm env v ]
+compileEnv env v@Boolean {} 		= [ compileImm env v ]
+compileEnv env v@Id      {} 		= [ compileImm env v ]
+compileEnv env e@Let     {} 		= is ++ compileEnv env' body
+    where (env', is)     = compileBinds env [] binds
+          (binds, body)  = exprBinds e
+compileEnv env (Prim1 o v l)		= compilePrim1 l env o v
+compileEnv env (Prim2 o v1 v2 l)	= compilePrim2 l env o v1 v2
+compileEnv env (If v e1 e2 l)		= compileIf l env v e1 e2
+
 
 compileImm :: Env -> IExp -> Instruction
 compileImm env v = IMov (Reg EAX) (immArg env v)
