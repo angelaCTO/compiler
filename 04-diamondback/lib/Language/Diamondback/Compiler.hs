@@ -90,7 +90,6 @@ funExit :: [Instruction]
 --funExit = error "TBD:funExit"
 funExit = [ IMov (Reg ESP) (Reg EBP), 
             IPop (Reg EBP), 
-            IRet
           ]
 
 --------------------------------------------------------------------------------
