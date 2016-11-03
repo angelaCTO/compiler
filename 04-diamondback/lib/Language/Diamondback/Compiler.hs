@@ -24,8 +24,9 @@ import           Language.Diamondback.Asm        (asm)
 
 
 --------------------------------------------------------------------------------
-compiler :: FilePath -> Text -> Text
+-- | @compiler
 --------------------------------------------------------------------------------
+compiler :: FilePath -> Text -> Text
 compiler f = parse f >>> check >>> anormal >>> tag >>> tails >>> compile >>> asm
 
 
@@ -45,114 +46,238 @@ instance Located Ann where
 instance Located a => Located (Expr a) where
   sourceSpan = sourceSpan . getLabel
 
+
+-------------------------------------------------------------------------------
+-- | @annTag
+-------------------------------------------------------------------------------
 annTag :: Ann -> Int
 annTag = snd . fst
 
+
+-------------------------------------------------------------------------------
+-- | @annTail
+-------------------------------------------------------------------------------
 annTail :: Ann -> Bool
 annTail = snd
 
 
 --------------------------------------------------------------------------------
-compile :: APgm -> [Instruction]
+-- | @compile 								(TODO)
 --------------------------------------------------------------------------------
---compile (Prog ds e) = error "TBD:compile"
+compile :: APgm -> [Instruction]
 compile (Prog ds e) = compileBody emptyEnv e <> concatMap compileDecl ds
 
+
+-------------------------------------------------------------------------------
+-- | @compileDecl 							(TODO)
+-------------------------------------------------------------------------------
 compileDecl :: ADcl -> [Instruction]
---compileDecl (Decl f xs e l) = error "TBD:compileDecl"
 compileDecl (Decl f xs e l) = ILabel (DefFun (bindId f) : compileBody env e
     where env = fromListEnv (zip (bindId <$> xs) [-2, -3..])
 
 
+-------------------------------------------------------------------------------
+-- | @compileBody
+-------------------------------------------------------------------------------
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env e = funInstrs (countVars e) (compileEnv env e)
 
+
+-------------------------------------------------------------------------------
 -- | @funInstrs n body@ returns the instructions of `body` wrapped
 --   with code that sets up the stack (by allocating space for n local vars)
---   and restores the callees stack prior to return.
-
+--   and restores the callees stack prior to return.			(TODO)
+-------------------------------------------------------------------------------
 funInstrs :: Int -> [Instruction] -> [Instruction]
 funInstrs n instrs = funEntry n ++ 
                      instrs     ++ 
                      funExit    ++ 
                      [IRet]
 
--- FILL: insert instructions for setting up stack for `n` local vars
+
+-------------------------------------------------------------------------------
+-- | @funEntry sets up stack for `n` local vars 			(TODO)
+------------------------------------------------------------------------------
 funEntry :: Int -> [Instruction]
---funEntry n = error "TBD:funEntry"
 funEntry n  = [ IPush (Reg EBP), 
                 IMov  (Reg EBP) (Reg ESP), 
                 ISub  (Reg ESP) (Const (4 * n)) 
               ]
 
--- FILL: clean up stack & labels for jumping to error
+
+-------------------------------------------------------------------------------
+-- | @funExit cleans up stack & labels for jumping to error 		(TODO)
+-------------------------------------------------------------------------------
 funExit :: [Instruction]
---funExit = error "TBD:funExit"
 funExit = [ IMov (Reg ESP) (Reg EBP), 
             IPop (Reg EBP), 
           ]
 
+
 --------------------------------------------------------------------------------
 -- | @countVars e@ returns the maximum stack-size needed to evaluate e,
---   which is the maximum number of let-binds in scope at any point in e.
+--   which is the maximum number of let-binds in scope at any point in e (TODO)
 --------------------------------------------------------------------------------
 countVars :: AnfExpr a -> Int
---------------------------------------------------------------------------------
 countVars (Let _ e b _)  = max (countVars e) (1 + countVars b)
 countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+-- | @compileEnv 							(TODO)
+-------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
---------------------------------------------------------------------------------
---compileEnv env e = error "TBD:compileEnv"
 compileEnv env v@Number  {} 		= [ compileImm env v ]
 compileEnv env v@Boolean {} 		= [ compileImm env v ]
 compileEnv env v@Id      {} 		= [ compileImm env v ]
 compileEnv env e@Let     {} 		= is ++ compileEnv env' body
-    where (env', is)     = compileBinds env [] binds
-          (binds, body)  = exprBinds e
+    where  
+        (env', is)     = compileBinds env [] binds
+        (binds, body)  = exprBinds e
 compileEnv env (Prim1 o v l)		= compilePrim1 l env o v
 compileEnv env (Prim2 o v1 v2 l)	= compilePrim2 l env o v1 v2
 compileEnv env (If v e1 e2 l)		= compileIf l env v e1 e2
+compileEnv env (App f vs l)
+    | annTail l		= tailcall (DefFun f) (param env <$> vs) 
+    | otherwise		= call     (DefFun f) (param env <$> vs) 
 
 
+-------------------------------------------------------------------------------
+-- | @compileImm  							
+-------------------------------------------------------------------------------
 compileImm :: Env -> IExp -> Instruction
 compileImm env v = IMov (Reg EAX) (immArg env v)
 
+
+-------------------------------------------------------------------------------
+-- | @compileBinds 							
+-------------------------------------------------------------------------------
 compileBinds :: Env -> [Instruction] -> [(ABind, AExp)] -> (Env, [Instruction])
 compileBinds env is []     = (env, is)
 compileBinds env is (b:bs) = compileBinds env' (is <> is') bs
-  where
-    (env', is')            = compileBind env b
+    where
+        (env', is') = compileBind env b
 
+
+-------------------------------------------------------------------------------
+-- | @compileBind
+-------------------------------------------------------------------------------
 compileBind :: Env -> (ABind, AExp) -> (Env, [Instruction])
 compileBind env (x, e) = (env', is)
-  where
-    is                 = compileEnv env e
-                      <> [IMov (stackVar i) (Reg EAX)]
-    (i, env')          = pushEnv x env
+    where
+        is        = compileEnv env e <> [IMov (stackVar i) (Reg EAX)]
+        (i, env') = pushEnv x env
 
+{-
+-------------------------------------------------------------------------------
+-- | @compilePrim1
+-------------------------------------------------------------------------------
+compilePrim1 :: Ann -> Env -> Prim1 -> IExp -> [Instruction]  
+compilePrim1 _ env Sub1   v =   
+compilePrim1 _ env Add1   v =
+compilePrim1 l env IsNum  v = isType l env v TNumber
+compilePrim1 l env IsBool v = isType l env v TBoolean
+compilePrim1 _ env Print  v = call (Builtin "print") [param env v]
+
+
+-------------------------------------------------------------------------------
+-- | @compilePrim2
+-------------------------------------------------------------------------------
+compilePrim2 :: Ann -> Env -> Prim2 -> IExp -> [Instruction]
+compilePrim2 _ env Plus     = arith     env addOp
+compilePrim2 _ env Minus    = arith     env subOp
+compilePrim2 _ env Times    = arith     env mulOp
+comilePrim2  l env Less     = compare l env IJl  (Just TNumber)
+comilePrim2  l env Greater  = compare l env IJg  (Just TNumber)
+comilePrim2  l env Equal    = compare l env IJe  (Just TNumber)
+
+-}
+-------------------------------------------------------------------------------
+-- | @immArg
+-------------------------------------------------------------------------------
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
 immArg _   (Boolean b _) = repr b
 immArg env e@(Id x _)    = stackVar (fromMaybe err (lookupEnv x env))
-  where
-    err                  = abort (errUnboundVar (sourceSpan e) x)
+    where 
+        err = abort (errUnboundVar (sourceSpan e) x)
 immArg _   e             = panic msg (sourceSpan e)
-  where
-    msg                  = "Unexpected non-immExpr in immArg: " <> show (void e)
+    where
+         msg = "Unexpected non-immExpr in immArg: " <> show (void e)
 
+
+-------------------------------------------------------------------------------
+-- | @stackVar
+-------------------------------------------------------------------------------
 stackVar :: Int -> Arg
 stackVar i = RegOffset (-4 * i) EBP
 
+
+--------------------------------------------------------------------------------
+-- | @pushArgs 								(TODO)
+--------------------------------------------------------------------------------
+pushArgs :: [Arg] -> [Instruction]
+pushArgs args = [IPush a | a <- reverse args]
+
+
+-------------------------------------------------------------------------------
+-- | @popArgs 								(TODO)
+-------------------------------------------------------------------------------
+popArgs :: Int -> [Instruction]
+popArgs n = [IAdd (Reg ESP) (Const (4 * n))]
+
+
+-------------------------------------------------------------------------------
+-- | @call 								(TODO)
+-------------------------------------------------------------------------------
+call :: Label -> [Arg] -> [Instruction]
+call f args = [IPush a | a <- reverse args]     ++
+              [ICall f]                         ++
+              [IAdd (Reg ESP) (Const (4 * n))]
+                  where n = length args
+
+
+-------------------------------------------------------------------------------
+-- | @param
+-------------------------------------------------------------------------------
 param :: Env -> IExp -> Arg
 param env v = Sized DWordPtr (immArg env v)
+
+
+--------------------------------------------------------------------------------
+-- | @tailcall 								(TODO)
+--------------------------------------------------------------------------------
+tailcall :: Label -> [Arg] -> [Instruction]
+tailcall f args = copyArgs args ++ funExit
+
+
+-------------------------------------------------------------------------------
+-- | @compareCheck                                                 	(TODO)
+-------------------------------------------------------------------------------
+{- compareCheck env (Just t) v1 v2 = assertType env v1 t <> assertType env v2 t -}
+
+
+-------------------------------------------------------------------------------
+-- | @compareVal
+-------------------------------------------------------------------------------
+compareVal :: Ann -> Env -> COp -> IExp -> IExp -> [Instruction]
+compareVal l env j v1 v2 = IMov (Reg EAX) (immArg env v1)  :
+                           IMov (Reg EBX) (immArg ennv v2) :
+                           ICmp (Reg EAX) (Reg EBX)        :
+                           boolBranch l j
+
+
+-------------------------------------------------------------------------------
+-- | @assign
+-------------------------------------------------------------------------------
+assign :: (Repr a) => Reg -> a -> Instruction
+assign r v = IMov (Reg r) (repr v)
+
 
 --------------------------------------------------------------------------------
 -- | Representing Values
 --------------------------------------------------------------------------------
-
 class Repr a where
   repr :: a -> Arg
 
@@ -166,10 +291,18 @@ instance Repr Int where
 instance Repr Integer where
   repr n = Const (fromIntegral (shift n 1))
 
+
+-------------------------------------------------------------------------------
+-- | @typeTag
+-------------------------------------------------------------------------------
 typeTag :: Ty -> Arg
 typeTag TNumber   = HexConst 0x00000000
 typeTag TBoolean  = HexConst 0x7fffffff
 
+
+-------------------------------------------------------------------------------
+-- | @typeMask
+-------------------------------------------------------------------------------
 typeMask :: Ty -> Arg
 typeMask TNumber  = HexConst 0x00000001
 typeMask TBoolean = HexConst 0x7fffffff
