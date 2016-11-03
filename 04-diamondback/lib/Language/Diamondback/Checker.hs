@@ -19,37 +19,46 @@ import           Text.Printf        (printf)
 import           Language.Diamondback.Types
 import           Language.Diamondback.Utils
 
---------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+-- | @check
+-------------------------------------------------------------------------------
 check :: BareProgram -> BareProgram
---------------------------------------------------------------------------------
 check p = case wellFormed p of
             [] -> p
             es -> throw es
 
+
+-------------------------------------------------------------------------------
 -- | Map from function name to arity
+-------------------------------------------------------------------------------
 type FunEnv = Env
+ 
 
 --------------------------------------------------------------------------------
--- | `wellFormed p` returns the list of errors for a program `p`
+-- | @wellFormed p returns the list of errors for a program `p`
 --------------------------------------------------------------------------------
 wellFormed :: BareProgram -> [UserError]
---------------------------------------------------------------------------------
 {-
 wellFormed (Prog ds e) = duplicateFunErrors ds            ++
                          concatMap (wellFormedD fEnv) ds  ++
                          wellFormedE fEnv emptyEnv e
   where fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds]
 -}
-wellFormed (Prog ds e) = concat [wellFormedD fEnv d | d <- ds ] ++
+wellFormed (Prog ds e) = concat [ wellFormedD fEnv d | d <- ds ] ++
                                  wellFormedE fEnv emptyEnv e
-  where fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds]
+    where 
+        fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds ]
+
+
 --------------------------------------------------------------------------------
 -- | wellFormedD fEnv vEnv d` returns the list of errors for a func-decl d (TODO)
 --------------------------------------------------------------------------------
 wellFormedD :: FunEnv -> BareDecl -> [UserError]
---wellFormedD fEnv (Decl _ xs e _) = error "TBD:wellFormedD"
 wellFormedD fEnv (Decl _ xs e _) = wellFormedE fEnv vEnv e
-    where vEnv = addEnv xs emptyEnv 
+    where 
+        vEnv = addEnv xs emptyEnv 
+
 
 --------------------------------------------------------------------------------
 -- | wellFormedE vEnv e returns the list of errors for an expression `e` (TODO)
@@ -98,52 +107,68 @@ duplicateBindErrors :: Env -> BareBind -> [UserError]
 duplicateBindErrors vEnv x = 
     condError (memberEnv (bindId x) vEnv) (errDupBind x)
 
+
 duplicateParamErrors :: Env -> BareBind -> [UserError]
 duplicateParamErrors vEnv x = 
     condError (memberEnv (bindId x) vEnv) (errDupParam x) 
+
 
 largeNumberErrors :: Integer -> SourceSpan -> [UserError]
 largeNumberErrors n l =
     condError (maxInt < abs n) (errLargeNum l n)
 
+
 shadowVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 shadowVarErrors vEnv x l = 
     condError (memberEnv x vEnv) (errShadowVar l x)
+
 
 unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundVarErrors vEnv x l = 
     condError (not (memberEnv x vEnv)) (errUnboundVar l x)
 
+
 unboundFunErrors :: FunEnv -> Id -> SourceSpan -> [UserError]
 unboundFunErrors fEnv f l = 
     condError (not (memberEnv f fEnv)) (errUnboundFun l f) 
 
---callArityErrors ::
+
+callArityErrors :: FunEnv -> Id -> SourceSpan -> [UserError]
+callArityErrors fEnv f l = 
+    condError (not (envArity f fEnv)) (errCallArity)
+
+
 --------------------------------------------------------------------------------
 -- | Error Constructors: Use these functions to construct `UserError` values
 --   when the corresponding situation arises. e.g see how `errDupFun` is used.
 --------------------------------------------------------------------------------
-
 errDupFun :: (Located (Bind a)) => Decl a -> UserError
-errDupFun d = mkError (printf "duplicate function '%s'" (pprint f))    (sourceSpan f) where f = fName d
+errDupFun d = mkError (printf "duplicate function '%s'" (pprint f)) (sourceSpan f) where f = fName d
+
 
 errDupParam :: (Located (Bind a)) => Bind a -> UserError
 errDupParam x = mkError (printf "Duplicate parameter '%s'" (bindId x)) (sourceSpan x)
 
+
 errDupBind :: (Located (Bind a)) => Bind a -> UserError
-errDupBind x = mkError (printf "Shadow binding '%s'" (bindId x))      (sourceSpan x)
+errDupBind x = mkError (printf "Shadow binding '%s'" (bindId x)) (sourceSpan x)
+
 
 errLargeNum :: SourceSpan -> Integer -> UserError
 errLargeNum   l n = mkError (printf "Number '%d' is too large" n) l
 
+
 errUnboundVar :: SourceSpan -> Id -> UserError
 errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
+
 
 errShadowVar :: SourceSpan -> Id -> UserError
 errShadowVar l x = mkError (printf "Shadow variable '%s'" x) l
 
+
 errUnboundFun :: SourceSpan -> Id -> UserError
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
+
 
 errCallArity :: SourceSpan -> Id -> UserError
 errCallArity  l f = mkError (printf "Wrong arity of arguments at call of %s" f) l
