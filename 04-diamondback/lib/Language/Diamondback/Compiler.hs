@@ -192,7 +192,89 @@ comilePrim2  l env Less     = compare l env IJl  (Just TNumber)
 comilePrim2  l env Greater  = compare l env IJg  (Just TNumber)
 comilePrim2  l env Equal    = compare l env IJe  (Just TNumber)
 
+
+-------------------------------------------------------------------------------
+-- | @compilePrim1
+-------------------------------------------------------------------------------
+compilePrim1 :: Ann -> Env -> Prim1 -> IExp -> [Instruction]  
+compilePrim1 _ env Add1   v = arithU   env v addOp1     
+compilePrim1 _ env Sub1   v = arithU   env v subOp1     
+compilePrim1 l env IsNum  v = isType l env v TNumber
+compilePrim1 l env IsBool v = isType l env v TBoolean
+compilePrim1 _ env Print  v = call (Builtin "print") [param env v]
+
+
+-------------------------------------------------------------------------------
+-- | @compilePrim2
+-------------------------------------------------------------------------------
+compilePrim2 :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+compilePrim2 _ env Plus    v1 v2 = arithB       env addOp v1 v2
+compilePrim2 _ env Minus   v1 v2 = arithB       env subOp v1 v2
+compilePrim2 _ env Times   v1 v2 = arithB       env mulOp v1 v2
+comilePrim2  l env Less    v1 v2 = compareVal l env IJl  (Just TNumber) 
+comilePrim2  l env Greater v1 v2 = compareVal l env IJg  (Just TNumber)
+comilePrim2  l env Equal   v1 v2 = compareVal l env IJe  (Just TNumber)
+
 -}
+
+-------------------------------------------------------------------------------
+-- | @compilePrim1
+-------------------------------------------------------------------------------
+compilePrim1 :: Ann -> Env -> Prim1 -> IExp -> [Instruction]  
+compilePrim1 _ env Add1   v = (assertType TNumber 0 env v )         ++
+                              [compileImm env v]                    ++
+                              [IAdd (Reg EAX) (Const 2), 
+                               IJo (DynamicErr (ArithOverflow))]
+compilePrim1 _ env Sub1   v = (assertType TNumber 0 env v)          ++
+                              [compileImm env v]                    ++
+                              [ISub (Reg EAX) (Const 2),
+			                         IJo (DynamicErr (ArithOverflow))]
+compilePrim1 l env IsNum  v = isType l env v TNumber
+compilePrim1 l env IsBool v = isType l env v TBoolean
+compilePrim1 _ env Print  v = call (Builtin "print") [param env v]
+
+------------------------------------------------------------------------------
+-- | @isType
+------------------------------------------------------------------------------
+isType :: Ann -> Env -> IExp -> -> Ty -> [Instruction]
+isType l env v TNumber  = TODO
+isType l env v TBoolean = TODO
+
+-------------------------------------------------------------------------------
+-- | @compilePrim2
+-------------------------------------------------------------------------------
+compilePrim2 :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+compilePrim2 _ env Plus    v1 v2 = (assertType TNumber 0 env v1)      ++ 
+                                   (assertType TNumber 0 env v2)      ++
+                                   [IMov (Reg EAX) (immArg env v1),
+				                            IAdd (Reg EAX) (immArg env v2),
+                                    IJo (DynamicErr (ArithOverflow))]
+compilePrim2 _ env Minus   v1 v2 = (assertType TNumber 0 env v1)      ++ 
+                                   (assertType TNumber 0 env v2)      ++
+                                   [IMov (Reg EAX) (immArg env v1),
+				                            ISub (Reg EAX) (immArg env v2),
+                                    IJo (DynamicErr (ArithOverflow))]
+compilePrim2 _ env Times   v1 v2 = (assertType TNumber 0 env v1)      ++ 
+                                   (assertType TNumber 0 env v2)      ++
+                                   [IMov (Reg EAX) (immArg env v1),
+				                            ISar (Reg EAX) (Const 1),
+                                    IMul (Reg EAX) (immArg env v2),
+				                            IJo (DynamicErr (ArithOverflow))]
+comilePrim2  l env Less    v1 v2 = compareVal l env IJl  (Just TNumber) 
+comilePrim2  l env Greater v1 v2 = compareVal l env IJg  (Just TNumber)
+comilePrim2  l env Equal   v1 v2 = compareVal l env IJe  (Just TNumber)
+
+
+-------------------------------------------------------------------------------
+-- | @compareVal                                                 (TODO - CHECK)
+-------------------------------------------------------------------------------
+compareVal :: Ann -> Env -> COp -> IExp -> IExp -> [Instruction]
+compareVal l env j v1 v2 = IMov (Reg EAX) (immArg env v1)  :
+                           IMov (Reg EBX) (immArg env v2)  :
+                           ICmp (Reg EAX) (Reg EBX)        :
+                           boolBranch l j
+                           
+                           
 -------------------------------------------------------------------------------
 -- | @immArg
 -------------------------------------------------------------------------------
@@ -255,16 +337,6 @@ tailcall f args = copyArgs args ++ funExit
 -- | @compareCheck                                                 (TODO -CHECK)
 -------------------------------------------------------------------------------
 {- compareCheck env (Just t) v1 v2 = assertType env v1 t <> assertType env v2 t -}
-
-
--------------------------------------------------------------------------------
--- | @compareVal
--------------------------------------------------------------------------------
-compareVal :: Ann -> Env -> COp -> IExp -> IExp -> [Instruction]
-compareVal l env j v1 v2 = IMov (Reg EAX) (immArg env v1)  :
-                           IMov (Reg EBX) (immArg ennv v2) :
-                           ICmp (Reg EAX) (Reg EBX)        :
-                           boolBranch l j
 
 
 -------------------------------------------------------------------------------
