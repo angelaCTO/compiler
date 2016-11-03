@@ -62,14 +62,14 @@ annTail = snd
 
 
 --------------------------------------------------------------------------------
--- | @compile 								(TODO)
+-- | @compile 							
 --------------------------------------------------------------------------------
 compile :: APgm -> [Instruction]
 compile (Prog ds e) = compileBody emptyEnv e <> concatMap compileDecl ds
 
 
 -------------------------------------------------------------------------------
--- | @compileDecl 							(TODO)
+-- | @compileDecl 							
 -------------------------------------------------------------------------------
 compileDecl :: ADcl -> [Instruction]
 compileDecl (Decl f xs e l) = ILabel (DefFun (bindId f) : compileBody env e
@@ -86,7 +86,7 @@ compileBody env e = funInstrs (countVars e) (compileEnv env e)
 -------------------------------------------------------------------------------
 -- | @funInstrs n body@ returns the instructions of `body` wrapped
 --   with code that sets up the stack (by allocating space for n local vars)
---   and restores the callees stack prior to return.			(TODO)
+--   and restores the callees stack prior to return.		
 -------------------------------------------------------------------------------
 funInstrs :: Int -> [Instruction] -> [Instruction]
 funInstrs n instrs = funEntry n ++ 
@@ -96,7 +96,7 @@ funInstrs n instrs = funEntry n ++
 
 
 -------------------------------------------------------------------------------
--- | @funEntry sets up stack for `n` local vars 			(TODO)
+-- | @funEntry sets up stack for `n` local vars 			
 ------------------------------------------------------------------------------
 funEntry :: Int -> [Instruction]
 funEntry n  = [ IPush (Reg EBP), 
@@ -106,7 +106,7 @@ funEntry n  = [ IPush (Reg EBP),
 
 
 -------------------------------------------------------------------------------
--- | @funExit cleans up stack & labels for jumping to error 		(TODO)
+-- | @funExit cleans up stack & labels for jumping to error 		
 -------------------------------------------------------------------------------
 funExit :: [Instruction]
 funExit = [ IMov (Reg ESP) (Reg EBP), 
@@ -116,7 +116,7 @@ funExit = [ IMov (Reg ESP) (Reg EBP),
 
 --------------------------------------------------------------------------------
 -- | @countVars e@ returns the maximum stack-size needed to evaluate e,
---   which is the maximum number of let-binds in scope at any point in e (TODO)
+--   which is the maximum number of let-binds in scope at any point in e 
 --------------------------------------------------------------------------------
 countVars :: AnfExpr a -> Int
 countVars (Let _ e b _)  = max (countVars e) (1 + countVars b)
@@ -125,7 +125,7 @@ countVars _              = 0
 
 
 -------------------------------------------------------------------------------
--- | @compileEnv 							(TODO)
+-- | @compileEnv 						(TODO - CHECK)
 -------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
 compileEnv env v@Number  {} 		= [ compileImm env v ]
@@ -213,27 +213,28 @@ stackVar i = RegOffset (-4 * i) EBP
 
 
 --------------------------------------------------------------------------------
--- | @pushArgs 								(TODO)
+-- | @pushArgs 								
 --------------------------------------------------------------------------------
 pushArgs :: [Arg] -> [Instruction]
 pushArgs args = [IPush a | a <- reverse args]
 
 
 -------------------------------------------------------------------------------
--- | @popArgs 								(TODO)
+-- | @popArgs 								
 -------------------------------------------------------------------------------
 popArgs :: Int -> [Instruction]
 popArgs n = [IAdd (Reg ESP) (Const (4 * n))]
 
 
 -------------------------------------------------------------------------------
--- | @call 								(TODO)
+-- | @call 								
 -------------------------------------------------------------------------------
 call :: Label -> [Arg] -> [Instruction]
 call f args = [IPush a | a <- reverse args]     ++
               [ICall f]                         ++
               [IAdd (Reg ESP) (Const (4 * n))]
-                  where n = length args
+    where 
+        n = length args
 
 
 -------------------------------------------------------------------------------
@@ -244,14 +245,14 @@ param env v = Sized DWordPtr (immArg env v)
 
 
 --------------------------------------------------------------------------------
--- | @tailcall 								(TODO)
+-- | @tailcall 							(TODO - CHECK)
 --------------------------------------------------------------------------------
 tailcall :: Label -> [Arg] -> [Instruction]
 tailcall f args = copyArgs args ++ funExit
 
 
 -------------------------------------------------------------------------------
--- | @compareCheck                                                 	(TODO)
+-- | @compareCheck                                                 (TODO -CHECK)
 -------------------------------------------------------------------------------
 {- compareCheck env (Just t) v1 v2 = assertType env v1 t <> assertType env v2 t -}
 
