@@ -169,7 +169,7 @@ compileBind env (x, e) = (env', is)
         is        = compileEnv env e <> [IMov (stackVar i) (Reg EAX)]
         (i, env') = pushEnv x env
 
-{-
+{- ? 
 -------------------------------------------------------------------------------
 -- | @compilePrim1
 -------------------------------------------------------------------------------
@@ -197,14 +197,12 @@ comilePrim2  l env Equal    = compare l env IJe  (Just TNumber)
 -- | @immArg
 -------------------------------------------------------------------------------
 immArg :: Env -> IExp -> Arg
-immArg _   (Number n _)  = repr n
-immArg _   (Boolean b _) = repr b
-immArg env e@(Id x _)    = stackVar (fromMaybe err (lookupEnv x env))
-    where 
-        err = abort (errUnboundVar (sourceSpan e) x)
-immArg _   e             = panic msg (sourceSpan e)
-    where
-         msg = "Unexpected non-immExpr in immArg: " <> show (void e)
+immArg _      (Number  n _)  = repr n
+immArg _      (Boolean b _)  = repr b
+immArg env  e@(Id      x _)  = stackVar (fromMaybe err (lookupEnv x env))
+    where err = abort (errUnboundVar (sourceSpan e) x)
+immArg _    e 	             = panic msg (sourceSpan e)
+    where msg = "Unexpected non-immExpr in immArg: " <> show (void e)
 
 
 -------------------------------------------------------------------------------

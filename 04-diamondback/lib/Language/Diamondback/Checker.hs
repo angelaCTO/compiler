@@ -65,9 +65,9 @@ wellFormedE fEnv env e = go env e
 	go env' (Prim2 _  e1 e2 _)	= gos env' [e1, e2]
 	go env' (If    e1 e2 e3 _)	= gos env' [e1, e2, e3]
 	go env' (Let   x  e1 e2 _)	= shadowVarErrors env' (bindId x) l ++
-                                          go env' e1		           ++
+                                          go env' e1		            ++
 					  go (addEnv x env') e2
-	go env' (App   f  es    l)	= unboundFunErrors fEnv f l        ++
+	go env' (App   f  es    l)	= unboundFunErrors fEnv f l         ++
 					  go env' es
 
 
