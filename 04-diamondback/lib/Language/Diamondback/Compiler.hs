@@ -255,16 +255,6 @@ assertType ty i env v = [IMov (Reg EAX) (immArg env v),
 
 
 -------------------------------------------------------------------------------
--- | @compareVal                                                 (TODO - CHECK)
--------------------------------------------------------------------------------
-compareVal :: Ann -> Env -> COp -> IExp -> IExp -> [Instruction]
-compareVal l env j v1 v2 = IMov (Reg EAX) (immArg env v1)  :
-                           IMov (Reg EBX) (immArg env v2)  :
-                           ICmp (Reg EAX) (Reg EBX)        :
-                           boolBranch l j
-
-
--------------------------------------------------------------------------------
 -- | @compileImm  							
 -------------------------------------------------------------------------------
 compileImm :: Env -> IExp -> Instruction
