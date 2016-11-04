@@ -147,16 +147,16 @@ compileEnv env (App f vs l)
 -- | @compilePrim1
 -------------------------------------------------------------------------------
 compilePrim1 :: Ann -> Env -> Prim1 -> IExp -> [Instruction]  
-compilePrim1 _ env Add1   v = (assertType TNumber 0 env v )         ++
-                              [compileImm env v]                    ++
+compilePrim1 _ env Add1   v = (assertType TNumber 0 env v )         	++
+                              [compileImm env v]                    	++
                               [IAdd (Reg EAX) (Const 2), 
                                IJo (DynamicErr (ArithOverflow))]
-compilePrim1 _ env Sub1   v = (assertType TNumber 0 env v)          ++
-                              [compileImm env v]                    ++
+compilePrim1 _ env Sub1   v = (assertType TNumber 0 env v)     		++
+                              [compileImm env v]                    	++
                               [ISub (Reg EAX) (Const 2),
-			                         IJo (DynamicErr (ArithOverflow))]
-compilePrim1 l env IsNum  v = isType l env v TNumber
-compilePrim1 l env IsBool v = isType l env v TBoolean
+                               IJo (DynamicErr (ArithOverflow))]
+compilePrim1 l env IsNum  v = compileIs l env v 0 
+compilePrim1 l env IsBool v = compileIs l env v 1
 compilePrim1 _ env Print  v = call (Builtin "print") [param env v]
 
 
@@ -164,39 +164,94 @@ compilePrim1 _ env Print  v = call (Builtin "print") [param env v]
 -- | @compilePrim2
 -------------------------------------------------------------------------------
 compilePrim2 :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
-compilePrim2 _ env Plus    v1 v2 = (assertType TNumber 0 env v1)      ++ 
-                                   (assertType TNumber 0 env v2)      ++
+compilePrim2 _ env Plus    v1 v2 = (assertType TNumber 0 env v1)      	++ 
+                                   (assertType TNumber 0 env v2)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    IAdd (Reg EAX) (immArg env v2),
                                     IJo (DynamicErr (ArithOverflow))]
-compilePrim2 _ env Minus   v1 v2 = (assertType TNumber 0 env v1)      ++ 
-                                   (assertType TNumber 0 env v2)      ++
+compilePrim2 _ env Minus   v1 v2 = (assertType TNumber 0 env v1)      	++ 
+                                   (assertType TNumber 0 env v2)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    ISub (Reg EAX) (immArg env v2),
                                     IJo (DynamicErr (ArithOverflow))]
-compilePrim2 _ env Times   v1 v2 = (assertType TNumber 0 env v1)      ++ 
-                                   (assertType TNumber 0 env v2)      ++
+compilePrim2 _ env Times   v1 v2 = (assertType TNumber 0 env v1)      	++ 
+                                   (assertType TNumber 0 env v2)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    ISar (Reg EAX) (Const 1),
                                     IMul (Reg EAX) (immArg env v2),
 				    IJo (DynamicErr (ArithOverflow))]
-comilePrim2  l env Less    v1 v2 = compareVal l env IJl  (Just TNumber) 
-comilePrim2  l env Greater v1 v2 = compareVal l env IJg  (Just TNumber)
-comilePrim2  l env Equal   v1 v2 = compareVal l env IJe  (Just TNumber)
+comilePrim2  l env Less    v1 v2 = (assertType TNumber 0 env v1)       	++ 
+                                   (assertType TNumber 0 env v2)	++
+                                   compileCmp l env IJl v1 v2
+comilePrim2  l env Greater v1 v2 = (assertType TNumber 0 env v1) 	++ 
+                                   (assertType TNumber 0 env v2) 	++
+                                    compileCmp l env IJg v1 v2
+comilePrim2  l env Equal   v1 v2 = (assertType TNumber 0 env v1) 	++ 
+                                   (assertType TNumber 0 env v2) 	++
+                                   compileCmp l env IJe  v1 v2
 
 
------------------------------------------------------------------------------
--- | @compileIf							       (TODO)
------------------------------------------------------------------------------
-
+-------------------------------------------------------------------------------
+-- | @compileCmp
+-------------------------------------------------------------------------------
+compileCmp :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+compileCmp l env op v1 v2 =
+              [IMov (Reg EAX) (immArg env v1),
+	       ICmp (Reg EAX) (immArg env v2),
+	       op lTrue,
+	       IMov (Reg EAX) (repr False),
+	       IJmp lExit,
+	       ILabel lTrue,
+	       IMov (Reg EAX) (repr True),
+	       ILabel lExit]
+	  where
+	        lTrue = BranchTrue i
+		lExit = BranchDone i
+		i = snd l
 
 
 ------------------------------------------------------------------------------
--- | @isType                                                           (TODO)
+-- | @compileIf
 ------------------------------------------------------------------------------
-isType :: Ann -> Env -> IExp -> -> Ty -> [Instruction]
-isType l env v TNumber  = TODO
-isType l env v TBoolean = TODO
+compileIf :: Ann -> Env -> IExp -> AExp -> AExp -> [Instruction]
+compileIf l env v e1 e2 = (assertType TBoolean 1 env v) ++ 
+                          [compileImm env v]		++
+			  [ICmp (Reg EAX) (repr False),
+                           IJne (BranchTrue (snd l))]	++ --l=label (fst l =sourcespan, snd l =tag)
+			  (compileEnv env e2)		++ 
+			  [IJmp (BranchDone (snd l)),
+                           ILabel (BranchTrue (snd l))]	++ 
+			  (compileEnv env e1)		++ 
+			  [ILabel (BranchDone (snd l))]
+
+
+------------------------------------------------------------------------------
+-- | @compileIs
+------------------------------------------------------------------------------
+compileIs :: Ann -> Env -> IExp -> Int -> [Instruction]
+compileIs l env v mask =  (compileEnv env v) ++
+                          [IAnd (Reg EAX) (HexConst 1),
+			   ICmp (Reg EAX) (Const mask),
+			   IJe lTrue,
+			   IMov (Reg EAX) (repr False),
+			   IJmp lExit,
+			   ILabel lTrue,
+			   IMov (Reg EAX) (repr True),
+			   ILabel lExit]
+                      where 
+			   lTrue = BranchTrue i
+			   lExit = BranchDone i
+			   i = snd l
+
+
+------------------------------------------------------------------------------
+-- | @assertType
+------------------------------------------------------------------------------
+assertType::Ty->Int->Env->IExp->[Instruction]
+assertType ty i env v = [IMov (Reg EAX) (immArg env v),
+                         IAnd (Reg EAX) (Const 1),
+		         ICmp (Reg EAX) (Const i),
+                         IJne (DynamicErr (TypeError ty))]
 
 
 -------------------------------------------------------------------------------
@@ -214,7 +269,6 @@ compareVal l env j v1 v2 = IMov (Reg EAX) (immArg env v1)  :
 -------------------------------------------------------------------------------
 compileImm :: Env -> IExp -> Instruction
 compileImm env v = IMov (Reg EAX) (immArg env v)
-
 
 
 -------------------------------------------------------------------------------
@@ -244,9 +298,11 @@ immArg :: Env -> IExp -> Arg
 immArg _      (Number  n _)  = repr n
 immArg _      (Boolean b _)  = repr b
 immArg env  e@(Id      x _)  = stackVar (fromMaybe err (lookupEnv x env))
-    where err = abort (errUnboundVar (sourceSpan e) x)
+    where 
+        err = abort (errUnboundVar (sourceSpan e) x)
 immArg _    e 	             = panic msg (sourceSpan e)
-    where msg = "Unexpected non-immExpr in immArg: " <> show (void e)
+    where
+        msg = "Unexpected non-immExpr in immArg: " <> show (void e)
 
 
 -------------------------------------------------------------------------------
@@ -255,19 +311,6 @@ immArg _    e 	             = panic msg (sourceSpan e)
 stackVar :: Int -> Arg
 stackVar i = RegOffset (-4 * i) EBP
 
-
---------------------------------------------------------------------------------
--- | @pushArgs 								
---------------------------------------------------------------------------------
-pushArgs :: [Arg] -> [Instruction]
-pushArgs args = [IPush a | a <- reverse args]
-
-
--------------------------------------------------------------------------------
--- | @popArgs 								
--------------------------------------------------------------------------------
-popArgs :: Int -> [Instruction]
-popArgs n = [IAdd (Reg ESP) (Const (4 * n))]
 
 
 -------------------------------------------------------------------------------
@@ -293,12 +336,6 @@ param env v = Sized DWordPtr (immArg env v)
 --------------------------------------------------------------------------------
 tailcall :: Label -> [Arg] -> [Instruction]
 tailcall f args = copyArgs args ++ funExit
-
-
--------------------------------------------------------------------------------
--- | @compareCheck                                                 (TODO -CHECK)
--------------------------------------------------------------------------------
-{- compareCheck env (Just t) v1 v2 = assertType env v1 t <> assertType env v2 t -}
 
 
 -------------------------------------------------------------------------------
