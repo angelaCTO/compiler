@@ -72,8 +72,9 @@ compile (Prog ds e) = compileBody emptyEnv e <> concatMap compileDecl ds
 -- | @compileDecl 							
 -------------------------------------------------------------------------------
 compileDecl :: ADcl -> [Instruction]
-compileDecl (Decl f xs e l) = ILabel (DefFun (bindId f) : compileBody env e
-    where env = fromListEnv (zip (bindId <$> xs) [-2, -3..])
+compileDecl (Decl f xs e l) = ILabel (DefFun (bindId f)) : compileBody env e
+    where 
+      env = fromListEnv (zip (bindId <$> xs) [-2, -3..])
 
 
 -------------------------------------------------------------------------------
@@ -110,7 +111,7 @@ funEntry n  = [ IPush (Reg EBP),
 -------------------------------------------------------------------------------
 funExit :: [Instruction]
 funExit = [ IMov (Reg ESP) (Reg EBP), 
-            IPop (Reg EBP), 
+            IPop (Reg EBP) 
           ]
 
 
@@ -169,32 +170,42 @@ compilePrim2 _ env Plus    v1 v2 = (assertType TNumber 0 env v1)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    IAdd (Reg EAX) (immArg env v2),
                                     IJo (DynamicErr (ArithOverflow))]
+
 compilePrim2 _ env Minus   v1 v2 = (assertType TNumber 0 env v1)      	++ 
                                    (assertType TNumber 0 env v2)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    ISub (Reg EAX) (immArg env v2),
                                     IJo (DynamicErr (ArithOverflow))]
+
 compilePrim2 _ env Times   v1 v2 = (assertType TNumber 0 env v1)      	++ 
                                    (assertType TNumber 0 env v2)      	++
                                    [IMov (Reg EAX) (immArg env v1),
 				    ISar (Reg EAX) (Const 1),
                                     IMul (Reg EAX) (immArg env v2),
 				    IJo (DynamicErr (ArithOverflow))]
-comilePrim2  l env Less    v1 v2 = (assertType TNumber 0 env v1)       	++ 
+
+compilePrim2  l env Less    v1 v2 = (assertType TNumber 0 env v1)       	++ 
                                    (assertType TNumber 0 env v2)	++
-                                   compileCmp l env IJl v1 v2
-comilePrim2  l env Greater v1 v2 = (assertType TNumber 0 env v1) 	++ 
-                                   (assertType TNumber 0 env v2) 	++
-                                    compileCmp l env IJg v1 v2
-comilePrim2  l env Equal   v1 v2 = (assertType TNumber 0 env v1) 	++ 
-                                   (assertType TNumber 0 env v2) 	++
-                                   compileCmp l env IJe  v1 v2
+                                   compileCmp a env IJl v1 v2
 
+			  where
+			  	(a, _) = l
+compilePrim2  l env Greater v1 v2 = (assertType TNumber 0 env v1) 	++ 
+                                   (assertType TNumber 0 env v2) 	++
+                                    compileCmp a env IJg v1 v2
 
+			  where
+			  	(a, _) = l
+compilePrim2  l env Equal   v1 v2 = (assertType TNumber 0 env v1) 	++ 
+                                   (assertType TNumber 0 env v2) 	++
+                                   compileCmp a env IJe  v1 v2
+			  where
+			  	(a, _) = l
+				(_, f) = a
 -------------------------------------------------------------------------------
 -- | @compileCmp
 -------------------------------------------------------------------------------
-compileCmp :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
+--compileCmp :: Ann -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 compileCmp l env op v1 v2 =
               [IMov (Reg EAX) (immArg env v1),
 	       ICmp (Reg EAX) (immArg env v2),
@@ -217,12 +228,16 @@ compileIf :: Ann -> Env -> IExp -> AExp -> AExp -> [Instruction]
 compileIf l env v e1 e2 = (assertType TBoolean 1 env v) ++ 
                           [compileImm env v]		++
 			  [ICmp (Reg EAX) (repr False),
-                           IJne (BranchTrue (snd l))]	++ --l=label (fst l =sourcespan, snd l =tag)
+                           IJne (BranchTrue (f))]	++ --l=label (fst l =sourcespan, snd l =tag)
 			  (compileEnv env e2)		++ 
-			  [IJmp (BranchDone (snd l)),
-                           ILabel (BranchTrue (snd l))]	++ 
+			  [IJmp (BranchDone (f)),
+                           ILabel (BranchTrue (f))]	++ 
 			  (compileEnv env e1)		++ 
-			  [ILabel (BranchDone (snd l))]
+			  [ILabel (BranchDone (f))]
+
+			  where
+			  	(a, _) = l
+				(_, f) = a
 
 
 ------------------------------------------------------------------------------
@@ -241,7 +256,8 @@ compileIs l env v mask =  (compileEnv env v) ++
                       where 
 			   lTrue = BranchTrue i
 			   lExit = BranchDone i
-			   i = snd l
+			   l' = fst l
+			   i = snd l'
 
 
 ------------------------------------------------------------------------------
@@ -325,8 +341,7 @@ param env v = Sized DWordPtr (immArg env v)
 -- | @tailcall 							(TODO - CHECK)
 --------------------------------------------------------------------------------
 tailcall :: Label -> [Arg] -> [Instruction]
-tailcall f args = copyArgs args ++ funExit
-
+tailcall f args =[] -- copyArgs args ++ funExit
 
 -------------------------------------------------------------------------------
 -- | @assign

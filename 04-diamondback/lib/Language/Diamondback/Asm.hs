@@ -27,7 +27,12 @@ header = unlines
   ]
 
 postlude :: [Instruction]
-postlude = concat
+postlude = 
+	[ILabel (DynamicErr (TypeError TNumber)), IPush (Const 0), ICall (Builtin "error"), IRet  ]++
+	[ILabel (DynamicErr (TypeError TBoolean)), IPush (Const 1), ICall (Builtin "error"), IRet  ]++
+	[ILabel (DynamicErr (ArithOverflow)), IPush (Const 2), ICall (Builtin "error"), IRet  ] 
+{-
+concat
   [ dynError (TypeError TNumber)
   , dynError (TypeError TBoolean)
   , dynError ArithOverflow
@@ -35,7 +40,7 @@ postlude = concat
 
 dynError   :: DynError -> [Instruction]
 dynError e = error "TBD:dynError"
-
+-}
 --------------------------------------------------------------------------------
 instrAsm :: Instruction -> Text
 --------------------------------------------------------------------------------

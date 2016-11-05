@@ -50,16 +50,15 @@ wellFormed (Prog ds e) = concat [ wellFormedD fEnv d | d <- ds ] ++
     where 
         fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds ]
 
-
 --------------------------------------------------------------------------------
 -- | wellFormedD fEnv vEnv d` returns the list of errors for a func-decl d (TODO)
 --------------------------------------------------------------------------------
 wellFormedD :: FunEnv -> BareDecl -> [UserError]
 wellFormedD fEnv (Decl _ xs e _) = wellFormedE fEnv vEnv e
     where 
-        vEnv = addEnv xs emptyEnv 
+        vEnv =  foldl (addEnv') emptyEnv xs
 
-
+addEnv' env x = addEnv x env
 --------------------------------------------------------------------------------
 -- | wellFormedE vEnv e returns the list of errors for an expression `e` (TODO)
 --------------------------------------------------------------------------------
@@ -73,11 +72,11 @@ wellFormedE fEnv env e = go env e
 	go env' (Prim1 _  e     l)      = go env' e
 	go env' (Prim2 _  e1 e2 _)	= gos env' [e1, e2]
 	go env' (If    e1 e2 e3 _)	= gos env' [e1, e2, e3]
-	go env' (Let   x  e1 e2 _)	= shadowVarErrors env' (bindId x) l ++
+	go env' (Let   x  e1 e2 l)	= shadowVarErrors env' (bindId x) l ++
                                           go env' e1		            ++
 					  go (addEnv x env') e2
 	go env' (App   f  es    l)	= unboundFunErrors fEnv f l         ++
-					  go env' es
+					  gos env' es
 
 
 -------------------------------------------------------------------------------
@@ -105,12 +104,12 @@ duplicateFunErrors = fmap errDupFun . concat . dupBy (bindId . fName)
 
 duplicateBindErrors :: Env -> BareBind -> [UserError]
 duplicateBindErrors vEnv x = 
-    condError (memberEnv (bindId x) vEnv) (errDupBind x)
+    condError (not( memberEnv (bindId x) vEnv)) (errDupBind x)
 
 
 duplicateParamErrors :: Env -> BareBind -> [UserError]
 duplicateParamErrors vEnv x = 
-    condError (memberEnv (bindId x) vEnv) (errDupParam x) 
+    condError (not (memberEnv (bindId x) vEnv)) (errDupParam x) 
 
 
 largeNumberErrors :: Integer -> SourceSpan -> [UserError]
@@ -120,22 +119,22 @@ largeNumberErrors n l =
 
 shadowVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 shadowVarErrors vEnv x l = 
-    condError (memberEnv x vEnv) (errShadowVar l x)
+    condError (not (memberEnv x vEnv)) (errShadowVar l x)
 
 
 unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundVarErrors vEnv x l = 
-    condError (not (memberEnv x vEnv)) (errUnboundVar l x)
+    condError ((memberEnv x vEnv)) (errUnboundVar l x)
 
 
 unboundFunErrors :: FunEnv -> Id -> SourceSpan -> [UserError]
 unboundFunErrors fEnv f l = 
-    condError (not (memberEnv f fEnv)) (errUnboundFun l f) 
+    condError ((memberEnv f fEnv)) (errUnboundFun l f) 
 
 
-callArityErrors :: FunEnv -> Id -> SourceSpan -> [UserError]
-callArityErrors fEnv f l = 
-    condError (not (envArity f fEnv)) (errCallArity)
+callArityErrors :: FunEnv -> Id -> SourceSpan -> Int -> [UserError]
+callArityErrors fEnv f l i = 
+    condError (not ((envArity fEnv) == i)) (errCallArity l f) 
 
 
 --------------------------------------------------------------------------------
