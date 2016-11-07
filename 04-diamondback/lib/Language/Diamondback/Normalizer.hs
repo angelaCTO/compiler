@@ -57,10 +57,10 @@ anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
     (i'  , bs, c')      = imm i   c
     (i'' ,     e1')     = anf i'  e1
     (i''',     e2')     = anf i'' e2
-
-anf i (App f es l)      = (i', stitch bs (App f es l)) 
+ 
+anf i (App f es l)      = (i', stitch bs (App f es' l)) 
   where
-  (i', bs, es') = imm i (App f es l)
+  (i', bs, es') = imms i es
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
