@@ -39,16 +39,19 @@ type FunEnv = Env
 -- | @wellFormed p returns the list of errors for a program `p`
 --------------------------------------------------------------------------------
 wellFormed :: BareProgram -> [UserError]
-{-
+
 wellFormed (Prog ds e) = duplicateFunErrors ds            ++
                          concatMap (wellFormedD fEnv) ds  ++
                          wellFormedE fEnv emptyEnv e
   where fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds]
--}
+
+{-
 wellFormed (Prog ds e) = concat [ wellFormedD fEnv d | d <- ds ] ++
                                  wellFormedE fEnv emptyEnv e
     where 
         fEnv = fromListEnv [(bindId f, length xs) | Decl f xs _ _ <- ds ]
+-}
+
 
 --------------------------------------------------------------------------------
 -- | wellFormedD fEnv vEnv d` returns the list of errors for a func-decl d (TODO)
@@ -59,6 +62,8 @@ wellFormedD fEnv (Decl _ xs e _) = wellFormedE fEnv vEnv e
         vEnv =  foldl (addEnv') emptyEnv xs
 
 addEnv' env x = addEnv x env
+
+
 --------------------------------------------------------------------------------
 -- | wellFormedE vEnv e returns the list of errors for an expression `e` (TODO)
 --------------------------------------------------------------------------------
@@ -72,10 +77,11 @@ wellFormedE fEnv env e = go env e
 	go env' (Prim1 _  e     l)      = go env' e
 	go env' (Prim2 _  e1 e2 _)	= gos env' [e1, e2]
 	go env' (If    e1 e2 e3 _)	= gos env' [e1, e2, e3]
-	go env' (Let   x  e1 e2 l)	= shadowVarErrors env' (bindId x) l ++
-                                          go env' e1		            ++
+--	go env' (Let   x  e1 e2 l)	= shadowVarErrors env' (bindId x) l ++
+	go env' (Let   x  e1 e2 l)	= duplicateBindErrors env' x            ++
+                                          go env' e1		                ++
 					  go (addEnv x env') e2
-	go env' (App   f  es    l)	= unboundFunErrors fEnv f l         ++
+	go env' (App   f  es    l)	= unboundFunErrors fEnv f l             ++
 					  gos env' es
 
 
@@ -117,9 +123,9 @@ largeNumberErrors n l =
     condError (maxInt < abs n) (errLargeNum l n)
 
 
-shadowVarErrors :: Env -> Id -> SourceSpan -> [UserError]
-shadowVarErrors vEnv x l = 
-    condError (not (memberEnv x vEnv)) (errShadowVar l x)
+--shadowVarErrors :: Env -> Id -> SourceSpan -> [UserError]
+--shadowVarErrors vEnv x l = 
+--    condError (not (memberEnv x vEnv)) (errShadowVar l x)
 
 
 unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
@@ -161,8 +167,8 @@ errUnboundVar :: SourceSpan -> Id -> UserError
 errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 
 
-errShadowVar :: SourceSpan -> Id -> UserError
-errShadowVar l x = mkError (printf "Shadow variable '%s'" x) l
+-- errShadowVar :: SourceSpan -> Id -> UserError
+-- errShadowVar l x = mkError (printf "Shadow variable '%s'" x) l
 
 
 errUnboundFun :: SourceSpan -> Id -> UserError

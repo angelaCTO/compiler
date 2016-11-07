@@ -184,16 +184,14 @@ compilePrim2 _ env Times   v1 v2 = (assertType TNumber 0 env v1)      	++
                                     IMul (Reg EAX) (immArg env v2),
 				    IJo (DynamicErr (ArithOverflow))]
 
-compilePrim2  l env Less    v1 v2 = (assertType TNumber 0 env v1)       	++ 
+compilePrim2  l env Less    v1 v2 = (assertType TNumber 0 env v1)       ++ 
                                    (assertType TNumber 0 env v2)	++
                                    compileCmp a env IJl v1 v2
-
 			  where
 			  	(a, _) = l
 compilePrim2  l env Greater v1 v2 = (assertType TNumber 0 env v1) 	++ 
                                    (assertType TNumber 0 env v2) 	++
                                     compileCmp a env IJg v1 v2
-
 			  where
 			  	(a, _) = l
 compilePrim2  l env Equal   v1 v2 = (assertType TNumber 0 env v1) 	++ 
@@ -234,7 +232,6 @@ compileIf l env v e1 e2 = (assertType TBoolean 1 env v) ++
                            ILabel (BranchTrue (f))]	++ 
 			  (compileEnv env e1)		++ 
 			  [ILabel (BranchDone (f))]
-
 			  where
 			  	(a, _) = l
 				(_, f) = a
