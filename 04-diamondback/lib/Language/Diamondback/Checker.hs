@@ -72,7 +72,7 @@ wellFormedE fEnv env e = go env e
     where 
         gos  		        	= concatMap . go
         go _   (Boolean  {}      )	= []
-  	go _   (Number   n      l)	= []
+  	go _   (Number   n      l)	= largeNumberErrors n l 
 	go env' (Id       x     l)      = unboundVarErrors env' x l
 	go env' (Prim1 _  e     l)      = go env' e
 	go env' (Prim2 _  e1 e2 _)	= gos env' [e1, e2]
@@ -82,6 +82,7 @@ wellFormedE fEnv env e = go env e
                                           go env' e1		                ++
 					  go (addEnv x env') e2
 	go env' (App   f  es    l)	= unboundFunErrors fEnv f l             ++
+					  callArityErrors fEnv f l (length es) ++
 					  gos env' es
 
 
@@ -115,12 +116,12 @@ duplicateBindErrors vEnv x =
 
 duplicateParamErrors :: Env -> BareBind -> [UserError]
 duplicateParamErrors vEnv x = 
-    condError (not (memberEnv (bindId x) vEnv)) (errDupParam x) 
+    condError ((memberEnv (bindId x) vEnv)) (errDupParam x) 
 
 
 largeNumberErrors :: Integer -> SourceSpan -> [UserError]
 largeNumberErrors n l =
-    condError (maxInt < abs n) (errLargeNum l n)
+    condError (not (maxInt < abs n)) (errLargeNum l n)
 
 
 --shadowVarErrors :: Env -> Id -> SourceSpan -> [UserError]
@@ -138,9 +139,14 @@ unboundFunErrors fEnv f l =
     condError ((memberEnv f fEnv)) (errUnboundFun l f) 
 
 
+
 callArityErrors :: FunEnv -> Id -> SourceSpan -> Int -> [UserError]
 callArityErrors fEnv f l i = 
-    condError (not ((envArity fEnv) == i)) (errCallArity l f) 
+    condError (((fromMaybe (lookupEnv f fEnv) i) == i)) (errCallArity l f)
+
+fromMaybe a i = case a of
+  Just b ->  b
+  Nothing -> i
 
 
 --------------------------------------------------------------------------------
