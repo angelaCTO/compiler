@@ -57,9 +57,16 @@ wellFormed (Prog ds e) = concat [ wellFormedD fEnv d | d <- ds ] ++
 -- | wellFormedD fEnv vEnv d` returns the list of errors for a func-decl d (TODO)
 --------------------------------------------------------------------------------
 wellFormedD :: FunEnv -> BareDecl -> [UserError]
-wellFormedD fEnv (Decl _ xs e _) = wellFormedE fEnv vEnv e
+wellFormedD fEnv (Decl _ xs e _) = (wellFormedE fEnv vEnv e) ++ (checkEnv emptyEnv xs [])
     where 
         vEnv =  foldl (addEnv') emptyEnv xs
+
+checkEnv env xs acc = if length xs == 0 then acc 
+	else if (memberEnv (bindId x) env) then 
+	  checkEnv env y ((errDupParam x):acc)
+	  else checkEnv (addEnv x env) y acc 
+  where
+    (x:y) = xs
 
 addEnv' env x = addEnv x env
 
