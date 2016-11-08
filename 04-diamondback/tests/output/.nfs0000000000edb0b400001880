@@ -1,0 +1,17 @@
+nasm -f aout -o tests/output/fac-tr.o tests/output/fac-tr.s
+clang -g -m32 -o tests/output/fac-tr.run c-bits/main.c tests/output/fac-tr.o
+tests/output/fac-tr.run > tests/output/fac-tr.result
+Error: expected a number
+make: *** [tests/output/fac-tr.result] Error 1
+nasm -f aout -o tests/output/fac-tr.o tests/output/fac-tr.s
+clang -g -m32 -o tests/output/fac-tr.run c-bits/main.c tests/output/fac-tr.o
+tests/output/fac-tr.run > tests/output/fac-tr.result
+nasm -f aout -o tests/output/fac-tr.o tests/output/fac-tr.s
+clang -g -m32 -o tests/output/fac-tr.run c-bits/main.c tests/output/fac-tr.o
+tests/output/fac-tr.run > tests/output/fac-tr.result
+make: *** [tests/output/fac-tr.result] Interrupt
+nasm -f aout -o tests/output/fac-tr.o tests/output/fac-tr.s
+clang -g -m32 -o tests/output/fac-tr.run c-bits/main.c tests/output/fac-tr.o
+tests/output/fac-tr.run > tests/output/fac-tr.result
+Error: arithmetic overflow
+make: *** [tests/output/fac-tr.result] Error 1

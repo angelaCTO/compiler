@@ -338,7 +338,19 @@ param env v = Sized DWordPtr (immArg env v)
 -- | @tailcall 							(TODO - CHECK)
 --------------------------------------------------------------------------------
 tailcall :: Label -> [Arg] -> [Instruction]
-tailcall f args =[] -- copyArgs args ++ funExit
+tailcall f args = copyArgs 1 args [] ++
+                  [IMov (Reg ESP) (Reg EBP),
+		   IPop (Reg EBP),
+		   IJmp f]
+
+copyArgs n args acc = if t == 0 then acc else
+                      copyArgs n' args' acc' 
+		        where
+			  t = length args
+			  n' = n+1
+			  (h:args') = args
+			  acc' = [IMov (Reg EAX) h,
+			          IMov (RegOffset ((n+1)*4) EBP) (Reg EAX)]++acc
 
 -------------------------------------------------------------------------------
 -- | @assign
