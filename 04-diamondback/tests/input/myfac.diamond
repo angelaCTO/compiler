@@ -1,0 +1,8 @@
+def facTR(acc, n):
+  let t = true in
+  if (n < 1):
+    acc 
+  else: 
+    facTR(acc * n, n - 1)
+
+facTR(1, 5)
