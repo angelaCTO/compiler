@@ -124,7 +124,7 @@ compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
-compileEnv env (Tuple es _)      = "TBD:compileEnv:Tuple"
+compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"
 
 compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 
@@ -162,7 +162,7 @@ compilePrim2 l env Less    = compare l env IJl (Just TNumber)
 compilePrim2 l env Greater = compare l env IJg (Just TNumber)
 compilePrim2 l env Equal   = compare l env IJe Nothing
 
-compileIs :: Ann -> Env -> IExp -> Int -> [Instruction]
+compileIs :: Tag -> Env -> IExp -> Int -> [Instruction]
 compileIs l env v mask =  (compileEnv env v) ++
                           [IAnd (Reg EAX) (HexConst 1),
 			   ICmp (Reg EAX) (Const mask),
