@@ -57,8 +57,6 @@ anf i (App f es l)      = (i', stitch bs (App f es' l))
   where
     (i', bs, es')       = imms i es
 
-
--- TODO - CHECK, but almost there
 anf i (Tuple es l)      = (i', stitch bs (Tuple es' l)) --error "TBD:anf:Tuple"
   where
      (i', bs, es')      = imms i es
