@@ -124,7 +124,15 @@ compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
-compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"
+compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"   -- Overcomplicating ~ should be simple
+                                 {- (assertType env es TTuple) ++   -- (CHECK - on es)  
+ -                                  [IMov (Reg EAX) (Reg ESI),      -- (MOV EAX ESI)       
+ -                                   IAdd (Reg ESI) (4*<TupeSize>)) -- ("Bump ESI by 4*2") -- how exactly does this work?
+ -                                   IMov (Reg [ESI + 0], "e1")
+ -                                   IMov (Reg [ESI + 4], "e2")     --etc.
+ -                                   IAdd (Reg ESI) (Const 8)       --Const value 8 being the <size of tuple>?
+ -                                   IOr  (Reg EAX  (Const 1)       --Setting EAX Tag Bit
+                                 -}
 
 compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 

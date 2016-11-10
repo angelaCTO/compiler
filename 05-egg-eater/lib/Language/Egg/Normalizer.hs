@@ -57,17 +57,24 @@ anf i (App f es l)      = (i', stitch bs (App f es' l))
   where
     (i', bs, es')       = imms i es
 
-anf i (Tuple es l)      = error "TBD:anf:Tuple"
 
+-- TODO - CHECK, but almost there
+anf i (Tuple es l)      = (i', stitch bs (Tuple es' l)) --error "TBD:anf:Tuple"
+  where
+     (i', bs, es')      = imms i es
+
+    
 anf i (GetItem e1 e2 l) = error "TBD:anf:GetItem"
+
+
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
 --   definitions, and an expression `e` that uses the temp-vars in `bs` and glues
 --   them together into a `Let` expression.
 --------------------------------------------------------------------------------
 stitch :: Binds a -> AnfExpr a -> AnfExpr a
---------------------------------------------------------------------------------
 stitch bs e = bindsExpr [ (x, e) | (x, (e, _)) <- reverse bs] e (getLabel e)
+
 
 --------------------------------------------------------------------------------
 -- | `imms i es` takes as input a "start" counter `i` and expressions `es`, and
@@ -77,12 +84,12 @@ stitch bs e = bindsExpr [ (x, e) | (x, (e, _)) <- reverse bs] e (getLabel e)
 --   * `es'` are the immediate values  equivalent to es
 --------------------------------------------------------------------------------
 imms :: Int -> [AnfExpr a] -> (Int, Binds a, [ImmExpr a])
---------------------------------------------------------------------------------
 imms i []           = (i, [], [])
 imms i (e:es)       = (i'', bs' ++ bs, e' : es' )
   where
     (i' , bs , e' ) = imm  i  e
     (i'', bs', es') = imms i' es
+
 
 --------------------------------------------------------------------------------
 -- | `imm i e` takes as input a "start" counter `i` and expression `e` and
@@ -111,15 +118,21 @@ imm i (Prim2 o e1 e2 l) = (i'', bs', mkId x l)
     (i'', x)            = fresh l i'
     bs'                 = (x, (Prim2 o v1 v2 l, l)) : bs
 
-imm i (Tuple es l)      = error "TBD:imm:Tuple"
-
-imm i (GetItem e1 e2 l) = error "TBD:imm:Tuple"
-
 imm i (App f es l)      = (i'', bs', mkId x l)
   where
-    (i', bs, vs)        = imms  i es
+    (i', bs, vs)        = imms i es
     (i'', x)            = fresh l i'
     bs'                 = (x, (App f vs l, l)) : bs
+
+
+-- TODO : Maybe partially correct, but missing "something", will need to wokr on it WIP
+imm i (Tuple es l)      = (i'', bs', mkId x l)  --error "TBD:imm:Tuple"
+  where 
+    (i', bs, vs)        = imms i es 
+    (i'', x)            = fresh l i'
+    bs'                 = (x, (Tuple es l)) : bs
+
+imm i (GetItem e1 e2 l) = error "TBD:imm:Tuple"
 
 imm i e@(If _ _ _  l)   = immExp i e l
 
