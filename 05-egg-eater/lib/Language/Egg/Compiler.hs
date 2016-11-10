@@ -124,7 +124,7 @@ compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
-compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"
+compileEnv env (Tuple es _)      = "TBD:compileEnv:Tuple"
 
 compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 
@@ -149,8 +149,8 @@ compileBind env (x, e) = (env', is)
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
 compilePrim1 l env Sub1    v = compilePrim2 l env Minus v (Number 1 l)
-compilePrim1 l env IsNum   v = error "TBD:compilePrim1:isNum"
-compilePrim1 l env IsBool  v = error "TBD:compilePrim1:isBool"
+compilePrim1 l env IsNum   v = compileIs l env v 0 error --error "TBD:compilePrim1:isNum"
+compilePrim1 l env IsBool  v = compileIs l env v 1 error --error "TBD:compilePrim1:isBool"
 compilePrim1 l env IsTuple v = error "TBD:compilePrim1:isTuple"
 compilePrim1 _ env Print   v = call (Builtin "print") [param env v]
 
@@ -161,6 +161,23 @@ compilePrim2 _ env Times   = arith     env mulOp
 compilePrim2 l env Less    = compare l env IJl (Just TNumber)
 compilePrim2 l env Greater = compare l env IJg (Just TNumber)
 compilePrim2 l env Equal   = compare l env IJe Nothing
+
+compileIs :: Ann -> Env -> IExp -> Int -> [Instruction]
+compileIs l env v mask =  (compileEnv env v) ++
+                          [IAnd (Reg EAX) (HexConst 1),
+			   ICmp (Reg EAX) (Const mask),
+			   IJe lTrue,
+			   IMov (Reg EAX) (repr False),
+			   IJmp lExit,
+			   ILabel lTrue,
+			   IMov (Reg EAX) (repr True),
+			   ILabel lExit]
+                      where 
+			   lTrue = BranchTrue i
+			   lExit = BranchDone i
+			   l' = fst l
+			   i = snd l'
+
 
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
