@@ -62,11 +62,10 @@ anf i (Tuple es l)      = (i', stitch bs (Tuple es' l)) --error "TBD:anf:Tuple"
      (i', bs, es')      = imms i es
 
     
-anf i (GetItem e1 e2 l) = (i'', stitch bs'' (GetItem e1' e2' l))
+anf i (GetItem e1 e2 l) = (i'', stitch bs2 (GetItem e1' e2' l))
   where
-    (i',  bs1, e1')       = imm i e1
+    (i', e1')             = anf i e1
     (i'', bs2, e2')       = imm i' e2
-    bs''                  = bs2++bs1
     
 
 
