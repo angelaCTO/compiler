@@ -65,7 +65,10 @@ wellFormedE fEnv = go
                              ++ go vEnv e1
                              ++ go (addEnv x vEnv) e2
     go vEnv (Tuple es      _) = gos vEnv es
+
+    -- TODO FIX 
     go vEnv (GetItem e1 e2 _) = error "TBD:wellFormed:GetItem"
+
     go vEnv (App f es      l) = callArityErrors fEnv f es l
                              ++ unboundFunErrors fEnv f l
                              ++ gos vEnv es

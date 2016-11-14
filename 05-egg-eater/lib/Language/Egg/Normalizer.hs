@@ -61,7 +61,7 @@ anf i (Tuple es l)      = (i', stitch bs (Tuple es' l)) --error "TBD:anf:Tuple"
   where
      (i', bs, es')      = imms i es
 
-    
+-- TODO    
 anf i (GetItem e1 e2 l) = (i'', stitch bs2 (GetItem e1' e2' l))
   where
     (i', e1')             = anf i e1
@@ -127,13 +127,14 @@ imm i (App f es l)      = (i'', bs', mkId x l)
     bs'                 = (x, (App f vs l, l)) : bs
 
 
--- TODO : Maybe partially correct, but missing "something", will need to wokr on it WIP
-imm i (Tuple es l)      = (i'', bs', mkId x l)  --error "TBD:imm:Tuple"
+-- TODO 
+imm i (Tuple es l)      = (i'', bs', mkId x l)
   where 
     (i', bs, vs)        = imms i es 
     (i'', x)            = fresh l i'
     bs'                 = (x, (Tuple es l, l)) : bs
 
+-- TODO    
 imm i (GetItem e1 e2 l) = (i''', bs', mkId x l)
   where
     (i', b1', e1')      = imm i e1

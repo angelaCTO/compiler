@@ -129,15 +129,7 @@ compileEnv env (Tuple es _)      = (allocHeap (length es)) ++
 				   [IMov (Reg EAX) (Reg EBX),
 				    IAdd (Reg EAX) (HexConst 0x1)]
 
--- Overcomplicating ~ should be simple
-                                 {- (assertType env es TTuple) ++   -- (CHECK - on es)  
- -                                  [IMov (Reg EAX) (Reg ESI),      -- (MOV EAX ESI)       
- -                                   IAdd (Reg ESI) (4*<TupeSize>)) -- ("Bump ESI by 4*2") -- how exactly does this work?
- -                                   IMov (Reg [ESI + 0], "e1")
- -                                   IMov (Reg [ESI + 4], "e2")     --etc.
- -                                   IAdd (Reg ESI) (Const 8)       --Const value 8 being the <size of tuple>?
- -                                   IOr  (Reg EAX  (Const 1)       --Setting EAX Tag Bit
-                                 -}
+-- TODO                                    
 compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 
 compileEnv env (App f vs _)      = call (Builtin f) (param env <$> vs)
