@@ -124,7 +124,12 @@ compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
-compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"   -- Overcomplicating ~ should be simple
+compileEnv env (Tuple es _)      = (allocHeap (length es)) ++
+                                   (listCopy env (length es) es) ++
+				   [IMov (Reg EAX) (Reg EBX),
+				    IAdd (Reg EAX) (HexConst 0x1)]
+
+-- Overcomplicating ~ should be simple
                                  {- (assertType env es TTuple) ++   -- (CHECK - on es)  
  -                                  [IMov (Reg EAX) (Reg ESI),      -- (MOV EAX ESI)       
  -                                   IAdd (Reg ESI) (4*<TupeSize>)) -- ("Bump ESI by 4*2") -- how exactly does this work?
@@ -133,7 +138,6 @@ compileEnv env (Tuple es _)      = error "TBD:compileEnv:Tuple"   -- Overcomplic
  -                                   IAdd (Reg ESI) (Const 8)       --Const value 8 being the <size of tuple>?
  -                                   IOr  (Reg EAX  (Const 1)       --Setting EAX Tag Bit
                                  -}
-
 compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 
 compileEnv env (App f vs _)      = call (Builtin f) (param env <$> vs)
@@ -198,6 +202,31 @@ immArg _   e             = panic msg (sourceSpan e)
     msg                  = "Unexpected non-immExpr in immArg: " ++ show (strip e)
 
 strip = fmap (const ())
+
+
+--------------------------------------------------------------------------------
+-- | Tuple Helpers
+--------------------------------------------------------------------------------
+allocHeap :: Int -> [Instruction]
+allocHeap i = [IMov (Reg EBX) (Reg ESI),
+               IMov (Reg EAX) (Const (shift i 1)),
+               IMov (RegOffset 0 EBX) (Reg EAX),
+               IAdd (Reg ESI) (Const (s*4)),
+	       IAnd (Reg ESI) (HexConst 0xFFFFFFF8)]
+	       where
+	        s = i+s'
+		s' = (i `mod` 2) 
+
+listCopy env l es = if l' == 0 then [] else
+                    (compileEnv env h) ++
+                    [IMov (RegOffset s EBX ) (Reg EAX)] ++
+		     listCopy env l t
+		     where
+		       s = (1+l-l')*4
+		       l' = length es
+		       (h:t) = es
+
+
 
 --------------------------------------------------------------------------------
 -- | Arithmetic
