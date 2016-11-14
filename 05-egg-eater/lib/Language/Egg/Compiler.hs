@@ -158,8 +158,8 @@ compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
 compilePrim1 l env Sub1    v = compilePrim2 l env Minus v (Number 1 l)
 compilePrim1 l env IsNum   v = compileIs l env v 0  --error "TBD:compilePrim1:isNum"
-compilePrim1 l env IsBool  v = compileIs l env v 1  --error "TBD:compilePrim1:isBool"
-compilePrim1 l env IsTuple v = compileIs l env v 7  --error "TBD:compilePrim1:isTuple"
+compilePrim1 l env IsBool  v = compileIs l env v 7  --error "TBD:compilePrim1:isBool"
+compilePrim1 l env IsTuple v = compileIs l env v 1  --error "TBD:compilePrim1:isTuple"
 compilePrim1 _ env Print   v = call (Builtin "print") [param env v]
 
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
@@ -172,8 +172,8 @@ compilePrim2 l env Equal   = compare l env IJe Nothing
 
 compileIs :: Tag -> Env -> IExp -> Int -> [Instruction]
 compileIs l env v mask =  (compileEnv env v) ++
-                          [IAnd (Reg EAX) (HexConst 1),
-			   ICmp (Reg EAX) (Const mask),
+                          [IAnd (Reg EAX) (HexConst 7),
+			   ICmp (Reg EAX) (HexConst mask),
 			   IJe lTrue,
 			   IMov (Reg EAX) (repr False),
 			   IJmp lExit,
@@ -184,7 +184,7 @@ compileIs l env v mask =  (compileEnv env v) ++
 			   lTrue = BranchTrue i
 			   lExit = BranchDone i
 			   l' = fst l
-			   i = snd l'
+			   i = snd l
 
 
 immArg :: Env -> IExp -> Arg

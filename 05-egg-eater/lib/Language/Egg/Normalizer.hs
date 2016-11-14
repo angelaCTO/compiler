@@ -62,7 +62,12 @@ anf i (Tuple es l)      = (i', stitch bs (Tuple es' l)) --error "TBD:anf:Tuple"
      (i', bs, es')      = imms i es
 
     
-anf i (GetItem e1 e2 l) = error "TBD:anf:GetItem"
+anf i (GetItem e1 e2 l) = (i'', stitch bs'' (GetItem e1' e2' l))
+  where
+    (i',  bs1, e1')       = imm i e1
+    (i'', bs2, e2')       = imm i' e2
+    bs''                  = bs2++bs1
+    
 
 
 --------------------------------------------------------------------------------
@@ -128,9 +133,14 @@ imm i (Tuple es l)      = (i'', bs', mkId x l)  --error "TBD:imm:Tuple"
   where 
     (i', bs, vs)        = imms i es 
     (i'', x)            = fresh l i'
-    bs'                 = (x, (Tuple es l)) : bs
+    bs'                 = (x, (Tuple es l, l)) : bs
 
-imm i (GetItem e1 e2 l) = error "TBD:imm:Tuple"
+imm i (GetItem e1 e2 l) = (i''', bs', mkId x l)
+  where
+    (i', b1', e1')      = imm i e1
+    (i'', b2', e2')     = imm i' e2
+    (i''', x)           = fresh l i''
+    bs'                 = (x, (GetItem e1' e2' l, l)):b2'++b1'
 
 imm i e@(If _ _ _  l)   = immExp i e l
 
