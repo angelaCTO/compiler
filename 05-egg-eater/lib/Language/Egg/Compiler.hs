@@ -306,6 +306,11 @@ roundToEven n = if n `mod` 2 == 0 then n else (n + 1)
 -- | @loadAddr env vE assigns to EAX the base address of tuple vE  TODO
 -------------------------------------------------------------------------------
 loadAddr :: Arg -> [Instruction]
+loadAddr a = [IMov (Reg EAX) a,                    -- compute address
+              ISub (Reg EAX) (typeTag ty),         -- drop tag bits
+              IAnd (Reg EAX) (HexConst 0xfffffff8) -- set last 3 bits to 0
+             ]
+
 
 
 -------------------------------------------------------------------------------
