@@ -132,7 +132,7 @@ imm i (Tuple es l)      = (i'', bs', mkId x l)
   where 
     (i', bs, vs)        = imms i es 
     (i'', x)            = fresh l i'
-    bs'                 = (x, (Tuple es l, l)) : bs
+    bs'                 = (x, (Tuple vs l, l)) : bs
 
 -- TODO    
 imm i (GetItem e1 e2 l) = (i''', bs', mkId x l)

@@ -140,13 +140,15 @@ eggTests sc =
   , mkTest sc "list-4"    File      (rLines ["(0, (1, (2, (3, (4, (5, false))))))"])
   ]
 
-
-
 yourTests sc = 
-  [ mkTest sc "LowAccess_outOfBounds"  File (Left "Error: tuple index too small."),
-    mkTest sc "HighAccess_outOfBounds" File (Left "Error: tuple index too large."),
+  [ mkTest sc "LowAccess_outOfBounds"  File (Left  "Error: tuple index too small."),
+    mkTest sc "HighAccess_outOfBounds" File (Left  "Error: tuple index too large."),
     mkTest sc "Access_okayBounds"      File (Right "3"),
     mkTest sc "NestedAccess_okayBounds"File (Right "3"),
-    mkTest sc "AccessLet"              File (Right "1") 
-    
+    mkTest sc "AccessLet"              File (Right "1"),
+    mkTest sc "Access_BadAnf"          File (Left  "Error: tuple index too large."),
+    mkTest sc "Access_BadAnf2"         File (Right "5"),
+    mkTest sc "AccessFalse"            File (Right "false"),
+    mkTest sc "AccessSomething"        File (Right "9"),
+    mkTest sc "getTrue"                File (Right "20")
   ]

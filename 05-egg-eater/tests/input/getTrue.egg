@@ -1,0 +1,9 @@
+def getFst(t):
+    if (t[0] == 1): 
+        t[0]
+    else:
+        10
+
+let a = getFst((0,1,2,3)) in
+let b = getFst((3,2,1,0)) in
+    a + b
