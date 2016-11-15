@@ -293,13 +293,14 @@ loadAddr :: Arg -> [Instruction]
 
 
 -------------------------------------------------------------------------------
--- | TODO
+-- | @tupleRead
 -------------------------------------------------------------------------------
-{- ++ assertType   env vI TNumber
- - ++ assertBound  env vE vI
- - ++ tupleReadRaw (immARg env vE) (immArg vI)
+tupleRead :: Env -> IExp -> IExp -> [Instruction]
+tupleRead env vE vI = assertType   env vE TTuple
+                      assertType   env vI TNumber ++ 
+                      assertBound  env vE vI      ++ 
+                      tupleReadRaw (immARg env vE) (immArg vI)
  
--}
 
 -------------------------------------------------------------------------------
 -- | Arithmetic
