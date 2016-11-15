@@ -98,24 +98,21 @@ countVars (Let _ e b _)  = max (countVars e)  (1 + countVars b)
 countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
+
+-------------------------------------------------------------------------------
+-- | @compileEnv
 --------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
---------------------------------------------------------------------------------
 compileEnv env v@(Number {})     = [ compileImm env v  ]
-
 compileEnv env v@(Boolean {})    = [ compileImm env v  ]
-
 compileEnv env v@(Id {})         = [ compileImm env v  ]
-
 compileEnv env e@(Let {})        = is ++ compileEnv env' body
   where
     (env', is)                   = compileBinds env [] binds
     (binds, body)                = exprBinds e
 
 compileEnv env (Prim1 o v l)     = compilePrim1 l env o v
-
 compileEnv env (Prim2 o v1 v2 l) = compilePrim2 l env o v1 v2
-
 compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
                                 ++ IMov (Reg EAX) (immArg env v)
                                  : ICmp (Reg EAX) (repr False)
@@ -123,15 +120,16 @@ compileEnv env (If v e1 e2 l)    = assertType env v TBoolean
   where
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
-
-compileEnv env (Tuple es _)      = (allocHeap (length es)) ++
-                                   (listCopy env (length es) es) ++
+compileEnv env (Tuple es _)      = tupleAlloc  (length es)         ++
+                                   tupleWrites (immArg env <$> es) ++
+				   [IOr (Reg EAX) (typeTag TTuple)]
+{-
+compileEnv env (Tuple es _)      = (allocHeap (length es))         ++
+                                   (listCopy env (length es) es)   ++
 				   [IMov (Reg EAX) (Reg EBX),
 				    IAdd (Reg EAX) (HexConst 0x1)]
-
--- TODO                                    
-compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
-
+-}
+compileEnv env (GetItem vE vI _) = tupleRead env vE vI
 compileEnv env (App f vs _)      = call (Builtin f) (param env <$> vs)
 
 
@@ -171,8 +169,8 @@ compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
 compilePrim1 l env Sub1    v = compilePrim2 l env Minus v (Number 1 l)
 --compilePrim1 l env IsNum   v = isType l env v TNumber
 compilePrim1 l env IsNum   v = compileIs l env v 0
---compileprim1 l env isbool  v = isType l env v TBoolean
-compileprim1 l env isbool  v = compileis l env v 7
+--compileprim1 l env isBool  v = isType l env v TBoolean
+compileprim1 l env isBool  v = compileIs l env v 7
 compilePrim1 l env IsTuple v = compileIs l env v 1
 compilePrim1 _ env Print   v = call (Builtin "print") [param env v]
 
@@ -259,6 +257,17 @@ listCopy env l es = if l' == 0 then [] else
 
 
 -------------------------------------------------------------------------------
+-- | @tupleAlloc Tuple Manipulation
+-------------------------------------------------------------------------------
+tupleAlloc :: Int -> [Instruction]
+tupleAlloc n = [IMov (Reg EAX) (Reg ESI),
+                IMov (Sized DWordPtr (RegOffset 0 EAX)) (repr n),
+                IAdd (Reg ESI) (Const size)
+               ]
+    where 
+        size = (4 * roundToEven (n + 1))
+
+-------------------------------------------------------------------------------
 -- | @tupleReadRaw
 -------------------------------------------------------------------------------
 tupleReadRaw :: Arg -> Arg -> [Instruction]
@@ -278,7 +287,7 @@ assertBound :: Env -> IExp -> IExp -> [Instruction]
 assertBound env vE vI = 
     [IMov (Reg EBX) (immArg env vI),
      ICmp (Reg EBX) (Sized DWordPtr (Const 0)),
-     IJl  (DynamicErr indexLow)
+     IJl  (DynamicErr IndexLow)
     ]				++
     loadAddr (immArg env vE)	++
     [ICmp (Reg EBX) (tupleLoc 0),
@@ -287,7 +296,14 @@ assertBound env vE vI =
 
 
 -------------------------------------------------------------------------------
--- | @loadAddr env vE assigns to EAX the base address of tuple vE
+-- | @roundToEven  TODO
+-------------------------------------------------------------------------------
+roundToEven :: Int -> Int
+roundToEven n = if n `mod` 2 == 0 then n else (n + 1)
+  
+
+-------------------------------------------------------------------------------
+-- | @loadAddr env vE assigns to EAX the base address of tuple vE  TODO
 -------------------------------------------------------------------------------
 loadAddr :: Arg -> [Instruction]
 
@@ -299,8 +315,27 @@ tupleRead :: Env -> IExp -> IExp -> [Instruction]
 tupleRead env vE vI = assertType   env vE TTuple
                       assertType   env vI TNumber ++ 
                       assertBound  env vE vI      ++ 
-                      tupleReadRaw (immARg env vE) (immArg vI)
+                      tupleReadRaw (immArg env vE) (immArg vI)
  
+
+-------------------------------------------------------------------------------
+-- | @tupleWrites
+-------------------------------------------------------------------------------
+tupleWrites :: [Arg] -> [Instruction]
+tupleWrites args = concat (zipWith [1..] args)
+    where
+        tupleWrites i a = [IMov (Reg EBX) a,
+                           IMov (Sized DWordPtr (tupleLoc i )) (Reg EBX)
+                          ]
+
+
+
+-------------------------------------------------------------------------------
+-- | @tupleLoc
+-------------------------------------------------------------------------------
+tupleLoc :: Int -> Arg
+tupleLoc i = RegOffset (4 * i) EAX
+
 
 -------------------------------------------------------------------------------
 -- | Arithmetic
