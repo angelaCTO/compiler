@@ -134,15 +134,27 @@ compileEnv env (GetItem vE vI _) = error "TBD:compileEnv:GetItem"
 
 compileEnv env (App f vs _)      = call (Builtin f) (param env <$> vs)
 
+
+-------------------------------------------------------------------------------
+-- | @compileImm
+-------------------------------------------------------------------------------
 compileImm :: Env -> IExp -> Instruction
 compileImm env v = IMov (Reg EAX) (immArg env v)
 
+
+-------------------------------------------------------------------------------
+-- | @compileBinds
+-------------------------------------------------------------------------------
 compileBinds :: Env -> [Instruction] -> [(ABind, AExp)] -> (Env, [Instruction])
 compileBinds env is []     = (env, is)
 compileBinds env is (b:bs) = compileBinds env' (is ++ is') bs
   where
     (env', is')            = compileBind env b
 
+
+-------------------------------------------------------------------------------
+-- | @compileBind
+-------------------------------------------------------------------------------
 compileBind :: Env -> (ABind, AExp) -> (Env, [Instruction])
 compileBind env (x, e) = (env', is)
   where
@@ -150,6 +162,10 @@ compileBind env (x, e) = (env', is)
                       ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
 
+
+-------------------------------------------------------------------------------
+-- | @compilePrim Unary Operations
+-------------------------------------------------------------------------------
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
 compilePrim1 l env Sub1    v = compilePrim2 l env Minus v (Number 1 l)
@@ -158,6 +174,10 @@ compilePrim1 l env IsBool  v = compileIs l env v 7  --error "TBD:compilePrim1:is
 compilePrim1 l env IsTuple v = compileIs l env v 1  --error "TBD:compilePrim1:isTuple"
 compilePrim1 _ env Print   v = call (Builtin "print") [param env v]
 
+
+-------------------------------------------------------------------------------
+-- | @compilePrim2 Binary Operators
+-------------------------------------------------------------------------------
 compilePrim2 :: Tag -> Env -> Prim2 -> IExp -> IExp -> [Instruction]
 compilePrim2 _ env Plus    = arith     env addOp
 compilePrim2 _ env Minus   = arith     env subOp
@@ -166,6 +186,10 @@ compilePrim2 l env Less    = compare l env IJl (Just TNumber)
 compilePrim2 l env Greater = compare l env IJg (Just TNumber)
 compilePrim2 l env Equal   = compare l env IJe Nothing
 
+
+-------------------------------------------------------------------------------
+-- | @compileIS
+-------------------------------------------------------------------------------
 compileIs :: Tag -> Env -> IExp -> Int -> [Instruction]
 compileIs l env v mask =  (compileEnv env v) ++
                           [IAnd (Reg EAX) (HexConst 7),
@@ -183,6 +207,9 @@ compileIs l env v mask =  (compileEnv env v) ++
 			   i = snd l
 
 
+-------------------------------------------------------------------------------
+-- | @immArg
+-------------------------------------------------------------------------------
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
 immArg _   (Boolean b _) = repr b
@@ -191,13 +218,19 @@ immArg env e@(Id x _)    = stackVar (fromMaybe err (lookupEnv x env))
     err                  = abort (errUnboundVar (sourceSpan e) x)
 immArg _   e             = panic msg (sourceSpan e)
   where
-    msg                  = "Unexpected non-immExpr in immArg: " ++ show (strip e)
+    msg                  = "Unexpected non-immExpr in immArg: " ++show(strip e)
 
+
+-------------------------------------------------------------------------------
+-- | @strip
+------------------------------------------------------------------------------
 strip = fmap (const ())
 
 
 --------------------------------------------------------------------------------
--- | Tuple Helpers
+-- | Tuple Helper
+-----------------
+-- | @allocHeap
 --------------------------------------------------------------------------------
 allocHeap :: Int -> [Instruction]
 allocHeap i = [IMov (Reg EBX) (Reg ESI),
@@ -209,6 +242,10 @@ allocHeap i = [IMov (Reg EBX) (Reg ESI),
 	        s = i+s'
 		s' = (i `mod` 2) 
 
+
+-------------------------------------------------------------------------------
+-- | @listCopy
+-------------------------------------------------------------------------------
 listCopy env l es = if l' == 0 then [] else
                     (compileEnv env h) ++
                     [IMov (RegOffset s EBX ) (Reg EAX)] ++
@@ -222,6 +259,8 @@ listCopy env l es = if l' == 0 then [] else
 
 --------------------------------------------------------------------------------
 -- | Arithmetic
+---------------
+-- | @arith
 --------------------------------------------------------------------------------
 arith :: Env -> AOp -> IExp -> IExp  -> [Instruction]
 --------------------------------------------------------------------------------
@@ -232,35 +271,55 @@ arith env aop v1 v2
    : IMov (Reg EBX) (immArg env v2)
    : aop (Reg EAX) (Reg EBX)
 
+
+-------------------------------------------------------------------------------
+-- | @addOp
+-------------------------------------------------------------------------------
 addOp :: AOp
 addOp a1 a2 = [ IAdd a1 a2
               , overflow
               ]
 
+-------------------------------------------------------------------------------
+-- | @subOp
+-------------------------------------------------------------------------------
 subOp :: AOp
 subOp a1 a2 = [ ISub a1 a2
               , overflow
               ]
 
+
+-------------------------------------------------------------------------------
+-- | @milOp
+-------------------------------------------------------------------------------
 mulOp :: AOp
 mulOp a1 a2 = [ IMul a1 a2
               , overflow
               , ISar a1 (Const 1)
               ]
 
+
+-------------------------------------------------------------------------------
+-- | @overflow
+-------------------------------------------------------------------------------
 overflow :: Instruction
 overflow = IJo (DynamicErr ArithOverflow)
 
---------------------------------------------------------------------------------
--- | Dynamic Tests
---------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------
+-- | Dynamic Tests
+------------------
 -- | @assertType t@ tests if EAX is a value of type t and exits with error o.w.
+-------------------------------------------------------------------------------
 assertType :: Env -> IExp -> Ty -> [Instruction]
 assertType env v ty
   =   cmpType env v ty
   ++ [ IJne (DynamicErr (TypeError ty))    ]
 
+
+-------------------------------------------------------------------------------
+-- | @cmpType
+-------------------------------------------------------------------------------
 cmpType :: Env -> IExp -> Ty -> [Instruction]
 cmpType env v ty
   = [ IMov (Reg EAX) (immArg env v)
@@ -268,6 +327,7 @@ cmpType env v ty
     , IAnd (Reg EBX) (typeMask ty)
     , ICmp (Reg EBX) (typeTag  ty)
     ]
+
 
 --------------------------------------------------------------------------------
 -- | Comparisons
@@ -280,6 +340,10 @@ compare l env j t v1 v2
   =  compareCheck env t v1 v2
   ++ compareVal l env j v1 v2
 
+
+-------------------------------------------------------------------------------
+-- | @compareCheck
+-------------------------------------------------------------------------------
 compareCheck :: Env -> Maybe Ty -> IExp -> IExp -> [Instruction]
 compareCheck _   Nothing  _  _
   =  []
@@ -287,6 +351,10 @@ compareCheck env (Just t) v1 v2
   =  assertType env v1 t
   ++ assertType env v2 t
 
+
+-------------------------------------------------------------------------------
+-- | @compareVal
+-------------------------------------------------------------------------------
 compareVal :: Tag -> Env -> COp -> IExp -> IExp -> [Instruction]
 compareVal l env j v1 v2
    = IMov (Reg EAX) (immArg env v1)
@@ -294,14 +362,20 @@ compareVal l env j v1 v2
    : ICmp (Reg EAX) (Reg EBX)
    : boolBranch l j
 
+
 --------------------------------------------------------------------------------
 -- | Assignment
+---------------
+-- | @assign
 --------------------------------------------------------------------------------
 assign :: (Repr a) => Reg -> a -> Instruction
 assign r v = IMov (Reg r) (repr v)
 
+
 --------------------------------------------------------------------------------
 -- | Function call
+------------------
+-- | @call
 --------------------------------------------------------------------------------
 call :: Label -> [Arg] -> [Instruction]
 call f args
@@ -313,11 +387,18 @@ call f args
     n = length args
     k = 4 - (n `mod` 4)
 
+
+-------------------------------------------------------------------------------
+-- | @param
+-------------------------------------------------------------------------------
 param :: Env -> IExp -> Arg
 param env v = Sized DWordPtr (immArg env v)
 
+
 --------------------------------------------------------------------------------
 -- | Branching
+---------------
+-- | @branch
 --------------------------------------------------------------------------------
 branch :: Tag -> COp -> [Instruction] -> [Instruction] -> [Instruction]
 branch l j falseIs trueIs = concat
@@ -333,14 +414,23 @@ branch l j falseIs trueIs = concat
     lDone = BranchDone i
     i     = snd l
 
+
+-------------------------------------------------------------------------------
+-- | @boolBranch
+-------------------------------------------------------------------------------
 boolBranch :: Tag -> COp -> [Instruction]
 boolBranch l j = branch l j [assign EAX False] [assign EAX True]
 
-type AOp = Arg -> Arg -> [Instruction]
-type COp = Label -> Instruction
 
+-------------------------------------------------------------------------------
+-- | @stackVar
+-------------------------------------------------------------------------------
 stackVar :: Int -> Arg
 stackVar i = RegOffset (-4 * i) EBP
+
+
+type AOp = Arg -> Arg -> [Instruction]
+type COp = Label -> Instruction
 
 
 --------------------------------------------------------------------------------
