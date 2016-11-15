@@ -146,7 +146,7 @@ yourTests sc =
   [ mkTest sc "LowAccess_outOfBounds"  File (Left "Error: tuple index too small."),
     mkTest sc "HighAccess_outOfBounds" File (Left "Error: tuple index too large."),
     mkTest sc "Access_okayBounds"      File (Right "3"),
-    mkTest sc "NestedAccess_okayBounds"File (Right "3")
-    --mkTest sc "AccessLet"        
+    mkTest sc "NestedAccess_okayBounds"File (Right "3"),
+    mkTest sc "AccessLet"              File (Right "1") 
     
   ]
