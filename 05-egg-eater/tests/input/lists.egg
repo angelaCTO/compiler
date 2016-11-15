@@ -1,4 +1,29 @@
 def link(first, rest):
   (first, rest)
 
+def sum(l):
+  sumHelp(l,0)
 
+def sumHelp(l, sum):
+  if l == false: sum
+  else:
+    sumHelp(l[1], sum + l[0])
+
+def reverse(l):
+  let x = link(l[0], false) in
+  revHelp(l[1], x)
+
+def revHelp(l, acc):
+  if l == false: acc
+  else:
+    revHelp(l[1], link(l[0], acc))
+
+def append(l, r):
+  if l[1] == false: link(l[0], r)
+    else:
+    link(l[0], append(l[1], r))
+
+let l0 = link(1, link(2, link(3,false))),
+    l1 = link(4, link(5, false))
+    in 
+    append(l0, l1)
