@@ -165,11 +165,14 @@ compileBind env (x, e) = (env', is)
 -- | @compilePrim Unary Operations
 -------------------------------------------------------------------------------
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
-compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
+--compilePrim1 l env Add1    v = compilePrim2 l env Plus  v (Number 1 l)
+compilePrim1 l env Add1   v = (assertType TNumber 0 env v )         	++
+                              [compileImm env v]                    	++
+                              [IAdd (Reg EAX) (Const 2), 
+                               IJo (DynamicErr (ArithOverflow))]
+
 compilePrim1 l env Sub1    v = compilePrim2 l env Minus v (Number 1 l)
---compilePrim1 l env IsNum   v = isType l env v TNumber
 compilePrim1 l env IsNum   v = compileIs l env v 0
---compileprim1 l env isBool  v = isType l env v TBoolean
 compileprim1 l env isBool  v = compileIs l env v 7
 compilePrim1 l env IsTuple v = compileIs l env v 1
 compilePrim1 _ env Print   v = call (Builtin "print") [param env v]
