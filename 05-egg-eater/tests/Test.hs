@@ -143,5 +143,8 @@ eggTests sc =
 
 
 yourTests sc = 
-  [ -- Your tests go here 
+  [ mkTest sc "LowAccess_outOfBounds"  File (Left "Error: tuple index too small."),
+    mkTest sc "HighAccess_outOfBounds" File (Left "Error: tuple index too large."),
+    mkTest sc "Access_okayBounds"      File (Right "3")
+    
   ]
