@@ -66,9 +66,8 @@ wellFormedE fEnv = go
                              ++ go (addEnv x vEnv) e2
     go vEnv (Tuple es      _) = gos vEnv es
 
-    -- TODO FIX 
-    go vEnv (GetItem e1 e2 _) = error "TBD:wellFormed:GetItem"
-
+    go vEnv (GetItem e1 e2 _) = go vEnv e1 ++
+                                go vEnv e2
     go vEnv (App f es      l) = callArityErrors fEnv f es l
                              ++ unboundFunErrors fEnv f l
                              ++ gos vEnv es
@@ -125,9 +124,9 @@ condError :: Bool -> UserError -> [UserError]
 condError True  e = [e]
 condError False _ = []
 
-errDupFun d       = mkError (printf "duplicate function '%s'" (pprint f))    (sourceSpan f) where f = fName d
-errDupParam     x = mkError (printf "Duplicate parameter '%s'" (bindId x)) (sourceSpan x)
-errDupBind      x = mkError (printf "Shadow binding '%s'" (bindId x))      (sourceSpan x)
+errDupFun d       = mkError (printf "duplicate function '%s'" (pprint f))(sourceSpan f) where f = fName d
+errDupParam     x = mkError (printf "Duplicate parameter '%s'" (bindId x))(sourceSpan x)
+errDupBind      x = mkError (printf "Shadow binding '%s'" (bindId x))(sourceSpan x)
 errLargeNum   l n = mkError (printf "Number '%d' is too large" n) l
 errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l

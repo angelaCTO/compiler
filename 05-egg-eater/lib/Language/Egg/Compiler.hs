@@ -293,7 +293,8 @@ assertBound env vE vI =
      IJl  (DynamicErr IndexLow)
     ]				++
     loadAddr (immArg env vE)	++
-    [ICmp (Reg EBX) (tupleLoc 0),
+    [IAdd (Reg EBX) (Const 2),
+     ICmp (Reg EBX) (tupleLoc 0),
      IJg  (DynamicErr IndexHigh)
     ]
 
@@ -306,11 +307,11 @@ roundToEven n = if n `mod` 2 == 0 then n else (n + 1)
   
 
 -------------------------------------------------------------------------------
--- | @loadAddr env vE assigns to EAX the base address of tuple vE  TODO
+-- | @loadAddr env vE assigns to EAX the base address of tuple vE
 -------------------------------------------------------------------------------
 loadAddr :: Arg -> [Instruction]
 loadAddr a = [IMov (Reg EAX) a,                    -- compute address
-              ISub (Reg EAX) (Const 1),         -- drop tag bits
+              ISub (Reg EAX) (Const 1),            -- drop tag bits
               IAnd (Reg EAX) (HexConst 0xfffffff8) -- set last 3 bits to 0
              ]
 
