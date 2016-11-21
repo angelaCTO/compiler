@@ -150,5 +150,16 @@ fdlTests sc =
   ]
 
 yourTests sc =
-  [ -- Your tests go here
+  [
+--Tests from 05
+    mkTest sc "LowAccess_outOfBounds"  File (Left  "Error: tuple index too small."),
+    mkTest sc "HighAccess_outOfBounds" File (Left  "Error: tuple index too large."),
+    mkTest sc "Access_okayBounds"      File (Right "3"),
+    mkTest sc "NestedAccess_okayBounds"File (Right "3"),
+    mkTest sc "AccessLet"              File (Right "1"),
+    mkTest sc "Access_BadAnf"          File (Left  "Error: tuple index too large."),
+    mkTest sc "Access_BadAnf2"         File (Right "5"),
+    mkTest sc "AccessFalse"            File (Right "false"),
+    mkTest sc "AccessSomething"        File (Right "9"),
+    mkTest sc "getTrue"                File (Right "20")
   ]
