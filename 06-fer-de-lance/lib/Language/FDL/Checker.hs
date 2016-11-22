@@ -19,6 +19,10 @@ import           Language.FDL.Utils
 import           Control.Exception
 
 
+fromMaybe a i = case a of
+  Just b ->  b
+  Nothing -> i
+
 --------------------------------------------------------------------------------
 check :: Bare -> Bare
 --------------------------------------------------------------------------------
@@ -56,6 +60,11 @@ addsEnv xs env = L.foldl' (\env x -> addEnv x env) env xs
 --------------------------------------------------------------------------------
 -- | Error Checkers: In each case, return an empty list if no errors.
 --------------------------------------------------------------------------------
+{-
+duplicateFunErrors :: [BareDecl] -> [UserError]
+duplicateFunErrors = fmap errDupFun . concat . dupBy (bindId . fName)
+-}
+
 duplicateParamErrors :: [BareBind] -> [UserError]
 duplicateParamErrors xs
   = map errDupParam
@@ -78,6 +87,18 @@ unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundVarErrors vEnv x l
   = condError (not (memberEnv x vEnv)) (errUnboundVar l x)
 
+unboundFunErrors :: Env -> Id -> SourceSpan -> [UserError]
+unboundFunErrors fEnv f l =
+    condError ((memberEnv f fEnv)) (errUnboundFun l f)
+
+
+
+callArityErrors :: Env -> Id -> SourceSpan -> Int -> [UserError]
+callArityErrors fEnv f l i =
+    condError (((fromMaybe (lookupEnv f fEnv) i) == i)) (errCallArity l f)
+
+
+
 --------------------------------------------------------------------------------
 -- | Error Constructors
 --------------------------------------------------------------------------------
@@ -90,3 +111,6 @@ errDupBind      x = mkError (printf "Shadow binding '%s'" (bindId x))      (sour
 errLargeNum   l n = mkError (printf "Number '%d' is too large" n) l
 errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
+--errDupFun d = mkError (printf "duplicate function '%s'" (pprint f)) (sourceSpan f) where f = fName d
+errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
+errCallArity  l f = mkError (printf "Wrong arity of arguments at call of %s" f) l

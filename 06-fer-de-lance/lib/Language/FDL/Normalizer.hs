@@ -50,13 +50,24 @@ anf i (If c e1 e2 l)    = (i''', stitch bs  (If c' e1' e2' l))
     (i'' ,     e1')     = anf i'  e1
     (i''',     e2')     = anf i'' e2
 
-anf _i (Tuple _es _l)      = error "TBD:anf:Tuple"
+anf _i (Tuple _es _l)   = (i', stitch bs (Tuple es' _l))
+  where
+    (i', bs, es')       = imms _i _es
 
-anf _i (GetItem _e1 _e2 _l) = error "TBD:anf:Get"
 
-anf _i (App _e _es _l)    = error "TBD:anf:App"
+anf _i (GetItem _e1 _e2 _l) = (i'', stitch bs' (GetItem e1' e2' _l))
+  where
+    (i',  bs1, e1')       = imm _i  _e1
+    (i'', bs2, e2')       = imm i'  _e2
+    bs'                   = bs2 ++ bs1
 
-anf _i (Lam _xs _e _l)    = error "TBD:anf:Lam"
+anf _i (App _e _es _l)    = (i', stitch bs (App e' es' _l))
+  where
+    (i', bs, e':es')      = imms _i (_e : _es)
+
+anf _i (Lam _xs _e _l)    = (i', Lam _xs a _l)
+  where
+    (i', a)               = anf _i _e
 
 anf _i (Fun _f _xs _e _l) = error "TBD:anf:Fun"
 

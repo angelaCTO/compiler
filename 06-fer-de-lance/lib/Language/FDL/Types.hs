@@ -142,6 +142,7 @@ type Id = Text
 -- | `Tag` are used to tag each `If`
 type Tag = Int
 
+
 -- | `Prim1` are unary operations
 data Prim1
   = Add1
