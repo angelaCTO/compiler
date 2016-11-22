@@ -177,15 +177,14 @@ compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
 
 
-compileEnv _env (App _v  _vs _l)    =
-    assertType _env _vE TClosure                                        ++
-    assertArity _env _vE (length _e)                                    ++
-    tupleReadRaw (immArg _env _v) (repr (1 :: Int))                     ++
-    [IPush (param _env vX) | vX <- reverse _vs]                         ++
-    [ICall (Reg EAX)]                                                   ++
-    [IAdd (Reg ESP) (4 * n)]
-    where
-        n = countVars(_v)
+compileEnv _env (App _v  _vs _l) = assertType _env _vE TClosure                    ++
+                                   assertArity _env _vE (length _e)                ++
+                                   tupleReadRaw (immArg _env _v) (repr (1 :: Int)) ++
+                                   [IPush (param _env vX) | vX <- reverse _vs]     ++
+                                   [ICall (Reg EAX)]                               ++
+                                   [IAdd (Reg ESP) (4 * n)]
+                              where
+                                   n = countVars(_v)
 
 
 compileImm :: Env -> IExp -> Instruction
@@ -318,7 +317,6 @@ lamTuple l arity = tupleAlloc 2                                         ++
 lamTuple :: Tag -> Arity -> [Instruction]
 lamTuple l arity = tupleAlloc 2                                            ++
                    tupleWrites [ILabel LamStart (snd l)]  ++
---                   tupleWrites [(CodePtr (ILabel LamStart (snd l))),(repr arity)]  ++
                    [IOr (Reg EAX) (typeTag TClosure)]
 
 

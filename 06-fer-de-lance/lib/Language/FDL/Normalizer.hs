@@ -69,7 +69,9 @@ anf _i (Lam _xs _e _l)    = (i', Lam _xs a _l)
   where
     (i', a)               = anf _i _e
 
-anf _i (Fun _f _xs _e _l) = error "TBD:anf:Fun"
+anf _i (Fun _f _xs _e _l) = (i', Fun _xs a _l)
+   where
+    (i', a)               = anf _i a
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their
@@ -122,15 +124,29 @@ imm i (Prim2 o e1 e2 l) = (i'', bs', mkId x l)
     (i'', x)            = fresh l i'
     bs'                 = (x, (Prim2 o v1 v2 l, l)) : bs
 
-imm _i (Tuple _es _l)      = error "TBD:imm:Tuple"
+imm _i (Tuple _es _l)      = (i'', bs', mkId x _l)
+  where
+    (i', bs, vs)        = imms _i _es
+    (i'', x)            = fresh _l i'
+    bs'                 = (x, (Tuple _es _l, _l)) : bs
 
-imm _i (GetItem _e1 _e2 _l) = error "TBD:imm:Get"
+imm _i (GetItem _e1 _e2 _l) = (i''', bs', mkId x _l)
+  where
+    (i', b1', e1')      = imm _i _e1
+    (i'', b2', e2')     = imm i' _e2
+    (i''', x)           = fresh _l i''
+    bs'                 = (x, (GetItem e1' e2' _l, _l)) : b2'++b1'
 
 imm i e@(If _ _ _  l)   = immExp i e l
 
 imm i e@(Let _ _ _ l)   = immExp i e l
 
-imm _i (App _e _es _l)  = error "TBD:imm:App"
+
+imm _i (App _e _es _l)  = (i'', bs', mkId x _l)
+  where
+    (i', bs, es')       = imms _i _es
+    (i'', x)            = fresh _l i'
+    bs'                 = (x, (App _e es' _l, _l)) : bs
 
 imm i e@(Lam _ _ l)     = immExp i e l
 
