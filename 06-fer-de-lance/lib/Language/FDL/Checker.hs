@@ -18,17 +18,24 @@ import           Language.FDL.Types
 import           Language.FDL.Utils
 import           Control.Exception
 
-
+--------------------------------------------------------------------------------
 fromMaybe a i = case a of
   Just b ->  b
   Nothing -> i
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------
-check :: Bare -> Bare
+-- | Check
 --------------------------------------------------------------------------------
+check :: Bare -> Bare
 check p = case wellFormed p of
             [] -> p
             es -> throw es
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------
 -- | `wellFormed e` returns the list of errors for an expression `e`
@@ -53,9 +60,37 @@ wellFormed = go emptyEnv
                              ++ go (addsEnv xs vEnv) e
     go vEnv (Fun f xs e    _) = duplicateParamErrors xs
                              ++ go (addsEnv (f:xs) vEnv) e
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
+
+--------------------------------------------------------------------------------
+-- | wellFormedE                                                      Check
+--------------------------------------------------------------------------------
+--Do we need this?
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-- | wellFormedD                                                       Check
+--------------------------------------------------------------------------------
+--Do we need this?
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+-- | addsEnv
+--------------------------------------------------------------------------------
 addsEnv :: [BareBind] -> Env -> Env
 addsEnv xs env = L.foldl' (\env x -> addEnv x env) env xs
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------
 -- | Error Checkers: In each case, return an empty list if no errors.
@@ -65,6 +100,7 @@ duplicateFunErrors :: [BareDecl] -> [UserError]
 duplicateFunErrors = fmap errDupFun . concat . dupBy (bindId . fName)
 -}
 
+
 duplicateParamErrors :: [BareBind] -> [UserError]
 duplicateParamErrors xs
   = map errDupParam
@@ -72,31 +108,36 @@ duplicateParamErrors xs
   . dupBy bindId
   $ xs
 
+
 duplicateBindErrors :: Env -> BareBind -> [UserError]
 duplicateBindErrors vEnv x
   = condError (memberEnv (bindId x) vEnv) (errDupBind x)
+
 
 largeNumberErrors :: Integer -> SourceSpan -> [UserError]
 largeNumberErrors n l
   = condError (maxInt < abs n) (errLargeNum l n)
 
+
 maxInt :: Integer
 maxInt = 1073741824
+
 
 unboundVarErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundVarErrors vEnv x l
   = condError (not (memberEnv x vEnv)) (errUnboundVar l x)
+
 
 unboundFunErrors :: Env -> Id -> SourceSpan -> [UserError]
 unboundFunErrors fEnv f l =
     condError ((memberEnv f fEnv)) (errUnboundFun l f)
 
 
-
 callArityErrors :: Env -> Id -> SourceSpan -> Int -> [UserError]
 callArityErrors fEnv f l i =
     condError (((fromMaybe (lookupEnv f fEnv) i) == i)) (errCallArity l f)
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
@@ -114,3 +155,5 @@ errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
 --errDupFun d = mkError (printf "duplicate function '%s'" (pprint f)) (sourceSpan f) where f = fName d
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
 errCallArity  l f = mkError (printf "Wrong arity of arguments at call of %s" f) l
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------

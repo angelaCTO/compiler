@@ -167,6 +167,7 @@ compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
 
+--error "TBD:compileEnv:Lam"
 compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
                                       ILabel (LamStart _l)              :
                                       compileDecl _l _xs _e            ++
@@ -174,9 +175,11 @@ compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
                                       lamTuple _l (length _xs)
 
 
+--error "TBD:compileEnv:Fun"
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
 
 
+--error "TBD:compileEnv:App"
 compileEnv _env (App _v  _vs _l) = assertType _env _vE TClosure                    ++
                                    assertArity _env _vE (length _e)                ++
                                    tupleReadRaw (immArg _env _v) (repr (1 :: Int)) ++
@@ -468,7 +471,6 @@ branch l j falseIs trueIs = concat
     i     = snd l
 
 
-
 boolBranch :: Tag -> COp -> [Instruction]
 boolBranch l j = branch l j [assign EAX False] [assign EAX True]
 --------------------------------------------------------------------------------
@@ -488,23 +490,28 @@ stackVar i = RegOffset (-4 * i) EBP
 --------------------------------------------------------------------------------
 class Repr a where
   repr :: a -> Arg
---------------------------------------------------------------------------------
+
+
 instance Repr Bool where
   repr True  = HexConst 0xffffffff
   repr False = HexConst 0x7fffffff
---------------------------------------------------------------------------------
+
+
 instance Repr Int where
   repr n = Const (fromIntegral (shift n 1))
---------------------------------------------------------------------------------
+
+
 instance Repr Integer where
   repr n = Const (fromIntegral (shift n 1))
---------------------------------------------------------------------------------
+
+
 typeTag :: Ty -> Arg
 typeTag TNumber   = HexConst 0x00000000
 typeTag TBoolean  = HexConst 0x7fffffff
 typeTag TTuple    = HexConst 0x00000001
 typeTag TClosure  = HexConst 0x00000005
---------------------------------------------------------------------------------
+
+
 typeMask :: Ty -> Arg
 typeMask TNumber  = HexConst 0x00000001
 typeMask TBoolean = HexConst 0x7fffffff

@@ -69,7 +69,7 @@ anf _i (Lam _xs _e _l)    = (i', Lam _xs a _l)
   where
     (i', a)               = anf _i _e
 
-anf _i (Fun _f _xs _e _l) = (i', Fun _xs a _l)
+anf _i (Fun _f _xs _e _l) = (i', Fun _f _xs a _l)
    where
     (i', a)               = anf _i a
 

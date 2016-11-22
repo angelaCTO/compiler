@@ -92,7 +92,6 @@ instrAsm (IJmp l)       = printf "  jmp near %s" (labelAsm l)
 instrAsm IRet           =        "  ret"
 
 
-
 regAsm :: Reg -> Text
 regAsm EAX = "eax"
 regAsm EBX = "ebx"

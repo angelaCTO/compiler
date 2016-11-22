@@ -1,0 +1,24 @@
+Jogging Questions: Brain Kaputt atm ... Noting so I can remember these q tomorrow
+
+1. lamTuple - How to store tuple pair using codePtr (builtin? pprint?) and how
+   do pass in the (label, arity) pair as a single [Arg] into tupleWrites? ...
+   Do we tuple-ize in lamTuple or modify tupleWrites to make it work?
+
+2. Do we need to implement wellFormedE/D ...seems wellFormed already handles it?
+
+3. No longer have nice "Decl" ... how to extract necessary info from AEXP,etc
+   types ... ex, how to extract f, xs, e, ... (that was previously provided in
+   the Decl Data constructor ... If no more, are we suppose to rely on exbrBinds
+   to deconstruct for us (but what if function/whatever is not in ANF form...?)
+
+4. compileDecl??
+
+4. Arity check implemented, but forgot about closure check...will need to do that
+
+5. Do we neeed a assertClosuer?
+
+5. How to implement freeVars?
+
+**main q about missing Decl data construct --> AEXp .../Extraction
+
+BrainDEAD
