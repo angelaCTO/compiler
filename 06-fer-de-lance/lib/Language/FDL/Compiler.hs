@@ -60,6 +60,10 @@ tag = label
 --------------------------------------------------------------------------------
 
 
+
+
+
+
 --------------------------------------------------------------------------------
 -- | @funInstrs n body@ returns the instructions of `body` wrapped
 --   with code that sets up the stack (by allocating space for n local vars)
@@ -85,6 +89,37 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------
+-- | Compile
+--------------------------------------------------------------------------------
+compile :: AExp -> [Instruction]
+--compile v = compileBody emptyEnv (fst v) ++ concatMap compileDecl ds
+compile v = compileBody emptyEnv (fst v) ++ concatMap (lambdaBody xs e f)
+    where 
+        xs =
+        e  = 
+        f  = 
+
+{-
+compileDecl :: [Bind a] -> (Expr a) -> [Instruction]
+compileDecl xs f = ILabel (Builtin (bindId f)) : compileBody env e
+  where
+    env                     = fromListEnv (zip (bindId <$> xs) [-2, -3..])
+-}
+
+lambdaBody :: [Bind a] -> (Expr a) -> a -> [Instruction] 
+lambdaBody xs e f  = ILabel (Builtin (bindId f)) : compileBody env e
+   where 
+       env         = fromListEnv (zip (bindId <$> xs) [-2, -3..])        
+       ys          = freeVars (Lam xs e f)
+
+
+
+
+compileBody :: Env -> AExp -> [Instruction]
+compileBody env e = funInstrs (countVars e) (compileEnv env e)
+--------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------
 -- | @countVars e@ returns the maximum stack-size needed to evaluate e,
@@ -101,72 +136,40 @@ freeVars = error "TBD:freeVars"
 --------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------
---TODO Check Typing Declaration. not sure if correct
-{-                f           xs         e            output
-compileDecl :: (Bind a) -> [Bind a] -> (Expr a) -> [Instruction]
-compileDecl f xs e  = ILabel (Builtin (bindId f)) : compileBody env e
-  where 
-     env            = fromListEnv (zip (bindId <$> xs) [-2, -3..])
--}
-compileDecl :: [Bind a] -> (Expr a) -> [Instruction]
-compileDecl xs e  = ILabel (Builtin (bindId f)) : compileBody env e
-  where 
-    env             = fromListEnv (zip (bindId <$> xs) [-2, -3..])
-
-
---TODO Check
-compileBody :: Env -> AExp -> [Instruction]
-compileBody env v = funInstrs (countVars v) (compileEnv env v)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
 -- Compile AExp Expressions
 --------------------------------------------------------------------------------
 compile :: AExp -> [Instruction]
+
+
+{-
 compile e@(Number  n l)      = compileBody emptyEnv e
-                               
-
 compile e@(Boolean b l)      = compileBody emptyEnv e 
-
-
 compile e@(Id i l)           = compileBody emptyEnv e
-
 compile e@(Prim1 p1 e1 l)    = compileBody emptyEnv e ++ 
-                               concatMap compileDecl xs 
-
+                               concatMap (compileDecl _ e1 _)  
 compile e@(Prim2 p2 e1 e2 l) = compileBody emptyEnv e ++ 
-                               concatMap compileDecl xs
-
-
+                               concatMap (compileDecl _ e1 e2)
+{- idk
 compile e@(If e1 e2 e3 l)    = compileBody emptyEnv e ++ 
-                               concatMap compileDecl xs 
-
-
+                               compareCheck emptyEnv                               
+                               concatMap (compileDecl _ e1 e2) 
+-}
 compile e@(Let b1 e1 e2 l)   = compileBody emptyEnv e ++ 
-                               concatMap compileDecl xs 
-
-
+                               concatMap (compileDecl _ e1 e2) 
 compile e@(Tuple es l)       = compileBody emptyEnv e ++ 
-                               concatMap compileDecl xs 
-
-
+                               concatMap (compileDecl _ es _) 
 compile e@(GetItem e1 e2 l)  = compileBody emptyEnv e ++ 
-                               concatMap (compileDecl e1 e2)
-
-
+                               concatMap (compileDecl _ e1 e2)
 compile e@(App e1 es l)      = compileBody emptyEnv e ++ 
                                concatMap (compileDecl _ es e1) --Not sure
-
-
 compile e@(Lam bs e1 l)      = compileBody emptyEnv e ++ 
                                concatMap (compileDecl _ bs e1)
-
-
 compile e@(Fun b1 bs e1 l)   = compileBody emptyEnv e ++ 
-                               concatMap (compileDecl b1 bs e1) 
+                               concatMap (compileDecl _ bs e1) 
+-}
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -227,13 +230,14 @@ compileEnv env (Fun f xs e l)       = IJmp   end           		:
                                end   = (DefEnd   f l)
 
 compileEnv env (App v vs l)    = assertType env vs TClosure                 ++
-                                 assertArity env vs (length vs)             ++
+                                 assertArity env vs arity                   ++
                                  tupleReadRaw (immArg env v) (repr(1::Int)) ++
                                  [IPush (param env v) | v <- reverse vs]    ++
                                  [ICall (Reg EAX)]                          ++
-                                 [IAdd (Reg ESP) (4 * n)]
+                                 [IAdd (Reg ESP) (4 * Const n)]
                          where
-                              n = countVars(v)
+                              arity = length vs
+                              n     = countVars(v)
 
 
 
@@ -354,8 +358,9 @@ lamTuple l arity = tupleAlloc 2                                  ++
                    [IOr (Reg EAX) (typeTag TClosure)]
 
 -- | Creates an (arity, label) pair instruction (Named Functions)
-funTuple :: Int -> Arity -> Label -> [Instruction]
+funTuple :: Int -> Arity -> Id -> [Instruction]
 funTuple l arity f = tupleAlloc 2                                    ++
+--                     tupleWrites [repr arity, CodePtr(DefStart f l)] ++
                      tupleWrites [repr arity, CodePtr(DefStart f l)] ++
                      [IOr (Reg EAX) (typeTag TClosure)]
 
