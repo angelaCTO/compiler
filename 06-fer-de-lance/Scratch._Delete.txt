@@ -1,0 +1,51 @@
+--------------------------------------------------------------------------------
+-- | @funInstrs n body@ returns the instructions of `body` wrapped
+--   with code that sets up the stack (by allocating space for n local vars)
+--   and restores the callees stack prior to return.
+--------------------------------------------------------------------------------
+funInstrs :: Int -> [Instruction] -> [Instruction]
+funInstrs n instrs = funEntry n ++ instrs ++ funExit
+
+
+--Insert instructions for setting up stack for `n` local vars
+funEntry :: Int -> [Instruction]
+funEntry n = [ IPush (Reg EBP)                       -- save caller's ebp
+             , IMov  (Reg EBP) (Reg ESP)             -- set callee's ebp
+             , ISub  (Reg ESP) (Const (4 * n))       -- allocate n local-vars
+             , IAnd  (Reg ESP) (HexConst 0xFFFFFFF0)]-- MacOS stack alignment
+
+
+--Clean up stack & labels for jumping to error
+funExit :: [Instruction]
+funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
+            , IPop (Reg EBP)                    -- restore callee's ebp
+            , IRet]                             -- jump back to caller
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+
+
+{- 
+--Try 1, ref
+lamTuple :: Tag -> Arity -> [Instruction]
+lamTuple l arity = tupleAlloc 2                                         ++
+                   tupleWrites [ILabel (LamStart (snd l)), repr arity]  ++
+                   [IOr (Reg EAX) (typeTag TClosure)]
+--Try2, ref
+lamTuple :: Tag -> Arity -> [Instruction]
+lamTuple l arity = tupleAlloc 2                           ++
+                   tupleWrites [ILabel LamStart (snd l)]  ++
+                   [IOr (Reg EAX) (typeTag TClosure)]
+-}
+
+
+lamTuple :: Int -> Arity -> [Instruction]
+lamTuple l arity = tupleAlloc 2                             ++
+                   tupleWrites [repr arity, CodePtr start]  ++
+                   [IOr (Reg EAX) (typeTag TClosure)]
+{- Necessary?
+    where 
+        start    = LamStart l    
+-}
+

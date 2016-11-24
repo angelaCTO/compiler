@@ -1,3 +1,7 @@
-.stack-work/
-*.swp
-*.swo
+.stack-work/              # please don't
+*.swp                     # swap file
+*.swo                     # swap file
+*~                        # vim temp file
+tests/output/*.s          # output asm
+tests/output/*.log        # output log
+tests/output/*.result     # output res
