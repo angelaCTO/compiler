@@ -88,7 +88,7 @@ freeVars e = S.toList(go e)
 --   with code that sets up the stack (by allocating space for n local vars)
 --   and restores the callees stack prior to return.
 --------------------------------------------------------------------------------
-funInstrs :: Int -> [Instruction] -> [Instruction]
+funInstr :: Int -> [Instruction] -> [Instruction]
 funInstr n instr = funEntry n <> instrs <> funExit <> [IRet] 
 
 -- | Inserts instructions for setting up stack for n local variables
@@ -111,27 +111,47 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
 -- Compile
 --------------------------------------------------------------------------------
 compile :: AExp -> [Instruction] --FIXME
-compile v = compileBody emptyEnv (fst v) ++ concatMap compileDecl xs 
+compile v = compileBody emptyEnv v ++ 
     where
         ((x, e) : xs, body) = exprBinds(v)
 
-
-{- Note, lamTuple is similar to compileDecl, but Decl is no longer 
-   Keeping for current reference -}
-lamTuple :: Int -> Arity -> [Instruction]
-lamTuple l arity = 
-    tupleAlloc 2                ++      --alloc tuple size 2
-    tupleWrites [repr arity,            --shift arity bc it is of Int Type
-                 CodePtr start] ++      --CodePtr converts Label to Arg type
-    [IOr (Reg EAX) (typeTag TClosure)]  --Set the tag bits
---    where (TODO - Check)
---        start    = LamStart l    
-
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env v = funInstrs (countVars v) (compileEnv env v)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+-- | Lambda
+--------------------------------------------------------------------------------
+lamTuple :: Int -> Label -> Env -> [Id] -> [Instruction]
+lamTuple arity start env ys
+  =  tupleAlloc  (2 + length ys)                    -- alloc tuple 2+|ys|  
+  ++ tupleWrites ( repr arity                       -- fill arity
+                 : CodePtr start                    -- fill code-ptr
+                 : [immArg env (Id y) | y <- ys] )  -- fill free-vars
+  ++ [ IOr  (Reg EAX) (typeTag TClosure) ]          -- set the tag bits   
 
 
+lambdaBody :: [Id] -> [Id] -> AExp -> [Instruction]
+lambdaBody ys xs e = 
+        --restores free vars from closure-ptr,  exec function-body as before
+        funInstrs maxStack (restore ys ++ compileEnv env e)
+    where
+        maxStack       = envMax env + countVars e  -- max stack size
+        env            = fromListEnv bs
+                       --put params into env/stack, put free-vars into env/stack
+        bs             = zip xs  [-2,-3..] ++ zip ys  [1..]   
+        
 
+restore :: [Id] -> [Instruction]
+restore ys  = concat [ copy i | (y, i) <- zip ys [1..]]
+  where
+    closPtr = RegOffset 8 EBP
+    --Copy tuple-fld for y into EAX, write EAX into stackVar for y
+    copy i  = tupleReadRaw closPtr (repr (i+1)) ++ [IMov (stackVar i) (Reg EAX)]  
+
+--------------------------------------------------------------------------------        
+--------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
@@ -171,13 +191,6 @@ compileEnv env (App v xs _) =
         n = countVars(v)
 
 --TODO (Check Or) FIXME
-{-
-compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
-                                      ILabel (LamStart _l)              :
-                                      compileDecl _l _xs _e            ++
-                                      ILabel (LamEnd _l)                :
-                                      lamTuple _l (length _xs)
--}
 compileEnv env (Lam xs e l) = 
         IJmp end                        :               
         ILabel start                    :                    
