@@ -84,6 +84,30 @@ freeVars e = S.toList(go e)
 
 
 --------------------------------------------------------------------------------
+-- | FunInstr returns the instructions of `body` wrapped
+--   with code that sets up the stack (by allocating space for n local vars)
+--   and restores the callees stack prior to return.
+--------------------------------------------------------------------------------
+funInstrs :: Int -> [Instruction] -> [Instruction]
+funInstr n instr = funEntry n <> instrs <> funExit <> [IRet] 
+
+-- | Inserts instructions for setting up stack for n local variables
+funEntry :: Int -> [Instruction]
+funEntry n = [ IPush (Reg EBP)                       -- save caller's ebp
+             , IMov  (Reg EBP) (Reg ESP)             -- set callee's ebp
+             , ISub  (Reg ESP) (Const (4 * n))       -- allocate n local-vars
+             , IAnd  (Reg ESP) (HexConst 0xFFFFFFF0)]-- MacOS stack alignment
+
+-- | Cleans up stack and labels for jumping to error
+funExit :: [Instruction]
+funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
+            , IPop (Reg EBP)                    -- restore callee's ebp
+            , IRet]                             -- jump back to caller
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
 -- Compile
 --------------------------------------------------------------------------------
 compile :: AExp -> [Instruction] --FIXME
@@ -100,14 +124,14 @@ lamTuple l arity =
     tupleWrites [repr arity,            --shift arity bc it is of Int Type
                  CodePtr start] ++      --CodePtr converts Label to Arg type
     [IOr (Reg EAX) (typeTag TClosure)]  --Set the tag bits
---    where (TODO - Check Necessity?)
+--    where (TODO - Check)
 --        start    = LamStart l    
-
 
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env v = funInstrs (countVars v) (compileEnv env v)
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+
+
+
 
 
 --------------------------------------------------------------------------------
@@ -142,16 +166,31 @@ compileEnv env (App v xs _) =
         tupleReadRaw (immArg env v) (repr (1 :: Int)) ++ --load arity into EAX
         [IPush (param env vXs) | vXs <- reverse xs]   ++ --push args by c conv.
         [ICall (Reg EAX)]                             ++ --call EAX
-        [IAdd (Reg ESP) (4 * n)]                      ++ --pop args
+        [IAdd (Reg ESP) (4 * n)]                         --pop args
     where
         n = countVars(v)
 
 --TODO (Check Or) FIXME
+{-
 compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
                                       ILabel (LamStart _l)              :
                                       compileDecl _l _xs _e            ++
                                       ILabel (LamEnd _l)                :
                                       lamTuple _l (length _xs)
+-}
+compileEnv env (Lam xs e l) = 
+        IJmp end                        :               
+        ILabel start                    :                    
+        lambdaBody ys xs e              ++              
+        ILabel end                      :                      
+        lamTuple arity start env ys      
+    where
+        ys    = freeVars (Lam xs e l)
+        arity = length xs
+        start = LamStart l
+        end   = LamEnd   l
+
+
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
 --------------------------------------------------------------------------------
