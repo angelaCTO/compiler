@@ -1,3 +1,4 @@
-.stack-work/
-*.swp
-*.swo
+.stack-work/    # please don't
+*.swp           # swap file
+*.swo           # swap file
+*~              # vim temp file
