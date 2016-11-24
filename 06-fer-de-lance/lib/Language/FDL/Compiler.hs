@@ -7,8 +7,8 @@
 --   of the assembly-program string representing the compiled version
 --------------------------------------------------------------------------------
 
-module Language.FDL.Compiler ( compiler, compile, compileEnv, countVars, freeVars ) where
-
+module Language.FDL.Compiler(compiler, compile, compileEnv, countVars, freeVars)
+    where
 import           Prelude                  hiding (compare)
 import           Control.Arrow            ((>>>))
 import           Data.Maybe
@@ -20,14 +20,6 @@ import           Language.FDL.Parser     (parse)
 import           Language.FDL.Checker    (check, errUnboundVar)
 import           Language.FDL.Normalizer (anormal)
 import           Language.FDL.Asm        (asm)
-
-
-
-
---------------------------------------------------------------------------------
-compiler :: FilePath -> Text -> Text
-compiler f = parse f >>> check >>> anormal >>> tag >>> compile >>> asm
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
@@ -38,9 +30,7 @@ type Tag   = (SourceSpan, Int)
 type AExp  = AnfExpr Tag
 type IExp  = ImmExpr Tag
 type ABind = Bind    Tag
-
---Added
-type Arity = Arg --Int
+type Arity = Arg            -- Note, Arity set to type Arg (Const => Int)
 
 instance Located Tag where
   sourceSpan = fst
@@ -61,27 +51,10 @@ tag = label
 
 
 --------------------------------------------------------------------------------
--- | @funInstrs n body@ returns the instructions of `body` wrapped
---   with code that sets up the stack (by allocating space for n local vars)
---   and restores the callees stack prior to return.
+-- | Compiler f (Top Level Compilation)
 --------------------------------------------------------------------------------
-funInstrs :: Int -> [Instruction] -> [Instruction]
-funInstrs n instrs = funEntry n ++ instrs ++ funExit
-
-
---Insert instructions for setting up stack for `n` local vars
-funEntry :: Int -> [Instruction]
-funEntry n = [ IPush (Reg EBP)                       -- save caller's ebp
-             , IMov  (Reg EBP) (Reg ESP)             -- set callee's ebp
-             , ISub  (Reg ESP) (Const (4 * n))       -- allocate n local-vars
-             , IAnd  (Reg ESP) (HexConst 0xFFFFFFF0)]-- MacOS stack alignment
-
-
---Clean up stack & labels for jumping to error
-funExit :: [Instruction]
-funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
-            , IPop (Reg EBP)                    -- restore callee's ebp
-            , IRet]                             -- jump back to caller
+compiler :: FilePath -> Text -> Text
+compiler f = parse f >>> check >>> anormal >>> tag >>> compile >>> asm
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -94,9 +67,9 @@ countVars :: AnfExpr a -> Int
 countVars (Let _ e b _)  = max (countVars e)  (1 + countVars b)
 countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
---------------------------------------------------------------------------------
+
 freeVars :: Expr a -> [Id]
-freeVars = error "TBD:freeVars"
+freeVars = error "TBD:freeVars" --TODO
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -104,18 +77,22 @@ freeVars = error "TBD:freeVars"
 --------------------------------------------------------------------------------
 -- Compile
 --------------------------------------------------------------------------------
---error "TBD:compile"
-compile :: AExp -> [Instruction]
-compile v = compileBody emptyEnv (fst v) ++ concatMap compileDecl xs --is this right??
+compile :: AExp -> [Instruction] --FIXME
+compile v = compileBody emptyEnv (fst v) ++ concatMap compileDecl xs 
     where
         ((x, e) : xs, body) = exprBinds(v)
 
 
-compileDecl :: (Bind a) -> [Bind a] -> (Expr a) -> [Instruction]
-compileDecl f xs e  = ILabel (Builtin (bindId f))
-                    : compileBody env e
-  where
-    env             = fromListEnv (zip (bindId <$> xs) [-2, -3..])
+{- Note, lamTuple is similar to compileDecl, but Decl is no longer 
+   Keeping for current reference -}
+lamTuple :: Int -> Arity -> [Instruction]
+lamTuple l arity = 
+    tupleAlloc 2                ++  --alloc tuple size 2
+    tupleWrites [repr arity,        --shift arity bc it is of Int Type
+                 CodePtr start] ++  --CodePtr converts Label to Arg type
+    [IOr (Reg EAX) (typeTag TClosure)]
+--    where (TODO - Check Necessity?)
+--        start    = LamStart l    
 
 
 compileBody :: Env -> AExp -> [Instruction]
@@ -130,26 +107,14 @@ compileBody env v = funInstrs (countVars v) (compileEnv env v)
 --------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
 compileEnv env v@(Number {})        = [ compileImm env v  ]
-
-
 compileEnv env v@(Boolean {})       = [ compileImm env v  ]
-
-
 compileEnv env v@(Id {})            = [ compileImm env v  ]
-
-
 compileEnv env e@(Let {})           = is ++ compileEnv env' body
   where
     (env', is)                      = compileBinds env [] binds
     (binds, body)                   = exprBinds e
-
-
 compileEnv env (Prim1 o v l)        = compilePrim1 l env o v
-
-
 compileEnv env (Prim2 o v1 v2 l)    = compilePrim2 l env o v1 v2
-
-
 compileEnv env (If v e1 e2 l)       = assertType env v TBoolean
                                    ++ IMov (Reg EAX) (immArg env v)
                                     : ICmp (Reg EAX) (repr False)
@@ -157,37 +122,30 @@ compileEnv env (If v e1 e2 l)       = assertType env v TBoolean
   where
     i1s                             = compileEnv env e1
     i2s                             = compileEnv env e2
-
-
 compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
                                       tupleWrites (immArg _env <$> _es) ++
 				                      [IOr (Reg EAX) (typeTag TTuple)]
-
-
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
+--TODO (Check Or) FIXME
+compileEnv _env (App _v  _vs _l) = 
+        assertType _env _vE TClosure                    ++
+        assertArity _env _vE (length _e)                ++
+        tupleReadRaw (immArg _env _v) (repr (1 :: Int)) ++
+        [IPush (param _env vX) | vX <- reverse _vs]     ++
+        [ICall (Reg EAX)]                               ++
+        [IAdd (Reg ESP) (4 * n)]
+    where
+        n = countVars(_v)
 
---error "TBD:compileEnv:Lam"
+--TODO (Check Or) FIXME
 compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
                                       ILabel (LamStart _l)              :
                                       compileDecl _l _xs _e            ++
                                       ILabel (LamEnd _l)                :
                                       lamTuple _l (length _xs)
-
-
---error "TBD:compileEnv:Fun"
+--TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
-
-
---error "TBD:compileEnv:App"
-compileEnv _env (App _v  _vs _l) = assertType _env _vE TClosure                    ++
-                                   assertArity _env _vE (length _e)                ++
-                                   tupleReadRaw (immArg _env _v) (repr (1 :: Int)) ++
-                                   [IPush (param _env vX) | vX <- reverse _vs]     ++
-                                   [ICall (Reg EAX)]                               ++
-                                   [IAdd (Reg ESP) (4 * n)]
-                              where
-                                   n = countVars(_v)
 
 
 compileImm :: Env -> IExp -> Instruction
@@ -204,8 +162,7 @@ compileBinds env is (b:bs) = compileBinds env' (is ++ is') bs
 compileBind :: Env -> (ABind, AExp) -> (Env, [Instruction])
 compileBind env (x, e) = (env', is)
   where
-    is                 = compileEnv env e
-                      ++ [IMov (stackVar i) (Reg EAX)]
+    is                 = compileEnv env e ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
 
 
@@ -229,7 +186,7 @@ compilePrim2 l env Equal   = compare l env IJe Nothing
 
 
 --------------------------------------------------------------------------------
--- | immArg
+-- | Immediate Argument
 --------------------------------------------------------------------------------
 immArg :: Env -> IExp -> Arg
 immArg _   (Number n _)  = repr n
@@ -265,7 +222,6 @@ param env v = Sized DWordPtr (immArg env v)
 
 
 strip = fmap (const ())
-
 
 
 -------------------------------------------------------------------------------
@@ -310,17 +266,6 @@ tupleReadRaw aE aI =
       IShr (Reg EBX) (Const 1),
       IAdd (Reg EBX) (Const 1),
       IMov (Reg EAX) (RegIndex EAX EBX)]
-
-{-
-lamTuple :: Tag -> Arity -> [Instruction]
-lamTuple l arity = tupleAlloc 2                                         ++
-                   tupleWrites [ILabel (LamStart (snd l)), repr arity]  ++
-                   [IOr (Reg EAX) (typeTag TClosure)]
--}
-lamTuple :: Tag -> Arity -> [Instruction]
-lamTuple l arity = tupleAlloc 2                                            ++
-                   tupleWrites [ILabel LamStart (snd l)]  ++
-                   [IOr (Reg EAX) (typeTag TClosure)]
 
 
 roundToEven :: Int -> Int
