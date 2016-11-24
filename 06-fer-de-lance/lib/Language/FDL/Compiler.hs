@@ -69,7 +69,16 @@ countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
 freeVars :: Expr a -> [Id]
-freeVars = error "TBD:freeVars" --TODO
+freeVars e = S.toList(go e)
+  where 
+    go :: Expr -> S.Set Id
+    go (Id x)        = S.singleton x
+    go (Number _)    = S.empty
+    go (Boolean _)   = S.empty
+    go (If e e1 e2)  = S.unions (map go [e1, e2, e3])
+    go (App e es)    = S.unions (map go (e:es))
+    go (Let x e1 e2) = S.union  (go e1) (S.delete x (go e2))
+    go (Lam xs e)    = S.difference (go e) (S.fromList xs) --gives all free var in expr
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -87,10 +96,10 @@ compile v = compileBody emptyEnv (fst v) ++ concatMap compileDecl xs
    Keeping for current reference -}
 lamTuple :: Int -> Arity -> [Instruction]
 lamTuple l arity = 
-    tupleAlloc 2                ++  --alloc tuple size 2
-    tupleWrites [repr arity,        --shift arity bc it is of Int Type
-                 CodePtr start] ++  --CodePtr converts Label to Arg type
-    [IOr (Reg EAX) (typeTag TClosure)]
+    tupleAlloc 2                ++      --alloc tuple size 2
+    tupleWrites [repr arity,            --shift arity bc it is of Int Type
+                 CodePtr start] ++      --CodePtr converts Label to Arg type
+    [IOr (Reg EAX) (typeTag TClosure)]  --Set the tag bits
 --    where (TODO - Check Necessity?)
 --        start    = LamStart l    
 
@@ -99,7 +108,6 @@ compileBody :: Env -> AExp -> [Instruction]
 compileBody env v = funInstrs (countVars v) (compileEnv env v)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-
 
 
 --------------------------------------------------------------------------------
@@ -128,15 +136,15 @@ compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
 --TODO (Check Or) FIXME
-compileEnv _env (App _v  _vs _l) = 
-        assertType _env _vE TClosure                    ++
-        assertArity _env _vE (length _e)                ++
-        tupleReadRaw (immArg _env _v) (repr (1 :: Int)) ++
-        [IPush (param _env vX) | vX <- reverse _vs]     ++
-        [ICall (Reg EAX)]                               ++
-        [IAdd (Reg ESP) (4 * n)]
+compileEnv env (App v xs _) = 
+        assertType  env v TClosure                    ++ --check v is function
+        assertArity env v (length xs)                 ++ --check arity match
+        tupleReadRaw (immArg env v) (repr (1 :: Int)) ++ --load arity into EAX
+        [IPush (param env vXs) | vXs <- reverse xs]   ++ --push args by c conv.
+        [ICall (Reg EAX)]                             ++ --call EAX
+        [IAdd (Reg ESP) (4 * n)]                      ++ --pop args
     where
-        n = countVars(_v)
+        n = countVars(v)
 
 --TODO (Check Or) FIXME
 compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
@@ -146,12 +154,22 @@ compileEnv _env (Lam _xs _e  _l)    = IJmp (LamEnd _l)                  :
                                       lamTuple _l (length _xs)
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------
+-- | Compile Immediates
+--------------------------------------------------------------------------------
 compileImm :: Env -> IExp -> Instruction
 compileImm env v = IMov (Reg EAX) (immArg env v)
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------
+-- | Compile Bindings
+--------------------------------------------------------------------------------
 compileBinds :: Env -> [Instruction] -> [(ABind, AExp)] -> (Env, [Instruction])
 compileBinds env is []     = (env, is)
 compileBinds env is (b:bs) = compileBinds env' (is ++ is') bs
@@ -164,8 +182,13 @@ compileBind env (x, e) = (env', is)
   where
     is                 = compileEnv env e ++ [IMov (stackVar i) (Reg EAX)]
     (i, env')          = pushEnv x env
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
+--------------------------------------------------------------------------------
+-- | Compile Prim Expressions
+--------------------------------------------------------------------------------
 compilePrim1 :: Tag -> Env -> Prim1 -> IExp -> [Instruction]
 compilePrim1 l env Add1   v = compilePrim2 l env Plus  v (Number 1 l)
 compilePrim1 l env Sub1   v = compilePrim2 l env Minus v (Number 1 l)
