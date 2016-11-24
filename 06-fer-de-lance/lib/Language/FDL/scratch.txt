@@ -1,0 +1,38 @@
+compileEnv :: Env -> AExp -> [Instruction]
+compileEnv env (Lam xs e l)
+  = IJmp   end                       -- Why?
+  : ILabel start                     -- Function start
+
+  : lambdaBody ys xs e               -- Function code (like Decl)
+
+ ++ ILabel end                       -- Function end
+
+  : lamTuple arity start env ys      -- Compile closure-tuple into EAX
+
+  where
+    ys    = freeVars (Lam xs e l)
+    arity = length xs
+    start = LamStart l
+    end   = LamEnd   l
+
+compileEnv :: Env -> AExp -> [Instruction]
+compileEnv env (Lam xs e l)
+  = IJmp   end              -- Why?
+  : ILabel start            -- Function start
+
+  : compileDecl l xs e      -- Function code (like Decl)
+
+ ++ ILabel end              -- Function end
+ 
+ : lamTuple arity start    -- Compile fun-tuple into EAX
+  where
+    arity = length xs
+    start = LamStart l
+    end   = LamEnd   l
+
+
+compileDecl l xs e  ==   : lambdaBody ys xs e 
+
+
+lambdaBody :: [Id] ->[Bind a] (Expr a) 
+lambdaBody  =  is xs e
