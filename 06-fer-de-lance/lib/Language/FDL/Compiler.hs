@@ -75,7 +75,7 @@ freeVars e = S.toList(go e)
     go (Id x)        = S.singleton x
     go (Number _)    = S.empty
     go (Boolean _)   = S.empty
-    go (If e e1 e2)  = S.unions (map go [e1, e2, e3])
+    go (If e e1 e2)  = S.unions (map go [e, e1, e2])
     go (App e es)    = S.unions (map go (e:es))
     go (Let x e1 e2) = S.union  (go e1) (S.delete x (go e2))
     go (Lam xs e)    = S.difference (go e) (S.fromList xs) --gives all free var in expr
@@ -84,13 +84,12 @@ freeVars e = S.toList(go e)
 
 
 --------------------------------------------------------------------------------
--- !! (NOTE: Not sure if needed here)
 -- | FunInstr returns the instructions of `body` wrapped
 --   with code that sets up the stack (by allocating space for n local vars)
 --   and restores the callees stack prior to return.
 --------------------------------------------------------------------------------
 funInstr :: Int -> [Instruction] -> [Instruction]
-funInstr n instr = funEntry n <> instrs <> funExit <> [IRet] 
+funInstr n instr = funEntry n ++ instr ++ funExit ++ [IRet] 
 
 -- | Inserts instructions for setting up stack for n local variables
 funEntry :: Int -> [Instruction]
@@ -111,13 +110,15 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
 --------------------------------------------------------------------------------
 -- | Compile
 --------------------------------------------------------------------------------
-compile :: AExp -> [Instruction] --FIXME
-compile v = compileBody emptyEnv v ++ 
-    where
-        ((x, e) : xs, body) = exprBinds(v)
 
+--FIXME I think this maybe off ... not sure... 
+compile :: AExp -> [Instruction]
+compile v = compileBody emptyEnv v ++ compileBody emptyEnv v 
+--should compileBody be passed the emptyEnv ?
+
+        
 compileBody :: Env -> AExp -> [Instruction]
-compileBody env v = funInstrs (countVars v) (compileEnv env v)
+compileBody env v = funInstr (countVars v) (compileEnv env v)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -170,7 +171,7 @@ lamTuple arity start env ys
 lambdaBody :: [Id] -> [Id] -> AExp -> [Instruction]
 lambdaBody ys xs e = 
         --restores free vars from closure-ptr,  exec function-body as before
-        funInstrs maxStack (restore ys ++ compileEnv env e)
+        funInstr maxStack (restore ys ++ compileEnv env e)
     where
         maxStack       = envMax env + countVars e  -- max stack size
         env            = fromListEnv bs
@@ -241,8 +242,8 @@ compileEnv env (Lam xs e l) =
     where
         ys    = freeVars (Lam xs e l)
         arity = length xs
-        start = LamStart l --or, start = LamStart (snd l) ?
-        end   = LamEnd   l --or, end   = LamEnd   (snd l) ?
+        start = LamStart (snd l) --LamStart l 
+        end   = LamEnd   (snd l) --LamEnd   l
 
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
