@@ -60,14 +60,14 @@ compiler f = parse f >>> check >>> anormal >>> tag >>> compile >>> asm
 
 
 --------------------------------------------------------------------------------
--- | @countVars e@ returns the maximum stack-size needed to evaluate e,
+-- | countVars returns the maximum stack-size needed to evaluate e,
 --   which is the maximum number of let-binds in scope at any point in e.s
---------------------------------------------------------------------------------
 countVars :: AnfExpr a -> Int
 countVars (Let _ e b _)  = max (countVars e)  (1 + countVars b)
 countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
+-- | freeVars
 freeVars :: Expr a -> [Id]
 freeVars e = S.toList(go e)
   where 
@@ -84,6 +84,7 @@ freeVars e = S.toList(go e)
 
 
 --------------------------------------------------------------------------------
+-- !! (NOTE: Not sure if needed here)
 -- | FunInstr returns the instructions of `body` wrapped
 --   with code that sets up the stack (by allocating space for n local vars)
 --   and restores the callees stack prior to return.
@@ -108,7 +109,7 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
 
 
 --------------------------------------------------------------------------------
--- Compile
+-- | Compile
 --------------------------------------------------------------------------------
 compile :: AExp -> [Instruction] --FIXME
 compile v = compileBody emptyEnv v ++ 
@@ -120,9 +121,43 @@ compileBody env v = funInstrs (countVars v) (compileEnv env v)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
+
+---------------------------------------------------------------------------------
+-- | Apply (Function Call)
+---------------------------------------------------------------------------------
+apply :: Tag -> Env -> IExp -> [IExp] -> [Instruction]
+apply _ env v vs = assertType env v TClosure                        ++
+                   assertArity env v (length vs)                    ++
+                   -- load v[1] code-pointer into EAX
+                   tupleReadRaw (immArg env v) (repr (1 :: Int))    ++
+                   -- call EAX with params and closure
+                   call (Reg EAX) (param env <$> (v:vs))
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+
+
 --------------------------------------------------------------------------------
--- | Lambda
+-- | Lambda (Function Definition)
 --------------------------------------------------------------------------------
+{- Mentioned in slides, but is just another compileEnv(Lam ...)
+lambda :: Tag -> Env -> Maybe ABind -> [ABind] -> AExp -> [Instruction]
+lambda l env f xs e = IJmp   (LamEnd i)         :
+                      ILabel (LamStart i)       :
+                      lambdaBody f ys xs e      ++
+                      ILabel (LamEnd i)         :
+                      lamClosure l env arity ys  -- <- difference here is 'lamTuple' instead of 'lamClosure'
+    where
+        ys    = freeVars(fun f xs e l)
+        arity = length xs
+        i     = snd l      -- <- difference here is 'snd l'
+-}     
+        
+-- | lambdaClosure returns a sequence of instructions that have the effect of 
+--   writing into EAX the value of the closure corresponding to the lambda
+--   function l
+--TODO (?)
+
+
 lamTuple :: Int -> Label -> Env -> [Id] -> [Instruction]
 lamTuple arity start env ys
   =  tupleAlloc  (2 + length ys)                    -- alloc tuple 2+|ys|  
@@ -147,7 +182,7 @@ restore :: [Id] -> [Instruction]
 restore ys  = concat [ copy i | (y, i) <- zip ys [1..]]
   where
     closPtr = RegOffset 8 EBP
-    --Copy tuple-fld for y into EAX, write EAX into stackVar for y
+    --copy tuple-fld for y into EAX, write EAX into stackVar for y
     copy i  = tupleReadRaw closPtr (repr (i+1)) ++ [IMov (stackVar i) (Reg EAX)]  
 
 --------------------------------------------------------------------------------        
@@ -155,18 +190,22 @@ restore ys  = concat [ copy i | (y, i) <- zip ys [1..]]
 
 
 --------------------------------------------------------------------------------
--- CompileEnv
+-- | CompileEnv
 --------------------------------------------------------------------------------
 compileEnv :: Env -> AExp -> [Instruction]
 compileEnv env v@(Number {})        = [ compileImm env v  ]
 compileEnv env v@(Boolean {})       = [ compileImm env v  ]
 compileEnv env v@(Id {})            = [ compileImm env v  ]
+
 compileEnv env e@(Let {})           = is ++ compileEnv env' body
   where
     (env', is)                      = compileBinds env [] binds
     (binds, body)                   = exprBinds e
+
 compileEnv env (Prim1 o v l)        = compilePrim1 l env o v
+
 compileEnv env (Prim2 o v1 v2 l)    = compilePrim2 l env o v1 v2
+
 compileEnv env (If v e1 e2 l)       = assertType env v TBoolean
                                    ++ IMov (Reg EAX) (immArg env v)
                                     : ICmp (Reg EAX) (repr False)
@@ -174,9 +213,11 @@ compileEnv env (If v e1 e2 l)       = assertType env v TBoolean
   where
     i1s                             = compileEnv env e1
     i2s                             = compileEnv env e2
+
 compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
                                       tupleWrites (immArg _env <$> _es) ++
 				                      [IOr (Reg EAX) (typeTag TTuple)]
+
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
 --TODO (Check Or) FIXME
@@ -200,9 +241,8 @@ compileEnv env (Lam xs e l) =
     where
         ys    = freeVars (Lam xs e l)
         arity = length xs
-        start = LamStart l
-        end   = LamEnd   l
-
+        start = LamStart l --or, start = LamStart (snd l) ?
+        end   = LamEnd   l --or, end   = LamEnd   (snd l) ?
 
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
