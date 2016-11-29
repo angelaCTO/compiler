@@ -156,7 +156,7 @@ lambda l env f xs e = IJmp   (LamEnd i)         :
 -- | lambdaClosure returns a sequence of instructions that have the effect of 
 --   writing into EAX the value of the closure corresponding to the lambda
 --   function l
---TODO (?)
+--TODO (?) Shown in lecture, but not sure we need it
 
 
 lamTuple :: Int -> Label -> Env -> [Id] -> [Instruction]
@@ -242,8 +242,8 @@ compileEnv env (Lam xs e l) =
     where
         ys    = freeVars (Lam xs e l)
         arity = length xs
-        start = LamStart (snd l) --LamStart l 
-        end   = LamEnd   (snd l) --LamEnd   l
+        start = LamStart (snd l) --LamStart l ?
+        end   = LamEnd   (snd l) --LamEnd   l ?
 
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
@@ -445,7 +445,6 @@ assertType env v ty
   ++ [IJne (DynamicErr (TypeError ty))]
 
 
-
 assertBound :: Env -> IExp -> IExp -> [Instruction]
 assertBound env vE vI =
     [IMov (Reg EBX) (immArg env vI),
@@ -459,7 +458,7 @@ assertBound env vE vI =
 
 assertArity :: Env -> Id -> Arity -> [Instruction]
 assertArity env vE arity =
-    [IMov (Reg EBX) (Const (envMax env)),
+    [IMov (Reg EBX) (Const (envMax env)), --hmm...double check this
      ICmp (Reg EBX) arity,
      IJne (DynamicErr ArityError)]
 
