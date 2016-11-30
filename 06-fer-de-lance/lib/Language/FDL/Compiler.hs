@@ -238,7 +238,7 @@ compileEnv env (Lam xs e l) =
 - Since it has a name, you can call it recursively. Which means that the function
   should be visible inside the environment of its body.
 -} --error "TBD:compileEnv:Fun"
-compileEnv env (Fun f xs e l) = 
+compileEnv env (Fun f xs e l) = error "TBD:compileEnv:Fun"
        
 
     
