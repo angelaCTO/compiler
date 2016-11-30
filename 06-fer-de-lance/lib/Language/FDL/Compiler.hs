@@ -30,7 +30,6 @@ type Tag   = (SourceSpan, Int)
 type AExp  = AnfExpr Tag
 type IExp  = ImmExpr Tag
 type ABind = Bind    Tag
-type Arity = Arg            -- Note, Arity set to type Arg (Const => Int)
 
 instance Located Tag where
   sourceSpan = fst
@@ -67,18 +66,19 @@ countVars (Let _ e b _)  = max (countVars e)  (1 + countVars b)
 countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
--- | freeVars
+-- | freeVars takes in an `Expr a` and returns a list of free variables (no dups)
 freeVars :: Expr a -> [Id]
 freeVars e = S.toList(go e)
   where 
-    go :: Expr -> S.Set Id
-    go (Id x)        = S.singleton x
-    go (Number _)    = S.empty
-    go (Boolean _)   = S.empty
-    go (If e e1 e2)  = S.unions (map go [e, e1, e2])
-    go (App e es)    = S.unions (map go (e:es))
-    go (Let x e1 e2) = S.union  (go e1) (S.delete x (go e2))
-    go (Lam xs e)    = S.difference (go e) (S.fromList xs) --gives all free var in expr
+    go :: Expr a -> S.Set Id
+    go (Id x _)        = S.singleton x
+    go (Number _ _)    = S.empty
+    go (Boolean _ _)   = S.empty
+    go (If e e1 e2 _)  = S.unions [go e, go e1, go e2]
+    go (App e es _)    = S.unions (map go (e:es))
+    go (Let x e1 e2 _) = S.union  (go e1) (S.delete (bindId x) (go e2))
+    go (Lam xs e _)    = S.difference (go e) (S.fromList (map bindId xs)) --gives all free var in expr
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -151,41 +151,44 @@ lambda l env f xs e = IJmp   (LamEnd i)         :
         ys    = freeVars(fun f xs e l)
         arity = length xs
         i     = snd l      -- <- difference here is 'snd l'
--}     
-        
+
 -- | lambdaClosure returns a sequence of instructions that have the effect of 
 --   writing into EAX the value of the closure corresponding to the lambda
 --   function l
 --TODO (?) Shown in lecture, but not sure we need it
+-}     
+
+bogusTag :: Tag
+bogusTag = (mempty,0)
+
+--FIXME Code from lecture, but there are errors
+-- | lamTuple: creates a tuple of format (arity, label) 
+lamTuple :: Tag -> Int -> Label -> Env -> [Id] -> [Instruction]
+lamTuple bl arity start env ys =  
+    tupleAlloc  (2 + length ys)                     ++  -- alloc tuple 2+|ys|  
+    tupleWrites (repr arity                         :   -- fill arity
+                 CodePtr start                      :   -- fill code-ptr
+                 [immArg env (Id y bogusTag) | y <- ys])     ++  -- fill free-vars
+    [IOr (Reg EAX) (typeTag TClosure)]                  -- set the tag bits   
 
 
-lamTuple :: Int -> Label -> Env -> [Id] -> [Instruction]
-lamTuple arity start env ys
-  =  tupleAlloc  (2 + length ys)                    -- alloc tuple 2+|ys|  
-  ++ tupleWrites ( repr arity                       -- fill arity
-                 : CodePtr start                    -- fill code-ptr
-                 : [immArg env (Id y) | y <- ys] )  -- fill free-vars
-  ++ [ IOr  (Reg EAX) (typeTag TClosure) ]          -- set the tag bits   
-
-
+-- | lamBody: restores free vares from closure-ptr then executes function body
 lambdaBody :: [Id] -> [Id] -> AExp -> [Instruction]
-lambdaBody ys xs e = 
-        --restores free vars from closure-ptr,  exec function-body as before
-        funInstr maxStack (restore ys ++ compileEnv env e)
-    where
-        maxStack       = envMax env + countVars e  -- max stack size
-        env            = fromListEnv bs
-                       --put params into env/stack, put free-vars into env/stack
-        bs             = zip xs  [-2,-3..] ++ zip ys  [1..]   
+lambdaBody ys xs e = funInstr maxStack (restore ys ++ compileEnv env e)
+  where
+    maxStack = envMax env + countVars e  -- max stack size
+    env      = fromListEnv bs      
+    bs       = zip xs  [-2,-3..] ++      --put params into env/stack
+               zip ys  [1..]             --then, put free-vars into env/stack
         
-
+        
+-- | restores: variables onto the stack when function called (access values)
 restore :: [Id] -> [Instruction]
 restore ys  = concat [ copy i | (y, i) <- zip ys [1..]]
   where
     closPtr = RegOffset 8 EBP
-    --copy tuple-fld for y into EAX, write EAX into stackVar for y
-    copy i  = tupleReadRaw closPtr (repr (i+1)) ++ [IMov (stackVar i) (Reg EAX)]  
-
+    copy i  = tupleReadRaw closPtr (repr (i+1)) ++ --copy tuple-fld for y into EAX
+              [IMov (stackVar i) (Reg EAX)]        --then, write EAX into stackVar for y
 --------------------------------------------------------------------------------        
 --------------------------------------------------------------------------------
 
@@ -221,29 +224,30 @@ compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
 
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
---TODO (Check Or) FIXME
+--FIXME
 compileEnv env (App v xs _) = 
         assertType  env v TClosure                    ++ --check v is function
         assertArity env v (length xs)                 ++ --check arity match
         tupleReadRaw (immArg env v) (repr (1 :: Int)) ++ --load arity into EAX
         [IPush (param env vXs) | vXs <- reverse xs]   ++ --push args by c conv.
         [ICall (Reg EAX)]                             ++ --call EAX
-        [IAdd (Reg ESP) (4 * n)]                         --pop args
+        [IAdd (Reg ESP) (Const (4 * n))]                 --pop args
     where
         n = countVars(v)
 
---TODO (Check Or) FIXME
 compileEnv env (Lam xs e l) = 
-        IJmp end                        :               
+        IJmp   end                      :               
         ILabel start                    :                    
-        lambdaBody ys xs e              ++              
+        lambdaBody ys xs' e              ++            
         ILabel end                      :                      
-        lamTuple arity start env ys      
+        lamTuple bogusTag arity start env ys      
     where
-        ys    = freeVars (Lam xs e l)
+        ys    = freeVars (Lam xs e l) --fetch values from enviroment to store on heap
         arity = length xs
-        start = LamStart (snd l) --LamStart l ?
-        end   = LamEnd   (snd l) --LamEnd   l ?
+        start = LamStart (snd l) --LamStart l
+        end   = LamEnd   (snd l) --LamEnd   l
+        xs'   = map bindId xs
+
 
 --TODO
 compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
@@ -344,10 +348,10 @@ strip = fmap (const ())
 -- | TUPLES
 -------------------------------------------------------------------------------
 tupleWrites :: [Arg] -> [Instruction]
-tupleWrites args arity = concat (zipWith tupleWrite [1..] args)
+tupleWrites args = concat (zipWith tupleWrite [1..] args)
     where
        tupleWrite i a = [IMov (Reg EBX) a,
-                         IMov (Sized DWordPtr (tupleLoc i )) (Reg EBX)]
+                         IMov (Sized DWordPtr (tupleLoc i)) (Reg EBX)]
 
 
 tupleAlloc :: Int -> [Instruction]
@@ -391,7 +395,7 @@ roundToEven n = if n `mod` 2 == 0 then n else (n + 1)
 
 
 --------------------------------------------------------------------------------
--- | Arithmetic
+-- | Arithmetic / Overflow
 --------------------------------------------------------------------------------
 arith :: Env -> AOp -> IExp -> IExp  -> [Instruction]
 arith env aop v1 v2
@@ -401,25 +405,14 @@ arith env aop v1 v2
    : IMov (Reg EBX) (immArg env v2)
    : aop (Reg EAX) (Reg EBX)
 
-
 addOp :: AOp
-addOp a1 a2 = [ IAdd a1 a2
-              , overflow
-              ]
-
-
+addOp a1 a2 = [IAdd a1 a2, overflow]
+              
 subOp :: AOp
-subOp a1 a2 = [ ISub a1 a2
-              , overflow
-              ]
-
-
+subOp a1 a2 = [ISub a1 a2, overflow]
+              
 mulOp :: AOp
-mulOp a1 a2 = [ IMul a1 a2
-              , overflow
-              , ISar a1 (Const 1)
-              ]
-
+mulOp a1 a2 = [IMul a1 a2, overflow, ISar a1 (Const 1)]
 
 overflow :: Instruction
 overflow = IJo (DynamicErr ArithOverflow)
@@ -433,18 +426,16 @@ overflow = IJo (DynamicErr ArithOverflow)
 -- | @isType 0@ tests if EAX is an Number,
 --   @isType 1@ tests if EAX is a Boolean.
 isType :: Tag -> Env -> IExp -> Ty -> [Instruction]
-isType l env v ty
-  =  cmpType env v ty
-  ++ boolBranch  l IJe
+isType l env v ty =  cmpType env v ty ++ boolBranch  l IJe
 
 
--- | @assertType t@ tests if EAX is a value of type t and exits with error o.w.
+-- | assertType: tests if EAX is a value of type t and exits with error o.w.
 assertType :: Env -> IExp -> Ty -> [Instruction]
 assertType env v ty
   =   cmpType env v ty
   ++ [IJne (DynamicErr (TypeError ty))]
 
-
+-- | assertBound
 assertBound :: Env -> IExp -> IExp -> [Instruction]
 assertBound env vE vI =
     [IMov (Reg EBX) (immArg env vI),
@@ -455,21 +446,23 @@ assertBound env vE vI =
      ICmp (Reg EBX) (tupleLoc 0),
      IJg  (DynamicErr IndexHigh)]
 
-
-assertArity :: Env -> Id -> Arity -> [Instruction]
-assertArity env vE arity =
-    [IMov (Reg EBX) (Const (envMax env)), --hmm...double check this
-     ICmp (Reg EBX) arity,
+--TODO (Or Check) FIXME
+-- | assertArity
+assertArity :: Env -> IExp -> Int -> [Instruction]    
+assertArity env v arity =
+    loadAddr (immArg env v) ++
+    [{-IMov (Reg EAX) (tupleRead env v arity),-}
+     IMov (Reg EBX) (RegOffset 2 EAX),
+     ICmp (Reg EBX) (Const arity),
      IJne (DynamicErr ArityError)]
 
-
+-- | cmpType:
 cmpType :: Env -> IExp -> Ty -> [Instruction]
 cmpType env v ty
   = [ IMov (Reg EAX) (immArg env v)
     , IMov (Reg EBX) (Reg EAX)
     , IAnd (Reg EBX) (typeMask ty)
-    , ICmp (Reg EBX) (typeTag  ty)
-    ]
+    , ICmp (Reg EBX) (typeTag  ty)]
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 

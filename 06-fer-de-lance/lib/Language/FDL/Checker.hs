@@ -65,25 +65,6 @@ wellFormed = go emptyEnv
 
 
 --------------------------------------------------------------------------------
--- | wellFormedE                                                      Check
---------------------------------------------------------------------------------
---Do we need this?
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
---------------------------------------------------------------------------------
--- | wellFormedD                                                       Check
---------------------------------------------------------------------------------
---Do we need this?
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
-
-
-
---------------------------------------------------------------------------------
 -- | addsEnv
 --------------------------------------------------------------------------------
 addsEnv :: [BareBind] -> Env -> Env
@@ -95,7 +76,7 @@ addsEnv xs env = L.foldl' (\env x -> addEnv x env) env xs
 --------------------------------------------------------------------------------
 -- | Error Checkers: In each case, return an empty list if no errors.
 --------------------------------------------------------------------------------
-{-
+{- *This is no longer needed (covered by shadow binding checks)
 duplicateFunErrors :: [BareDecl] -> [UserError]
 duplicateFunErrors = fmap errDupFun . concat . dupBy (bindId . fName)
 -}
@@ -152,8 +133,10 @@ errDupBind      x = mkError (printf "Shadow binding '%s'" (bindId x))      (sour
 errLargeNum   l n = mkError (printf "Number '%d' is too large" n) l
 errUnboundVar l x = mkError (printf "Unbound variable '%s'" x) l
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
---errDupFun d = mkError (printf "duplicate function '%s'" (pprint f)) (sourceSpan f) where f = fName d
 errUnboundFun l f = mkError (printf "Function '%s' is not defined" f) l
 errCallArity  l f = mkError (printf "Wrong arity of arguments at call of %s" f) l
+{- No longer needed
+  errDupFun d = mkError (printf "duplicate function '%s'" (pprint f)) (sourceSpan f) where f = fName d
+-}
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
