@@ -22,6 +22,9 @@ import           Language.FDL.Normalizer (anormal)
 import           Language.FDL.Asm        (asm)
 --------------------------------------------------------------------------------
 
+bogusTag :: Tag
+bogusTag = (mempty,0)
+
 
 --------------------------------------------------------------------------------
 -- | The compilation (code generation) works with AST nodes labeled by @Tag@
@@ -77,8 +80,8 @@ freeVars e = S.toList(go e)
     go (If e e1 e2 _)  = S.unions [go e, go e1, go e2]
     go (App e es _)    = S.unions (map go (e:es))
     go (Let x e1 e2 _) = S.union  (go e1) (S.delete (bindId x) (go e2))
-    go (Lam xs e _)    = S.difference (go e) (S.fromList (map bindId xs)) --gives all free var in expr
-
+    go (Lam xs e _)    = S.difference (go e) (S.fromList (map bindId xs)) 
+    go (Fun x xs e _)  = S.difference (go e) (S.fromList ((bindId x):(map bindId xs))) 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -100,22 +103,19 @@ funEntry n = [ IPush (Reg EBP)                       -- save caller's ebp
 
 -- | Cleans up stack and labels for jumping to error
 funExit :: [Instruction]
-funExit   = [ IMov (Reg ESP) (Reg EBP)          -- restore callee's esp
-            , IPop (Reg EBP)                    -- restore callee's ebp
-            , IRet]                             -- jump back to caller
+funExit   = [ IMov (Reg ESP) (Reg EBP)              -- restore callee's esp
+            , IPop (Reg EBP)                        -- restore callee's ebp
+            , IRet]                                 -- jump back to caller
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
 --------------------------------------------------------------------------------
--- | Compile
+-- | compile
 --------------------------------------------------------------------------------
-
---FIXME I think this maybe off ... not sure... 
-compile :: AExp -> [Instruction]
+--FIXME Maybe ~ should compileBody be passed the emptyEnv ?
+compile :: AExp -> [Instruction] --FIXME ~MAYBE
 compile v = compileBody emptyEnv v ++ compileBody emptyEnv v 
---should compileBody be passed the emptyEnv ?
-
         
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env v = funInstr (countVars v) (compileEnv env v)
@@ -140,26 +140,7 @@ apply _ env v vs = assertType env v TClosure                        ++
 --------------------------------------------------------------------------------
 -- | Lambda (Function Definition)
 --------------------------------------------------------------------------------
-{- Mentioned in slides, but is just another compileEnv(Lam ...)
-lambda :: Tag -> Env -> Maybe ABind -> [ABind] -> AExp -> [Instruction]
-lambda l env f xs e = IJmp   (LamEnd i)         :
-                      ILabel (LamStart i)       :
-                      lambdaBody f ys xs e      ++
-                      ILabel (LamEnd i)         :
-                      lamClosure l env arity ys  -- <- difference here is 'lamTuple' instead of 'lamClosure'
-    where
-        ys    = freeVars(fun f xs e l)
-        arity = length xs
-        i     = snd l      -- <- difference here is 'snd l'
 
--- | lambdaClosure returns a sequence of instructions that have the effect of 
---   writing into EAX the value of the closure corresponding to the lambda
---   function l
---TODO (?) Shown in lecture, but not sure we need it
--}     
-
-bogusTag :: Tag
-bogusTag = (mempty,0)
 
 --FIXME Code from lecture, but there are errors
 -- | lamTuple: creates a tuple of format (arity, label) 

@@ -22,7 +22,7 @@ tests sc = testGroup "Tests"
   , testGroup "Adder"           (adderTests   sc)
   , testGroup "Boa"             (boaTests     sc)
   , testGroup "Cobra"           (cobraTests   sc)
-  , testGroup "Diamond"         (diamondTests sc)
+--  , testGroup "Diamond"         (diamondTests sc)
   , testGroup "Egg-eater"       (eggTests     sc)
   , testGroup "Fer-de-lance"    (fdlTests     sc)
   , testGroup "Dynamic-Errors"  (dynamicTests sc)
