@@ -113,7 +113,7 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)              -- restore callee's esp
 --------------------------------------------------------------------------------
 -- | compile
 --------------------------------------------------------------------------------
---FIXME Maybe ~ should compileBody be passed the emptyEnv ?
+--Maybe ~ should compileBody be passed the emptyEnv ?
 compile :: AExp -> [Instruction] --FIXME ~MAYBE
 compile v = compileBody emptyEnv v ++ compileBody emptyEnv v 
         
@@ -140,16 +140,13 @@ apply _ env v vs = assertType env v TClosure                        ++
 --------------------------------------------------------------------------------
 -- | Lambda (Function Definition)
 --------------------------------------------------------------------------------
-
-
---FIXME Code from lecture, but there are errors
 -- | lamTuple: creates a tuple of format (arity, label) 
 lamTuple :: Tag -> Int -> Label -> Env -> [Id] -> [Instruction]
 lamTuple bl arity start env ys =  
     tupleAlloc  (2 + length ys)                     ++  -- alloc tuple 2+|ys|  
     tupleWrites (repr arity                         :   -- fill arity
                  CodePtr start                      :   -- fill code-ptr
-                 [immArg env (Id y bogusTag) | y <- ys])     ++  -- fill free-vars
+                 [immArg env (Id y bogusTag) | y <- ys]) ++  -- fill free-vars
     [IOr (Reg EAX) (typeTag TClosure)]                  -- set the tag bits   
 
 
@@ -205,7 +202,7 @@ compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
 
 compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
 
---FIXME
+-- | App (Function Call)
 compileEnv env (App v xs _) = 
         assertType  env v TClosure                    ++ --check v is function
         assertArity env v (length xs)                 ++ --check arity match
@@ -216,6 +213,7 @@ compileEnv env (App v xs _) =
     where
         n = countVars(v)
 
+-- | Lamda (Anon Function)
 compileEnv env (Lam xs e l) = 
         IJmp   end                      :               
         ILabel start                    :                    
@@ -225,13 +223,29 @@ compileEnv env (Lam xs e l) =
     where
         ys    = freeVars (Lam xs e l) --fetch values from enviroment to store on heap
         arity = length xs
-        start = LamStart (snd l) --LamStart l
-        end   = LamEnd   (snd l) --LamEnd   l
+        start = LamStart (snd l)
+        end   = LamEnd   (snd l)
         xs'   = map bindId xs
 
 
---TODO
-compileEnv _env (Fun _f  _xs _e _l) = error "TBD:compileEnv:Fun"
+{- --TODO
+    1. Find all free vars
+    2. Put free vars into the initial environment for the function body (+ params)
+    3. Put function name into the initial environment
+    4. Compile body."
+    
+- It's almost the same as the anonymous function (lambda). 
+- Since it has a name, you can call it recursively. Which means that the function
+  should be visible inside the environment of its body.
+-} --error "TBD:compileEnv:Fun"
+compileEnv env (Fun f xs e l) = 
+       
+
+    
+
+      
+    
+
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
