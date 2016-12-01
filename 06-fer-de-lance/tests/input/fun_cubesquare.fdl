@@ -1,0 +1,10 @@
+def compose(f, g):
+  lambda (x): f(g(x))
+in
+def square(x):
+  x * x
+in 
+def cube(x):
+  x * x * x
+in
+  compose(square, cube)(3)

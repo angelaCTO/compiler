@@ -1,0 +1,4 @@
+def wrong_arr(a, b):
+    a + b
+
+wrong_arr(2)

@@ -1,0 +1,4 @@
+def simple_fun(a, b, c):
+    a + b - a
+
+simple_fun(1,2,3)

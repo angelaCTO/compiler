@@ -1,0 +1,7 @@
+def compose(f, g):
+  lambda (x): f(g(x))
+in
+def oof(x):
+  x*x*x
+in
+  compose(oof, oof)(1000000000000)

@@ -1,0 +1,4 @@
+let compose = (lambda(f, g): (lambda (x): f(g(x)))),
+    addr    = (lambda(x): x + x)
+in
+    compose(addr, addr)(100)
