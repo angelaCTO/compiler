@@ -147,11 +147,11 @@ apply _ env v vs = assertType env v TClosure                        ++
 -- | lamTuple: creates a tuple of format (arity, label) 
 lamTuple :: Tag -> Int -> Label -> Env -> [Id] -> [Instruction]
 lamTuple bl arity start env ys =  
-    tupleAlloc  (2 + length ys)                     ++  -- alloc tuple 2+|ys|  
-    [IOr (Reg EAX) (typeTag TClosure)]              ++    -- set the tag bits   
-    tupleWrites (repr arity                         :   -- fill arity
+    lamAlloc arity (2 + length ys)                     ++  -- alloc tuple 2+|ys|  
+    tupleWrites (--repr arity                         :   -- fill arity
                  CodePtr start                      :   -- fill code-ptr
-                 [immArg env (Id y bogusTag) | y <- ys])   -- fill free-vars
+                 [immArg env (Id y bogusTag) | y <- ys]) ++  -- fill free-vars
+    [IOr (Reg EAX) (typeTag TClosure)]                  -- set the tag bits   
 
 
 -- | lamBody: restores free vares from closure-ptr then executes function body
@@ -252,7 +252,7 @@ compileEnv env (Fun f xs e l) =         IJmp   end                      :
         arity = length xs
         start = LamStart (snd l)
         end   = LamEnd   (snd l)
-        xs'   = map bindId xs
+        xs'   = map bindId (f:xs)
 
 
       
@@ -372,10 +372,18 @@ tupleAlloc n = [IMov (Reg EAX) (Reg ESI),
     where
         size = (4 * roundToEven (n + 1))
 
+lamAlloc :: Int -> Int -> [Instruction]
+lamAlloc n p = [IMov (Reg EAX) (Reg ESI),
+                IMov (Sized DWordPtr (RegOffset 0 EAX)) (repr n),
+                IAdd (Reg ESI) (Const size)]
+    where
+        size = (4 * roundToEven (n + p + 1))
+
+
 
 loadAddr :: Arg -> [Instruction]
 loadAddr a = [IMov (Reg EAX) a,                      -- compute address
-              ISub (Reg EAX) (Const 1),              -- drop tag bits
+              --ISub (Reg EAX) (Const 1),              -- drop tag bits
               IAnd (Reg EAX) (HexConst 0xfffffff8)]  -- set last 3 bits to 0
 
 
@@ -395,7 +403,7 @@ tupleReadRaw aE aI =
      loadAddr aE	++
      [IMov (Reg EBX) aI,
       IShr (Reg EBX) (Const 1),
-      IAdd (Reg EBX) (Const 1),
+      --IAdd (Reg EBX) (Const 1),
       IMov (Reg EAX) (RegIndex EAX EBX)]
 
 
@@ -463,8 +471,8 @@ assertArity :: Env -> IExp -> Int -> [Instruction]
 assertArity env v arity =
     loadAddr (immArg env v) ++
     [{-IMov (Reg EAX) (tupleRead env v arity),-}
-     IMov (Reg EBX) (RegOffset 2 EAX),
-     ICmp (Reg EBX) (Const arity),
+     IMov (Reg EBX) (RegOffset 0 EAX),
+     ICmp (Reg EBX) (Const (arity*2)),
      IJne (DynamicErr ArityError)]
 
 -- | cmpType:
