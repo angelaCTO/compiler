@@ -82,6 +82,10 @@ freeVars e = S.toList(go e)
     go (Let x e1 e2 _) = S.union  (go e1) (S.delete (bindId x) (go e2))
     go (Lam xs e _)    = S.difference (go e) (S.fromList (map bindId xs)) 
     go (Fun x xs e _)  = S.difference (go e) (S.fromList ((bindId x):(map bindId xs))) 
+    go (Prim1 _ v _)   = go v
+    go (Prim2 _ e1 e2 _ ) = S.unions [go e1, go e2]
+    go (GetItem vE vI _) = S.unions [go vE, go vI]
+    go (Tuple es _ )  = S.empty
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -115,7 +119,7 @@ funExit   = [ IMov (Reg ESP) (Reg EBP)              -- restore callee's esp
 --------------------------------------------------------------------------------
 --Maybe ~ should compileBody be passed the emptyEnv ?
 compile :: AExp -> [Instruction] --FIXME ~MAYBE
-compile v = compileBody emptyEnv v ++ compileBody emptyEnv v 
+compile v = compileBody emptyEnv v -- ++ compileBody emptyEnv v 
         
 compileBody :: Env -> AExp -> [Instruction]
 compileBody env v = funInstr (countVars v) (compileEnv env v)
@@ -144,10 +148,10 @@ apply _ env v vs = assertType env v TClosure                        ++
 lamTuple :: Tag -> Int -> Label -> Env -> [Id] -> [Instruction]
 lamTuple bl arity start env ys =  
     tupleAlloc  (2 + length ys)                     ++  -- alloc tuple 2+|ys|  
+    [IOr (Reg EAX) (typeTag TClosure)]              ++    -- set the tag bits   
     tupleWrites (repr arity                         :   -- fill arity
                  CodePtr start                      :   -- fill code-ptr
-                 [immArg env (Id y bogusTag) | y <- ys]) ++  -- fill free-vars
-    [IOr (Reg EAX) (typeTag TClosure)]                  -- set the tag bits   
+                 [immArg env (Id y bogusTag) | y <- ys])   -- fill free-vars
 
 
 -- | lamBody: restores free vares from closure-ptr then executes function body
@@ -238,8 +242,20 @@ compileEnv env (Lam xs e l) =
 - Since it has a name, you can call it recursively. Which means that the function
   should be visible inside the environment of its body.
 -} --error "TBD:compileEnv:Fun"
-compileEnv env (Fun f xs e l) = error "TBD:compileEnv:Fun"
-       
+compileEnv env (Fun f xs e l) =         IJmp   end                      :               
+        ILabel start                    :                    
+        lambdaBody ys xs' e              ++            
+        ILabel end                      :                      
+        lamTuple bogusTag arity start env ys      
+    where
+        ys    = freeVars (Fun f xs e l) --fetch values from enviroment to store on heap
+        arity = length xs
+        start = LamStart (snd l)
+        end   = LamEnd   (snd l)
+        xs'   = map bindId xs
+
+
+      
 
     
 
