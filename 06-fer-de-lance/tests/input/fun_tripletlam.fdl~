@@ -1,0 +1,10 @@
+let f = (lambda(x): let tmp = x + 1 in
+                    (lambda(x): let tmp' = x + tmp in
+                                (lambda(x): x + tmp')
+                    )
+        )
+  , g = f(1)
+  , h = f(10)
+  , i = f(100)
+in
+    (g(0), h(0), i(0))

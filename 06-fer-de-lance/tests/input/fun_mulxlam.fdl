@@ -1,0 +1,4 @@
+let apply = (lambda(f, x): f(x)),
+    mulx  = (lambda(x): x * x)
+in
+    apply(mulx, 10)

@@ -22,7 +22,7 @@ tests sc = testGroup "Tests"
   , testGroup "Adder"           (adderTests   sc)
   , testGroup "Boa"             (boaTests     sc)
   , testGroup "Cobra"           (cobraTests   sc)
---  , testGroup "Diamond"         (diamondTests sc)
+  , testGroup "Diamond"         (diamondTests sc)
   , testGroup "Egg-eater"       (eggTests     sc)
   , testGroup "Fer-de-lance"    (fdlTests     sc)
   , testGroup "Dynamic-Errors"  (dynamicTests sc)
@@ -151,15 +151,19 @@ fdlTests sc =
 
 yourTests sc =
   [
---Tests from 05
-    mkTest sc "LowAccess_outOfBounds"  File (Left  "Error: tuple index too small."),
-    mkTest sc "HighAccess_outOfBounds" File (Left  "Error: tuple index too large."),
+    mkTest sc "LowAccess_outOfBounds"  File (Left  "Dynamic Error: tuple index too small."),
+    mkTest sc "HighAccess_outOfBounds" File (Left  "Dynamic Error: tuple index too large."),
     mkTest sc "Access_okayBounds"      File (Right "3"),
     mkTest sc "NestedAccess_okayBounds"File (Right "3"),
     mkTest sc "AccessLet"              File (Right "1"),
-    mkTest sc "Access_BadAnf"          File (Left  "Error: tuple index too large."),
+    mkTest sc "Access_BadAnf"          File (Left  "Dynamic Error: tuple index too large."),
     mkTest sc "Access_BadAnf2"         File (Right "5"),
-    mkTest sc "AccessFalse"            File (Right "false"),
     mkTest sc "AccessSomething"        File (Right "9"),
-    mkTest sc "getTrue"                File (Right "20")
+    mkTest sc "fun_simple"             File (rLines ["2"]),
+    mkTest sc "fun_triplelam"          File (rLines ["(4, 31, 301)"]),
+    mkTest sc "fun_mulxlam"            File (rLines ["100"]),
+    mkTest sc "fun_cubesquare"         File (rLines ["729"]),
+    mkTest sc "fun_arityError"         File (Left "Dynamic Error: function call arity mismatch"),
+    mkTest sc "fun_overflow"           File (Left "Dynamic Error: arithmetic overflow."),
+    mkTest sc "fun_addr"               File (rLines ["400"])
   ]
