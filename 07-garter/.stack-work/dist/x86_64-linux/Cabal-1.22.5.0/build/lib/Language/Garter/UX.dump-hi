@@ -1,0 +1,1337 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-02 06:46:01.103482 UTC
+
+interface garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.UX 7103
+  interface hash: dd2c3d49d29e472526bec633b2445c29
+  ABI hash: e7838afc1885a90188179ce483df233b
+  export-list hash: fb4435b3e83c41899f145dba3ce6a7c4
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: c91715e69db965320373fbe54581cf65
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Garter.UX.abort
+  Language.Garter.UX.junkSpan
+  Language.Garter.UX.mkError
+  Language.Garter.UX.panic
+  Language.Garter.UX.posSpan
+  Language.Garter.UX.readFileSpan
+  Language.Garter.UX.renderErrors
+  Language.Garter.UX.Located{Language.Garter.UX.sourceSpan}
+  Language.Garter.UX.PPrint{Language.Garter.UX.pprint}
+  Language.Garter.UX.Result
+  Language.Garter.UX.SourceSpan{Language.Garter.UX.SS Language.Garter.UX.ssBegin Language.Garter.UX.ssEnd}
+  Language.Garter.UX.Text
+  Language.Garter.UX.UserError{Language.Garter.UX.eMsg Language.Garter.UX.eSpan}
+module dependencies: Language.Garter.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Data.Either e8724afd65fd432cfe9a54014f5f762d
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Monoid 85b292b52bfd80ed619cddb767d638d3
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Typeable c3fcb0780ec05399195ad3277b18d294
+import  -/  base-4.8.2.0:Data.Typeable.Internal 76b09e88499fa4ff7869a34e89976afb
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Exception 18c46fe9c5c0c3a120035f264ef32d41
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.Garter.Utils a0f3a1ce07987f255eba52b263b76fd5
+  exports: 95401c007cc79e2e6298db4b7ab3d881
+  getRange f00b59b7eeac54e7f536b4615554ee6a
+  safeHead b2669caea36bac535271bff5684923d6
+  trimEnd c444c7db858fac1beb310a706dfe647c
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec 57878a9baf8576ebbee675ee635c1996
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Pos 2540586b968ba7421c57baf3e3177662
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fEqSourceSpan :: GHC.Classes.Eq Language.Garter.UX.SourceSpan
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.UX.SourceSpan
+                  Language.Garter.UX.$fEqSourceSpan_$c==
+                  Language.Garter.UX.$fEqSourceSpan_$c/= -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fEqSourceSpan_$c/= ::
+    Language.Garter.UX.SourceSpan
+    -> Language.Garter.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Garter.UX.SourceSpan
+                   w1 :: Language.Garter.UX.SourceSpan ->
+                 case w of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Garter.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.True
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True
+                                       -> case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.==# ww10 ww21) of wild5 {
+                                            GHC.Types.False -> GHC.Types.True
+                                            GHC.Types.True
+                                            -> GHC.Types.False } } } } } } } } } } } }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fEqSourceSpan_$c== ::
+    Language.Garter.UX.SourceSpan
+    -> Language.Garter.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Garter.UX.SourceSpan
+                   w1 :: Language.Garter.UX.SourceSpan ->
+                 case w of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Garter.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.False
+                                       GHC.Types.True
+                                       -> GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww10 ww21) } } } } } } } } } } }) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[] ::
+    GHC.Exception.Exception [Language.Garter.UX.UserError]
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.Garter.UX.UserError]
+                  Language.Garter.UX.$fException[]21
+                  Language.Garter.UX.$fException[]20
+                  Language.Garter.UX.$fException[]_$ctoException
+                  Language.Garter.UX.$fException[]_$cfromException
+                  Language.Garter.UX.$fException[]_$cdisplayException -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]1 :: Language.Garter.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Garter.UX.UserError
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Garter.UX.Error ww1 ww2 ->
+                 case ww2 of ww3 { Language.Garter.UX.SS ww4 ww5 ->
+                 Language.Garter.UX.$w$cshowsPrec 0 ww1 ww4 ww5 w1 } }) -}
+d9ca64c88447c61684d4dd0605ab3b61
+  $fException[]10 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (case Language.Garter.UX.$fException[]_w1 of wild2 {
+                   []
+                   -> Data.Typeable.Internal.TypeRep
+                        __word 17730107610217102821
+                        __word 9866972337190828755
+                        Language.Garter.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   : ipv ipv1
+                   -> case GHC.Fingerprint.fingerprintFingerprints
+                             Language.Garter.UX.$fException[]11 of dt { GHC.Fingerprint.Type.Fingerprint dt1 dt2 ->
+                      Data.Typeable.Internal.TypeRep
+                        dt1
+                        dt2
+                        Language.Garter.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        wild2 } }) -}
+0e2998846089486b22f47eb87b8f2dd6
+  $fException[]11 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Fingerprint.Type.Fingerprint
+                   Language.Garter.UX.$fException[]13
+                   Language.Garter.UX.$fException[]12) -}
+1ffd2e0eecb98636d275bc25a09dcf84
+  $fException[]12 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (Language.Garter.UX.$fException[]_go
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)) -}
+efef3422cff844aeea5577cc8ed4f860
+  $fException[]13 :: GHC.Fingerprint.Type.Fingerprint
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Fingerprint.Type.Fingerprint
+                   __word 17730107610217102821
+                   __word 9866972337190828755) -}
+b0adad26b57ea63e02fff856699d7826
+  $fException[]14 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Types.:
+                   @ Data.Typeable.Internal.TypeRep
+                   Language.Garter.UX.$fException[]15
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+e5f8005880fcf13ad60c659ee270cdf5
+  $fException[]15 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (Data.Typeable.Internal.TypeRep
+                   __word 13580209100375429835
+                   __word 17785174671652747409
+                   Language.Garter.UX.$fException[]16
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+1ddc7ad035b0186f3d7bd031fe3ae282
+  $fException[]16 :: Data.Typeable.Internal.TyCon
+  {- Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 13580209100375429835
+                   __word 17785174671652747409
+                   Language.Garter.UX.$fException[]19
+                   Language.Garter.UX.$fException[]18
+                   Language.Garter.UX.$fException[]17) -}
+41e9c1b31bf18ecc8f5a62e1bc87a43e
+  $fException[]17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "UserError"#) -}
+0b2255229ee32785de8a1b7ac9ce0a46
+  $fException[]18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Language.Garter.UX"#) -}
+dcc5035ddc23afe9ca4f403406d17385
+  $fException[]19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "garte_5443cALaUJ34G7JDhKOcwk"#) -}
+4825a4bdce6dcc5a2df67d87fccd9f70
+  $fException[]2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]20 :: GHC.Show.Show [Language.Garter.UX.UserError]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.UX.$fException[]_$s$fShow[] -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]21 ::
+    Data.Typeable.Internal.Typeable [Language.Garter.UX.UserError]
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.UX.$fException[]22
+                  `cast`
+                (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                          <*>_N <[Language.Garter.UX.UserError]>_N)) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]22 ::
+    GHC.Prim.Proxy# [Language.Garter.UX.UserError]
+    -> Data.Typeable.Internal.TypeRep
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ wild :: GHC.Prim.Proxy# [Language.Garter.UX.UserError] ->
+                 Language.Garter.UX.$fException[]10) -}
+4b17f34c041ad74cbbc954c21fd05f5f
+  $fException[]3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssEnd = "#) -}
+1de9f1908934253fac9f0f134875a5ab
+  $fException[]4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+e7c2b14e72589f9710a6ee9b4363ac7e
+  $fException[]5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssBegin = "#) -}
+a0cd19ad3fd567d895a9d9f86b9a385c
+  $fException[]6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SS {"#) -}
+73fb485ef70ac7c92a4372b68e11d048
+  $fException[]7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eSpan = "#) -}
+d0d8400015101507ba0cdf7466d49e54
+  $fException[]8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eMsg = "#) -}
+c9af95440b9ba2e607f16fab229e5d0d
+  $fException[]9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Error {"#) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$cdisplayException ::
+    [Language.Garter.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.UX.$fException[]_$s$fShow[]_$cshow -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$cfromException ::
+    GHC.Exception.SomeException
+    -> GHC.Base.Maybe [Language.Garter.UX.UserError]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ eta :: GHC.Exception.SomeException ->
+                 case eta of wild { GHC.Exception.SomeException e10 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e10 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e10>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e10) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case Language.Garter.UX.$fException[]10 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds5 ds6 ds7 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqWord# dt dt2) of wild3 {
+                   GHC.Types.False
+                   -> GHC.Base.Nothing @ [Language.Garter.UX.UserError]
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqWord# dt1 dt3) of wild4 {
+                        GHC.Types.False
+                        -> GHC.Base.Nothing @ [Language.Garter.UX.UserError]
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ [Language.Garter.UX.UserError]
+                             e2
+                               `cast`
+                             (UnivCo mkUnsafeCo representational e10 [Language.Garter.UX.UserError]) } } } } }) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$cshowList ::
+    [Language.Garter.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Garter.UX.UserError
+                   Language.Garter.UX.$fException[]1) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$ctoException ::
+    [Language.Garter.UX.UserError] -> GHC.Exception.SomeException
+  {- Arity: 1 -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$s$fShow[] ::
+    GHC.Show.Show [Language.Garter.UX.UserError]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.Garter.UX.UserError]
+                  Language.Garter.UX.$fException[]_$s$fShow[]_$cshowsPrec
+                  Language.Garter.UX.$fException[]_$s$fShow[]_$cshow
+                  Language.Garter.UX.$fException[]_$s$fShow[]_$cshowList -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$s$fShow[]_$cshow ::
+    [Language.Garter.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [Language.Garter.UX.UserError] ->
+                 Language.Garter.UX.$fException[]_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$s$fShow[]_$cshowList ::
+    [[Language.Garter.UX.UserError]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[Language.Garter.UX.UserError]]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [Language.Garter.UX.UserError]
+                   Language.Garter.UX.$fException[]_$cshowList
+                   eta
+                   eta1) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fException[]_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int -> [Language.Garter.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [Language.Garter.UX.UserError]
+                   eta1 :: GHC.Base.String ->
+                 Language.Garter.UX.$fException[]_$cshowList eta eta1) -}
+0ee6ed5efc6c9f6727ae11ea9bdd5362
+  $fException[]_go ::
+    [Data.Typeable.Internal.TypeRep]
+    -> [GHC.Fingerprint.Type.Fingerprint]
+  {- Arity: 1, Strictness: <S,1*U> -}
+6f30fe41aee203eba161dcbc3bad0981
+  $fException[]_w1 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Base.++
+                   @ Data.Typeable.Internal.TypeRep
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   Language.Garter.UX.$fException[]14) -}
+e4184119fba8890fd136de2ad34e2081
+  $fException[]_wild :: Data.Typeable.Internal.TyCon
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 17730107610217102821
+                   __word 9866972337190828755
+                   Language.Garter.UX.$fException[]_ww2
+                   Language.Garter.UX.$fException[]_ww3
+                   Language.Garter.UX.$fException[]_ww4) -}
+938ee510a67a92bec047e6ca1240b8a6
+  $fException[]_ww2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "ghc-prim"#) -}
+05afdd2946d9fdd909de14aadff07fd3
+  $fException[]_ww3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "GHC.Types"#) -}
+22d92c1bac40a65c7de721bf3670419e
+  $fException[]_ww4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[]"#) -}
+6457c41948153b73d23f42673b6d17db
+  $fLocatedSourceSpan ::
+    Language.Garter.UX.Located Language.Garter.UX.SourceSpan
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.UX.$fLocatedSourceSpan_$csourceSpan
+                  `cast`
+                (Sym (Language.Garter.UX.NTCo:Located[0]
+                          <Language.Garter.UX.SourceSpan>_N)) -}
+b3f0b812826d779ab56fec87e95ca297
+  $fLocatedSourceSpan_$csourceSpan ::
+    Language.Garter.UX.SourceSpan -> Language.Garter.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U,U)>m,
+     Unfolding: InlineRule (1, True, True)
+                (\ x :: Language.Garter.UX.SourceSpan -> x) -}
+6457c41948153b73d23f42673b6d17db
+  $fLocatedUserError ::
+    Language.Garter.UX.Located Language.Garter.UX.UserError
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.UX.eSpan
+                  `cast`
+                (Sym (Language.Garter.UX.NTCo:Located[0]
+                          <Language.Garter.UX.UserError>_N)) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fMonoidSourceSpan :: GHC.Base.Monoid Language.Garter.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.UX.SourceSpan
+                  Language.Garter.UX.junkSpan
+                  Language.Garter.UX.$fMonoidSourceSpan_$cmappend
+                  Language.Garter.UX.$fMonoidSourceSpan_$cmconcat -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fMonoidSourceSpan_$cmappend ::
+    Language.Garter.UX.SourceSpan
+    -> Language.Garter.UX.SourceSpan -> Language.Garter.UX.SourceSpan
+  {- Arity: 2,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S,1*U(U(U,U,U),U(U,U,U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Garter.UX.SourceSpan
+                   w1 :: Language.Garter.UX.SourceSpan ->
+                 case w of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.Garter.UX.SS ww12 ww13 ->
+                 case GHC.Base.eqString
+                        ww4
+                        Language.Garter.UX.$fMonoidSourceSpan_dt of wild {
+                   GHC.Types.False
+                   -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                      case GHC.Base.eqString
+                             ww15
+                             Language.Garter.UX.$fMonoidSourceSpan_dt of wild1 {
+                        GHC.Types.False
+                        -> Language.Garter.UX.SS
+                             (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                             ww13
+                        GHC.Types.True
+                        -> case ww16 of wild2 {
+                             DEFAULT
+                             -> Language.Garter.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                  ww13
+                             1
+                             -> case ww17 of wild3 {
+                                  DEFAULT
+                                  -> Language.Garter.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                       ww13
+                                  1
+                                  -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                     case GHC.Base.eqString
+                                            ww19
+                                            Language.Garter.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.Garter.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                            ww18
+                                       GHC.Types.True
+                                       -> case ww20 of wild5 {
+                                            DEFAULT
+                                            -> Language.Garter.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                 ww18
+                                            1
+                                            -> case ww21 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      ww18
+                                                 1
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      (Text.Megaparsec.Pos.SourcePos
+                                                         ww8
+                                                         ww9
+                                                         ww10) } } } } } } } }
+                   GHC.Types.True
+                   -> case ww5 of wild1 {
+                        DEFAULT
+                        -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                           case GHC.Base.eqString
+                                  ww15
+                                  Language.Garter.UX.$fMonoidSourceSpan_dt of wild2 {
+                             GHC.Types.False
+                             -> Language.Garter.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                  ww13
+                             GHC.Types.True
+                             -> case ww16 of wild3 {
+                                  DEFAULT
+                                  -> Language.Garter.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                       ww13
+                                  1
+                                  -> case ww17 of wild4 {
+                                       DEFAULT
+                                       -> Language.Garter.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                            ww13
+                                       1
+                                       -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                          case GHC.Base.eqString
+                                                 ww19
+                                                 Language.Garter.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.Garter.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                 ww18
+                                            GHC.Types.True
+                                            -> case ww20 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                      ww18
+                                                 1
+                                                 -> case ww21 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           ww18
+                                                      1
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww8
+                                                              ww9
+                                                              ww10) } } } } } } } }
+                        1
+                        -> case ww6 of wild2 {
+                             DEFAULT
+                             -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                case GHC.Base.eqString
+                                       ww15
+                                       Language.Garter.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> Language.Garter.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                       ww13
+                                  GHC.Types.True
+                                  -> case ww16 of wild4 {
+                                       DEFAULT
+                                       -> Language.Garter.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                            ww13
+                                       1
+                                       -> case ww17 of wild5 {
+                                            DEFAULT
+                                            -> Language.Garter.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                 ww13
+                                            1
+                                            -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                               case GHC.Base.eqString
+                                                      ww19
+                                                      Language.Garter.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                      ww18
+                                                 GHC.Types.True
+                                                 -> case ww20 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              1
+                                                              wild2)
+                                                           ww18
+                                                      1
+                                                      -> case ww21 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Garter.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                ww18
+                                                           1
+                                                           -> Language.Garter.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww8
+                                                                   ww9
+                                                                   ww10) } } } } } } } }
+                             1
+                             -> case GHC.Base.eqString
+                                       ww8
+                                       Language.Garter.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                     case GHC.Base.eqString
+                                            ww15
+                                            Language.Garter.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.Garter.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                            ww13
+                                       GHC.Types.True
+                                       -> case ww16 of wild5 {
+                                            DEFAULT
+                                            -> Language.Garter.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            1
+                                            -> case ww17 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                    case GHC.Base.eqString
+                                                           ww19
+                                                           Language.Garter.UX.$fMonoidSourceSpan_dt of wild7 {
+                                                      GHC.Types.False
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww18
+                                                      GHC.Types.True
+                                                      -> case ww20 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Garter.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           1
+                                                           -> case ww21 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.Garter.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> Language.Garter.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww8
+                                                                        ww9
+                                                                        ww10) } } } } } } } }
+                                  GHC.Types.True
+                                  -> case ww9 of wild4 {
+                                       DEFAULT
+                                       -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                          case GHC.Base.eqString
+                                                 ww15
+                                                 Language.Garter.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.Garter.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            GHC.Types.True
+                                            -> case ww16 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww17 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                         case GHC.Base.eqString
+                                                                ww19
+                                                                Language.Garter.UX.$fMonoidSourceSpan_dt of wild8 {
+                                                           GHC.Types.False
+                                                           -> Language.Garter.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           GHC.Types.True
+                                                           -> case ww20 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.Garter.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> case ww21 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.Garter.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> Language.Garter.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww8
+                                                                             wild4
+                                                                             ww10) } } } } } } } }
+                                       1
+                                       -> case ww10 of wild5 {
+                                            DEFAULT
+                                            -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                               case GHC.Base.eqString
+                                                      ww15
+                                                      Language.Garter.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.Garter.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 GHC.Types.True
+                                                 -> case ww16 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.Garter.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww17 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.Garter.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww13
+                                                           1
+                                                           -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                              case GHC.Base.eqString
+                                                                     ww19
+                                                                     Language.Garter.UX.$fMonoidSourceSpan_dt of wild9 {
+                                                                GHC.Types.False
+                                                                -> Language.Garter.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                GHC.Types.True
+                                                                -> case ww20 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.Garter.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> case ww21 of wild11 {
+                                                                          DEFAULT
+                                                                          -> Language.Garter.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               ww18
+                                                                          1
+                                                                          -> Language.Garter.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww8
+                                                                                  1
+                                                                                  wild5) } } } } } } } }
+                                            1
+                                            -> Language.Garter.UX.SS
+                                                 ww12
+                                                 ww13 } } } } } } } } } }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fMonoidSourceSpan_$cmconcat ::
+    [Language.Garter.UX.SourceSpan] -> Language.Garter.UX.SourceSpan
+  {- Arity: 1, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [Language.Garter.UX.SourceSpan] ->
+                 case Language.Garter.UX.$wgo w of ww { (#,#) ww1 ww2 ->
+                 Language.Garter.UX.SS ww1 ww2 }) -}
+b953ad56a7e1bb17e146e856305307ee
+  $fMonoidSourceSpan_dt :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "unknown"#) -}
+996dfae47492ba4456a960d008db2485
+  $fPPrintSourceSpan ::
+    Language.Garter.UX.PPrint Language.Garter.UX.SourceSpan
+  DFunId[0]
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.UX.$fPPrintSourceSpan_$cpprint
+                  `cast`
+                (Sym (Language.Garter.UX.NTCo:PPrint[0]
+                          <Language.Garter.UX.SourceSpan>_N)) -}
+9d52608943cd43e36b0ec3f22e05f4e5
+  $fPPrintSourceSpan_$cpprint ::
+    Language.Garter.UX.SourceSpan -> Language.Garter.UX.Text
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.Garter.UX.SourceSpan ->
+                 case w of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.Garter.UX.$w$cpprint ww4 ww5 ww6 ww8 ww9 ww10 } } }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fShowSourceSpan :: GHC.Show.Show Language.Garter.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.UX.SourceSpan
+                  Language.Garter.UX.$fShowSourceSpan_$cshowsPrec
+                  Language.Garter.UX.$fShowSourceSpan_$cshow
+                  Language.Garter.UX.$fShowSourceSpan_$cshowList -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fShowSourceSpan1 ::
+    Language.Garter.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.Garter.UX.SourceSpan
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.Garter.UX.$w$cshowsPrec1
+                   0
+                   ww4
+                   ww5
+                   ww6
+                   ww8
+                   ww9
+                   ww10
+                   w1 } } }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fShowSourceSpan_$cshow ::
+    Language.Garter.UX.SourceSpan -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U(U,U,U),U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Garter.UX.SourceSpan ->
+                 Language.Garter.UX.$fShowSourceSpan_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fShowSourceSpan_$cshowList ::
+    [Language.Garter.UX.SourceSpan] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.Garter.UX.SourceSpan
+                   Language.Garter.UX.$fShowSourceSpan1) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $fShowSourceSpan_$cshowsPrec ::
+    GHC.Types.Int -> Language.Garter.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U(U,U,U),U(U,U,U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Garter.UX.SourceSpan
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Garter.UX.SS ww3 ww4 ->
+                 case ww3 of ww5 { Text.Megaparsec.Pos.SourcePos ww6 ww7 ww8 ->
+                 case ww4 of ww9 { Text.Megaparsec.Pos.SourcePos ww10 ww11 ww12 ->
+                 Language.Garter.UX.$w$cshowsPrec1
+                   ww1
+                   ww6
+                   ww7
+                   ww8
+                   ww10
+                   ww11
+                   ww12
+                   w2 } } } }) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fShowUserError :: GHC.Show.Show Language.Garter.UX.UserError
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.UX.UserError
+                  Language.Garter.UX.$fShowUserError_$cshowsPrec
+                  Language.Garter.UX.$fShowUserError_$cshow
+                  Language.Garter.UX.$fException[]_$cshowList -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fShowUserError_$cshow ::
+    Language.Garter.UX.UserError -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.Garter.UX.UserError ->
+                 Language.Garter.UX.$fShowUserError_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+6a8e07dbb8b4a94a180a576567a74972
+  $fShowUserError_$cshowsPrec ::
+    GHC.Types.Int -> Language.Garter.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.Garter.UX.UserError
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.Garter.UX.Error ww3 ww4 ->
+                 case ww4 of ww5 { Language.Garter.UX.SS ww6 ww7 ->
+                 Language.Garter.UX.$w$cshowsPrec ww1 ww3 ww6 ww7 w2 } } }) -}
+f1c933e77aa2e17545d2da51f88a862d
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+e8f4f5cc20edc5dcf6a3a4c98c0c5e3e
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+d8feda869ac65685c41f10292cd44ac4
+  $w$cpprint ::
+    GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <S,U><L,U><L,U><S,1*H><L,U><L,U>,
+     Inline: [0] -}
+c6ea185083cb5a160910973b295ede90
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Language.Garter.UX.Text
+    -> Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5, Strictness: <L,U><S,U><L,U(U,U,U)><L,U(U,U,U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: Language.Garter.UX.Text
+                   ww2 :: Text.Megaparsec.Pos.SourcePos
+                   ww3 :: Text.Megaparsec.Pos.SourcePos
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Garter.UX.$fException[]9
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.Garter.UX.$fException[]8
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Language.Garter.UX.$fException[]4
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.Garter.UX.$fException[]7
+                                         (case ww2 of ww4 { Text.Megaparsec.Pos.SourcePos ww5 ww6 ww7 ->
+                                          case ww3 of ww8 { Text.Megaparsec.Pos.SourcePos ww9 ww10 ww11 ->
+                                          Language.Garter.UX.$w$cshowsPrec1
+                                            0
+                                            ww5
+                                            ww6
+                                            ww7
+                                            ww9
+                                            ww10
+                                            ww11
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Language.Garter.UX.$fException[]2
+                                               x) } })))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+640003668c6f16ec458a30db7273c1ac
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 8, Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Prim.Int#
+                   ww3 :: GHC.Prim.Int#
+                   ww4 :: GHC.Base.String
+                   ww5 :: GHC.Prim.Int#
+                   ww6 :: GHC.Prim.Int#
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.Garter.UX.$fException[]6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.Garter.UX.$fException[]5
+                          (GHC.Base.++
+                             @ GHC.Types.Char
+                             (Text.Megaparsec.Pos.$w$cshow ww1 ww2 ww3)
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Language.Garter.UX.$fException[]4
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Language.Garter.UX.$fException[]3
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      (Text.Megaparsec.Pos.$w$cshow ww4 ww5 ww6)
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.Garter.UX.$fException[]2
+                                         x))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  $wgo ::
+    [Language.Garter.UX.SourceSpan]
+    -> (# Text.Megaparsec.Pos.SourcePos,
+          Text.Megaparsec.Pos.SourcePos #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+6457c41948153b73d23f42673b6d17db
+  class Located a where
+    sourceSpan :: a -> Language.Garter.UX.SourceSpan
+996dfae47492ba4456a960d008db2485
+  class PPrint a where
+    pprint :: a -> Language.Garter.UX.Text
+24ff40f5e609d5a0ee4bb7899737a056
+  type Result a = Data.Either.Either [Language.Garter.UX.UserError] a
+098d2e4d05b4af1a543dcf8b2ba83b07
+  data SourceSpan
+    = SS {ssBegin :: !Text.Megaparsec.Pos.SourcePos,
+          ssEnd :: !Text.Megaparsec.Pos.SourcePos}
+85afadf93186942f6e6e34b9287d4792
+  type Text = GHC.Base.String
+6a8e07dbb8b4a94a180a576567a74972
+  data UserError
+    = Error {eMsg :: !Language.Garter.UX.Text,
+             eSpan :: !Language.Garter.UX.SourceSpan}
+cf0ae346b8d2eca92224b59a4cfce058
+  abort :: Language.Garter.UX.UserError -> b
+  {- Arity: 1, Strictness: <L,U>b -}
+0f42a15f8bace5261a23e9abcc52e829
+  eMsg :: Language.Garter.UX.UserError -> Language.Garter.UX.Text
+  RecSel Language.Garter.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U,1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.UX.UserError ->
+                 case ds of wild { Language.Garter.UX.Error ds1 ds2 -> ds1 }) -}
+8678f90873069199c2077fa881c51577
+  eSpan ::
+    Language.Garter.UX.UserError -> Language.Garter.UX.SourceSpan
+  RecSel Language.Garter.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.UX.UserError ->
+                 case ds of wild { Language.Garter.UX.Error ds1 ds2 -> ds2 }) -}
+098d2e4d05b4af1a543dcf8b2ba83b07
+  junkSpan :: Language.Garter.UX.SourceSpan
+  {- Strictness: m,
+     Unfolding: (Language.Garter.UX.SS
+                   Language.Garter.UX.junkSpan1
+                   Language.Garter.UX.junkSpan1) -}
+7da7bd93d6ddc383a23f4f7b04c6d5a0
+  junkSpan1 :: Text.Megaparsec.Pos.SourcePos
+  {- Strictness: m,
+     Unfolding: (Text.Megaparsec.Pos.SourcePos
+                   Language.Garter.UX.$fMonoidSourceSpan_dt
+                   1
+                   1) -}
+547c4c16e543d2f43bff570de296002f
+  mkError ::
+    Language.Garter.UX.Text
+    -> Language.Garter.UX.SourceSpan -> Language.Garter.UX.UserError
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>m,
+     Unfolding: InlineRule (0, True, True) Language.Garter.UX.$WError -}
+b394828b72058246094ed03e5f6494d7
+  panic :: GHC.Base.String -> Language.Garter.UX.SourceSpan -> a
+  {- Arity: 2, Strictness: <L,U><L,U>b -}
+069768eacb26c3681f61f7c65cbcbfb7
+  posSpan ::
+    Text.Megaparsec.Pos.SourcePos -> Language.Garter.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ p :: Text.Megaparsec.Pos.SourcePos ->
+                 Language.Garter.UX.$WSS p p) -}
+2bb950566a8b827431945f57f1b060b0
+  readFileSpan ::
+    Language.Garter.UX.SourceSpan -> GHC.Types.IO GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.UX.readFileSpan1
+                  `cast`
+                (<Language.Garter.UX.SourceSpan>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R)) -}
+07918e10efa4845ef55a78c3a5d2fde0
+  readFileSpan1 ::
+    Language.Garter.UX.SourceSpan
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U> -}
+ea8fd6036136a68dcc12e39167d93869
+  renderErrors ::
+    [Language.Garter.UX.UserError]
+    -> GHC.Types.IO Language.Garter.UX.Text
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.UX.renderErrors1
+                  `cast`
+                (<[Language.Garter.UX.UserError]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Language.Garter.UX.Text>_R)) -}
+349229053dc1c03c450dae37b6c349a3
+  renderErrors1 ::
+    [Language.Garter.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Language.Garter.UX.Text #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ es :: [Language.Garter.UX.UserError]
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Language.Garter.UX.renderErrors4
+                        es
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    Data.OldList.intercalate_$spoly_go
+                      @ GHC.Types.Char
+                      Language.Garter.UX.renderErrors3
+                      (Data.OldList.prependToAll
+                         @ [GHC.Types.Char]
+                         Language.Garter.UX.renderErrors2
+                         ipv1) #) }) -}
+311639b23b7449942d6a706a8f0f393a
+  renderErrors2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+8e80896f6a105c1ac350668a956cdc9b
+  renderErrors3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Errors found!"#) -}
+cafa90abddc8fc46ad3184b7119d3946
+  renderErrors4 ::
+    [Language.Garter.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          [Language.Garter.UX.Text] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+122367f6740ebac5a62d9552e0fe62ae
+  ssBegin ::
+    Language.Garter.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.Garter.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U(U,U,U),1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.UX.SourceSpan ->
+                 case ds of wild { Language.Garter.UX.SS ds1 ds2 -> ds1 }) -}
+ea54d9a2e92097bd0352f9d5f1b33386
+  ssEnd ::
+    Language.Garter.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.Garter.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.UX.SourceSpan ->
+                 case ds of wild { Language.Garter.UX.SS ds1 ds2 -> ds2 }) -}
+instance GHC.Classes.Eq [Language.Garter.UX.SourceSpan]
+  = Language.Garter.UX.$fEqSourceSpan
+instance GHC.Exception.Exception [[]]
+  = Language.Garter.UX.$fException[]
+instance Language.Garter.UX.Located [Language.Garter.UX.SourceSpan]
+  = Language.Garter.UX.$fLocatedSourceSpan
+instance Language.Garter.UX.Located [Language.Garter.UX.UserError]
+  = Language.Garter.UX.$fLocatedUserError
+instance GHC.Base.Monoid [Language.Garter.UX.SourceSpan]
+  = Language.Garter.UX.$fMonoidSourceSpan
+instance Language.Garter.UX.PPrint [Language.Garter.UX.SourceSpan]
+  = Language.Garter.UX.$fPPrintSourceSpan
+instance GHC.Show.Show [Language.Garter.UX.SourceSpan]
+  = Language.Garter.UX.$fShowSourceSpan
+instance GHC.Show.Show [Language.Garter.UX.UserError]
+  = Language.Garter.UX.$fShowUserError
+"SPEC/Language.Garter.UX $fShow[] @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                           Language.Garter.UX.UserError
+  GHC.Show.$fShow[] @ Language.Garter.UX.UserError $dShow
+  = Language.Garter.UX.$fException[]_$s$fShow[]
+"SPEC/Language.Garter.UX $fShow[]_$cshow @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                  Language.Garter.UX.UserError
+  GHC.Show.$fShow[]_$cshow @ Language.Garter.UX.UserError $dShow
+  = Language.Garter.UX.$fException[]_$s$fShow[]_$cshow
+"SPEC/Language.Garter.UX $fShow[]_$cshowList @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                      Language.Garter.UX.UserError
+  GHC.Show.$fShow[]_$cshowList @ Language.Garter.UX.UserError $dShow
+  = Language.Garter.UX.$fException[]_$s$fShow[]_$cshowList
+"SPEC/Language.Garter.UX $fShow[]_$cshowsPrec @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                       Language.Garter.UX.UserError
+  GHC.Show.$fShow[]_$cshowsPrec @ Language.Garter.UX.UserError $dShow
+  = Language.Garter.UX.$fException[]_$s$fShow[]_$cshowsPrec
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

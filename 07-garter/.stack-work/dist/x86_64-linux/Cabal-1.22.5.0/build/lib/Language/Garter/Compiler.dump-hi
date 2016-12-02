@@ -1,0 +1,711 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-02 08:22:50.536592 UTC
+
+interface garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Compiler [orphan module] 7103
+  interface hash: 0996ab0167f9cdcd99346ab7fcfd76ee
+  ABI hash: 8d9beec3ed6ebc135e3c08a5cf6e85d2
+  export-list hash: dd3ed45fdfe09503d0206bf229221e07
+  orphan hash: eff22e91a5f7bc0f458aa42eb3b4634c
+  flag hash: c91715e69db965320373fbe54581cf65
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Garter.Compiler.compile
+  Language.Garter.Compiler.compileEnv
+  Language.Garter.Compiler.compiler
+  Language.Garter.Compiler.countVars
+  Language.Garter.Compiler.freeVars
+  Language.Garter.Compiler.typeMask
+  Language.Garter.Compiler.typeTag
+module dependencies: Language.Garter.Asm Language.Garter.Checker
+                     Language.Garter.Normalizer Language.Garter.Parser
+                     Language.Garter.Types Language.Garter.UX Language.Garter.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Checker
+         garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Parser
+         garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Types
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Arrow ab7f126fed349de468f94ac777dc8f4e
+import  -/  base-4.8.2.0:Control.Category 99263bd976f974ec28d3d82cdd4ec538
+import  -/  base-4.8.2.0:Data.Bits 87551525e7ef366d0fc4cad44e8b1bfc
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set 7116dff3002cb8f8fc1c63ac63f4ea50
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base 7beac595f1e2224b9aedae785739990e
+import  -/  Language.Garter.Asm d47fb2dc9f582e8397d6d8e7a35d18eb
+  exports: 13da3037209419075ccc3a50dfc7a9e6
+  asm cd4221fa1a487fbb942a95dc148eacb5
+import  -/  Language.Garter.Checker df39602725ed6becc08902b11cd0efef
+  exports: ec45f6b9e8b62e60395b2a388a55e541
+  check 6cefc85f6dcca885f4f510c73d123809
+  errUnboundVar 78f45e4c2b62b1d4f0b956bcad2dac54
+import  -/  Language.Garter.Normalizer 24a9674cfc98766f220ba6104fce2722
+  exports: 621cea926e5e5763d7eb1e884a4dbc2e
+  anormal 21cd44ebea13ae66e385883f91647495
+import  -/  Language.Garter.Parser bdf3ed8796de8f8172f2dd273a051661
+  exports: 10f15e92b533e33f5718052de6f5af95
+  parse a5e3dfba2786fd6e8225ec1fdc368ef2
+import  -/  Language.Garter.Types 8ca41696149f07f5aa5baf9355e1b055
+  exports: b8b362ef72140df12c1601db53af873b
+  Add1 ff725cc901bba903e80af83ecf5f1de5
+  AnfExpr 51349900087c394ed6fe45c87a2b4337
+  App 8d9e770e205e45a7703196e02bab8110
+  Arg b517962542e649fa4d24121d256b2fde
+  ArithOverflow 42202cfad2c65a25e129bbffe8d69763
+  ArityError 82dcc551d8a95103df68155525f7ad96
+  Bind 1db059313dbe0b2a86fa54046d4badd2
+  Boolean afe53549f9ceb572236cb16e973302ec
+  BranchDone db51565b7ade6ab3c24ce7f388df09f3
+  BranchTrue 7c38d2d0a3ac8e229dca1cfef0864d14
+  CodePtr 12a8c90a0e21074aa2cdb14e17d7f89d
+  Const bf3cbad31e905ef6327f39f9eac4342d
+  DWordPtr bed84ea17a140dd7a73c0d69e3430d97
+  DynamicErr bff9b00b740e21d6acc27d3bd2da2361
+  EAX 03c202ecd6ebfbb74de023d3970f3342
+  EBP 1f5b59a7fe43249948f98440882c154d
+  EBX 13e048b38a9ddc519c63fcfc7cc49dfb
+  ESI aaf566aa6a55eba8b3369883eb1cb851
+  ESP 9ec0aa5ada3017d809384c7b4ab2855f
+  Env bf088f1a8e6a9a985f57bf0d4d56c5df
+  Equal 2ddae2514e887c9a949ee9fe2488acdc
+  Expr 80521ab022e666a0b20e931283531b58
+  Field db943a13676934b1385a232e4c90cb47
+  Fun d3c90cd8104333e77094322faaf0f5f8
+  GetItem 0c58da45f4390f5eabc9ecc15b5d6919
+  Greater 344d70fc65980a219d7e4acc93c52c51
+  HexConst 33d9a948eba51d641f84cd36559fd7ca
+  IAdd 3c96c8571cf32bebf7c55c8950a91468
+  IAnd 93bf1868dce52bd1cba883b0524a71de
+  ICall ce62d20db14d6df1ef004d052d73d28b
+  ICmp 143b39f151aa2f0ae7c811f7fb8739b0
+  IJe 4a9137b08c223758f036d5b2e1bb8ab9
+  IJg e26172d10415cb1740c061bcd8ac16c4
+  IJl 86947d540b0467e99fc9f5e1c6a33c3a
+  IJmp ffac49e0fcf68638aeb1258ca32cb439
+  IJne 23b85cca71825a54f61fbf0537b855b7
+  IJo 7ded132dd03dbab2214fc90672ebad36
+  ILabel 8313b800c6c729c93541afd4699f4150
+  IMov 50681af0f5416f548a5eef660c63c2f5
+  IMul 294f1f548d055a739a0ad774cf81bda0
+  IOr dd537cafb0498d5f21146213a9e848ff
+  IPop c102f750a77509e405fb7322b2e1b80a
+  IPush 4e4c8a72c1ac1be0c58ee90756869586
+  IRet 98c6994bfcfefcaa040eecfa0ade1010
+  ISar f3f0937a83ac7411a1e3b62ff0c75123
+  IShr d0718ef9fe3183522b48e999942d2878
+  ISub 9f3cbe150b87ba4bcb37d02047af1d29
+  Id ebc467784f10a24b5d0c6d75238e515e
+  Id 2ec59c776a0bf310549facfa39720cec
+  If 08ad3e39c3610acbfae14f9f0e76e757
+  ImmExpr 6201682c3e9b4de04eb00ae31c5a837a
+  IndexHigh 943394ad55fa85436e3e1665c460ab97
+  IndexLow 378fc9ed4a90083044710506abbf44db
+  Instruction 7e7f83346d837cff4da31a8a5e59f5c2
+  Label e2acb120046302640351f77e887f300d
+  Lam 443c4fc65b95ef19f64bfda4a4ff88c5
+  LamEnd 6bd1b9e49b91366f8a6f2fa397b83ce4
+  LamStart b7240748fe8734855d11113be248e6e6
+  Less 4cdcd9e261f52a0f69f93e8fc1b87122
+  Let b41df16b39c00dac253cdaaf731bb605
+  Minus 461def6f50548fad44bffae47bd516e4
+  Number cc82aa1424f5597d1c73087442115697
+  One 3f1946d2c2d46d5d6df437d692431b6b
+  Plus 8e432d0d9cffe531855fa885b7c3b3a9
+  Prim1 006189eb82ad287b6f823a95b46447e6
+  Prim1 d7ab88e9bec7d89c8233218b7a604425
+  Prim2 5a70fdda05628f2dbf1cef6a78cc9a33
+  Prim2 e98afafd387752b23da03badacd96682
+  Print 9076b0d9238b522273cc7e319d1b6263
+  Reg eb8c8a3ba3b766f5095b0c2a6542451e
+  Reg 5328c305b1fa3f823f4970760457f076
+  RegIndex 58924061db7224f27bbeff5a251b3853
+  RegOffset e6492ddc8c41a213bdf29406728fba27
+  Sized 1fd6a4f7b19022221eda02fe9694ad49
+  Sub1 bd525fbd79fdc161bb8d81f0d4cd8a8e
+  TBoolean 4efbae9fe7fa39de621c9ad9805aafcb
+  TClosure 0eb0c3d735a0a748b2d8722afdae75b3
+  TNumber a3e37b15b1a073867e77f92027d602e4
+  TTuple 8faa858f19ff56ac52a6d29ad9485383
+  Times 90f2aefd7688ae07b95e8991b200271a
+  Tuple 7a176fa9d5792876f943ba827e8b5f32
+  Ty 7a994f0ff6f59591bad0a02e4edfb882
+  TypeError 58bd7e650c4e78ac13795663b730d8ea
+  Zero 7e9198d5df5cb7e2c924e07ccb7a4dcb
+  bindId 1db059313dbe0b2a86fa54046d4badd2
+  builtin 3897255814f891e163e7b3691476fc43
+  emptyEnv 8da115454c2a3b26d9525a09f8682e9a
+  envMax e6dc92f90d282f1930128e0b444bb91a
+  exprBinds 5858493789ee9720653f9d145d864fa5
+  fromListEnv 93c3c2aca54040ed91beca47ff2add89
+  getLabel 80521ab022e666a0b20e931283531b58
+  label 3b2601ad2e043d1dad21a9dbc076c28a
+  lookupEnv b028aff97949b08136e94306181e9991
+  pushEnv 01e68d669537b909a4bc34c573db2bd1
+import  -/  Language.Garter.UX e7838afc1885a90188179ce483df233b
+  Located 6457c41948153b73d23f42673b6d17db
+  SourceSpan 098d2e4d05b4af1a543dcf8b2ba83b07
+  Text 85afadf93186942f6e6e34b9287d4792
+  abort cf0ae346b8d2eca92224b59a4cfce058
+  panic b394828b72058246094ed03e5f6494d7
+  sourceSpan d5b8f842334ed6ed1a38ba453737d4c4
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+4574620bf11539a6a0850795b592fbaa
+  $fLocated(,) ::
+    Language.Garter.UX.Located Language.Garter.Compiler.Tag
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                (Data.Tuple.fst @ Language.Garter.UX.SourceSpan @ GHC.Types.Int)
+                  `cast`
+                (Sym (Language.Garter.UX.NTCo:Located[0]
+                          <Language.Garter.Compiler.Tag>_N)) -}
+5aae5a178cdeb6f378ff320e466e2fc3
+  $fLocatedExpr ::
+    Language.Garter.UX.Located a =>
+    Language.Garter.UX.Located (Language.Garter.Types.Expr a)
+  DFunId[0]
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U(U,U))><L,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.Compiler.$fLocatedExpr_$csourceSpan
+                  `cast`
+                (forall a7.
+                 <Language.Garter.UX.Located a7>_R
+                 ->_R Sym (Language.Garter.UX.NTCo:Located[0]
+                               <Language.Garter.Types.Expr a7>_N)) -}
+e595f7b8dde7afe68b70a8df593235ad
+  $fLocatedExpr_$csourceSpan ::
+    Language.Garter.UX.Located a =>
+    Language.Garter.Types.Expr a -> Language.Garter.UX.SourceSpan
+  {- Arity: 2, HasNoCafRefs, Strictness: <C(S),1*C1(U(U,U))><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a7
+                   $dLocated :: Language.Garter.UX.Located a7
+                   eta :: Language.Garter.Types.Expr a7 ->
+                 $dLocated `cast` (Language.Garter.UX.NTCo:Located[0] <a7>_N)
+                   (Language.Garter.Types.getLabel @ a7 eta)) -}
+2cc430d50a424c41b6c3088eaccdffab
+  $fReprBool :: Language.Garter.Compiler.Repr GHC.Types.Bool
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.Compiler.$fReprBool_$crepr
+                  `cast`
+                (Sym (Language.Garter.Compiler.NTCo:Repr[0] <GHC.Types.Bool>_N)) -}
+7f3952b2feecf714453efc86c00a1005
+  $fReprBool1 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.$fReprBool2) -}
+0650f04ff61053adef9cdf506804fcf2
+  $fReprBool2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.I# 4294967295) -}
+98ffa9e8580b2547347c3b3cafb64b5a
+  $fReprBool3 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.$fReprBool4) -}
+9cf61bc406ae76f2736203099c67a820
+  $fReprBool4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.I# 2147483647) -}
+3a8acd6724eeed69a300f8cfa48178bc
+  $fReprBool_$crepr :: GHC.Types.Bool -> Language.Garter.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GHC.Types.Bool ->
+                 case ds of wild {
+                   GHC.Types.False -> Language.Garter.Compiler.$fReprBool3
+                   GHC.Types.True -> Language.Garter.Compiler.$fReprBool1 }) -}
+2cc430d50a424c41b6c3088eaccdffab
+  $fReprField ::
+    Language.Garter.Compiler.Repr Language.Garter.Types.Field
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m1,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.Compiler.$fReprField_$crepr
+                  `cast`
+                (Sym (Language.Garter.Compiler.NTCo:Repr[0]
+                          <Language.Garter.Types.Field>_N)) -}
+432a5f8517a8543290b20a451289b3eb
+  $fReprField1 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Garter.Types.Const
+                   Language.Garter.Compiler.$fReprField2) -}
+b66c01927442a3948074eee2eaabe7b8
+  $fReprField2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2) -}
+7cd2e535d374d4d662c5f1496238ac53
+  $fReprField3 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Garter.Types.Const
+                   Language.Garter.Compiler.$fReprField4) -}
+548217f79e3331e887d70449b0a3eb82
+  $fReprField4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+081731af7826b0c9db649de37d9b1097
+  $fReprField_$crepr ::
+    Language.Garter.Types.Field -> Language.Garter.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.Types.Field ->
+                 case ds of wild {
+                   Language.Garter.Types.Zero -> Language.Garter.Compiler.$fReprField3
+                   Language.Garter.Types.One
+                   -> Language.Garter.Compiler.$fReprField1 }) -}
+2cc430d50a424c41b6c3088eaccdffab
+  $fReprInt :: Language.Garter.Compiler.Repr GHC.Types.Int
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U(U)>m1,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.Compiler.$fReprInt_$crepr
+                  `cast`
+                (Sym (Language.Garter.Compiler.NTCo:Repr[0] <GHC.Types.Int>_N)) -}
+b4c3a7b6a4f7efb9ed396facccc7d42e
+  $fReprInt_$crepr :: GHC.Types.Int -> Language.Garter.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U(U)>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ n :: GHC.Types.Int ->
+                 Language.Garter.Types.Const
+                   (case n of wild { GHC.Types.I# x# ->
+                    GHC.Types.I# (GHC.Prim.uncheckedIShiftL# x# 1) })) -}
+2cc430d50a424c41b6c3088eaccdffab
+  $fReprInteger ::
+    Language.Garter.Compiler.Repr GHC.Integer.Type.Integer
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,1*U>m1, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.Garter.Compiler.$fReprInteger_$crepr
+                  `cast`
+                (Sym (Language.Garter.Compiler.NTCo:Repr[0]
+                          <GHC.Integer.Type.Integer>_N)) -}
+b0d5d4ea88c871a4e2f4f2e7ade3a538
+  $fReprInteger_$crepr ::
+    GHC.Integer.Type.Integer -> Language.Garter.Types.Arg
+  {- Arity: 1, Strictness: <L,1*U>m1,
+     Unfolding: InlineRule (1, True, False)
+                (\ n :: GHC.Integer.Type.Integer ->
+                 Language.Garter.Types.Const
+                   (case GHC.Integer.Type.integerToInt
+                           (GHC.Integer.Type.shiftLInteger n 1) of wild { DEFAULT ->
+                    GHC.Types.I# wild })) -}
+0fae6b96af37491684e2139730543e7a
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+06acc732ebf2f1ea6f7828bbe3c19f99
+  $sdelete_$sgo5 ::
+    Language.Garter.Types.Id
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+1f98e29cd7898a9a86075c3f9504a1ec
+  $sfromList ::
+    [Language.Garter.Types.Id]
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ ds :: [Language.Garter.Types.Id] ->
+                 case ds of wild {
+                   [] -> Data.Set.Base.Tip @ Language.Garter.Types.Id
+                   : x ds1
+                   -> case ds1 of wild1 {
+                        []
+                        -> case x of dt { DEFAULT ->
+                           Data.Set.Base.Bin
+                             @ Language.Garter.Types.Id
+                             1
+                             dt
+                             (Data.Set.Base.Tip @ Language.Garter.Types.Id)
+                             (Data.Set.Base.Tip @ Language.Garter.Types.Id) }
+                        : ipv ipv1
+                        -> case GHC.Classes.$fOrd[]_$s$ccompare1 x ipv of wild2 {
+                             DEFAULT
+                             -> case x of dt { DEFAULT ->
+                                Language.Garter.Compiler.$sfromList_go5
+                                  (Data.Set.Base.Bin
+                                     @ Language.Garter.Types.Id
+                                     1
+                                     dt
+                                     (Data.Set.Base.Tip @ Language.Garter.Types.Id)
+                                     (Data.Set.Base.Tip @ Language.Garter.Types.Id))
+                                  wild1 }
+                             GHC.Types.LT
+                             -> case x of dt { DEFAULT ->
+                                Language.Garter.Compiler.$wgo5
+                                  1
+                                  (Data.Set.Base.Bin
+                                     @ Language.Garter.Types.Id
+                                     1
+                                     dt
+                                     (Data.Set.Base.Tip @ Language.Garter.Types.Id)
+                                     (Data.Set.Base.Tip @ Language.Garter.Types.Id))
+                                  wild1 } } } }) -}
+a68ca2dad6c66ec09f9835dbbf8c0962
+  $sfromList_go5 ::
+    Data.Set.Base.Set Language.Garter.Types.Id
+    -> [Language.Garter.Types.Id]
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+99d7dba135fdc1faa7797c7ce6e25629
+  $sinsert_$sgo5 ::
+    Language.Garter.Types.Id
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+e91b1e1ecdd992cf8f31f5e22aa58bdd
+  $sunions_go5 ::
+    Data.Set.Base.Set Language.Garter.Types.Id
+    -> [Data.Set.Base.Set Language.Garter.Types.Id]
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+dc85d6cc990119cb3ec6b44390158647
+  $wcompile ::
+    Language.Garter.Compiler.AExp
+    -> (# Language.Garter.Types.Instruction,
+          [Language.Garter.Types.Instruction] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ w :: Language.Garter.Compiler.AExp ->
+                 (# Language.Garter.Compiler.compile11,
+                    GHC.Types.:
+                      @ Language.Garter.Types.Instruction
+                      Language.Garter.Compiler.compile10
+                      (GHC.Types.:
+                         @ Language.Garter.Types.Instruction
+                         (Language.Garter.Types.ISub
+                            Language.Garter.Compiler.compile6
+                            (Language.Garter.Types.Const
+                               (case Language.Garter.Compiler.countVars
+                                       @ Language.Garter.Compiler.Tag
+                                       w of wild1 { GHC.Types.I# y ->
+                                GHC.Types.I# (GHC.Prim.*# 4 y) })))
+                         (GHC.Types.:
+                            @ Language.Garter.Types.Instruction
+                            Language.Garter.Compiler.compile7
+                            (GHC.Base.++
+                               @ Language.Garter.Types.Instruction
+                               (Language.Garter.Compiler.compileEnv
+                                  Language.Garter.Types.emptyEnv
+                                  w)
+                               Language.Garter.Compiler.funExit))) #)) -}
+07c887207dc9999eec29dd98a518fe81
+  $wgo5 ::
+    GHC.Prim.Int#
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+    -> [Language.Garter.Types.Id]
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+ae8bcf03241ace72d330500450f6d263
+  type ABind =
+    Language.Garter.Types.Bind Language.Garter.Compiler.Tag
+446e4262617a282cf2a3e82beedd6d80
+  type AExp =
+    Language.Garter.Types.AnfExpr Language.Garter.Compiler.Tag
+3ab2d79382de5e07a153fdd49f11f183
+  type AOp =
+    Language.Garter.Types.Arg
+    -> Language.Garter.Types.Arg -> [Language.Garter.Types.Instruction]
+2076e13185f684fe5605b534936ca247
+  type COp =
+    Language.Garter.Types.Label -> Language.Garter.Types.Instruction
+9f6edbfd0ab80fb2cdd5183e9db28a02
+  type IExp =
+    Language.Garter.Types.ImmExpr Language.Garter.Compiler.Tag
+2cc430d50a424c41b6c3088eaccdffab
+  class Repr a where
+    repr :: a -> Language.Garter.Types.Arg
+27330d94659bc91181a271d4508d1c4a
+  type Tag = (Language.Garter.UX.SourceSpan, GHC.Types.Int)
+ae52369715c60795fd505cb7f9618d76
+  compile ::
+    Language.Garter.Compiler.AExp
+    -> [Language.Garter.Types.Instruction]
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.Garter.Compiler.AExp ->
+                 case Language.Garter.Compiler.$wcompile w of ww { (#,#) ww1 ww2 ->
+                 GHC.Types.: @ Language.Garter.Types.Instruction ww1 ww2 }) -}
+059da5327f61953355e6e3fca2991de3
+  compile1 :: [Language.Garter.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Garter.Types.Instruction
+                   Language.Garter.Compiler.compile3
+                   Language.Garter.Compiler.compile2) -}
+c0081b94e94542963f8993239e277320
+  compile10 :: Language.Garter.Types.Instruction
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Garter.Types.IMov
+                   Language.Garter.Compiler.compile4
+                   Language.Garter.Compiler.compile6) -}
+ad61d51b0a66ddb80a34c9b13773eec7
+  compile11 :: Language.Garter.Types.Instruction
+  {- HasNoCafRefs, Strictness: m12,
+     Unfolding: (Language.Garter.Types.IPush
+                   Language.Garter.Compiler.compile4) -}
+f6b00c0dbb8979cdc0330ed010f007c5
+  compile2 :: [Language.Garter.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Garter.Types.Instruction
+                   Language.Garter.Types.IRet
+                   (GHC.Types.[] @ Language.Garter.Types.Instruction)) -}
+dd81d80dfc1bf034d7b618f85f4c5251
+  compile3 :: Language.Garter.Types.Instruction
+  {- HasNoCafRefs, Strictness: m13,
+     Unfolding: (Language.Garter.Types.IPop
+                   Language.Garter.Compiler.compile4) -}
+badb51a853e50c5312e32857a946f249
+  compile4 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Garter.Types.Reg Language.Garter.Types.EBP) -}
+c5a94d95e2a1e151ccba54b897758e20
+  compile5 :: Language.Garter.Types.Instruction
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.Garter.Types.IMov
+                   Language.Garter.Compiler.compile6
+                   Language.Garter.Compiler.compile4) -}
+a6c398c91a1bb94ca4e592a653cf998a
+  compile6 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m3,
+     Unfolding: (Language.Garter.Types.Reg Language.Garter.Types.ESP) -}
+95ad66fad17c1bfed6feb0db1a768a4b
+  compile7 :: Language.Garter.Types.Instruction
+  {- HasNoCafRefs, Strictness: m8,
+     Unfolding: (Language.Garter.Types.IAnd
+                   Language.Garter.Compiler.compile6
+                   Language.Garter.Compiler.compile8) -}
+91807c767e21850e334972f6b8b234f3
+  compile8 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.compile9) -}
+afd565329bd4fe95f15d9d6c8e353464
+  compile9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.I# 4294967280) -}
+5f65bc5677e688dfa25f2c7eeda31003
+  compileEnv ::
+    Language.Garter.Types.Env
+    -> Language.Garter.Compiler.AExp
+    -> [Language.Garter.Types.Instruction]
+  {- Arity: 2, Strictness: <L,U(U,U)><S,1*U> -}
+042dc22d08323fbc829c5e66c283113c
+  compiler ::
+    GHC.IO.FilePath
+    -> Language.Garter.UX.Text -> Language.Garter.UX.Text
+  {- Arity: 2, Strictness: <L,1*U><L,U>,
+     Unfolding: (\ f :: GHC.IO.FilePath x :: Language.Garter.UX.Text ->
+                 Language.Garter.Asm.asm
+                   (GHC.Types.:
+                      @ Language.Garter.Types.Instruction
+                      Language.Garter.Compiler.compile11
+                      (GHC.Types.:
+                         @ Language.Garter.Types.Instruction
+                         Language.Garter.Compiler.compile10
+                         (let {
+                            _e :: Language.Garter.Compiler.AExp
+                            = case Language.Garter.Normalizer.$wanf
+                                     @ Language.Garter.UX.SourceSpan
+                                     Language.Garter.Normalizer.anormal1
+                                     (Language.Garter.Checker.check
+                                        (Language.Garter.Parser.parse f x)) of ww { (#,#) ww1 ww2 ->
+                              case Language.Garter.Types.$wgo
+                                     @ Language.Garter.UX.SourceSpan
+                                     @ Language.Garter.UX.SourceSpan
+                                     Language.Garter.Types.$fShowBind1
+                                     ww2 of ww4 { (#,#) ww5 ww6 ->
+                              ww6 } }
+                          } in
+                          GHC.Types.:
+                            @ Language.Garter.Types.Instruction
+                            (Language.Garter.Types.ISub
+                               Language.Garter.Compiler.compile6
+                               (Language.Garter.Types.Const
+                                  (case Language.Garter.Compiler.countVars
+                                          @ Language.Garter.Compiler.Tag
+                                          _e of wild1 { GHC.Types.I# y ->
+                                   GHC.Types.I# (GHC.Prim.*# 4 y) })))
+                            (GHC.Types.:
+                               @ Language.Garter.Types.Instruction
+                               Language.Garter.Compiler.compile7
+                               (GHC.Base.++
+                                  @ Language.Garter.Types.Instruction
+                                  (Language.Garter.Compiler.compileEnv
+                                     Language.Garter.Types.emptyEnv
+                                     _e)
+                                  Language.Garter.Compiler.funExit)))))) -}
+3ab3e87ee148725ab12958335ee4a066
+  countVars :: Language.Garter.Types.AnfExpr a -> GHC.Types.Int
+  {- Arity: 1, Strictness: <S,1*U> -}
+66a1e2d85d8151389ac9103dd15c39e9
+  freeVars ::
+    Language.Garter.Types.Expr a -> [Language.Garter.Types.Id]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a7 e :: Language.Garter.Types.Expr a7 ->
+                 Data.Set.Base.toAscList1
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ [GHC.Types.Char])
+                   (Language.Garter.Compiler.freeVars_go @ a7 e)) -}
+8cd40b65ebcc6e077e38bcf9ae7ae378
+  freeVars_go ::
+    Language.Garter.Types.Expr a
+    -> Data.Set.Base.Set Language.Garter.Types.Id
+  {- Arity: 1, Strictness: <S,1*U> -}
+07a741c6be113acf990356a816e3f599
+  funExit :: [Language.Garter.Types.Instruction]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Language.Garter.Types.Instruction
+                   Language.Garter.Compiler.compile5
+                   Language.Garter.Compiler.compile1) -}
+bf32dbd25ad998c70caa7fdaabb09ddb
+  typeMask :: Language.Garter.Types.Ty -> Language.Garter.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.Types.Ty ->
+                 case ds of wild {
+                   Language.Garter.Types.TNumber -> Language.Garter.Compiler.typeMask3
+                   Language.Garter.Types.TBoolean
+                   -> Language.Garter.Compiler.$fReprBool3
+                   Language.Garter.Types.TTuple -> Language.Garter.Compiler.typeMask1
+                   Language.Garter.Types.TClosure
+                   -> Language.Garter.Compiler.typeMask1 }) -}
+73587ee2f0645ee8562b5a9b1dc3da96
+  typeMask1 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.typeMask2) -}
+164e81d3fa9062d45403381a4ea2226a
+  typeMask2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 7) -}
+f57e2b5068cf53f3344cbc4bf254a42d
+  typeMask3 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.typeMask4) -}
+a775af0cea764f525d04a09c6518e389
+  typeMask4 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+7642d4f8ecf9c720004ad95ec883e3b8
+  typeTag :: Language.Garter.Types.Ty -> Language.Garter.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.Garter.Types.Ty ->
+                 case ds of wild {
+                   Language.Garter.Types.TNumber -> Language.Garter.Compiler.typeTag3
+                   Language.Garter.Types.TBoolean
+                   -> Language.Garter.Compiler.$fReprBool3
+                   Language.Garter.Types.TTuple -> Language.Garter.Compiler.typeMask3
+                   Language.Garter.Types.TClosure
+                   -> Language.Garter.Compiler.typeTag1 }) -}
+f22f20cd9ed6d1beaafaafc2318824a0
+  typeTag1 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.typeTag2) -}
+4f10ed893d62f7604d5234b73df16b0c
+  typeTag2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 5) -}
+27ecc78b118018c5ae6c7889bb7dd2e2
+  typeTag3 :: Language.Garter.Types.Arg
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Language.Garter.Types.HexConst
+                   Language.Garter.Compiler.$fReprField4) -}
+instance Language.Garter.UX.Located [(,)]
+  = Language.Garter.Compiler.$fLocated(,)
+instance Language.Garter.UX.Located [Language.Garter.Types.Expr]
+  = Language.Garter.Compiler.$fLocatedExpr
+instance Language.Garter.Compiler.Repr [GHC.Types.Bool]
+  = Language.Garter.Compiler.$fReprBool
+instance Language.Garter.Compiler.Repr [Language.Garter.Types.Field]
+  = Language.Garter.Compiler.$fReprField
+instance Language.Garter.Compiler.Repr [GHC.Types.Int]
+  = Language.Garter.Compiler.$fReprInt
+instance Language.Garter.Compiler.Repr [GHC.Integer.Type.Integer]
+  = Language.Garter.Compiler.$fReprInteger
+"SPEC/Language.Garter.Compiler fromList @ Id" [ALWAYS] forall $dOrd :: GHC.Classes.Ord
+                                                                         Language.Garter.Types.Id
+  Data.Set.Base.fromList @ [GHC.Types.Char] $dOrd
+  = Language.Garter.Compiler.$sfromList
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

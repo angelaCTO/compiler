@@ -1,0 +1,1317 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-02 07:26:12.987127 UTC
+
+interface garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Checker [orphan module] 7103
+  interface hash: eb680025c3dfb8bd07da2483ea76ccc2
+  ABI hash: df39602725ed6becc08902b11cd0efef
+  export-list hash: ec45f6b9e8b62e60395b2a388a55e541
+  orphan hash: 823aab307bacdb25a81ca9e6acab85fd
+  flag hash: 00183df1bf1a1a1ab42cfabb58567251
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.Garter.Checker.check
+  Language.Garter.Checker.eqPoly
+  Language.Garter.Checker.errMismatch
+  Language.Garter.Checker.errSignature
+  Language.Garter.Checker.errUnboundFun
+  Language.Garter.Checker.errUnboundVar
+  Language.Garter.Checker.extTypesEnv
+  Language.Garter.Checker.freshFun
+module dependencies: Language.Garter.Types Language.Garter.UX
+                     Language.Garter.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Types
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Exception 18c46fe9c5c0c3a120035f264ef32d41
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map 1800ccac43fd924c376b60eac12f4d04
+import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base 61f4bf9a28a6b2eb8805b671ced219c1
+import  -/  Language.Garter.Types 8ca41696149f07f5aa5baf9355e1b055
+  exports: b8b362ef72140df12c1601db53af873b
+  :=> b72b1fd06ee9aee5275fc0d4d1a62b34
+  Add1 ff725cc901bba903e80af83ecf5f1de5
+  App 8d9e770e205e45a7703196e02bab8110
+  Assume 915a008ce0e7fb83856d13206a70b87a
+  Bare 80521ab022e666a0b20e931283531b58
+  BareBind 1db059313dbe0b2a86fa54046d4badd2
+  Bind 1db059313dbe0b2a86fa54046d4badd2
+  Boolean afe53549f9ceb572236cb16e973302ec
+  Check c8c14d2d52cab00d4757bf98e0ebf555
+  Env bf088f1a8e6a9a985f57bf0d4d56c5df
+  Equal 2ddae2514e887c9a949ee9fe2488acdc
+  Expr 80521ab022e666a0b20e931283531b58
+  Field db943a13676934b1385a232e4c90cb47
+  Forall 871b55403693642038efa7824b83fb7f
+  Fun d3c90cd8104333e77094322faaf0f5f8
+  GetItem 0c58da45f4390f5eabc9ecc15b5d6919
+  Greater 344d70fc65980a219d7e4acc93c52c51
+  Id ebc467784f10a24b5d0c6d75238e515e
+  Id 2ec59c776a0bf310549facfa39720cec
+  If 08ad3e39c3610acbfae14f9f0e76e757
+  Infer f1b29e2db8f818fe3d249490a5e50a92
+  Lam 443c4fc65b95ef19f64bfda4a4ff88c5
+  Less 4cdcd9e261f52a0f69f93e8fc1b87122
+  Let b41df16b39c00dac253cdaaf731bb605
+  Minus 461def6f50548fad44bffae47bd516e4
+  Number cc82aa1424f5597d1c73087442115697
+  One 3f1946d2c2d46d5d6df437d692431b6b
+  Plus 8e432d0d9cffe531855fa885b7c3b3a9
+  Poly 28bca9a08429fae28d31f9e61bc8570d
+  Prim1 006189eb82ad287b6f823a95b46447e6
+  Prim1 d7ab88e9bec7d89c8233218b7a604425
+  Prim2 5a70fdda05628f2dbf1cef6a78cc9a33
+  Prim2 e98afafd387752b23da03badacd96682
+  Print 9076b0d9238b522273cc7e319d1b6263
+  Sub1 bd525fbd79fdc161bb8d81f0d4cd8a8e
+  TBool 175308417a166528b34be87de376268a
+  TCtor b38ba7589a121d2eadc3b1f49235d547
+  TInt 18df79a2999c3de17673f42f2136af93
+  TPair 50e004f94e1f36e45a4e675c691eafa1
+  TV 185d76679b55bda4820995457bd0ba6b
+  TVar c231ad8d959679a6133ac26c3e17f836
+  TVar 1d6f7a01ed6b0a9965871a8cd14f03df
+  Times 90f2aefd7688ae07b95e8991b200271a
+  Tuple 7a176fa9d5792876f943ba827e8b5f32
+  Type 0c24e752fa183294d4b863aa0c577b45
+  Zero 7e9198d5df5cb7e2c924e07ccb7a4dcb
+  addEnv 5639e68096925d70c488895d3fea03cd
+  bindId 1db059313dbe0b2a86fa54046d4badd2
+  emptyEnv 8da115454c2a3b26d9525a09f8682e9a
+  getLabel 80521ab022e666a0b20e931283531b58
+  memberEnv 329c8e6c62de362ecbb70a1749362434
+import  -/  Language.Garter.UX e7838afc1885a90188179ce483df233b
+  Located 6457c41948153b73d23f42673b6d17db
+  SourceSpan 098d2e4d05b4af1a543dcf8b2ba83b07
+  UserError 6a8e07dbb8b4a94a180a576567a74972
+  abort cf0ae346b8d2eca92224b59a4cfce058
+  mkError 547c4c16e543d2f43bff570de296002f
+  panic b394828b72058246094ed03e5f6494d7
+  pprint 069187f9dda30fbef535bfe8d30c91d1
+  sourceSpan d5b8f842334ed6ed1a38ba453737d4c4
+import  -/  Language.Garter.Utils a0f3a1ce07987f255eba52b263b76fd5
+  exports: 95401c007cc79e2e6298db4b7ab3d881
+  dupBy 55f6aa20c574d1ad1547c39f0c078340
+  traceShow 9b291aa9092445837c6aac3970f06c10
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+5b9d1398db2ca96a6449f572f64c05be
+  $fException[] :: GHC.Exception.Exception GHC.Base.String
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ GHC.Base.String
+                  Language.Garter.Checker.$fException[]10
+                  Language.Garter.Checker.$fException[]9
+                  Language.Garter.Checker.$fException[]_$ctoException
+                  Language.Garter.Checker.$fException[]_$cfromException
+                  Language.Garter.Checker.$fException[]_$s$dmdisplayException -}
+b646301b911e506704a3873963c7e772
+  $fException[]1 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (case Language.Garter.Checker.$fException[]_w1 of wild2 {
+                   []
+                   -> Data.Typeable.Internal.TypeRep
+                        __word 17730107610217102821
+                        __word 9866972337190828755
+                        Language.Garter.Checker.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   : ipv ipv1
+                   -> case GHC.Fingerprint.fingerprintFingerprints
+                             Language.Garter.Checker.$fException[]2 of dt { GHC.Fingerprint.Type.Fingerprint dt1 dt2 ->
+                      Data.Typeable.Internal.TypeRep
+                        dt1
+                        dt2
+                        Language.Garter.Checker.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        wild2 } }) -}
+13546cc2b2d71e84daa944f4adea6f52
+  $fException[]10 :: Data.Typeable.Internal.Typeable GHC.Base.String
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.Checker.$fException[]11
+                  `cast`
+                (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                          <*>_N <[GHC.Types.Char]>_N)) -}
+be23e9672909ef07a2e639c4a72ff267
+  $fException[]11 ::
+    GHC.Prim.Proxy# [GHC.Types.Char] -> Data.Typeable.Internal.TypeRep
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ wild :: GHC.Prim.Proxy# [GHC.Types.Char] ->
+                 Language.Garter.Checker.$fException[]1) -}
+09a8358898520f025e8853dd4991f333
+  $fException[]2 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Fingerprint.Type.Fingerprint
+                   Language.Garter.Checker.$fException[]4
+                   Language.Garter.Checker.$fException[]3) -}
+4e5eb6095960eed8fb17361bfd12b18a
+  $fException[]3 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (Language.Garter.Checker.$fException[]_go
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)) -}
+50b6616f70d3e367220b50241ce3f02c
+  $fException[]4 :: GHC.Fingerprint.Type.Fingerprint
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Fingerprint.Type.Fingerprint
+                   __word 17730107610217102821
+                   __word 9866972337190828755) -}
+8e44743e85e0f2229658ceb790dd93a8
+  $fException[]5 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Types.:
+                   @ Data.Typeable.Internal.TypeRep
+                   Language.Garter.Checker.$fException[]6
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+417eb11beca744f7deb88c4896db86cc
+  $fException[]6 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (Data.Typeable.Internal.TypeRep
+                   __word 16781394633280494409
+                   __word 2520638044472077920
+                   Language.Garter.Checker.$fException[]7
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+b48eb417d015fc087e83fe11e40706c0
+  $fException[]7 :: Data.Typeable.Internal.TyCon
+  {- Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 16781394633280494409
+                   __word 2520638044472077920
+                   Language.Garter.Checker.$fException[]_ww2
+                   Language.Garter.Checker.$fException[]_ww3
+                   Language.Garter.Checker.$fException[]8) -}
+5e1622a40b242c5088221235a3f70166
+  $fException[]8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Char"#) -}
+de417c4371585a250601493291819229
+  $fException[]9 :: GHC.Show.Show GHC.Base.String
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                GHC.Show.$fShow[]_$s$fShow[]1 -}
+0d124a29dfa263b35755a962295efd4a
+  $fException[]_$cfromException ::
+    GHC.Exception.SomeException -> GHC.Base.Maybe GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ eta :: GHC.Exception.SomeException ->
+                 case eta of wild { GHC.Exception.SomeException e10 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e10 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e10>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e10) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds3 ds4 ds5 ->
+                 case Language.Garter.Checker.$fException[]1 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds6 ds7 ds8 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqWord# dt dt2) of wild3 {
+                   GHC.Types.False -> GHC.Base.Nothing @ GHC.Base.String
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqWord# dt1 dt3) of wild4 {
+                        GHC.Types.False -> GHC.Base.Nothing @ GHC.Base.String
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ GHC.Base.String
+                             e2
+                               `cast`
+                             (UnivCo mkUnsafeCo representational e10 GHC.Base.String) } } } } }) -}
+1526fa076c08369302e7a8ce14da7115
+  $fException[]_$ctoException ::
+    GHC.Base.String -> GHC.Exception.SomeException
+  {- Arity: 1 -}
+14a2e0e8feb1c3717ad820977da17de0
+  $fException[]_$s$dmdisplayException ::
+    GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>m2,
+     Unfolding: InlineRule (-1, True, True)
+                GHC.Show.$fShow[]_$s$cshow1 -}
+03a3a8bea708053c63953ad272f3daca
+  $fException[]_go ::
+    [Data.Typeable.Internal.TypeRep]
+    -> [GHC.Fingerprint.Type.Fingerprint]
+  {- Arity: 1, Strictness: <S,1*U> -}
+d4d9f9ac51ef073571575c24a737c2e6
+  $fException[]_w1 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Base.++
+                   @ Data.Typeable.Internal.TypeRep
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   Language.Garter.Checker.$fException[]5) -}
+9d3f27eda06a7dcc55b086293916e2a5
+  $fException[]_wild :: Data.Typeable.Internal.TyCon
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 17730107610217102821
+                   __word 9866972337190828755
+                   Language.Garter.Checker.$fException[]_ww2
+                   Language.Garter.Checker.$fException[]_ww3
+                   Language.Garter.Checker.$fException[]_ww4) -}
+b3894e69732105c47cbc9af5f09bebff
+  $fException[]_ww2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "ghc-prim"#) -}
+1bd3dbf91ad741f98c8000b27a3eb254
+  $fException[]_ww3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "GHC.Types"#) -}
+5e6a6b4b50d607b198c83ef25017f5a8
+  $fException[]_ww4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[]"#) -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  $fShowSubst :: GHC.Show.Show Language.Garter.Checker.Subst
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.Checker.Subst
+                  Language.Garter.Checker.$fShowSubst_$s$dmshowsPrec
+                  Language.Garter.Checker.$fShowSubst_$cshow
+                  Language.Garter.Checker.$fShowSubst_$cshowList -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  $fShowSubst1 ::
+    Language.Garter.Checker.Subst
+    -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Unfolding: (\ x :: Language.Garter.Checker.Subst
+                   s :: GHC.Base.String[OneShot] ->
+                 case x of ww { Language.Garter.Checker.Su ww1 ww2 ->
+                 case Language.Garter.Checker.$w$cshow
+                        ww1
+                        ww2 of ww3 { (#,#) ww4 ww5 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (GHC.Types.: @ GHC.Types.Char ww4 ww5)
+                   s } }) -}
+ee0c480e9c469ad3a895793f3a7d45ae
+  $fShowSubst2 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows8
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  $fShowSubst_$cshow ::
+    Language.Garter.Checker.Subst -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.Garter.Checker.Subst ->
+                 case w of ww { Language.Garter.Checker.Su ww1 ww2 ->
+                 case Language.Garter.Checker.$w$cshow
+                        ww1
+                        ww2 of ww3 { (#,#) ww4 ww5 ->
+                 GHC.Types.: @ GHC.Types.Char ww4 ww5 } }) -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  $fShowSubst_$cshowList ::
+    [Language.Garter.Checker.Subst] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ls :: [Language.Garter.Checker.Subst]
+                   s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ Language.Garter.Checker.Subst
+                   Language.Garter.Checker.$fShowSubst1
+                   ls
+                   s) -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  $fShowSubst_$s$dmshowsPrec ::
+    GHC.Types.Int -> Language.Garter.Checker.Subst -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U(1*U,U)><L,1*U>,
+     Unfolding: InlineRule (-1, True, False)
+                (\ ds3 :: GHC.Types.Int
+                   x :: Language.Garter.Checker.Subst
+                   s :: GHC.Base.String ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b c :: GHC.Types.Char -> b -> b[OneShot] n :: b[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b
+                      c
+                      n
+                      (Language.Garter.Checker.$fShowSubst_$cshow x))
+                   s) -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $fShowTypeEnv :: GHC.Show.Show Language.Garter.Checker.TypeEnv
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.Checker.TypeEnv
+                  Language.Garter.Checker.$fShowTypeEnv_$cshowsPrec
+                  Language.Garter.Checker.$fShowTypeEnv_$cshow
+                  Language.Garter.Checker.$fShowTypeEnv_$cshowList -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $fShowTypeEnv1 ::
+    Language.Garter.Checker.TypeEnv
+    -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2,
+     Unfolding: (\ ds3 :: Language.Garter.Checker.TypeEnv
+                   eta1 :: GHC.Base.String[OneShot] ->
+                 GHC.Show.showList__
+                   @ ([GHC.Types.Char], Language.Garter.Types.Poly)
+                   Language.Garter.Checker.$fShowTypeEnv2
+                   (Data.Map.Base.$fEqMap1
+                      @ [GHC.Types.Char]
+                      @ Language.Garter.Types.Poly
+                      (GHC.Types.[] @ ([GHC.Types.Char], Language.Garter.Types.Poly))
+                      ds3 `cast` (Language.Garter.Checker.NTCo:TypeEnv[0]))
+                   eta1) -}
+4ffe00cb39976c202366a263de5203b5
+  $fShowTypeEnv2 ::
+    ([GHC.Types.Char], Language.Garter.Types.Poly)
+    -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Unfolding: (\ w3 :: ([GHC.Types.Char], Language.Garter.Types.Poly)
+                   w4 :: GHC.Base.String[OneShot] ->
+                 case w3 of ww { (,) ww1 ww2 ->
+                 GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows9
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (GHC.Show.showLitString
+                         ww1
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showList__1
+                               (GHC.Show.$fShow(,)_$sgo
+                                  (Language.Garter.Types.$w$cshowsPrec7 ww2)
+                                  (GHC.Types.[] @ GHC.Show.ShowS)
+                                  (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w4)))))) }) -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $fShowTypeEnv_$cshow ::
+    Language.Garter.Checker.TypeEnv -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ x :: Language.Garter.Checker.TypeEnv ->
+                 GHC.Show.showList__
+                   @ ([GHC.Types.Char], Language.Garter.Types.Poly)
+                   Language.Garter.Checker.$fShowTypeEnv2
+                   (Data.Map.Base.$fEqMap1
+                      @ [GHC.Types.Char]
+                      @ Language.Garter.Types.Poly
+                      (GHC.Types.[] @ ([GHC.Types.Char], Language.Garter.Types.Poly))
+                      x `cast` (Language.Garter.Checker.NTCo:TypeEnv[0]))
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $fShowTypeEnv_$cshowList ::
+    [Language.Garter.Checker.TypeEnv] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ ls :: [Language.Garter.Checker.TypeEnv]
+                   s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ Language.Garter.Checker.TypeEnv
+                   Language.Garter.Checker.$fShowTypeEnv1
+                   ls
+                   s) -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $fShowTypeEnv_$cshowsPrec ::
+    GHC.Types.Int -> Language.Garter.Checker.TypeEnv -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <L,A><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, True)
+                (\ w :: GHC.Types.Int w1 :: Language.Garter.Checker.TypeEnv ->
+                 Language.Garter.Checker.$w$cshowsPrec w1) -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutablePoly ::
+    Language.Garter.Checker.Substitutable Language.Garter.Types.Poly
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.Types.Poly
+                  Language.Garter.Checker.$fSubstitutablePoly_$capply
+                  Language.Garter.Checker.$fSubstitutablePoly_$cfreeTvars -}
+96ffd2422ada5627df2d9dbdc7afd19a
+  $fSubstitutablePoly_$capply ::
+    Language.Garter.Checker.Subst
+    -> Language.Garter.Types.Poly -> Language.Garter.Types.Poly
+  {- Arity: 2, Strictness: <L,1*U(U,1*U)><S,1*U(U,1*U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Garter.Checker.Subst
+                   w1 :: Language.Garter.Types.Poly ->
+                 case w1 of ww { Language.Garter.Types.Forall ww1 ww2 ->
+                 case Language.Garter.Checker.$w$capply
+                        w
+                        ww1
+                        ww2 of ww3 { (#,#) ww4 ww5 ->
+                 Language.Garter.Types.Forall ww4 ww5 } }) -}
+0fd7d90ec90fe16fd4888f4245b8c7e4
+  $fSubstitutablePoly_$capply1 ::
+    Language.Garter.Checker.Subst
+    -> Language.Garter.Types.Type -> Language.Garter.Types.Type
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U,A)><S,1*U> -}
+233d053d17e1266ef16264a05f727d58
+  $fSubstitutablePoly_$cfreeTvars ::
+    Language.Garter.Types.Poly -> [Language.Garter.Types.TVar]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds3 :: Language.Garter.Types.Poly ->
+                 case ds3 of wild { Language.Garter.Types.Forall as t ->
+                 Data.OldList.\\
+                   @ Language.Garter.Types.TVar
+                   Language.Garter.Types.$fEqTVar
+                   (Language.Garter.Checker.$fSubstitutablePoly_$cfreeTvars1 t)
+                   as }) -}
+f4ef5af4691b2d719307cf8f41713b55
+  $fSubstitutablePoly_$cfreeTvars1 ::
+    Language.Garter.Types.Type -> [Language.Garter.Types.TVar]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+d7d451081241b672049ffa06ddc028cf
+  $fSubstitutablePoly_$sgo10 ::
+    Language.Garter.Types.TVar
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a1
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutableType ::
+    Language.Garter.Checker.Substitutable Language.Garter.Types.Type
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.Types.Type
+                  Language.Garter.Checker.$fSubstitutablePoly_$capply1
+                  Language.Garter.Checker.$fSubstitutablePoly_$cfreeTvars1 -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutableTypeEnv ::
+    Language.Garter.Checker.Substitutable
+      Language.Garter.Checker.TypeEnv
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.Garter.Checker.TypeEnv
+                  Language.Garter.Checker.$fSubstitutableTypeEnv_$capply
+                  Language.Garter.Checker.$fSubstitutableTypeEnv_$cfreeTvars -}
+86b0a35055dcde813e3e20424f8d62d3
+  $fSubstitutableTypeEnv1 ::
+    Language.Garter.Checker.Subst
+    -> Language.Garter.Checker.TypeEnv
+    -> Data.Map.Base.Map
+         Language.Garter.Types.Id Language.Garter.Types.Poly
+  {- Arity: 2, Strictness: <L,U(U,U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ s :: Language.Garter.Checker.Subst
+                   ds3 :: Language.Garter.Checker.TypeEnv ->
+                 Data.Map.Base.map
+                   @ Language.Garter.Types.Poly
+                   @ Language.Garter.Types.Poly
+                   @ [GHC.Types.Char]
+                   (Language.Garter.Checker.$fSubstitutablePoly_$capply s)
+                   ds3 `cast` (Language.Garter.Checker.NTCo:TypeEnv[0])) -}
+16de8890a542a578cf7d4e0bd7392b9d
+  $fSubstitutableTypeEnv_$capply ::
+    Language.Garter.Checker.Subst
+    -> Language.Garter.Checker.TypeEnv
+    -> Language.Garter.Checker.TypeEnv
+  {- Arity: 2, Strictness: <L,U(U,U)><S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.Garter.Checker.$fSubstitutableTypeEnv1
+                  `cast`
+                (<Language.Garter.Checker.Subst>_R
+                 ->_R <Language.Garter.Checker.TypeEnv>_R
+                 ->_R Sym (Language.Garter.Checker.NTCo:TypeEnv[0])) -}
+6b99d06a484712be2a37d9721dcae21b
+  $fSubstitutableTypeEnv_$cfreeTvars ::
+    Language.Garter.Checker.TypeEnv -> [Language.Garter.Types.TVar]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ ds3 :: Language.Garter.Checker.TypeEnv ->
+                 Language.Garter.Checker.$fSubstitutableTypeEnv_go10
+                   (GHC.Types.[] @ Language.Garter.Types.TVar)
+                   ds3 `cast` (Language.Garter.Checker.NTCo:TypeEnv[0])) -}
+382fd25574652e7415fe239945055864
+  $fSubstitutableTypeEnv_go10 ::
+    [Language.Garter.Types.TVar]
+    -> Data.Map.Base.Map [GHC.Types.Char] Language.Garter.Types.Poly
+    -> [Language.Garter.Types.TVar]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U><S,1*U> -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutablet ::
+    (GHC.Base.Functor t, Data.Foldable.Foldable t,
+     Language.Garter.Checker.Substitutable a) =>
+    Language.Garter.Checker.Substitutable (t a)
+  DFunId[0]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,U(C(U),A)><L,1*U(A,A,1*C1(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(C(U),C(U))>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (t :: * -> *)
+                      @ a4
+                      $dFunctor :: GHC.Base.Functor t
+                      $dFoldable :: Data.Foldable.Foldable t
+                      $dSubstitutable :: Language.Garter.Checker.Substitutable a4.
+                  @ (t a4)
+                  (Language.Garter.Checker.$fSubstitutablet_$capply
+                     @ t
+                     @ a4
+                     $dFunctor
+                     $dFoldable
+                     $dSubstitutable)
+                  (Language.Garter.Checker.$fSubstitutablet_$cfreeTvars
+                     @ t
+                     @ a4
+                     $dFunctor
+                     $dFoldable
+                     $dSubstitutable) -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutablet_$capply ::
+    (GHC.Base.Functor t, Data.Foldable.Foldable t,
+     Language.Garter.Checker.Substitutable a) =>
+    Language.Garter.Checker.Subst -> t a -> t a
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S(C(S)L),1*U(1*C1(U),A)><L,A><L,1*U(1*C1(U),A)><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ (t :: * -> *)
+                   @ a4
+                   $dFunctor :: GHC.Base.Functor t
+                   $dFoldable :: Data.Foldable.Foldable t
+                   $dSubstitutable :: Language.Garter.Checker.Substitutable a4
+                   eta :: Language.Garter.Checker.Subst ->
+                 GHC.Base.fmap
+                   @ t
+                   $dFunctor
+                   @ a4
+                   @ a4
+                   (Language.Garter.Checker.apply @ a4 $dSubstitutable eta)) -}
+c90306f673371fe36cbf8c60abfcbda2
+  $fSubstitutablet_$cfreeTvars ::
+    (GHC.Base.Functor t, Data.Foldable.Foldable t,
+     Language.Garter.Checker.Substitutable a) =>
+    t a -> [Language.Garter.Types.TVar]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,A><S(LLC(C(S))LLLLLLLLLLLLL),1*U(A,A,1*C1(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(A,C(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ @ (t :: * -> *)
+                   @ a4
+                   w :: GHC.Base.Functor t
+                   w1 :: Data.Foldable.Foldable t
+                   w2 :: Language.Garter.Checker.Substitutable a4 ->
+                 Language.Garter.Checker.$w$cfreeTvars @ t @ a4 w1 w2) -}
+f50d138c2cd440e681d8f2ceb3569442
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds3 :: [GHC.Types.Char] ds4 :: [GHC.Types.Char] ->
+                 case ds4 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+3b3b2ccdd5ed694b0ab804dea06df654
+  $sfindWithDefault1 ::
+    a
+    -> Language.Garter.Types.TVar
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a
+    -> a
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,1*U><S,1*U><S,1*U> -}
+adaaed39ed2a428d6f2d127d0016f512
+  $sfromList ::
+    [(Language.Garter.Types.TVar, a)]
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ a4 ds3 :: [(Language.Garter.Types.TVar, a4)] ->
+                 case ds3 of wild {
+                   [] -> Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4
+                   : ds4 ds5
+                   -> case ds4 of wild1 { (,) kx x ->
+                      case ds5 of wild2 {
+                        []
+                        -> case kx
+                                  `cast`
+                                (Language.Garter.Types.NTCo:TVar[0]) of nt { DEFAULT ->
+                           Data.Map.Base.Bin
+                             @ Language.Garter.Types.TVar
+                             @ a4
+                             1
+                             nt `cast` (Sym (Language.Garter.Types.NTCo:TVar[0]))
+                             x
+                             (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4)
+                             (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4) }
+                        : ipv ipv1
+                        -> case ipv of wild3 { (,) ky ds6 ->
+                           case GHC.Classes.$fOrd[]_$s$ccompare1
+                                  kx `cast` (Language.Garter.Types.NTCo:TVar[0])
+                                  ky `cast` (Language.Garter.Types.NTCo:TVar[0]) of wild4 {
+                             DEFAULT
+                             -> case kx
+                                       `cast`
+                                     (Language.Garter.Types.NTCo:TVar[0]) of nt { DEFAULT ->
+                                Language.Garter.Checker.$sfromList1
+                                  @ a4
+                                  (Data.Map.Base.Bin
+                                     @ Language.Garter.Types.TVar
+                                     @ a4
+                                     1
+                                     nt `cast` (Sym (Language.Garter.Types.NTCo:TVar[0]))
+                                     x
+                                     (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4)
+                                     (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4))
+                                  wild2 }
+                             GHC.Types.LT
+                             -> case kx
+                                       `cast`
+                                     (Language.Garter.Types.NTCo:TVar[0]) of nt { DEFAULT ->
+                                Language.Garter.Checker.$wpoly_go10
+                                  @ a4
+                                  1
+                                  (Data.Map.Base.Bin
+                                     @ Language.Garter.Types.TVar
+                                     @ a4
+                                     1
+                                     nt `cast` (Sym (Language.Garter.Types.NTCo:TVar[0]))
+                                     x
+                                     (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4)
+                                     (Data.Map.Base.Tip @ Language.Garter.Types.TVar @ a4))
+                                  wild2 } } } } } }) -}
+63e1c6cbc77b9fa2a590a0639d321f09
+  $sfromList1 ::
+    Data.Map.Base.Map Language.Garter.Types.TVar a1
+    -> [(Language.Garter.Types.TVar, a1)]
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a1
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+97975272ee1ad2813674313ff8e754d7
+  $sinsert_$sgo1 ::
+    Language.Garter.Types.Id
+    -> a1
+    -> Data.Map.Base.Map Language.Garter.Types.Id a1
+    -> Data.Map.Base.Map Language.Garter.Types.Id a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+536defd021ccc07278fdd3ac3c729437
+  $sinsert_$sgo10 ::
+    Language.Garter.Types.TVar
+    -> a1
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a1
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a1
+  {- Arity: 3, Strictness: <S,1*U><L,U><S,1*U> -}
+03ae49791a77c64beaec3ff905c59d32
+  $slookup1 ::
+    Language.Garter.Types.Id
+    -> Data.Map.Base.Map Language.Garter.Types.Id a -> GHC.Base.Maybe a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U> -}
+8c35e42e10d07ae3c0ba18ab51c90ee6
+  $sprintf6 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+fc7fafc48077c3898c31118c03fe2f5b
+  $w$capply ::
+    Language.Garter.Checker.Subst
+    -> [Language.Garter.Types.TVar]
+    -> Language.Garter.Types.Type
+    -> (# [Language.Garter.Types.TVar], Language.Garter.Types.Type #)
+  {- Arity: 3, Strictness: <L,1*U(U,1*U)><L,U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Garter.Checker.Subst
+                   ww :: [Language.Garter.Types.TVar]
+                   ww1 :: Language.Garter.Types.Type ->
+                 (# ww,
+                    Language.Garter.Checker.$fSubstitutablePoly_$capply1
+                      (case w of wild { Language.Garter.Checker.Su ds3 dt ->
+                       Language.Garter.Checker.Su
+                         (letrec {
+                            go2 :: [Language.Garter.Types.TVar]
+                                   -> Data.Map.Base.Map
+                                        Language.Garter.Types.TVar Language.Garter.Types.Type
+                              {- Arity: 1, Strictness: <S,1*U> -}
+                            = \ ds4 :: [Language.Garter.Types.TVar] ->
+                              case ds4 of wild1 {
+                                [] -> ds3
+                                : y ys
+                                -> Language.Garter.Checker.$fSubstitutablePoly_$sgo10
+                                     @ Language.Garter.Types.Type
+                                     y
+                                     (go2 ys) }
+                          } in
+                          go2 ww)
+                         dt })
+                      ww1 #)) -}
+c90306f673371fe36cbf8c60abfcbda2
+  $w$cfreeTvars ::
+    (Data.Foldable.Foldable t,
+     Language.Garter.Checker.Substitutable a) =>
+    t a -> [Language.Garter.Types.TVar]
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LLC(C(S))LLLLLLLLLLLLL),1*U(A,A,1*C1(C1(U)),A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U(A,C(U))>,
+     Inline: [0],
+     Unfolding: (\ @ (t :: * -> *)
+                   @ a4
+                   w :: Data.Foldable.Foldable t
+                   w1 :: Language.Garter.Checker.Substitutable a4 ->
+                 Data.Foldable.foldr
+                   @ t
+                   w
+                   @ a4
+                   @ [Language.Garter.Types.TVar]
+                   (\ x :: a4 r :: [Language.Garter.Types.TVar] ->
+                    GHC.Base.++
+                      @ Language.Garter.Types.TVar
+                      (Language.Garter.Checker.freeTvars @ a4 w1 x)
+                      r)
+                   (GHC.Types.[] @ Language.Garter.Types.TVar)) -}
+ef2fdec6a1c3466ca193d48c41db1718
+  $w$cshow ::
+    Data.Map.Base.Map
+      Language.Garter.Types.TVar Language.Garter.Types.Type
+    -> GHC.Prim.Int# -> (# GHC.Types.Char, [GHC.Types.Char] #)
+  {- Arity: 2, Strictness: <L,1*U><L,U>, Inline: [0],
+     Unfolding: (\ ww :: Data.Map.Base.Map
+                           Language.Garter.Types.TVar Language.Garter.Types.Type
+                   ww1 :: GHC.Prim.Int# ->
+                 (# GHC.Show.shows9,
+                    Data.Map.Base.$w$cshowsPrec
+                      @ Language.Garter.Types.TVar
+                      @ Language.Garter.Types.Type
+                      Language.Garter.Types.$fShowTVar
+                      Language.Garter.Types.$fShowType
+                      0
+                      ww
+                      (GHC.Types.:
+                         @ GHC.Types.Char
+                         GHC.Show.showList__1
+                         (GHC.Show.$fShow(,)_$sgo
+                            (\ w2 :: GHC.Base.String ->
+                             case GHC.Show.$wshowSignedInt 0 ww1 w2 of ww4 { (#,#) ww5 ww6 ->
+                             GHC.Types.: @ GHC.Types.Char ww5 ww6 })
+                            (GHC.Types.[] @ GHC.Show.ShowS)
+                            Language.Garter.Checker.$fShowSubst2)) #)) -}
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  $w$cshowsPrec ::
+    Language.Garter.Checker.TypeEnv
+    -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.Garter.Checker.TypeEnv ->
+                 let {
+                   eta :: [([GHC.Types.Char], Language.Garter.Types.Poly)]
+                   = Data.Map.Base.$fEqMap1
+                       @ [GHC.Types.Char]
+                       @ Language.Garter.Types.Poly
+                       (GHC.Types.[] @ ([GHC.Types.Char], Language.Garter.Types.Poly))
+                       w `cast` (Language.Garter.Checker.NTCo:TypeEnv[0])
+                 } in
+                 \ eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ ([GHC.Types.Char], Language.Garter.Types.Poly)
+                   Language.Garter.Checker.$fShowTypeEnv2
+                   eta
+                   eta1) -}
+b7793b7ac08ef085c5fda325b615a7f7
+  $w$sti ::
+    Language.Garter.Checker.TypeEnv
+    -> Language.Garter.Checker.Subst
+    -> Language.Garter.Types.Expr Language.Garter.UX.SourceSpan
+    -> (# Language.Garter.Checker.Subst, Language.Garter.Types.Type #)
+  {- Arity: 3, Strictness: <L,U><L,U(U,U)><S,1*U>, Inline: [0] -}
+6e0764bd9226c0275f184c7d6d275331
+  $wa ::
+    GHC.Prim.Int#
+    -> Language.Garter.Checker.Subst
+    -> (# Language.Garter.Checker.Subst,
+          [Language.Garter.Types.Type] #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U(U,U)>,
+     Inline: [0] -}
+5be09beadf9fa75553e6e29b13693943
+  $werrMismatch ::
+    (GHC.Show.Show a, GHC.Show.Show a1) =>
+    Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> a
+    -> a1
+    -> (# Language.Garter.UX.Text, Language.Garter.UX.SourceSpan #)
+  {- Arity: 6,
+     Strictness: <L,1*U(A,1*C1(U),A)><L,1*U(A,1*C1(U),A)><S,U><S,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a4
+                   @ a5
+                   w :: GHC.Show.Show a4
+                   w1 :: GHC.Show.Show a5
+                   ww :: Text.Megaparsec.Pos.SourcePos
+                   ww1 :: Text.Megaparsec.Pos.SourcePos
+                   w2 :: a4
+                   w3 :: a5 ->
+                 case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Text.Printf.$fIsCharChar_$cfromChar
+                        (Text.Printf.uprintfs
+                           Language.Garter.Checker.errMismatch1
+                           (let {
+                              a6 :: [GHC.Types.Char] = GHC.Show.show @ a4 w w2
+                            } in
+                            let {
+                              a7 :: [GHC.Types.Char] = GHC.Show.show @ a5 w1 w3
+                            } in
+                            GHC.List.reverse1
+                              @ Text.Printf.UPrintf
+                              (GHC.Types.:
+                                 @ Text.Printf.UPrintf
+                                 (Language.Garter.Checker.$s$fPrintfArg[]1 a7,
+                                  \ w4 :: Text.Printf.FieldFormat ->
+                                  case w4 of ww2 { Text.Printf.FieldFormat ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                                  case ww9 of ww10 { GHC.Types.C# ww11 ->
+                                  Text.Printf.$wformatString
+                                    @ GHC.Types.Char
+                                    Text.Printf.$fIsCharChar
+                                    a7
+                                    ww3
+                                    ww4
+                                    ww5
+                                    ww11 } })
+                                 (GHC.Types.:
+                                    @ Text.Printf.UPrintf
+                                    (Language.Garter.Checker.$s$fPrintfArg[]1 a6,
+                                     \ w4 :: Text.Printf.FieldFormat ->
+                                     case w4 of ww2 { Text.Printf.FieldFormat ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                                     case ww9 of ww10 { GHC.Types.C# ww11 ->
+                                     Text.Printf.$wformatString
+                                       @ GHC.Types.Char
+                                       Text.Printf.$fIsCharChar
+                                       a6
+                                       ww3
+                                       ww4
+                                       ww5
+                                       ww11 } })
+                                    (GHC.Types.[] @ Text.Printf.UPrintf)))
+                              (GHC.Types.[] @ Text.Printf.UPrintf))
+                           (GHC.Types.[] @ GHC.Types.Char)) of dt { DEFAULT ->
+                 (# dt, Language.Garter.UX.SS ww ww1 #) }) -}
+b1cb02f0ac9b1da6e8a5cf89b6470f81
+  $werrSignature ::
+    GHC.Show.Show a =>
+    Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> a
+    -> (# Language.Garter.UX.Text, Language.Garter.UX.SourceSpan #)
+  {- Arity: 4, Strictness: <L,1*U(A,1*C1(U),A)><S,U><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a4
+                   w :: GHC.Show.Show a4
+                   ww :: Text.Megaparsec.Pos.SourcePos
+                   ww1 :: Text.Megaparsec.Pos.SourcePos
+                   w1 :: a4 ->
+                 case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Text.Printf.$fIsCharChar_$cfromChar
+                        (Text.Printf.uprintfs
+                           Language.Garter.Checker.errSignature1
+                           (let {
+                              a5 :: [GHC.Types.Char] = GHC.Show.show @ a4 w w1
+                            } in
+                            GHC.List.reverse1
+                              @ Text.Printf.UPrintf
+                              (GHC.Types.:
+                                 @ Text.Printf.UPrintf
+                                 (Language.Garter.Checker.$s$fPrintfArg[]1 a5,
+                                  \ w2 :: Text.Printf.FieldFormat ->
+                                  case w2 of ww2 { Text.Printf.FieldFormat ww3 ww4 ww5 ww6 ww7 ww8 ww9 ->
+                                  case ww9 of ww10 { GHC.Types.C# ww11 ->
+                                  Text.Printf.$wformatString
+                                    @ GHC.Types.Char
+                                    Text.Printf.$fIsCharChar
+                                    a5
+                                    ww3
+                                    ww4
+                                    ww5
+                                    ww11 } })
+                                 (GHC.Types.[] @ Text.Printf.UPrintf))
+                              (GHC.Types.[] @ Text.Printf.UPrintf))
+                           (GHC.Types.[] @ GHC.Types.Char)) of dt { DEFAULT ->
+                 (# dt, Language.Garter.UX.SS ww ww1 #) }) -}
+50edda712e3a10a2be2fdd7133ea70ba
+  $werrUnboundFun ::
+    Text.Printf.PrintfArg t =>
+    Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> t
+    -> (# Language.Garter.UX.Text, Language.Garter.UX.SourceSpan #)
+  {- Arity: 4, Strictness: <L,U(1*C1(U),1*C1(U))><S,U><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ t
+                   w :: Text.Printf.PrintfArg t
+                   ww :: Text.Megaparsec.Pos.SourcePos
+                   ww1 :: Text.Megaparsec.Pos.SourcePos
+                   w1 :: t ->
+                 case GHC.Base.map
+                        @ GHC.Types.Char
+                        @ GHC.Types.Char
+                        Text.Printf.$fIsCharChar_$cfromChar
+                        (Text.Printf.uprintfs
+                           Language.Garter.Checker.errUnboundFun1
+                           (GHC.List.reverse1
+                              @ Text.Printf.UPrintf
+                              (GHC.Types.:
+                                 @ Text.Printf.UPrintf
+                                 (Text.Printf.parseFormat @ t w w1, Text.Printf.formatArg @ t w w1)
+                                 (GHC.Types.[] @ Text.Printf.UPrintf))
+                              (GHC.Types.[] @ Text.Printf.UPrintf))
+                           (GHC.Types.[] @ GHC.Types.Char)) of dt { DEFAULT ->
+                 (# dt, Language.Garter.UX.SS ww ww1 #) }) -}
+6ee46851b87e13fa947ee452db44eed3
+  $wpoly_go10 ::
+    GHC.Prim.Int#
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a
+    -> [(Language.Garter.Types.TVar, a)]
+    -> Data.Map.Base.Map Language.Garter.Types.TVar a
+  {- Arity: 3, Strictness: <L,U><S,1*U><S,1*U>, Inline: [0] -}
+4898f2ee06b144a988cc1a7e0e3b889e
+  data Subst
+    = Su {suMap :: Data.Map.Base.Map
+                     Language.Garter.Types.TVar Language.Garter.Types.Type,
+          suCnt :: {-# UNPACK #-}GHC.Types.Int}
+c90306f673371fe36cbf8c60abfcbda2
+  class Substitutable a where
+    apply :: Language.Garter.Checker.Subst -> a -> a
+    freeTvars :: a -> [Language.Garter.Types.TVar]
+89a4f3f9f14d0e1d040b163bcc5ae34f
+  newtype TypeEnv
+    = TypeEnv (Data.Map.Base.Map
+                 Language.Garter.Types.Id Language.Garter.Types.Poly)
+6cefc85f6dcca885f4f510c73d123809
+  check :: Language.Garter.Types.Bare -> Language.Garter.Types.Bare
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ p :: Language.Garter.Types.Bare ->
+                 case Language.Garter.Checker.check_go
+                        Language.Garter.Types.emptyEnv
+                        p of wild {
+                   []
+                   -> case Text.PrettyPrint.HughesPJ.fullRender
+                             @ GHC.Base.String
+                             Text.PrettyPrint.HughesPJ.PageMode
+                             Text.PrettyPrint.HughesPJ.$fEqDoc2
+                             Text.PrettyPrint.HughesPJ.$fEqDoc1
+                             Text.PrettyPrint.HughesPJ.txtPrinter
+                             (GHC.Types.[] @ GHC.Types.Char)
+                             (case Language.Garter.Checker.$w$sti
+                                     (Data.Map.Base.Tip
+                                        @ Language.Garter.Types.Id
+                                        @ Language.Garter.Types.Poly)
+                                       `cast`
+                                     (Sym (Language.Garter.Checker.NTCo:TypeEnv[0]))
+                                     Language.Garter.Checker.empSubst
+                                     p of ww { (#,#) ww1 ww2 ->
+                              Language.Garter.Types.prType
+                                (Language.Garter.Checker.$fSubstitutablePoly_$capply1
+                                   ww1
+                                   ww2) }) of wild1 {
+                        [] -> Language.Garter.Checker.check2 : ds3 ds4 -> p }
+                   : ipv ipv1 -> Language.Garter.Checker.check1 wild }) -}
+efb37b771ae8e39060d646f146858b63
+  check1 ::
+    [Language.Garter.UX.UserError] -> Language.Garter.Types.Bare
+  {- Arity: 1, Strictness: <L,U>b -}
+8296351ca3e05aa63bf86c370efc3058
+  check2 :: Language.Garter.Types.Expr Language.Garter.UX.SourceSpan
+  {- Strictness: b -}
+050041fa9307d88d85827801bae36e7c
+  check_go ::
+    Language.Garter.Types.Env
+    -> Language.Garter.Types.Expr Language.Garter.UX.SourceSpan
+    -> [Language.Garter.UX.UserError]
+  {- Arity: 2, Strictness: <L,U(U,U)><S,1*U> -}
+d3bf1b442c248d4b8eeda3023bbd65b4
+  empSubst :: Language.Garter.Checker.Subst
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Language.Garter.Checker.Su
+                   (Data.Map.Base.Tip
+                      @ Language.Garter.Types.TVar
+                      @ Language.Garter.Types.Type)
+                   0) -}
+ffdef14281509ceeb98fa4ca9acc3f98
+  eqPoly ::
+    Language.Garter.Types.Poly
+    -> Language.Garter.Types.Poly -> GHC.Types.Bool
+  {- Strictness: b -}
+7bc475581a185425a3906b0a6d713956
+  errMismatch ::
+    (GHC.Show.Show a, GHC.Show.Show a1) =>
+    Language.Garter.UX.SourceSpan
+    -> a -> a1 -> Language.Garter.UX.UserError
+  {- Arity: 5,
+     Strictness: <L,1*U(A,1*C1(U),A)><L,1*U(A,1*C1(U),A)><S(SS),1*U(U,U)><L,U><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ @ a4
+                   @ a5
+                   w :: GHC.Show.Show a4
+                   w1 :: GHC.Show.Show a5
+                   w2 :: Language.Garter.UX.SourceSpan
+                   w3 :: a4
+                   w4 :: a5 ->
+                 case w2 of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case Language.Garter.Checker.$werrMismatch
+                        @ a4
+                        @ a5
+                        w
+                        w1
+                        ww1
+                        ww2
+                        w3
+                        w4 of ww3 { (#,#) ww4 ww5 ->
+                 Language.Garter.UX.Error ww4 ww5 } }) -}
+dbdc3019444da53c16bce455f9df55f6
+  errMismatch1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Type error: mismatched function signature: specified %s but inferred %s"#) -}
+e076cce136cfafac73423725b3e2d386
+  errSignature ::
+    GHC.Show.Show a =>
+    Language.Garter.UX.SourceSpan -> a -> Language.Garter.UX.UserError
+  {- Arity: 3,
+     Strictness: <L,1*U(A,1*C1(U),A)><S(SS),1*U(U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a4
+                   w :: GHC.Show.Show a4
+                   w1 :: Language.Garter.UX.SourceSpan
+                   w2 :: a4 ->
+                 case w1 of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case Language.Garter.Checker.$werrSignature
+                        @ a4
+                        w
+                        ww1
+                        ww2
+                        w2 of ww3 { (#,#) ww4 ww5 ->
+                 Language.Garter.UX.Error ww4 ww5 } }) -}
+3bdc273b4ab823e8dbfeb0a98112aa64
+  errSignature1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Type error: malformed function signature %s"#) -}
+e7151d012c6be5859154d248fe18025b
+  errUnboundFun ::
+    Text.Printf.PrintfArg t =>
+    Language.Garter.UX.SourceSpan -> t -> Language.Garter.UX.UserError
+  {- Arity: 3,
+     Strictness: <L,U(1*C1(U),1*C1(U))><S(SS),1*U(U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ t
+                   w :: Text.Printf.PrintfArg t
+                   w1 :: Language.Garter.UX.SourceSpan
+                   w2 :: t ->
+                 case w1 of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case Language.Garter.Checker.$werrUnboundFun
+                        @ t
+                        w
+                        ww1
+                        ww2
+                        w2 of ww3 { (#,#) ww4 ww5 ->
+                 Language.Garter.UX.Error ww4 ww5 } }) -}
+0516cec72814ec964fd2c2cf76ddb48c
+  errUnboundFun1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Function '%s' is not defined"#) -}
+78f45e4c2b62b1d4f0b956bcad2dac54
+  errUnboundVar ::
+    Text.Printf.PrintfArg t =>
+    Language.Garter.UX.SourceSpan -> t -> Language.Garter.UX.UserError
+  {- Arity: 3,
+     Strictness: <L,U(1*C1(U),1*C1(U))><S(SS),1*U(U,U)><L,U>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ t
+                   w :: Text.Printf.PrintfArg t
+                   w1 :: Language.Garter.UX.SourceSpan
+                   w2 :: t ->
+                 case w1 of ww { Language.Garter.UX.SS ww1 ww2 ->
+                 case Language.Garter.Checker.$sprintf6
+                        Language.Garter.Checker.errUnboundVar1
+                        (GHC.Types.:
+                           @ Text.Printf.UPrintf
+                           (Text.Printf.parseFormat @ t w w2, Text.Printf.formatArg @ t w w2)
+                           (GHC.Types.[] @ Text.Printf.UPrintf)) of dt { DEFAULT ->
+                 Language.Garter.UX.Error dt (Language.Garter.UX.SS ww1 ww2) } }) -}
+fbeb73c5dd8c08c25d60a7f226bdad73
+  errUnboundVar1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Unbound variable '%s'"#) -}
+843e52dd8a5bd855fc7c9a2c48228ed5
+  extTypesEnv ::
+    Language.Garter.Checker.TypeEnv
+    -> [(Language.Garter.Types.Bind a, Language.Garter.Types.Type)]
+    -> Language.Garter.Checker.TypeEnv
+  {- Arity: 2,
+     Unfolding: (\ @ a4 ->
+                 GHC.Base.foldr
+                   @ (Language.Garter.Types.Bind a4, Language.Garter.Types.Type)
+                   @ Language.Garter.Checker.TypeEnv
+                   (Language.Garter.Checker.extTypesEnv1 @ a4)) -}
+7438a967876d211ad818a00373171660
+  extTypesEnv1 ::
+    (Language.Garter.Types.Bind a, Language.Garter.Types.Type)
+    -> Language.Garter.Checker.TypeEnv
+    -> Language.Garter.Checker.TypeEnv
+  {- Arity: 2, Strictness: <S(S(SL)L),1*U(1*U(U,A),U)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a4
+                   ds3 :: (Language.Garter.Types.Bind a4, Language.Garter.Types.Type)
+                   eta :: Language.Garter.Checker.TypeEnv ->
+                 case ds3 of wild { (,) x t ->
+                 (Language.Garter.Checker.$sinsert_$sgo1
+                    @ Language.Garter.Types.Poly
+                    (Language.Garter.Types.bindId @ a4 x)
+                    (Language.Garter.Types.Forall
+                       (GHC.Types.[] @ Language.Garter.Types.TVar)
+                       t)
+                    eta `cast` (Language.Garter.Checker.NTCo:TypeEnv[0]))
+                   `cast`
+                 (Sym (Language.Garter.Checker.NTCo:TypeEnv[0])) }) -}
+a197d87758c1f17183d908b3ec47b75a
+  freshFun ::
+    Language.Garter.Checker.Subst
+    -> GHC.Types.Int
+    -> (Language.Garter.Checker.Subst, Language.Garter.Types.Type)
+  {- Arity: 2, Strictness: <L,U(U,U)><L,1*U(U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.Garter.Checker.Subst w1 :: GHC.Types.Int ->
+                 let {
+                   ds3 :: (Language.Garter.Checker.Subst,
+                           Language.Garter.Types.Type,
+                           [Language.Garter.Types.Type])
+                   = case w1 of wild1 { GHC.Types.I# y ->
+                     let {
+                       ww :: GHC.Prim.Int# = GHC.Prim.+# 1 y
+                     } in
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.<# 0 ww) of wild {
+                       GHC.Types.False -> Language.Garter.Checker.freshFun1
+                       GHC.Types.True
+                       -> case Language.Garter.Checker.$wa ww w of ww1 { (#,#) ww2 ww3 ->
+                          case ww3 of wild2 {
+                            [] -> Language.Garter.Checker.freshFun1
+                            : tOut tXs -> (ww2, tOut, tXs) } } } }
+                 } in
+                 (case ds3 of ds4 { (,,) su' tOut tXs -> su' },
+                  Language.Garter.Types.:=>
+                    (case ds3 of ds4 { (,,) su' tOut tXs -> tXs })
+                    (case ds3 of ds4 { (,,) su' tOut tXs -> tOut }))) -}
+d837c62fe58708bd9569a8d867b78392
+  freshFun1 ::
+    (Language.Garter.Checker.Subst,
+     Language.Garter.Types.Type,
+     [Language.Garter.Types.Type])
+  {- Strictness: b -}
+f898a27372f12271611b8e258adb0e82
+  suCnt :: Language.Garter.Checker.Subst -> GHC.Types.Int
+  RecSel Language.Garter.Checker.Subst
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds3 :: Language.Garter.Checker.Subst ->
+                 case ds3 of wild { Language.Garter.Checker.Su ds4 dt ->
+                 GHC.Types.I# dt }) -}
+98162bc82beda4e11c49f628e8a4d899
+  suMap ::
+    Language.Garter.Checker.Subst
+    -> Data.Map.Base.Map
+         Language.Garter.Types.TVar Language.Garter.Types.Type
+  RecSel Language.Garter.Checker.Subst
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds3 :: Language.Garter.Checker.Subst ->
+                 case ds3 of wild { Language.Garter.Checker.Su ds4 dt -> ds4 }) -}
+instance GHC.Exception.Exception [[]]
+  = Language.Garter.Checker.$fException[]
+instance GHC.Show.Show [Language.Garter.Checker.Subst]
+  = Language.Garter.Checker.$fShowSubst
+instance GHC.Show.Show [Language.Garter.Checker.TypeEnv]
+  = Language.Garter.Checker.$fShowTypeEnv
+instance Language.Garter.Checker.Substitutable [Language.Garter.Types.Poly]
+  = Language.Garter.Checker.$fSubstitutablePoly
+instance Language.Garter.Checker.Substitutable [Language.Garter.Types.Type]
+  = Language.Garter.Checker.$fSubstitutableType
+instance Language.Garter.Checker.Substitutable [Language.Garter.Checker.TypeEnv]
+  = Language.Garter.Checker.$fSubstitutableTypeEnv
+instance Language.Garter.Checker.Substitutable [.]
+  = Language.Garter.Checker.$fSubstitutablet
+"SPEC/Language.Garter.Checker $dmdisplayException @ String" [ALWAYS] forall $dException :: GHC.Exception.Exception
+                                                                                             GHC.Base.String
+  GHC.Exception.$dmdisplayException @ [GHC.Types.Char] $dException
+  = Language.Garter.Checker.$fException[]_$s$dmdisplayException
+"SPEC/Language.Garter.Checker $dmshowsPrec @ Subst" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                Language.Garter.Checker.Subst
+  GHC.Show.$dmshowsPrec @ Language.Garter.Checker.Subst $dShow
+  = Language.Garter.Checker.$fShowSubst_$s$dmshowsPrec
+"SPEC/Language.Garter.Checker fromList @ TVar _" [ALWAYS] forall @ a4
+                                                                 $dOrd :: GHC.Classes.Ord
+                                                                            Language.Garter.Types.TVar
+  Data.Map.Base.fromList @ Language.Garter.Types.TVar @ a4 $dOrd
+  = Language.Garter.Checker.$sfromList @ a4
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
