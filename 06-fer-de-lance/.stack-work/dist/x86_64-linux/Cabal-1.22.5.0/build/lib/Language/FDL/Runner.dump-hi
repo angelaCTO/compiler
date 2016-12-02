@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-02 03:06:29.45347 UTC
+2016-12-02 05:14:42.785154 UTC
 
 interface fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Runner 7103
-  interface hash: ccdbe2b18c79442ee5ddec922e2a79eb
-  ABI hash: 29dd40876340e99d6b4cfd61e45cf658
+  interface hash: 7c90401dc680930925934e0d00844ce4
+  ABI hash: cb5616cb669a22611ac00a42a1cd5bf4
   export-list hash: dbd8da63b14cd4d5f5ced73d46352058
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: a7d42e0b26f93e0274ddd07ed4a423ce
@@ -1058,14 +1058,14 @@ da856e79dc0ca64c6b9685353e99ce7e
 81524df5c96f2e3a088614c84a2d858a
   timeLimit2 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10) -}
-1ab8e20c1b98e38bce9daa1ec95cf211
+7aaef035f6b310d1baacccc8b1fc4438
   topMain :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Language.FDL.Runner.topMain1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-774ac5855f07a87ff9f005576a6853fc
+a3ae0ef66550480dad193721f91b53dc
   topMain1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -1077,7 +1077,7 @@ da856e79dc0ca64c6b9685353e99ce7e
                    Language.FDL.Runner.runCompiler1
                    Language.FDL.Runner.topMain2
                    eta) -}
-1d0bcf329c1a0054629a627690e46b09
+4a9020d545f83596e3035f2b5bffef17
   topMain2 ::
     GHC.Exception.SomeException
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -1085,13 +1085,13 @@ da856e79dc0ca64c6b9685353e99ce7e
   {- Arity: 2,
      Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
                    eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
-                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
-                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                 case e1 of wild { GHC.Exception.SomeException e10 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e10 $dException1)
                         `cast`
-                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e10>_N)
                         (GHC.Prim.proxy#
                            @ *
-                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                           @ e10) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
                  case Language.FDL.UX.$fException[]10 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds5 ds6 ds7 ->
                  case GHC.Prim.tagToEnum#
                         @ GHC.Types.Bool
@@ -1111,7 +1111,7 @@ da856e79dc0ca64c6b9685353e99ce7e
                              (System.Exit.die2 @ ()) `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))
                              e2
                                `cast`
-                             (UnivCo mkUnsafeCo representational e100 [Language.FDL.UX.UserError])
+                             (UnivCo mkUnsafeCo representational e10 [Language.FDL.UX.UserError])
                              eta } } } } }) -}
 d9e2901a078dbe6248fd70e857b4f694
   updateCurrent ::

@@ -151,19 +151,14 @@ fdlTests sc =
 
 yourTests sc =
   [
-    mkTest sc "LowAccess_outOfBounds"  File (Left  "Dynamic Error: tuple index too small."),
-    mkTest sc "HighAccess_outOfBounds" File (Left  "Dynamic Error: tuple index too large."),
-    mkTest sc "Access_okayBounds"      File (Right "3"),
-    mkTest sc "NestedAccess_okayBounds"File (Right "3"),
-    mkTest sc "AccessLet"              File (Right "1"),
-    mkTest sc "Access_BadAnf"          File (Left  "Dynamic Error: tuple index too large."),
-    mkTest sc "Access_BadAnf2"         File (Right "5"),
-    mkTest sc "AccessSomething"        File (Right "9"),
-    mkTest sc "fun_simple"             File (rLines ["2"]),
-    mkTest sc "fun_triplelam"          File (rLines ["(4, 31, 301)"]),
-    mkTest sc "fun_mulxlam"            File (rLines ["100"]),
-    mkTest sc "fun_cubesquare"         File (rLines ["729"]),
-    mkTest sc "fun_arityError"         File (Left "Dynamic Error: function call arity mismatch"),
-    mkTest sc "fun_overflow"           File (Left "Dynamic Error: arithmetic overflow."),
-    mkTest sc "fun_addr"               File (rLines ["400"])
+   mkTest sc "1forty_one"  (Code "141")               (Right "141"),
+  mkTest sc "2forty_one"  (Code "241")               (Right "241"),
+  mkTest sc "3forty_one"  (Code "341")               (Right "341"),
+  mkTest sc "4forty_one"  (Code "441")               (Right "441"),
+  mkTest sc "5forty_one"  (Code "541")               (Right "541"),
+  mkTest sc "6forty_one"  (Code "641")               (Right "641"),
+  mkTest sc "7forty_one"  (Code "741")               (Right "741"),
+  mkTest sc "8forty_one"  (Code "841")               (Right "841"),
+  mkTest sc "9forty_one"  (Code "941")               (Right "941"),
+  mkTest sc "10forty_one"  (Code "1041")               (Right "1041")
   ]
