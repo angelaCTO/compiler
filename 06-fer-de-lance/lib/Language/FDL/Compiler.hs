@@ -85,7 +85,7 @@ freeVars e = S.toList(go e)
     go (Prim1 _ v _)   = go v
     go (Prim2 _ e1 e2 _ ) = S.unions [go e1, go e2]
     go (GetItem vE vI _) = S.unions [go vE, go vI]
-    go (Tuple es _ )  = S.empty
+    go (Tuple es _ )  = S.unions (map go es)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ freeVars e = S.toList(go e)
 --   and restores the callees stack prior to return.
 --------------------------------------------------------------------------------
 funInstr :: Int -> [Instruction] -> [Instruction]
-funInstr n instr = funEntry n ++ instr ++ funExit ++ [IRet] 
+funInstr n instr = funEntry n ++ instr ++ funExit 
 
 -- | Inserts instructions for setting up stack for n local variables
 funEntry :: Int -> [Instruction]
@@ -204,18 +204,21 @@ compileEnv _env (Tuple _es _)       = tupleAlloc  (length _es)          ++
                                       tupleWrites (immArg _env <$> _es) ++
 				                      [IOr (Reg EAX) (typeTag TTuple)]
 
-compileEnv _env (GetItem _vE _vI _) = tupleRead _env _vE _vI
+compileEnv _env (GetItem _vE _vI _) = tupleReadNoShift _env _vE _vI
 
 -- | App (Function Call)
+{--
 compileEnv env (App v xs _) = 
         assertType  env v TClosure                    ++ --check v is function
         assertArity env v (length xs)                 ++ --check arity match
-        tupleReadRaw (immArg env v) (repr (1 :: Int)) ++ --load arity into EAX
+        tupleReadRaw (immArg env v) (repr (1 :: Int)) ++ --load code pointer into EAX
         [IPush (param env vXs) | vXs <- reverse xs]   ++ --push args by c conv.
         [ICall (Reg EAX)]                             ++ --call EAX
         [IAdd (Reg ESP) (Const (4 * n))]                 --pop args
     where
         n = countVars(v)
+--}
+compileEnv env (App v vs l) = apply l env v vs
 
 -- | Lamda (Anon Function)
 compileEnv env (Lam xs e l) = 
@@ -393,6 +396,11 @@ tupleRead env vE vI = assertType   env vE TTuple  ++
                       assertBound  env vE vI      ++
                       tupleReadRaw (immArg env vE) (immArg env vI)
 
+tupleReadNoShift env vE vI = assertType   env vE TTuple  ++
+                      assertType   env vI TNumber ++
+                      assertBound  env vE vI      ++
+                      tupleReadRawNoShift (immArg env vE) (immArg env vI)
+
 
 tupleLoc :: Int -> Arg
 tupleLoc i = RegOffset (4 * i) EAX
@@ -405,6 +413,15 @@ tupleReadRaw aE aI =
       IShr (Reg EBX) (Const 1),
       --IAdd (Reg EBX) (Const 1),
       IMov (Reg EAX) (RegIndex EAX EBX)]
+
+
+tupleReadRawNoShift aE aI =
+     loadAddr aE	++
+     [IMov (Reg EBX) aI,
+      IShr (Reg EBX) (Const 1),
+      IAdd (Reg EBX) (Const 1),
+      IMov (Reg EAX) (RegIndex EAX EBX)]
+
 
 
 roundToEven :: Int -> Int
