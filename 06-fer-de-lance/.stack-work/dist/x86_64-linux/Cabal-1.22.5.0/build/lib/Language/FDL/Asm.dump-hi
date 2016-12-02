@@ -1,0 +1,372 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-01 01:48:53.124622 UTC
+
+interface fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Asm 7103
+  interface hash: 635f245ece80bfc25f97f0143f18c53f
+  ABI hash: 59c047def02cd98f505f662ad3871a1a
+  export-list hash: d2d874964a86b2164492b98df9ef5114
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 6cfcf6be451d8c1e63ea9538d4f41991
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.FDL.Asm.asm
+module dependencies: Language.FDL.Types Language.FDL.UX
+                     Language.FDL.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Types
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Monoid 85b292b52bfd80ed619cddb767d638d3
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.FDL.Types 30f24122a8d962a106d6646bbf28cfee
+  exports: 9943064701d7c0047dbd16a689338f95
+  Arg d583a7fef7454af679c5a211304d6dea
+  ArithOverflow 93880bb158797af80897e0f52f4e047a
+  ArityError f28d73afeee79922ec15d9f4a9a033fc
+  BranchDone 0d701b4ecb50766ed4d37b2267140c5d
+  BranchTrue 79c51a042d01f3480dc9d74b17b967db
+  Builtin 6777713de871eee61599da454aff0863
+  BytePtr 1b38ddc55264bd4799ecf9ca76000fcb
+  CodePtr 2a861664cef3af53bb711b817c33b16d
+  Const 476b6042279b2400a7c7db46522a45fe
+  DWordPtr 4f77cdf513b3743276b5d6680b42b42c
+  DefEnd 9a682f9e054d2d230445714b7ff8dcfd
+  DefStart 3c51e69387c797efa8a6a35d05a442c3
+  DynError b0dd84cf9b3be242445b7e759764a87d
+  DynamicErr 9acdef0f53d4c4bf1e327436f0b69d5c
+  EAX a4c421f860f96af2a4650b00a5e75ac6
+  EBP 35e6bedffd889728661719bfaff8962c
+  EBX 5f90c30115660b9b62e1a0ee9e673973
+  ESI 0542e7307602b04b3296a6febd794657
+  ESP c8116f2d6469d4093d190c2253ac239d
+  HexConst 4d7246e52c2fded9f4ce83fd85da3495
+  IAdd e4c2962c61b12b2d67645ccb378e2432
+  IAnd 3b8d7a07647994cf55305a1bfcafb79f
+  ICall 1a997c35244122cf18fb7de4c3f292bc
+  ICmp f23979f13580d409f6b7c97d59537996
+  IJe e4bcb212bae30ff734a23788bbc33bba
+  IJg af5320d5921983a1a98504d7d1eec800
+  IJl bdba6811f4bb4d3c5e0d9295d4d39653
+  IJmp 3131c88279776f3b593691579d4ce923
+  IJne 08b8a1af824a765967aaac028e45f0f5
+  IJo 147b606458f65b912ebd67ae0e0fc2ef
+  ILabel f559d0364dcfe4cfec93920504ed49ed
+  IMov 1c7f5981823146d0708198f17144da3d
+  IMul 667b58af5e5bbdfc6b99593eb64a533d
+  IOr a7834baa07d36c57af6b8ed52e389f9c
+  IPop 79be3b00f4cdc1aff187e697db5e00ab
+  IPush 2c1c368347b64e27e3ce356188752404
+  IRet 72b808c1b05730ca8cbbc1bbc258c34b
+  ISar 2d146327d06c11a69c88b633ddb813b4
+  IShl f7bc4b85f34bed6fca19e0b9c817866f
+  IShr 312ea6e562735f43922f7e3f4abd8248
+  ISub c86c508d08fa50f2978f2640d3e10ed8
+  IXor b28dacf3ef1c6f07d314165469e8cbec
+  Id 8a9cf45483e478c50d34e0797e5d9c0d
+  IndexHigh b5ed293d021ff0e55d6b2541d7186bbe
+  IndexLow 312a0abbc19cbaa12cfd764c34c17dc7
+  Instruction c6447804f90db0781dfd21136ae8c654
+  Label d361508e8fd3e142a815b868ef6e62ea
+  LamEnd 7829359086770f4ac5de6c12f271938a
+  LamStart 10e23867c67477bea0cd1b10d3356634
+  Reg 2dcd182775d95da8df7677abdd958949
+  Reg 7cf501fa99364fa467ecd58d3ff731fe
+  RegIndex 9e7a12883b87cf8dbaa438c0d40fb32f
+  RegOffset 546fa318a44127670538819973891725
+  Size 7a8815dbab020ee3edc94f2cb7c24056
+  Sized 7b33e05bf65a6aefc25ef4ecaf2b411c
+  TBoolean 1c2dfcea13321b9cf8b96761c638af8f
+  TClosure b510b4596452fbb2645a1a756f085b02
+  TNumber afa6f431ed23f8750b44c8d7a62c0b36
+  TTuple 0edbac05191e184dcb414e3c31da9e25
+  TypeError 3f43b37c417d656230acf0e421952cb1
+  WordPtr f23f10845d517a71806c1892964c8c66
+  builtin 288b33075020ce0f8ac6d2b35051e810
+import  -/  Language.FDL.UX 8707e5ca884a685eb036e023b26c987f
+  Text 36edf686d4c19aef752632644eaef928
+  pprint fe2ba3b3187be3fac9eca7478d580836
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+7a8404a04b4823b8ab4f7141942c4c8e
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+629de80bb70fbc328e0425803d311c08
+  $sprintf12 ::
+    GHC.Base.String
+    -> [Text.Printf.UPrintf]
+    -> [GHC.Types.Char]
+    -> GHC.Types.Int
+    -> [GHC.Types.Char]
+  {- Arity: 4, Strictness: <S,1*U><L,U><L,U><L,U(U)>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf]
+                   a2 :: [GHC.Types.Char]
+                   eta :: GHC.Types.Int ->
+                 Language.FDL.Asm.$sprintf3
+                   fmts
+                   (GHC.Types.:
+                      @ Text.Printf.UPrintf
+                      (Text.Printf.$w$sparseIntFormat,
+                       Text.Printf.$fPrintfArgInt_$sformatInt eta)
+                      (GHC.Types.:
+                         @ Text.Printf.UPrintf
+                         (Language.FDL.Asm.$s$fPrintfArg[]1 a2,
+                          \ w2 :: Text.Printf.FieldFormat ->
+                          case w2 of ww { Text.Printf.FieldFormat ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                          case ww7 of ww8 { GHC.Types.C# ww9 ->
+                          Text.Printf.$wformatString
+                            @ GHC.Types.Char
+                            Text.Printf.$fIsCharChar
+                            a2
+                            ww1
+                            ww2
+                            ww3
+                            ww9 } })
+                         args))) -}
+82abc3f82c0a5eb5cf05406bd2b8997b
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+fa6f465f9aac74eaccc2649c148f4649
+  asm :: [Language.FDL.Types.Instruction] -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ instrs :: [Language.FDL.Types.Instruction] ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.FDL.Asm.header
+                   (let {
+                      z1 :: [[GHC.Types.Char]] = Language.FDL.Asm.asm_go instrs
+                    } in
+                    letrec {
+                      go1 :: [Language.FDL.Types.Instruction] -> [[GHC.Types.Char]]
+                        {- Arity: 1, Strictness: <S,1*U> -}
+                      = \ ds :: [Language.FDL.Types.Instruction] ->
+                        case ds of wild {
+                          [] -> z1
+                          : y ys
+                          -> GHC.Types.:
+                               @ [GHC.Types.Char]
+                               (Language.FDL.Asm.instrAsm y)
+                               (go1 ys) }
+                    } in
+                    case go1 Language.FDL.Asm.asm2 of wild {
+                      [] -> Language.FDL.Asm.asm1
+                      : x xs1
+                      -> GHC.Base.++
+                           @ GHC.Types.Char
+                           (Data.OldList.intercalate_$spoly_go
+                              @ GHC.Types.Char
+                              x
+                              (Data.OldList.prependToAll
+                                 @ [GHC.Types.Char]
+                                 Language.FDL.Asm.asm1
+                                 xs1))
+                           Language.FDL.Asm.asm1 })) -}
+0ac597874d5941ab5c8463c10005dcc3
+  asm1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+ba59f9554ee31f2353f1f9b3e69b3a91
+  asm10 :: Language.FDL.Types.Arg
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Language.FDL.Types.Const Language.FDL.Asm.asm11) -}
+1b7366a53bef862b82ed00eb43a36a64
+  asm11 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 8) -}
+84f22cf556cb0e49e409fa0e342658ec
+  asm12 :: Language.FDL.Types.Instruction
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.IMov
+                   Language.FDL.Asm.asm8
+                   Language.FDL.Asm.asm13) -}
+8a37487c7f339ae719e4931cf13b5f52
+  asm13 :: Language.FDL.Types.Arg
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.RegOffset
+                   Language.FDL.Asm.asm14
+                   Language.FDL.Types.ESP) -}
+af5983db21f733b922a13b0afd7ecf46
+  asm14 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 4) -}
+eb3b7852693ff6f781254876e7c6d43b
+  asm15 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.FDL.Asm.asm24
+                   Language.FDL.Asm.asm16) -}
+fc9c12afd79afc68f5c6a41976ef4aac
+  asm16 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.FDL.Asm.asm23
+                   Language.FDL.Asm.asm17) -}
+e102ffe238a8b1e6bf068fd30fe768bf
+  asm17 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.FDL.Asm.asm22
+                   Language.FDL.Asm.asm18) -}
+60742cc31111136f101ca63649b0a855
+  asm18 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.FDL.Asm.asm21
+                   Language.FDL.Asm.asm19) -}
+2f489dfd2056a66726035db3a34698db
+  asm19 :: [GHC.Base.String]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Language.FDL.Asm.asm20
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+5648f82828549d6834afd1e8e5a04a52
+  asm2 :: [Language.FDL.Types.Instruction]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Language.FDL.Types.Instruction
+                   Language.FDL.Asm.asm12
+                   Language.FDL.Asm.asm3) -}
+5312a49f33847c8b288fb20b257b1b3e
+  asm20 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "our_code_starts_here:"#) -}
+9b0dd1e34ccda48c1490476bbb4a7965
+  asm21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "global our_code_starts_here"#) -}
+b38dd9bfb635e13c56367ea2cd22655d
+  asm22 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern print"#) -}
+4edabd74d126576145cbba55f1ea1bd2
+  asm23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "extern error"#) -}
+00a69c87948c12d9f155fe80859ef5e1
+  asm24 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "section .text"#) -}
+aa32f8f83c8ca480bef936bad679718d
+  asm3 :: [Language.FDL.Types.Instruction]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Language.FDL.Types.Instruction
+                   Language.FDL.Asm.asm9
+                   Language.FDL.Asm.asm4) -}
+c054c7ee4b504b816b78f796dcea2e9b
+  asm4 :: [Language.FDL.Types.Instruction]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Language.FDL.Types.Instruction
+                   Language.FDL.Asm.asm5
+                   (GHC.Types.[] @ Language.FDL.Types.Instruction)) -}
+6b823ed44f0c08255847bf9c67523b5a
+  asm5 :: Language.FDL.Types.Instruction
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.IAnd
+                   Language.FDL.Asm.asm8
+                   Language.FDL.Asm.asm6) -}
+2f93eba1112dce7db798b2450761108c
+  asm6 :: Language.FDL.Types.Arg
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.HexConst Language.FDL.Asm.asm7) -}
+419ddeac37602b094c6c852b6a83720d
+  asm7 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 4294967288) -}
+d3b4c883f34b338a9f1ffa020a5a44c2
+  asm8 :: Language.FDL.Types.Arg
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.Reg Language.FDL.Types.ESI) -}
+e7232496e2e639a625b4130dfecd4830
+  asm9 :: Language.FDL.Types.Instruction
+  {- HasNoCafRefs,
+     Unfolding: (Language.FDL.Types.IAdd
+                   Language.FDL.Asm.asm8
+                   Language.FDL.Asm.asm10) -}
+68c2f5dfc089df0d16ebba45704a9842
+  asm_go :: [Language.FDL.Types.Instruction] -> [[GHC.Types.Char]]
+  {- Arity: 1, Strictness: <S,1*U> -}
+c975b4aad31b2907f9b6004ebd235958
+  header :: Language.FDL.UX.Text
+  {- Unfolding: (Data.OldList.unlines Language.FDL.Asm.asm15) -}
+ecaa2ef16f6f94d322a9d28ab3e3bc92
+  instrAsm :: Language.FDL.Types.Instruction -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U> -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

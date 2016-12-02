@@ -1,0 +1,7 @@
+def f(a, b):
+  if (a == 1):
+    b
+  else:
+    f(b, a)
+ 
+f(10, 1)

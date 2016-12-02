@@ -1,0 +1,1548 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-01 01:48:46.013339 UTC
+
+interface fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Types [orphan module] 7103
+  interface hash: 51cc84ed6bcf0b7574300c535e416c13
+  ABI hash: 30f24122a8d962a106d6646bbf28cfee
+  export-list hash: 9943064701d7c0047dbd16a689338f95
+  orphan hash: 59f8dced6d33ad6637bc7d1cb26a4ebc
+  flag hash: ab7793ece7ce69c6658b193e942588fc
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.FDL.Types.addEnv
+  Language.FDL.Types.bindId
+  Language.FDL.Types.bindsExpr
+  Language.FDL.Types.builtin
+  Language.FDL.Types.dec
+  Language.FDL.Types.emptyEnv
+  Language.FDL.Types.exprBinds
+  Language.FDL.Types.exprsExpr
+  Language.FDL.Types.ext
+  Language.FDL.Types.fromListEnv
+  Language.FDL.Types.fun
+  Language.FDL.Types.getLabel
+  Language.FDL.Types.isAnf
+  Language.FDL.Types.label
+  Language.FDL.Types.lookupEnv
+  Language.FDL.Types.memberEnv
+  Language.FDL.Types.pushEnv
+  Language.FDL.UX.abort
+  Language.FDL.UX.junkSpan
+  Language.FDL.UX.mkError
+  Language.FDL.UX.panic
+  Language.FDL.UX.posSpan
+  Language.FDL.UX.readFileSpan
+  Language.FDL.UX.renderErrors
+  Language.FDL.Types.AnfExpr
+  Language.FDL.Types.Arg{Language.FDL.Types.CodePtr Language.FDL.Types.Const Language.FDL.Types.HexConst Language.FDL.Types.Reg Language.FDL.Types.RegIndex Language.FDL.Types.RegOffset Language.FDL.Types.Sized}
+  Language.FDL.Types.Bare
+  Language.FDL.Types.BareBind
+  Language.FDL.Types.Bind{Language.FDL.Types.Bind}
+  Language.FDL.Types.DynError{Language.FDL.Types.ArithOverflow Language.FDL.Types.ArityError Language.FDL.Types.IndexHigh Language.FDL.Types.IndexLow Language.FDL.Types.TypeError}
+  Language.FDL.Types.Env{Language.FDL.Types.envMax}
+  Language.FDL.Types.Expr{Language.FDL.Types.App Language.FDL.Types.Boolean Language.FDL.Types.Fun Language.FDL.Types.GetItem Language.FDL.Types.Id Language.FDL.Types.If Language.FDL.Types.Lam Language.FDL.Types.Let Language.FDL.Types.Number Language.FDL.Types.Prim1 Language.FDL.Types.Prim2 Language.FDL.Types.Tuple}
+  Language.FDL.Types.Ext{Language.FDL.Types.Asm Language.FDL.Types.Exe Language.FDL.Types.Log Language.FDL.Types.Res Language.FDL.Types.Src}
+  Language.FDL.Types.Id
+  Language.FDL.Types.ImmExpr
+  Language.FDL.Types.Instruction{Language.FDL.Types.IAdd Language.FDL.Types.IAnd Language.FDL.Types.ICall Language.FDL.Types.ICmp Language.FDL.Types.IJe Language.FDL.Types.IJg Language.FDL.Types.IJl Language.FDL.Types.IJmp Language.FDL.Types.IJne Language.FDL.Types.IJo Language.FDL.Types.ILabel Language.FDL.Types.IMov Language.FDL.Types.IMul Language.FDL.Types.IOr Language.FDL.Types.IPop Language.FDL.Types.IPush Language.FDL.Types.IRet Language.FDL.Types.ISar Language.FDL.Types.IShl Language.FDL.Types.IShr Language.FDL.Types.ISub Language.FDL.Types.IXor}
+  Language.FDL.Types.Label{Language.FDL.Types.BranchDone Language.FDL.Types.BranchTrue Language.FDL.Types.Builtin Language.FDL.Types.DefEnd Language.FDL.Types.DefStart Language.FDL.Types.DynamicErr Language.FDL.Types.LamEnd Language.FDL.Types.LamStart}
+  Language.FDL.Types.Prim1{Language.FDL.Types.Add1 Language.FDL.Types.IsBool Language.FDL.Types.IsNum Language.FDL.Types.Print Language.FDL.Types.Sub1}
+  Language.FDL.Types.Prim2{Language.FDL.Types.Equal Language.FDL.Types.Greater Language.FDL.Types.Less Language.FDL.Types.Minus Language.FDL.Types.Plus Language.FDL.Types.Times}
+  Language.FDL.Types.Reg{Language.FDL.Types.EAX Language.FDL.Types.EBP Language.FDL.Types.EBX Language.FDL.Types.ESI Language.FDL.Types.ESP}
+  Language.FDL.Types.Size{Language.FDL.Types.BytePtr Language.FDL.Types.DWordPtr Language.FDL.Types.WordPtr}
+  Language.FDL.Types.Tag
+  Language.FDL.Types.Ty{Language.FDL.Types.TBoolean Language.FDL.Types.TClosure Language.FDL.Types.TNumber Language.FDL.Types.TTuple}
+  Language.FDL.UX.Located{Language.FDL.UX.sourceSpan}
+  Language.FDL.UX.PPrint{Language.FDL.UX.pprint}
+  Language.FDL.UX.Result
+  Language.FDL.UX.SourceSpan{Language.FDL.UX.SS Language.FDL.UX.ssBegin Language.FDL.UX.ssEnd}
+  Language.FDL.UX.Text
+  Language.FDL.UX.UserError{Language.FDL.UX.eMsg Language.FDL.UX.eSpan}
+module dependencies: Language.FDL.UX Language.FDL.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Maybe 1cb58de2b04ee3c0c0a7dc9201184aff
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Tuple 012ad951a59a9d85fe1de36a2f012986
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.FDL.UX 8707e5ca884a685eb036e023b26c987f
+  exports: a77ae1fdfcc531800d4d8c73083201f7
+  Located 6aa77917a2f60fd12659009ee2082e98
+  PPrint 550306f7d7ca122adcca5fc1341331f8
+  Result 8895a0b3bf4fb84b83535c0fa3c17e55
+  SS 86029315295346dbde7fb1bfdf64e35e
+  SourceSpan 25dbe2033af298b23f6146cc10053d6a
+  Text 36edf686d4c19aef752632644eaef928
+  UserError cbf9f6458b5acfddf7d6304b825f0bf1
+  abort e685a5de69f8514dc89412e2840327f4
+  eMsg d9c2fe79fe1617387f271c4ef95c24ca
+  eSpan 44dabda1e0c054131bb92621b3c7e20f
+  junkSpan 25dbe2033af298b23f6146cc10053d6a
+  mkError 0af8d0ed9891f48d3cb8ae96c2f02767
+  panic 300f7c2cd9c122be7c1a5349ddd583fd
+  posSpan 9eb244da8f34729d2d59b9aadce095ff
+  pprint fe2ba3b3187be3fac9eca7478d580836
+  readFileSpan 0f58b35daf1010f84e0fe61ae5aaa216
+  renderErrors e93be96692182b03d055b190feed6011
+  sourceSpan cdbf7e7aae50d516d52832c45dd00d25
+  ssBegin 6ff2f64091fd3c72ece40561746c3fa7
+  ssEnd 695bf44d9cc078723910de6884daedc5
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  integer-gmp-1.0.0.0:GHC.Integer.Type 371e90fe753f08ddedf0d2657a9ef5c4
+baecbec6067fb6d416079083925ffcb6
+  $fFunctorBind :: GHC.Base.Functor Language.FDL.Types.Bind
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Bind
+                  Language.FDL.Types.$fFunctorBind_$cfmap
+                  Language.FDL.Types.$fFunctorBind_$c<$ -}
+baecbec6067fb6d416079083925ffcb6
+  $fFunctorBind_$c<$ ::
+    a -> Language.FDL.Types.Bind b -> Language.FDL.Types.Bind a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(U,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a ds :: Language.FDL.Types.Bind b ->
+                 case ds of wild { Language.FDL.Types.Bind a1 a2 ->
+                 Language.FDL.Types.Bind @ a a1 eta }) -}
+baecbec6067fb6d416079083925ffcb6
+  $fFunctorBind_$cfmap ::
+    (a -> b) -> Language.FDL.Types.Bind a -> Language.FDL.Types.Bind b
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,1*C1(U)><S(SL),1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b f :: a -> b ds :: Language.FDL.Types.Bind a ->
+                 case ds of wild { Language.FDL.Types.Bind a1 a2 ->
+                 Language.FDL.Types.Bind @ b a1 (f a2) }) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fFunctorExpr :: GHC.Base.Functor Language.FDL.Types.Expr
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Expr
+                  Language.FDL.Types.$fFunctorExpr_$cfmap
+                  Language.FDL.Types.$fFunctorExpr_$c<$ -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fFunctorExpr_$c<$ ::
+    a -> Language.FDL.Types.Expr b -> Language.FDL.Types.Expr a
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a @ b eta :: a eta1 :: Language.FDL.Types.Expr b ->
+                 Language.FDL.Types.$fFunctorExpr_$cfmap
+                   @ b
+                   @ a
+                   (\ ds :: b -> eta)
+                   eta1) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fFunctorExpr_$cfmap ::
+    (a -> b) -> Language.FDL.Types.Expr a -> Language.FDL.Types.Expr b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,C(U)><S,1*U> -}
+baecbec6067fb6d416079083925ffcb6
+  $fLocatedBind ::
+    Language.FDL.UX.Located Language.FDL.Types.BareBind
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fLocatedBind_$csourceSpan
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:Located[0]
+                          <Language.FDL.Types.BareBind>_N)) -}
+baecbec6067fb6d416079083925ffcb6
+  $fLocatedBind_$csourceSpan ::
+    Language.FDL.Types.BareBind -> Language.FDL.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,1*U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Bind Language.FDL.UX.SourceSpan ->
+                 case ds of wild { Language.FDL.Types.Bind ds1 l -> l }) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fLocatedExpr :: Language.FDL.UX.Located Language.FDL.Types.Bare
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                (Language.FDL.Types.getLabel @ Language.FDL.UX.SourceSpan)
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:Located[0]
+                          <Language.FDL.Types.Bare>_N)) -}
+baecbec6067fb6d416079083925ffcb6
+  $fPPrintBind :: Language.FDL.UX.PPrint (Language.FDL.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.bindId
+                  `cast`
+                (forall a.
+                 Sym (Language.FDL.UX.NTCo:PPrint[0]
+                          <Language.FDL.Types.Bind a>_N)) -}
+faa2ed4744954c77a314c6dec2e8905d
+  $fPPrintBool :: Language.FDL.UX.PPrint GHC.Types.Bool
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fPPrintBool_$cpprint
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:PPrint[0] <GHC.Types.Bool>_N)) -}
+b26a624caea035f76569495934d0cb64
+  $fPPrintBool1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "true"#) -}
+36a9b054e66950a60985cbd0b748ab3c
+  $fPPrintBool2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "false"#) -}
+9ad6dab94137d915dc73c7dd84922f56
+  $fPPrintBool_$cpprint :: GHC.Types.Bool -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: GHC.Types.Bool ->
+                 case ds of wild {
+                   GHC.Types.False -> Language.FDL.Types.$fPPrintBool2
+                   GHC.Types.True -> Language.FDL.Types.$fPPrintBool1 }) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fPPrintExpr :: Language.FDL.UX.PPrint (Language.FDL.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fPPrintExpr_$cpprint
+                  `cast`
+                (forall a.
+                 Sym (Language.FDL.UX.NTCo:PPrint[0]
+                          <Language.FDL.Types.Expr a>_N)) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fPPrintExpr_$cpprint ::
+    Language.FDL.Types.Expr a -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U> -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fPPrintPrim1 :: Language.FDL.UX.PPrint Language.FDL.Types.Prim1
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fPPrintPrim1_$cpprint
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:PPrint[0]
+                          <Language.FDL.Types.Prim1>_N)) -}
+6a475a6b569f9392127dbce8f43ff965
+  $fPPrintPrim10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ">"#) -}
+a6fd8458ddd8664d20cf21b48790ea2d
+  $fPPrintPrim11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "<"#) -}
+165b7d07ea8541d0350cc5af32109e1a
+  $fPPrintPrim12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "*"#) -}
+16b7ccf983646429c1dd6f95e8fe8566
+  $fPPrintPrim13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "-"#) -}
+45d9d843e9a16fe476b6c68042e78473
+  $fPPrintPrim14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "+"#) -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fPPrintPrim1_$cpprint ::
+    Language.FDL.Types.Prim1 -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Prim1 ->
+                 case ds of wild {
+                   Language.FDL.Types.Add1 -> Language.FDL.Types.$fPPrintPrim8
+                   Language.FDL.Types.Sub1 -> Language.FDL.Types.$fPPrintPrim7
+                   Language.FDL.Types.Print -> Language.FDL.Types.$fPPrintPrim6
+                   Language.FDL.Types.IsNum -> Language.FDL.Types.$fPPrintPrim5
+                   Language.FDL.Types.IsBool -> Language.FDL.Types.$fPPrintPrim4 }) -}
+8017343157d6d95882382520dee2aa69
+  $fPPrintPrim2 :: Language.FDL.UX.PPrint Language.FDL.Types.Prim2
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fPPrintPrim2_$cpprint
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:PPrint[0]
+                          <Language.FDL.Types.Prim2>_N)) -}
+8017343157d6d95882382520dee2aa69
+  $fPPrintPrim2_$cpprint ::
+    Language.FDL.Types.Prim2 -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Prim2 ->
+                 case ds of wild {
+                   Language.FDL.Types.Plus -> Language.FDL.Types.$fPPrintPrim14
+                   Language.FDL.Types.Minus -> Language.FDL.Types.$fPPrintPrim13
+                   Language.FDL.Types.Times -> Language.FDL.Types.$fPPrintPrim12
+                   Language.FDL.Types.Less -> Language.FDL.Types.$fPPrintPrim11
+                   Language.FDL.Types.Greater -> Language.FDL.Types.$fPPrintPrim10
+                   Language.FDL.Types.Equal -> Language.FDL.Types.$fPPrintPrim9 }) -}
+0994abbfe1722e1f44c62bec707f3d7f
+  $fPPrintPrim4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "isBool"#) -}
+63c37bd84f59a816cda1fde3a99f779d
+  $fPPrintPrim5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "isNum"#) -}
+056ff3c8b01a302c07ebbc03913642b7
+  $fPPrintPrim6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "print"#) -}
+f6ac9b8201ac479734e98397d1a08090
+  $fPPrintPrim7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "sub1"#) -}
+69510a9b1da5eae3bc225b187f2ab551
+  $fPPrintPrim8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "add1"#) -}
+9c8c410f00ff44daaf76cff9a75a51a6
+  $fPPrintPrim9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "=="#) -}
+875d90d731c3cb6001316e87a38e1663
+  $fPPrintTy :: Language.FDL.UX.PPrint Language.FDL.Types.Ty
+  DFunId[0]
+  {- Arity: 1, Strictness: <S,1*U>, Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.Types.$fPPrintTy_$cpprint
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:PPrint[0] <Language.FDL.Types.Ty>_N)) -}
+4b8d3fbb57da6f9992826b4762b565f4
+  $fPPrintTy1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "closure"#) -}
+28b9e008982743b36d4f492f4841578e
+  $fPPrintTy2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tuple"#) -}
+647d168f2077ef7e0079af3e600b0fbc
+  $fPPrintTy3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "boolean"#) -}
+1369308303efb25896900788c4350eec
+  $fPPrintTy4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "number"#) -}
+875d90d731c3cb6001316e87a38e1663
+  $fPPrintTy_$cpprint ::
+    Language.FDL.Types.Ty -> Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Ty ->
+                 case ds of wild {
+                   Language.FDL.Types.TNumber -> Language.FDL.Types.$fPPrintTy4
+                   Language.FDL.Types.TBoolean -> Language.FDL.Types.$fPPrintTy3
+                   Language.FDL.Types.TTuple -> Language.FDL.Types.$fPPrintTy2
+                   Language.FDL.Types.TClosure -> Language.FDL.Types.$fPPrintTy1 }) -}
+baecbec6067fb6d416079083925ffcb6
+  $fShowBind ::
+    GHC.Show.Show a => GHC.Show.Show (Language.FDL.Types.Bind a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.FDL.Types.Bind a)
+                  (Language.FDL.Types.$fShowBind_$cshowsPrec @ a $dShow)
+                  (Language.FDL.Types.$fShowBind_$cshow @ a $dShow)
+                  (Language.FDL.Types.$fShowBind_$cshowList @ a $dShow) -}
+34bfb14025bc966cb0227dd3437c6f11
+  $fShowBind1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0) -}
+754479a1d514f60e8cc473f662ea9c59
+  $fShowBind2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Bind "#) -}
+3fb0a18ad15eb6be2d29e811b0efb6b1
+  $fShowBind3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11) -}
+baecbec6067fb6d416079083925ffcb6
+  $fShowBind_$cshow ::
+    GHC.Show.Show a => Language.FDL.Types.Bind a -> GHC.Base.String
+  {- Arity: 2,
+     Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a w :: GHC.Show.Show a w1 :: Language.FDL.Types.Bind a ->
+                 case w1 of ww { Language.FDL.Types.Bind ww1 ww2 ->
+                 Language.FDL.Types.$w$cshow @ a w ww1 ww2 }) -}
+baecbec6067fb6d416079083925ffcb6
+  $fShowBind_$cshowList ::
+    GHC.Show.Show a => [Language.FDL.Types.Bind a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.FDL.Types.Bind a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.FDL.Types.Bind a)
+                   (Language.FDL.Types.$fShowBind_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.FDL.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+baecbec6067fb6d416079083925ffcb6
+  $fShowBind_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.FDL.Types.Bind a -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,1*U(1*C1(C1(U)),A,A)><S,1*U(U)><S(SL),1*U(U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.FDL.Types.Bind a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 case w2 of ww2 { Language.FDL.Types.Bind ww3 ww4 ->
+                 Language.FDL.Types.$w$cshowsPrec @ a w ww1 ww3 ww4 } }) -}
+b0dd84cf9b3be242445b7e759764a87d
+  $fShowDynError :: GHC.Show.Show Language.FDL.Types.DynError
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.DynError
+                  Language.FDL.Types.$fShowDynError_$cshowsPrec
+                  Language.FDL.Types.$fShowDynError_$cshow
+                  Language.FDL.Types.$fShowDynError_$cshowList -}
+b0dd84cf9b3be242445b7e759764a87d
+  $fShowDynError1 :: Language.FDL.Types.DynError -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (Language.FDL.Types.$fShowDynError_$cshowsPrec
+                   Language.FDL.Types.$fShowBind1) -}
+2f27fb842d34697456506acbcdc99706
+  $fShowDynError10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TypeError "#) -}
+df912c09f2a1c9ce22383d25eca87bf0
+  $fShowDynError2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ArityError"#) -}
+894fbfbde077ed296d82695873f08bdf
+  $fShowDynError3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IndexHigh"#) -}
+f7fa08afe8b847a914656f845f740364
+  $fShowDynError4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IndexLow"#) -}
+135be676b8d2a61c507db63771f1e04c
+  $fShowDynError5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ArithOverflow"#) -}
+c31320bc1c118ee1876e121b6c0303f7
+  $fShowDynError6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TClosure"#) -}
+3666d5d11bac07323c795514df5b6ec2
+  $fShowDynError7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TTuple"#) -}
+05c6faccb720989b113844b2fea1c6f7
+  $fShowDynError8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TBoolean"#) -}
+36b42fe4391927e4a2934015b83ed0f2
+  $fShowDynError9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TNumber"#) -}
+b0dd84cf9b3be242445b7e759764a87d
+  $fShowDynError_$cshow ::
+    Language.FDL.Types.DynError -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.DynError ->
+                 Language.FDL.Types.$fShowDynError_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+b0dd84cf9b3be242445b7e759764a87d
+  $fShowDynError_$cshowList ::
+    [Language.FDL.Types.DynError] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.DynError
+                   Language.FDL.Types.$fShowDynError1) -}
+b0dd84cf9b3be242445b7e759764a87d
+  $fShowDynError_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.DynError -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,1*U(U)><S,1*U><L,U>,
+     Unfolding: (\ a :: GHC.Types.Int
+                   ds :: Language.FDL.Types.DynError
+                   eta :: GHC.Base.String ->
+                 case ds of wild {
+                   Language.FDL.Types.TypeError b1
+                   -> case a of wild1 { GHC.Types.I# x1 ->
+                      case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.>=# x1 11) of wild2 {
+                        GHC.Types.False
+                        -> GHC.Base.++
+                             @ GHC.Types.Char
+                             Language.FDL.Types.$fShowDynError10
+                             (Language.FDL.Types.$w$cshowsPrec1 b1 eta)
+                        GHC.Types.True
+                        -> GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows9
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Language.FDL.Types.$fShowDynError10
+                                (Language.FDL.Types.$w$cshowsPrec1
+                                   b1
+                                   (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 eta))) } }
+                   Language.FDL.Types.ArithOverflow
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError5
+                        eta
+                   Language.FDL.Types.IndexLow
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError4
+                        eta
+                   Language.FDL.Types.IndexHigh
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError3
+                        eta
+                   Language.FDL.Types.ArityError
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError2
+                        eta }) -}
+8feb872162ed8acedcb270573494dc0e
+  $fShowEnv :: GHC.Show.Show Language.FDL.Types.Env
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Env
+                  Language.FDL.Types.$fShowEnv_$cshowsPrec
+                  Language.FDL.Types.$fShowEnv_$cshow
+                  Language.FDL.Types.$fShowEnv_$cshowList -}
+8feb872162ed8acedcb270573494dc0e
+  $fShowEnv1 :: Language.FDL.Types.Env -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.FDL.Types.Env w1 :: GHC.Base.String ->
+                 case w of ww { Language.FDL.Types.Env ww1 ww2 ->
+                 Language.FDL.Types.$w$cshowsPrec2 0 ww1 ww2 w1 }) -}
+8feb872162ed8acedcb270573494dc0e
+  $fShowEnv_$cshow :: Language.FDL.Types.Env -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.Env ->
+                 Language.FDL.Types.$fShowEnv_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+8feb872162ed8acedcb270573494dc0e
+  $fShowEnv_$cshowList :: [Language.FDL.Types.Env] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.Env
+                   Language.FDL.Types.$fShowEnv1) -}
+8feb872162ed8acedcb270573494dc0e
+  $fShowEnv_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Env -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U(1*U,U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Env
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.FDL.Types.Env ww3 ww4 ->
+                 Language.FDL.Types.$w$cshowsPrec2 ww1 ww3 ww4 w2 } }) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fShowExpr ::
+    GHC.Show.Show a => GHC.Show.Show (Language.FDL.Types.Expr a)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(C(C1(U)),A,A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ a $dShow :: GHC.Show.Show a.
+                  @ (Language.FDL.Types.Expr a)
+                  (Language.FDL.Types.$fShowExpr_$cshowsPrec @ a $dShow)
+                  (Language.FDL.Types.$fShowExpr_$cshow @ a $dShow)
+                  (Language.FDL.Types.$fShowExpr_$cshowList @ a $dShow) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fShowExpr_$cshow ::
+    GHC.Show.Show a => Language.FDL.Types.Expr a -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(C(C1(U)),A,A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a $dShow :: GHC.Show.Show a x1 :: Language.FDL.Types.Expr a ->
+                 Language.FDL.Types.$fShowExpr_$cshowsPrec
+                   @ a
+                   $dShow
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fShowExpr_$cshowList ::
+    GHC.Show.Show a => [Language.FDL.Types.Expr a] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   $dShow :: GHC.Show.Show a
+                   eta :: [Language.FDL.Types.Expr a]
+                   eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ (Language.FDL.Types.Expr a)
+                   (Language.FDL.Types.$fShowExpr_$cshowsPrec
+                      @ a
+                      $dShow
+                      Language.FDL.Types.$fShowBind1)
+                   eta
+                   eta1) -}
+419675833eb508d2ae9a3b13b502bc6b
+  $fShowExpr_$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Types.Int -> Language.FDL.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><S,1*U(U)><S,1*U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ a
+                   w :: GHC.Show.Show a
+                   w1 :: GHC.Types.Int
+                   w2 :: Language.FDL.Types.Expr a ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Language.FDL.Types.$w$cshowsPrec3 @ a w ww1 w2 }) -}
+128fd34592f556f945e5bfcfb8157753
+  $fShowExt :: GHC.Show.Show Language.FDL.Types.Ext
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Ext
+                  Language.FDL.Types.$fShowExt_$cshowsPrec
+                  Language.FDL.Types.$fShowExt_$cshow
+                  Language.FDL.Types.$fShowExt_$cshowList -}
+0d2c764ff8e838a83de6936f38ac34fb
+  $fShowExt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "log"#) -}
+bfc21e95573845bda3ecdb5da9b3b700
+  $fShowExt2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "result"#) -}
+22cc6eaae9431a063d8c67087efb73c6
+  $fShowExt3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "run"#) -}
+72d700d75e9feaa3746aff4778a3cd77
+  $fShowExt4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "s"#) -}
+6dcc044d5792e60e9a9c10e96eb0557c
+  $fShowExt5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "fdl"#) -}
+128fd34592f556f945e5bfcfb8157753
+  $fShowExt_$cshow :: Language.FDL.Types.Ext -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Ext ->
+                 case ds of wild {
+                   Language.FDL.Types.Src -> Language.FDL.Types.$fShowExt5
+                   Language.FDL.Types.Asm -> Language.FDL.Types.$fShowExt4
+                   Language.FDL.Types.Exe -> Language.FDL.Types.$fShowExt3
+                   Language.FDL.Types.Res -> Language.FDL.Types.$fShowExt2
+                   Language.FDL.Types.Log -> Language.FDL.Types.$fShowExt1 }) -}
+128fd34592f556f945e5bfcfb8157753
+  $fShowExt_$cshowList :: [Language.FDL.Types.Ext] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ ls :: [Language.FDL.Types.Ext] s :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ Language.FDL.Types.Ext
+                   (Language.FDL.Types.$fShowExt_$cshowsPrec GHC.Show.shows18)
+                   ls
+                   s) -}
+128fd34592f556f945e5bfcfb8157753
+  $fShowExt_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Ext -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Ext
+                   w2 :: GHC.Base.String ->
+                 Language.FDL.Types.$w$cshowsPrec4 w1 w2) -}
+d361508e8fd3e142a815b868ef6e62ea
+  $fShowLabel :: GHC.Show.Show Language.FDL.Types.Label
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Label
+                  Language.FDL.Types.$fShowLabel_$cshowsPrec
+                  Language.FDL.Types.$fShowLabel_$cshow
+                  Language.FDL.Types.$fShowLabel_$cshowList -}
+d361508e8fd3e142a815b868ef6e62ea
+  $fShowLabel1 :: Language.FDL.Types.Label -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.FDL.Types.Label
+                   w1 :: GHC.Base.String ->
+                 Language.FDL.Types.$w$cshowsPrec5 0 w w1) -}
+d361508e8fd3e142a815b868ef6e62ea
+  $fShowLabel_$cshow :: Language.FDL.Types.Label -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.Label ->
+                 Language.FDL.Types.$fShowLabel_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d361508e8fd3e142a815b868ef6e62ea
+  $fShowLabel_$cshowList ::
+    [Language.FDL.Types.Label] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.Label
+                   Language.FDL.Types.$fShowLabel1) -}
+d361508e8fd3e142a815b868ef6e62ea
+  $fShowLabel_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Label -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,1*U(U)><S,1*U><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Label
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 Language.FDL.Types.$w$cshowsPrec5 ww1 w1 w2 }) -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fShowPrim1 :: GHC.Show.Show Language.FDL.Types.Prim1
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Prim1
+                  Language.FDL.Types.$fShowPrim1_$cshowsPrec
+                  Language.FDL.Types.$fShowPrim1_$cshow
+                  Language.FDL.Types.$fShowPrim1_$cshowList -}
+82d6bdc1a96b16b516c1b828d1f51539
+  $fShowPrim10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Greater"#) -}
+8316d745d41c30bd5214d5a90c2775c3
+  $fShowPrim11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Less"#) -}
+5e4853fa1f6d5c28b8ebac30c720a272
+  $fShowPrim12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Times"#) -}
+64fd37824da7aba757c4b53555b740e3
+  $fShowPrim13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Minus"#) -}
+51c6a7dfa7ca290ccabeeda47d81222b
+  $fShowPrim14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Plus"#) -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fShowPrim1_$cshow :: Language.FDL.Types.Prim1 -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.Prim1 ->
+                 Language.FDL.Types.$fShowPrim1_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fShowPrim1_$cshowList ::
+    [Language.FDL.Types.Prim1] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.Prim1
+                   Language.FDL.Types.$w$cshowsPrec6) -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $fShowPrim1_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Prim1 -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Prim1
+                   w2 :: GHC.Base.String ->
+                 Language.FDL.Types.$w$cshowsPrec6 w1 w2) -}
+8017343157d6d95882382520dee2aa69
+  $fShowPrim2 :: GHC.Show.Show Language.FDL.Types.Prim2
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Prim2
+                  Language.FDL.Types.$fShowPrim2_$cshowsPrec
+                  Language.FDL.Types.$fShowPrim2_$cshow
+                  Language.FDL.Types.$fShowPrim2_$cshowList -}
+8017343157d6d95882382520dee2aa69
+  $fShowPrim2_$cshow :: Language.FDL.Types.Prim2 -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.Prim2 ->
+                 Language.FDL.Types.$fShowPrim2_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+8017343157d6d95882382520dee2aa69
+  $fShowPrim2_$cshowList ::
+    [Language.FDL.Types.Prim2] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.Prim2
+                   Language.FDL.Types.$w$cshowsPrec7) -}
+8017343157d6d95882382520dee2aa69
+  $fShowPrim2_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Prim2 -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Prim2
+                   w2 :: GHC.Base.String ->
+                 Language.FDL.Types.$w$cshowsPrec7 w1 w2) -}
+fe16654768d38834984f6b540f1716ba
+  $fShowPrim4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IsBool"#) -}
+1f65be8b97c628695ccfb6c756c0dc0a
+  $fShowPrim5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "IsNum"#) -}
+5bb98ab6e79e955354a83c7eb9a9051c
+  $fShowPrim6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Print"#) -}
+1a834ec0c9da09e3dcfeaa9235601660
+  $fShowPrim7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Sub1"#) -}
+62b1bb33bc24ef1704a33ee20f2bc3e1
+  $fShowPrim8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Add1"#) -}
+1b300b0577c559a2981330099efe0b79
+  $fShowPrim9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Equal"#) -}
+875d90d731c3cb6001316e87a38e1663
+  $fShowTy :: GHC.Show.Show Language.FDL.Types.Ty
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.Types.Ty
+                  Language.FDL.Types.$fShowTy_$cshowsPrec
+                  Language.FDL.Types.$fShowTy_$cshow
+                  Language.FDL.Types.$fShowTy_$cshowList -}
+875d90d731c3cb6001316e87a38e1663
+  $fShowTy_$cshow :: Language.FDL.Types.Ty -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x1 :: Language.FDL.Types.Ty ->
+                 Language.FDL.Types.$fShowTy_$cshowsPrec
+                   GHC.Show.shows18
+                   x1
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+875d90d731c3cb6001316e87a38e1663
+  $fShowTy_$cshowList :: [Language.FDL.Types.Ty] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.Types.Ty
+                   Language.FDL.Types.$w$cshowsPrec1) -}
+875d90d731c3cb6001316e87a38e1663
+  $fShowTy_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.Types.Ty -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.Types.Ty
+                   w2 :: GHC.Base.String ->
+                 Language.FDL.Types.$w$cshowsPrec1 w1 w2) -}
+fc74341d0bf51b55633bdf15c941af00
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+882075504e729f2b487617e19ab88538
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+6db3e18ad89305ff7dc0181133ee24c6
+  $w$cshow ::
+    GHC.Show.Show a => Language.FDL.Types.Id -> a -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,1*U(1*C1(C1(C1(U))),A,A)><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: Language.FDL.Types.Id
+                   ww1 :: a ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Language.FDL.Types.$fShowBind2
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows6
+                      (GHC.Show.showLitString
+                         ww
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows6
+                            (GHC.Types.:
+                               @ GHC.Types.Char
+                               GHC.Show.showSpace1
+                               (GHC.Show.showsPrec
+                                  @ a
+                                  w
+                                  Language.FDL.Types.$fShowBind3
+                                  ww1
+                                  (GHC.Types.[] @ GHC.Types.Char))))))) -}
+f5b8ef669c34dcc3eba7b515254e5c7a
+  $w$cshowsPrec ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.FDL.Types.Id -> a -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <L,1*U(1*C1(C1(U)),A,A)><L,U><S,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a
+                   w :: GHC.Show.Show a
+                   ww :: GHC.Prim.Int#
+                   ww1 :: Language.FDL.Types.Id
+                   ww2 :: a ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = GHC.Show.showsPrec @ a w Language.FDL.Types.$fShowBind3 ww2
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ x1 :: GHC.Base.String ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.FDL.Types.$fShowBind2
+                       (GHC.Types.:
+                          @ GHC.Types.Char
+                          GHC.Show.shows6
+                          (GHC.Show.showLitString
+                             ww1
+                             (GHC.Types.:
+                                @ GHC.Types.Char
+                                GHC.Show.shows6
+                                (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x1)))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ x1 :: GHC.Base.String ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 x1)) }) -}
+875d90d731c3cb6001316e87a38e1663
+  $w$cshowsPrec1 ::
+    Language.FDL.Types.Ty -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.FDL.Types.Ty w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.FDL.Types.TNumber
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError9
+                        w1
+                   Language.FDL.Types.TBoolean
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError8
+                        w1
+                   Language.FDL.Types.TTuple
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError7
+                        w1
+                   Language.FDL.Types.TClosure
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowDynError6
+                        w1 }) -}
+aead1366c6d9030b6426b506c1b57599
+  $w$cshowsPrec2 ::
+    GHC.Prim.Int#
+    -> [(Language.FDL.Types.Id, GHC.Types.Int)]
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4, Strictness: <L,U><L,1*U><L,U><L,U>, Inline: [0] -}
+419675833eb508d2ae9a3b13b502bc6b
+  $w$cshowsPrec3 ::
+    GHC.Show.Show a =>
+    GHC.Prim.Int# -> Language.FDL.Types.Expr a -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,U(C(C1(U)),A,A)><L,U><S,1*U>,
+     Inline: [0] -}
+128fd34592f556f945e5bfcfb8157753
+  $w$cshowsPrec4 ::
+    Language.FDL.Types.Ext -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.FDL.Types.Ext w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.FDL.Types.Src
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowExt5 w1
+                   Language.FDL.Types.Asm
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowExt4 w1
+                   Language.FDL.Types.Exe
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowExt3 w1
+                   Language.FDL.Types.Res
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowExt2 w1
+                   Language.FDL.Types.Log
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowExt1
+                        w1 }) -}
+d361508e8fd3e142a815b868ef6e62ea
+  $w$cshowsPrec5 ::
+    GHC.Prim.Int#
+    -> Language.FDL.Types.Label -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>, Inline: [0] -}
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  $w$cshowsPrec6 ::
+    Language.FDL.Types.Prim1 -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.FDL.Types.Prim1
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.FDL.Types.Add1
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim8 w1
+                   Language.FDL.Types.Sub1
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim7 w1
+                   Language.FDL.Types.Print
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim6 w1
+                   Language.FDL.Types.IsNum
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim5 w1
+                   Language.FDL.Types.IsBool
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowPrim4
+                        w1 }) -}
+8017343157d6d95882382520dee2aa69
+  $w$cshowsPrec7 ::
+    Language.FDL.Types.Prim2 -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ w :: Language.FDL.Types.Prim2
+                   w1 :: GHC.Base.String ->
+                 case w of wild {
+                   Language.FDL.Types.Plus
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim14 w1
+                   Language.FDL.Types.Minus
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim13 w1
+                   Language.FDL.Types.Times
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim12 w1
+                   Language.FDL.Types.Less
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim11 w1
+                   Language.FDL.Types.Greater
+                   -> GHC.Base.++ @ GHC.Types.Char Language.FDL.Types.$fShowPrim10 w1
+                   Language.FDL.Types.Equal
+                   -> GHC.Base.++
+                        @ GHC.Types.Char
+                        Language.FDL.Types.$fShowPrim9
+                        w1 }) -}
+8486cb08649cf57ec467a240840b1894
+  $wexprBinds ::
+    Language.FDL.Types.Expr a
+    -> (# [(Language.FDL.Types.Bind a, Language.FDL.Types.Expr a)],
+          Language.FDL.Types.Expr a #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0] -}
+a3b4b59240895d617d4a5b6ce7c55ec9
+  $wgo ::
+    Language.FDL.Types.Tag
+    -> Language.FDL.Types.Expr a1
+    -> (# Language.FDL.Types.Tag,
+          Language.FDL.Types.Expr (a1, Language.FDL.Types.Tag) #)
+  {- Arity: 2, Strictness: <L,U(U)><S,1*U>, Inline: [0] -}
+609883c1a9b25b8b3c7c0178fa3ec666
+  type AnfExpr = Language.FDL.Types.Expr
+d583a7fef7454af679c5a211304d6dea
+  data Arg
+    = Const GHC.Types.Int
+    | HexConst GHC.Types.Int
+    | Reg Language.FDL.Types.Reg
+    | RegOffset Language.FDL.Types.Nat Language.FDL.Types.Reg
+    | RegIndex Language.FDL.Types.Reg Language.FDL.Types.Reg
+    | Sized Language.FDL.Types.Size Language.FDL.Types.Arg
+    | CodePtr Language.FDL.Types.Label
+419675833eb508d2ae9a3b13b502bc6b
+  type Bare = Language.FDL.Types.Expr Language.FDL.UX.SourceSpan
+baecbec6067fb6d416079083925ffcb6
+  type BareBind = Language.FDL.Types.Bind Language.FDL.UX.SourceSpan
+baecbec6067fb6d416079083925ffcb6
+  data Bind a = Bind !Language.FDL.Types.Id a
+b0dd84cf9b3be242445b7e759764a87d
+  data DynError
+    = TypeError Language.FDL.Types.Ty
+    | ArithOverflow
+    | IndexLow
+    | IndexHigh
+    | ArityError
+    Promotable
+8feb872162ed8acedcb270573494dc0e
+  data Env
+    = Env {envBinds :: [(Language.FDL.Types.Id, GHC.Types.Int)],
+           envMax :: {-# UNPACK #-}GHC.Types.Int}
+419675833eb508d2ae9a3b13b502bc6b
+  data Expr a
+    = Number !GHC.Integer.Type.Integer a
+    | Boolean !GHC.Types.Bool a
+    | Id !Language.FDL.Types.Id a
+    | Prim1 !Language.FDL.Types.Prim1 !(Language.FDL.Types.Expr a) a
+    | Prim2 !Language.FDL.Types.Prim2
+            !(Language.FDL.Types.Expr a)
+            !(Language.FDL.Types.Expr a)
+            a
+    | If !(Language.FDL.Types.Expr a)
+         !(Language.FDL.Types.Expr a)
+         !(Language.FDL.Types.Expr a)
+         a
+    | Let !(Language.FDL.Types.Bind a)
+          !(Language.FDL.Types.Expr a)
+          !(Language.FDL.Types.Expr a)
+          a
+    | Tuple [Language.FDL.Types.Expr a] a
+    | GetItem !(Language.FDL.Types.Expr a)
+              !(Language.FDL.Types.Expr a)
+              a
+    | App !(Language.FDL.Types.Expr a) [Language.FDL.Types.Expr a] a
+    | Lam [Language.FDL.Types.Bind a] !(Language.FDL.Types.Expr a) a
+    | Fun !(Language.FDL.Types.Bind a)
+          [Language.FDL.Types.Bind a]
+          !(Language.FDL.Types.Expr a)
+          a
+128fd34592f556f945e5bfcfb8157753
+  data Ext = Src | Asm | Exe | Res | Log
+    Promotable
+8a9cf45483e478c50d34e0797e5d9c0d
+  type Id = Language.FDL.UX.Text
+8733b5445f2eb0fe42a2bd2d7d0c75e5
+  type ImmExpr = Language.FDL.Types.Expr
+c6447804f90db0781dfd21136ae8c654
+  data Instruction
+    = IMov Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IAdd Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | ISub Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IMul Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IShr Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | ISar Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IShl Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IAnd Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IOr Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IXor Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | ILabel Language.FDL.Types.Label
+    | IPush Language.FDL.Types.Arg
+    | IPop Language.FDL.Types.Arg
+    | ICmp Language.FDL.Types.Arg Language.FDL.Types.Arg
+    | IJe Language.FDL.Types.Label
+    | IJne Language.FDL.Types.Label
+    | IJg Language.FDL.Types.Label
+    | IJl Language.FDL.Types.Label
+    | IJo Language.FDL.Types.Label
+    | IJmp Language.FDL.Types.Label
+    | ICall Language.FDL.Types.Arg
+    | IRet
+d361508e8fd3e142a815b868ef6e62ea
+  data Label
+    = BranchTrue Language.FDL.Types.Tag
+    | BranchDone Language.FDL.Types.Tag
+    | LamStart Language.FDL.Types.Tag
+    | LamEnd Language.FDL.Types.Tag
+    | DefStart Language.FDL.Types.Id Language.FDL.Types.Tag
+    | DefEnd Language.FDL.Types.Id Language.FDL.Types.Tag
+    | DynamicErr Language.FDL.Types.DynError
+    | Builtin Language.FDL.UX.Text
+10c26de2e38280b7ea943dac0fd137af
+  type ListNE a = [a]
+d0edd63e2097a7ac33665f31fa2c3101
+  type Nat = GHC.Types.Int
+98b4ade9627ea3e14d4a3eeb85ceaa58
+  data Prim1 = Add1 | Sub1 | Print | IsNum | IsBool
+    Promotable
+8017343157d6d95882382520dee2aa69
+  data Prim2 = Plus | Minus | Times | Less | Greater | Equal
+    Promotable
+7cf501fa99364fa467ecd58d3ff731fe
+  data Reg = EAX | EBX | ESP | EBP | ESI
+    Promotable
+7a8815dbab020ee3edc94f2cb7c24056
+  data Size = DWordPtr | WordPtr | BytePtr
+    Promotable
+357c53f7fd41c9ebca92226c7d53621c
+  type Tag = GHC.Types.Int
+875d90d731c3cb6001316e87a38e1663
+  data Ty = TNumber | TBoolean | TTuple | TClosure
+    Promotable
+c7149e4e0de8f8e3ea8316d1b67ea5ae
+  addEnv ::
+    Language.FDL.Types.Bind a
+    -> Language.FDL.Types.Env -> Language.FDL.Types.Env
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,A)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   x1 :: Language.FDL.Types.Bind a
+                   env :: Language.FDL.Types.Env ->
+                 case env of wild { Language.FDL.Types.Env bs dt ->
+                 let {
+                   a1 :: GHC.Prim.Int# = GHC.Prim.+# 1 dt
+                 } in
+                 Language.FDL.Types.Env
+                   (GHC.Types.:
+                      @ (Language.FDL.Types.Id, GHC.Types.Int)
+                      (case x1 of wild1 { Language.FDL.Types.Bind x2 ds -> x2 },
+                       GHC.Types.I# a1)
+                      bs)
+                   a1 }) -}
+baecbec6067fb6d416079083925ffcb6
+  bindId :: Language.FDL.Types.Bind a -> Language.FDL.Types.Id
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a ds :: Language.FDL.Types.Bind a ->
+                 case ds of wild { Language.FDL.Types.Bind x1 ds1 -> x1 }) -}
+bfc9ee748f99609044ef82de2fc477ab
+  bindsExpr ::
+    [(Language.FDL.Types.Bind a, Language.FDL.Types.Expr a)]
+    -> Language.FDL.Types.Expr a -> a -> Language.FDL.Types.Expr a
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><S,U><L,U>,
+     Unfolding: (\ @ a
+                   bs :: [(Language.FDL.Types.Bind a, Language.FDL.Types.Expr a)]
+                   e :: Language.FDL.Types.Expr a
+                   l :: a ->
+                 letrec {
+                   go :: [(Language.FDL.Types.Bind a, Language.FDL.Types.Expr a)]
+                         -> Language.FDL.Types.Expr a
+                     {- Arity: 1, Strictness: <S,1*U> -}
+                   = \ ds :: [(Language.FDL.Types.Bind a,
+                               Language.FDL.Types.Expr a)] ->
+                     case ds of wild {
+                       [] -> e
+                       : y ys
+                       -> case y of wild1 { (,) x1 e1 ->
+                          case x1 of dt { Language.FDL.Types.Bind ipv ipv1 ->
+                          case e1 of dt1 { DEFAULT ->
+                          case go ys of dt2 { DEFAULT ->
+                          Language.FDL.Types.Let @ a dt dt1 dt2 l } } } } }
+                 } in
+                 go bs) -}
+288b33075020ce0f8ac6d2b35051e810
+  builtin :: Language.FDL.UX.Text -> Language.FDL.Types.Arg
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m7,
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: Language.FDL.UX.Text ->
+                 Language.FDL.Types.CodePtr (Language.FDL.Types.Builtin s)) -}
+8d68ed9388d64e97208139be4b06ada6
+  dec ::
+    Language.FDL.Types.Bind a
+    -> [Language.FDL.Types.Bind a]
+    -> Language.FDL.Types.Expr a
+    -> Language.FDL.Types.Expr a
+    -> a
+    -> Language.FDL.Types.Expr a
+  {- Arity: 5, HasNoCafRefs,
+     Strictness: <S(SL),1*U(U,U)><L,U><S,1*U><S,1*U><L,U>m7,
+     Unfolding: InlineRule (5, True, False)
+                (\ @ a
+                   f :: Language.FDL.Types.Bind a
+                   xs :: [Language.FDL.Types.Bind a]
+                   e :: Language.FDL.Types.Expr a
+                   e' :: Language.FDL.Types.Expr a
+                   l :: a ->
+                 case f of dt { Language.FDL.Types.Bind ipv ipv1 ->
+                 case e of dt1 { DEFAULT ->
+                 case e' of dt2 { DEFAULT ->
+                 Language.FDL.Types.Let
+                   @ a
+                   dt
+                   (Language.FDL.Types.Fun @ a dt xs dt1 l)
+                   dt2
+                   l } } }) -}
+3526492ffdcd0bb40e8a71385e6dac0c
+  emptyEnv :: Language.FDL.Types.Env
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Language.FDL.Types.Env
+                   (GHC.Types.[] @ (Language.FDL.Types.Id, GHC.Types.Int))
+                   0) -}
+bfa7adfea3a6ce4b9776c27f170e1817
+  envBinds ::
+    Language.FDL.Types.Env -> [(Language.FDL.Types.Id, GHC.Types.Int)]
+  RecSel Language.FDL.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Env ->
+                 case ds of wild { Language.FDL.Types.Env ds1 dt -> ds1 }) -}
+4d1607df69853dad6011c91972178c8d
+  envMax :: Language.FDL.Types.Env -> GHC.Types.Int
+  RecSel Language.FDL.Types.Env
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(A,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.Types.Env ->
+                 case ds of wild { Language.FDL.Types.Env ds1 dt ->
+                 GHC.Types.I# dt }) -}
+f732d4810fbb4fbaeb00e3345197f9c6
+  exprBinds ::
+    Language.FDL.Types.Expr a
+    -> ([(Language.FDL.Types.Bind a, Language.FDL.Types.Expr a)],
+        Language.FDL.Types.Expr a)
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a w :: Language.FDL.Types.Expr a ->
+                 case Language.FDL.Types.$wexprBinds @ a w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+853a68925cc5bc86049a16ddea25d3b2
+  exprsExpr ::
+    Language.FDL.Types.ListNE (Language.FDL.Types.Expr a)
+    -> a -> Language.FDL.Types.Expr a
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a ds :: [Language.FDL.Types.Expr a] ds1 :: a ->
+                 case ds of wild {
+                   []
+                   -> Language.FDL.Types.Tuple
+                        @ a
+                        (GHC.Types.[] @ (Language.FDL.Types.Expr a))
+                        ds1
+                   : e ds2
+                   -> case ds2 of wild1 {
+                        [] -> e : ipv ipv1 -> Language.FDL.Types.Tuple @ a wild ds1 } }) -}
+9c7865b5faa640d18fda085cac230a4e
+  ext :: GHC.IO.FilePath -> Language.FDL.Types.Ext -> GHC.IO.FilePath
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ f :: GHC.IO.FilePath e :: Language.FDL.Types.Ext ->
+                 case e of wild {
+                   Language.FDL.Types.Src
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.FDL.Types.$fShowExt5
+                   Language.FDL.Types.Asm
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.FDL.Types.$fShowExt4
+                   Language.FDL.Types.Exe
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.FDL.Types.$fShowExt3
+                   Language.FDL.Types.Res
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.FDL.Types.$fShowExt2
+                   Language.FDL.Types.Log
+                   -> System.FilePath.Posix.addExtension
+                        f
+                        Language.FDL.Types.$fShowExt1 }) -}
+035ac2e0dc8bf7f1e7a0b2608b4b27a5
+  fromListEnv ::
+    [(Language.FDL.Types.Id, GHC.Types.Int)] -> Language.FDL.Types.Env
+  {- Arity: 1, Strictness: <L,U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [(Language.FDL.Types.Id, GHC.Types.Int)] ->
+                 case GHC.List.strictMaximum
+                        @ GHC.Types.Int
+                        GHC.Classes.$fOrdInt
+                        (GHC.Types.:
+                           @ GHC.Types.Int
+                           Language.FDL.Types.$fShowBind1
+                           (Language.FDL.Types.fromListEnv_go w)) of dt { GHC.Types.I# dt1 ->
+                 Language.FDL.Types.Env w dt1 }) -}
+e74205f6dfc1e20619206b57d0eda924
+  fromListEnv_go ::
+    [(Language.FDL.Types.Id, GHC.Types.Int)] -> [GHC.Types.Int]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+de9beae4a52c4ed284ebef2d748990aa
+  fun ::
+    GHC.Base.Maybe (Language.FDL.Types.Bind a)
+    -> [Language.FDL.Types.Bind a]
+    -> Language.FDL.Types.Expr a
+    -> a
+    -> Language.FDL.Types.Expr a
+  {- Arity: 4, HasNoCafRefs, Strictness: <S,1*U><L,U><S,U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a
+                   ds :: GHC.Base.Maybe (Language.FDL.Types.Bind a)
+                   eta :: [Language.FDL.Types.Bind a]
+                   eta1 :: Language.FDL.Types.Expr a
+                   eta2 :: a ->
+                 case ds of wild {
+                   GHC.Base.Nothing -> Language.FDL.Types.$WLam @ a eta eta1 eta2
+                   GHC.Base.Just f
+                   -> Language.FDL.Types.$WFun @ a f eta eta1 eta2 }) -}
+419675833eb508d2ae9a3b13b502bc6b
+  getLabel :: Language.FDL.Types.Expr a -> a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: (\ @ a ds :: Language.FDL.Types.Expr a ->
+                 case ds of wild {
+                   Language.FDL.Types.Number ds1 l -> l
+                   Language.FDL.Types.Boolean ds1 l -> l
+                   Language.FDL.Types.Id ds1 l -> l
+                   Language.FDL.Types.Prim1 ds1 ds2 l -> l
+                   Language.FDL.Types.Prim2 ds1 ds2 ds3 l -> l
+                   Language.FDL.Types.If ds1 ds2 ds3 l -> l
+                   Language.FDL.Types.Let ds1 ds2 ds3 l -> l
+                   Language.FDL.Types.Tuple ds1 l -> l
+                   Language.FDL.Types.GetItem ds1 ds2 l -> l
+                   Language.FDL.Types.App ds1 ds2 l -> l
+                   Language.FDL.Types.Lam ds1 ds2 l -> l
+                   Language.FDL.Types.Fun ds1 ds2 ds3 l -> l }) -}
+4423080a79a857c5a3a88ab339dc3fc1
+  isAnf :: Language.FDL.Types.Expr a -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+88ec5a6e8c9d0b4f270b3dc5dc84e9ce
+  label ::
+    Language.FDL.Types.Expr a
+    -> Language.FDL.Types.Expr (a, Language.FDL.Types.Tag)
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a x1 :: Language.FDL.Types.Expr a ->
+                 case Language.FDL.Types.label_go
+                        @ a
+                        @ a
+                        Language.FDL.Types.$fShowBind1
+                        x1 of wild { (,) ds1 y ->
+                 y }) -}
+0a6c958cd7e4631f02fedd394c5f472f
+  label_go ::
+    Language.FDL.Types.Tag
+    -> Language.FDL.Types.Expr a1
+    -> (Language.FDL.Types.Tag,
+        Language.FDL.Types.Expr (a1, Language.FDL.Types.Tag))
+  {- Arity: 2, Strictness: <L,U(U)><S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   @ a1
+                   w :: Language.FDL.Types.Tag
+                   w1 :: Language.FDL.Types.Expr a1 ->
+                 case Language.FDL.Types.$wgo @ a @ a1 w w1 of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+fdc8f3e3dad8012dd7922cc1f8a956d2
+  lookupEnv ::
+    Language.FDL.Types.Id
+    -> Language.FDL.Types.Env -> GHC.Base.Maybe GHC.Types.Int
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ k :: Language.FDL.Types.Id env :: Language.FDL.Types.Env ->
+                 case env of wild { Language.FDL.Types.Env ds dt ->
+                 GHC.List.lookup
+                   @ Language.FDL.Types.Id
+                   @ GHC.Types.Int
+                   GHC.Classes.$fEq[]_$s$fEq[]1
+                   k
+                   ds }) -}
+3716712fe32d0b138770d041a638e27c
+  memberEnv ::
+    Language.FDL.Types.Id -> Language.FDL.Types.Env -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ k :: Language.FDL.Types.Id env :: Language.FDL.Types.Env ->
+                 case env of wild { Language.FDL.Types.Env ds dt ->
+                 case GHC.List.lookup
+                        @ Language.FDL.Types.Id
+                        @ GHC.Types.Int
+                        GHC.Classes.$fEq[]_$s$fEq[]1
+                        k
+                        ds of wild1 {
+                   GHC.Base.Nothing -> GHC.Types.False
+                   GHC.Base.Just ipv -> GHC.Types.True } }) -}
+8baaf226013e3420bb66082a23f95219
+  pushEnv ::
+    Language.FDL.Types.Bind a
+    -> Language.FDL.Types.Env
+    -> (GHC.Types.Int, Language.FDL.Types.Env)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*U(U,A)><S,1*U(U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ a
+                   x1 :: Language.FDL.Types.Bind a
+                   ds :: Language.FDL.Types.Env ->
+                 case ds of wild { Language.FDL.Types.Env bs dt ->
+                 let {
+                   a1 :: GHC.Prim.Int# = GHC.Prim.+# 1 dt
+                 } in
+                 let {
+                   n' :: GHC.Types.Int = GHC.Types.I# a1
+                 } in
+                 (n',
+                  Language.FDL.Types.Env
+                    (GHC.Types.:
+                       @ (Language.FDL.Types.Id, GHC.Types.Int)
+                       (case x1 of wild1 { Language.FDL.Types.Bind x2 ds1 -> x2 }, n')
+                       bs)
+                    a1) }) -}
+instance GHC.Base.Functor [Language.FDL.Types.Bind]
+  = Language.FDL.Types.$fFunctorBind
+instance GHC.Base.Functor [Language.FDL.Types.Expr]
+  = Language.FDL.Types.$fFunctorExpr
+instance Language.FDL.UX.Located [Language.FDL.Types.Bind]
+  = Language.FDL.Types.$fLocatedBind
+instance Language.FDL.UX.Located [Language.FDL.Types.Expr]
+  = Language.FDL.Types.$fLocatedExpr
+instance Language.FDL.UX.PPrint [Language.FDL.Types.Bind]
+  = Language.FDL.Types.$fPPrintBind
+instance Language.FDL.UX.PPrint [GHC.Types.Bool]
+  = Language.FDL.Types.$fPPrintBool
+instance Language.FDL.UX.PPrint [Language.FDL.Types.Expr]
+  = Language.FDL.Types.$fPPrintExpr
+instance Language.FDL.UX.PPrint [Language.FDL.Types.Prim1]
+  = Language.FDL.Types.$fPPrintPrim1
+instance Language.FDL.UX.PPrint [Language.FDL.Types.Prim2]
+  = Language.FDL.Types.$fPPrintPrim2
+instance Language.FDL.UX.PPrint [Language.FDL.Types.Ty]
+  = Language.FDL.Types.$fPPrintTy
+instance GHC.Show.Show [Language.FDL.Types.Bind]
+  = Language.FDL.Types.$fShowBind
+instance GHC.Show.Show [Language.FDL.Types.DynError]
+  = Language.FDL.Types.$fShowDynError
+instance GHC.Show.Show [Language.FDL.Types.Env]
+  = Language.FDL.Types.$fShowEnv
+instance GHC.Show.Show [Language.FDL.Types.Expr]
+  = Language.FDL.Types.$fShowExpr
+instance GHC.Show.Show [Language.FDL.Types.Ext]
+  = Language.FDL.Types.$fShowExt
+instance GHC.Show.Show [Language.FDL.Types.Label]
+  = Language.FDL.Types.$fShowLabel
+instance GHC.Show.Show [Language.FDL.Types.Prim1]
+  = Language.FDL.Types.$fShowPrim1
+instance GHC.Show.Show [Language.FDL.Types.Prim2]
+  = Language.FDL.Types.$fShowPrim2
+instance GHC.Show.Show [Language.FDL.Types.Ty]
+  = Language.FDL.Types.$fShowTy
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

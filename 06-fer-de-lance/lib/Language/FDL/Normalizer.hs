@@ -71,7 +71,7 @@ anf _i (Lam _xs _e _l)    = (i', Lam _xs a _l)
 
 anf _i (Fun _f _xs _e _l) = (i', Fun _f _xs a _l)
    where
-    (i', a)               = anf _i a
+    (i', a)               = anf _i _e
 
 --------------------------------------------------------------------------------
 -- | `stitch bs e` takes a "context" `bs` which is a list of temp-vars and their

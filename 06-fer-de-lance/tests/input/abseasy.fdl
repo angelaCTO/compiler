@@ -1,0 +1,9 @@
+def abs(n):
+  if (n < 0):
+    0 - n
+  else:
+    n
+in
+    let t2 = print(abs(124))
+in
+    0

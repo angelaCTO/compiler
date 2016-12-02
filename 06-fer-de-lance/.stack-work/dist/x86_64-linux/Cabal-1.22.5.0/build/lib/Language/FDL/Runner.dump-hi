@@ -1,0 +1,1170 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-02 03:06:29.45347 UTC
+
+interface fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Runner 7103
+  interface hash: ccdbe2b18c79442ee5ddec922e2a79eb
+  ABI hash: 29dd40876340e99d6b4cfd61e45cf658
+  export-list hash: dbd8da63b14cd4d5f5ced73d46352058
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: a7d42e0b26f93e0274ddd07ed4a423ce
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.FDL.Runner.anfRun
+  Language.FDL.Runner.anfTest
+  Language.FDL.Runner.check
+  Language.FDL.Runner.dirExt
+  Language.FDL.Runner.dynamicError
+  Language.FDL.Runner.esHandle
+  Language.FDL.Runner.exec
+  Language.FDL.Runner.generateAsm
+  Language.FDL.Runner.generateSource
+  Language.FDL.Runner.getSrcFile
+  Language.FDL.Runner.getTotal
+  Language.FDL.Runner.initScore
+  Language.FDL.Runner.matchError
+  Language.FDL.Runner.mkTest
+  Language.FDL.Runner.mkTest'
+  Language.FDL.Runner.overflowError
+  Language.FDL.Runner.rLines
+  Language.FDL.Runner.readResult
+  Language.FDL.Runner.run
+  Language.FDL.Runner.runCompiler
+  Language.FDL.Runner.scoreTest'
+  Language.FDL.Runner.staticError
+  Language.FDL.Runner.timeLimit
+  Language.FDL.Runner.topMain
+  Language.FDL.Runner.updateCurrent
+  Language.FDL.Runner.updateTotal
+  Language.FDL.Runner.Program{Language.FDL.Runner.Code Language.FDL.Runner.File}
+  Language.FDL.Runner.Result
+  Language.FDL.Runner.Score
+module dependencies: Language.FDL.Asm Language.FDL.Checker
+                     Language.FDL.Compiler Language.FDL.Normalizer Language.FDL.Parser
+                     Language.FDL.Types Language.FDL.UX Language.FDL.Utils
+package dependencies: ansi-terminal-0.6.2.3@ansit_BDlVdfJGo3VHCIHxPTNjH1
+                      ansi-wl-pprint-0.6.7.3@ansiw_KTAhiPa3RNI09mbeoAwSSX
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      async-2.1.0@async_KuqnF1GrhHK5nNp6Zzm3jy base-4.8.2.0
+                      binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      clock-0.7.2@clock_25jKxsKUfKCI5az98RdfRZ
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      optparse-applicative-0.12.1.0@optpa_FpNJ7fLofFNEy3rK4ZnBoD
+                      parsec-3.1.11@parse_AtBt9uDOS2NCyWnucTHV3y
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP
+                      regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV
+                      tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unbounded-delays-0.1.0.9@unbou_GvUJpzHeuHuHPAHITwhpe4
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Compiler
+         fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Parser
+         fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.Types
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         regex-base-0.93.2@regex_47KXx9dLqeO8MNJeizLKhP:Text.Regex.Base.Context
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.ByteString
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.ByteString.Lazy
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.Sequence
+         regex-tdfa-1.2.2@regex_BHhH6txOvxoFOdieb8wrx7:Text.Regex.TDFA.String
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         clock-0.7.2@clock_25jKxsKUfKCI5az98RdfRZ:System.Clock
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty.Core
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Control.Exception.Base b99410eaf0cc6bb119b1d45a497c1b10
+import  -/  base-4.8.2.0:Data.Char c8f827952d4111ae2e47c0b105217cdb
+import  -/  base-4.8.2.0:Data.Either e8724afd65fd432cfe9a54014f5f762d
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.IORef 976e22a2a5bee98653c6ebd18a5d0d2f
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.IO.Exception e38c1261b70caecb7af416b94c82c925
+import  -/  base-4.8.2.0:GHC.IO.Handle.FD 4b888b3713ea36bd21caa2badeaf319d
+import  -/  base-4.8.2.0:GHC.IO.Handle.Text 06d2dc7704bcfe88a2157fd04748ace5
+import  -/  base-4.8.2.0:GHC.IO.Handle.Types fe7c781ed6b3f00c4b1f0266e32a6e61
+import  -/  base-4.8.2.0:GHC.IO.IOMode 89fcaeb96929360e7be5a7bbb14ceec9
+import  -/  base-4.8.2.0:GHC.IORef 214f24404788140014fb59d5413cb1a5
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:GHC.Unicode cdf84fc3abbaf34ba6b6645291cef991
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.Environment ba6e36000c8274703cf7786fbe8d0f6c
+import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.FDL.Compiler fcfc034890261c706983fab8bc4cac44
+  exports: 195e1ea25c7d7e69262edc8454d154d4
+  compiler 3a81ccf214706c7209030796876dee74
+import  -/  Language.FDL.Normalizer f7255481ce7082ff5b225f80f898f5ff
+  exports: f534d761944ea253c95aa7409c66b592
+  anormal 49676f0cee2c3565718c6c6d2f41089a
+import  -/  Language.FDL.Parser c50898ec0ed2ae13d3ee289a88f1adbe
+  exports: 5ecaad17d7923eb257b40cb3c2ebbc1a
+  parse 47d657701e8e580dd83c3b3e7b44ced0
+import  -/  Language.FDL.Types 30f24122a8d962a106d6646bbf28cfee
+  exports: 9943064701d7c0047dbd16a689338f95
+  Asm 4f19d0295f008a61e320da77f4188eba
+  Ext 128fd34592f556f945e5bfcfb8157753
+  Log 0d2ff8e7960bb68638c88b58f72e23fd
+  Res 4cd99ab5bd82818583b3f590a6092ab2
+  Src 1cf234c3128cf384fdb8b7228fcc6b40
+  ext 9c7865b5faa640d18fda085cac230a4e
+import  -/  Language.FDL.UX 8707e5ca884a685eb036e023b26c987f
+  Text 36edf686d4c19aef752632644eaef928
+  UserError cbf9f6458b5acfddf7d6304b825f0bf1
+  pprint fe2ba3b3187be3fac9eca7478d580836
+  renderErrors e93be96692182b03d055b190feed6011
+import  -/  Language.FDL.Utils 081ad0bacfa681923d25df14b02a4b0e
+  exports: c216801eb3fe4dad9a12432d9f86632d
+  executeShellCommand 628d22a8b75c0f65c8243d19b725c58e
+  trim 353830a5aa1fc1a3377d7008e71db29d
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
+import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV:Test.Tasty.HUnit 559fe7fd7c8d423b34e073b1c48863c9
+import  -/  tasty-hunit-0.9.2@tasty_5PVHuetvyJEFMXqMUHBZJV:Test.Tasty.HUnit.Orig ac4bc7f1e6e232714ea5854d8b764667
+import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty abbde09ca8e64a0ee7c7cf8254d23309
+import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty.Core b94dda12df45b3281c2386eb541c4af9
+2647256454853632e58ee5a1b39a0ee8
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+912210bf6c9a179ecb1972285a7adce7
+  $s^1 :: GHC.Types.Int
+  {- Strictness: b -}
+0f48d10fd00e5846e7b327aaec8a522c
+  $s^2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (__integer 0) -}
+31491140fdfd373f6dc94317ee8f240f
+  $w$s^ :: GHC.Types.Int -> GHC.Integer.Type.Integer -> GHC.Prim.Int#
+  {- Arity: 2, Strictness: <L,U(U)><S,U>, Inline: [0],
+     Unfolding: (\ w :: GHC.Types.Int w1 :: GHC.Integer.Type.Integer ->
+                 case GHC.Integer.Type.ltInteger#
+                        w1
+                        Language.FDL.Runner.$s^2 of wild { DEFAULT ->
+                 case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild of wild1 {
+                   GHC.Types.False
+                   -> case GHC.Integer.Type.eqInteger#
+                             w1
+                             Language.FDL.Runner.$s^2 of wild2 { DEFAULT ->
+                      case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild2 of wild3 {
+                        GHC.Types.False
+                        -> case w of ww { GHC.Types.I# ww1 ->
+                           Language.FDL.Runner.$wf ww1 w1 }
+                        GHC.Types.True -> 1 } }
+                   GHC.Types.True
+                   -> case Language.FDL.Runner.$s^1 ret_ty GHC.Prim.Int# of {} } }) -}
+053a3e935ec9da1ea5e8d7a6654b60e6
+  $wa ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Language.FDL.UX.Text #)
+  {- Arity: 1, Strictness: <B,A>b, Inline: [0] -}
+0cf8b4dfcfbdd3f969e52495bc4655d4
+  $wanfRun :: Language.FDL.UX.Text -> (# Language.FDL.UX.Text #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ w :: Language.FDL.UX.Text ->
+                 (# case (Text.Megaparsec.Prim.runParsecT
+                            @ GHC.Base.String
+                            @ Data.Functor.Identity.Identity
+                            @ Language.FDL.Types.Bare
+                            Data.Functor.Identity.$fMonadIdentity
+                            Language.FDL.Parser.parse3
+                            (Text.Megaparsec.Prim.State
+                               @ GHC.Base.String
+                               w
+                               Language.FDL.Runner.anfRun1
+                               8))
+                           `cast`
+                         (Data.Functor.Identity.NTCo:Identity[0]
+                              <Text.Megaparsec.Prim.Reply
+                                 GHC.Base.String
+                                 Language.FDL.Types.Bare>_R) of wild { Text.Megaparsec.Prim.Reply s' ds result ->
+                    case result of wild1 {
+                      Text.Megaparsec.Prim.OK x
+                      -> case Language.FDL.Normalizer.$wanf
+                                @ Language.FDL.UX.SourceSpan
+                                Language.FDL.Normalizer.anormal1
+                                x of ww { (#,#) ww1 ww2 ->
+                         Language.FDL.Types.$fPPrintExpr_$cpprint
+                           @ Language.FDL.UX.SourceSpan
+                           ww2 }
+                      Text.Megaparsec.Prim.Error e
+                      -> case e of ww { Text.Megaparsec.Error.ParseError ww1 ww2 ->
+                         case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                         case Language.FDL.Parser.parse2 ww4 ww5 ww6 ww2
+                         ret_ty Language.FDL.UX.Text
+                         of {} } } } } #)) -}
+b3625974a0ae31770ab3f8a95a40e498
+  $wf :: GHC.Prim.Int# -> GHC.Integer.Type.Integer -> GHC.Prim.Int#
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0] -}
+f00f168ef4b041b1f5557df1a2daa10f
+  $wscoreTest' ::
+    GHC.Classes.Eq b =>
+    Language.FDL.Runner.Score
+    -> (a -> b)
+    -> a
+    -> b
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> Test.Tasty.Core.TestTree
+  {- Arity: 7,
+     Strictness: <L,U(C(C1(U)),A)><L,U(U)><L,C(U)><L,U><L,U><L,U(U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ @ a2
+                   @ b
+                   w :: GHC.Classes.Eq b
+                   w1 :: Language.FDL.Runner.Score
+                   ww :: a2 -> b
+                   ww1 :: a2
+                   ww2 :: b
+                   ww3 :: GHC.Types.Int
+                   ww4 :: GHC.Base.String ->
+                 Test.Tasty.Core.SingleTest
+                   @ Test.Tasty.HUnit.TestCase
+                   Test.Tasty.HUnit.$fIsTestTestCase
+                   ww4
+                   (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    case w1
+                           `cast`
+                         (GHC.IORef.NTCo:IORef[0] <(GHC.Types.Int,
+                                                    GHC.Types.Int)>_N) of wild { GHC.STRef.STRef var# ->
+                    case GHC.Prim.readMutVar#
+                           @ GHC.Prim.RealWorld
+                           @ (GHC.Types.Int, GHC.Types.Int)
+                           var#
+                           s of ds1 { (#,#) ipv ipv1 ->
+                    case GHC.Prim.writeMutVar#
+                           @ GHC.Prim.RealWorld
+                           @ (GHC.Types.Int, GHC.Types.Int)
+                           var#
+                           (case ipv1 of wild1 { (,) x y -> (x, GHC.Num.$fNumInt_$c+ y ww3) })
+                           ipv of s2# { DEFAULT ->
+                    case GHC.Classes.== @ b w (ww ww1) ww2 of wild1 {
+                      GHC.Types.False
+                      -> case GHC.Prim.raiseIO#
+                                @ GHC.Exception.SomeException
+                                @ ()
+                                Language.FDL.Runner.scoreTest'1
+                                s2#
+                         ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, [GHC.Types.Char] #)
+                         of {}
+                      GHC.Types.True
+                      -> case GHC.Prim.readMutVar#
+                                @ GHC.Prim.RealWorld
+                                @ (GHC.Types.Int, GHC.Types.Int)
+                                var#
+                                s2# of ds2 { (#,#) ipv2 ipv3 ->
+                         case GHC.Prim.writeMutVar#
+                                @ GHC.Prim.RealWorld
+                                @ (GHC.Types.Int, GHC.Types.Int)
+                                var#
+                                (case ipv3 of wild2 { (,) x y -> (GHC.Num.$fNumInt_$c+ x ww3, y) })
+                                ipv2 of s2#1 { DEFAULT ->
+                         (# s2#1, GHC.Types.[] @ GHC.Types.Char #) } } } } } })
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R))
+                        (Sym (Test.Tasty.HUnit.NTCo:TestCase[0])))) -}
+43346ef3d20e01bf5bf070082428263b
+  data Program = File | Code Language.FDL.UX.Text
+e66e0c9f9615485a6d16802e9529823c
+  type Result =
+    Data.Either.Either Language.FDL.UX.Text Language.FDL.UX.Text
+75acf08874267182bca53040c1ed6d0b
+  type Score = GHC.IORef.IORef (GHC.Types.Int, GHC.Types.Int)
+bf95eca667a81c62bfa8f38dc0c95184
+  anfRun :: Language.FDL.UX.Text -> Language.FDL.Runner.Result
+  {- Arity: 1, Strictness: <L,U>m2, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.FDL.UX.Text ->
+                 case Language.FDL.Runner.$wanfRun w of ww { (##) ww1 ->
+                 Data.Either.Right
+                   @ Language.FDL.UX.Text
+                   @ Language.FDL.UX.Text
+                   ww1 }) -}
+c8df1d67c31677d77a04922d1282e6e7
+  anfRun1 :: Text.Megaparsec.Pos.SourcePos
+  {- HasNoCafRefs,
+     Unfolding: (Text.Megaparsec.Pos.SourcePos
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   1
+                   1) -}
+fdafbf2be0d33b0464d5f3dbd7f69ab8
+  anfTest ::
+    Language.FDL.Runner.Score
+    -> GHC.Base.String
+    -> Language.FDL.UX.Text
+    -> Language.FDL.UX.Text
+    -> Test.Tasty.Core.TestTree
+  {- Arity: 4, Strictness: <L,U(U)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ sc :: Language.FDL.Runner.Score
+                   name :: GHC.Base.String
+                   inS :: Language.FDL.UX.Text
+                   expS :: Language.FDL.UX.Text ->
+                 Language.FDL.Runner.mkTest'
+                   sc
+                   Language.FDL.Runner.anfTest1
+                   name
+                   (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    (# s, Language.FDL.Runner.anfRun inS #))
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0] <Language.FDL.Runner.Result>_R))
+                   (Data.Either.Right
+                      @ Language.FDL.UX.Text
+                      @ Language.FDL.UX.Text
+                      expS)) -}
+e7c4b237b55b44bbf1ba5d1689949ffc
+  anfTest1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+59035323574a063e47f467c35587caab
+  check ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.Int
+    -> Data.Either.Either [GHC.Types.Char] GHC.Base.String
+    -> Data.Either.Either [GHC.Types.Char] GHC.Base.String
+    -> GHC.Types.IO ()
+  {- Arity: 5, Strictness: <L,1*U(U)><L,1*U(U)><S,1*U><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.mkTest'1
+                  `cast`
+                (<Language.FDL.Runner.Score>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R <Data.Either.Either [GHC.Types.Char] GHC.Base.String>_R
+                 ->_R <Data.Either.Either [GHC.Types.Char] GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+2c6f17ea737ca94910883db082c6a0a7
+  dirExt ::
+    GHC.IO.FilePath
+    -> GHC.IO.FilePath -> Language.FDL.Types.Ext -> GHC.IO.FilePath
+  {- Arity: 3, Strictness: <L,1*U><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ dir :: GHC.IO.FilePath
+                   name :: GHC.IO.FilePath
+                   e :: Language.FDL.Types.Ext ->
+                 System.FilePath.Posix.combine
+                   Language.FDL.Runner.dirExt1
+                   (System.FilePath.Posix.combine
+                      dir
+                      (Language.FDL.Types.ext name e))) -}
+8a8c5fc7a4eadb31357ac5ca5e43f2cf
+  dirExt1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "tests"#) -}
+c022124f197227ab149ad53cd9da8bcb
+  dynamicError ::
+    Language.FDL.UX.PPrint a =>
+    a -> Data.Either.Either [GHC.Types.Char] b
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,1*C1(U)><L,U>m1,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ b @ a2 w :: Language.FDL.UX.PPrint a2 w1 :: a2 ->
+                 Data.Either.Left
+                   @ [GHC.Types.Char]
+                   @ b
+                   (GHC.CString.unpackAppendCString#
+                      "Error: expected a "#
+                      (w `cast` (Language.FDL.UX.NTCo:PPrint[0] <a2>_N) w1))) -}
+fe4a94b7ef5fc6550d28c18d0f00cfd4
+  esHandle ::
+    GHC.IO.Handle.Types.Handle
+    -> GHC.Types.IO a -> [Language.FDL.UX.UserError] -> GHC.Types.IO a
+  {- Arity: 4, Strictness: <L,U><L,1*C1(U(U,U))><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.esHandle1
+                  `cast`
+                (forall a2.
+                 <GHC.IO.Handle.Types.Handle>_R
+                 ->_R <GHC.Types.IO a2>_R
+                 ->_R <[Language.FDL.UX.UserError]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <a2>_R)) -}
+4fa80e29920e2dcff9192dc54b08414d
+  esHandle1 ::
+    GHC.IO.Handle.Types.Handle
+    -> GHC.Types.IO a
+    -> [Language.FDL.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, a #)
+  {- Arity: 4, Strictness: <L,U><L,1*C1(U(U,U))><S,1*U><L,U>,
+     Unfolding: (\ @ a2
+                   h :: GHC.IO.Handle.Types.Handle
+                   exitF :: GHC.Types.IO a2
+                   es :: [Language.FDL.UX.UserError]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Language.FDL.UX.renderErrors4
+                        es
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        h
+                        (Data.OldList.intercalate_$spoly_go
+                           @ GHC.Types.Char
+                           Language.FDL.UX.renderErrors3
+                           (Data.OldList.prependToAll
+                              @ [GHC.Types.Char]
+                              Language.FDL.UX.renderErrors2
+                              ipv1))
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 exitF `cast` (GHC.Types.NTCo:IO[0] <a2>_R) ipv2 } }) -}
+8dfb0ab9b456bea407e9bddceb76d6b8
+  exec :: Language.FDL.UX.Text -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.exec1
+                  `cast`
+                (<Language.FDL.UX.Text>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+67f7974776786b17a3342f4faefcea79
+  exec1 ::
+    Language.FDL.UX.Text
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: (\ src :: Language.FDL.UX.Text
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Language.FDL.Runner.exec3
+                        Language.FDL.Runner.exec2
+                        (Language.FDL.Runner.Code src)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (case ipv1 of wild {
+                      Data.Either.Left x -> x Data.Either.Right y -> y })
+                   GHC.Types.True
+                   ipv }) -}
+030446ff1d5288314a7d363d7f76fb2d
+  exec2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "exec_tmp"#) -}
+f4402307a0beefa6eea89b942b9dd73d
+  exec3 ::
+    GHC.IO.FilePath
+    -> Language.FDL.Runner.Program
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Language.FDL.Runner.Result #)
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U> -}
+67eb39cdd7d78c46b2b9a6827749cc83
+  generateAsm :: GHC.IO.FilePath -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.generateAsm1
+                  `cast`
+                (<GHC.IO.FilePath>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+23037e537802ab936197c3337ed0a5ae
+  generateAsm1 ::
+    GHC.IO.FilePath
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: (\ name :: GHC.IO.FilePath
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 let {
+                   srcF :: GHC.IO.FilePath
+                   = System.FilePath.Posix.combine
+                       Language.FDL.Runner.dirExt1
+                       (System.FilePath.Posix.combine
+                          Language.FDL.Runner.generateAsm3
+                          (System.FilePath.Posix.addExtension
+                             name
+                             Language.FDL.Types.$fShowExt5))
+                 } in
+                 case GHC.IO.Handle.FD.openFile1
+                        srcF
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 Control.Exception.Base.bracket1
+                   @ GHC.IO.Handle.Types.Handle
+                   @ ()
+                   @ ()
+                   (GHC.IO.Handle.FD.openFile1
+                      (System.FilePath.Posix.combine
+                         Language.FDL.Runner.dirExt1
+                         (System.FilePath.Posix.combine
+                            Language.FDL.Runner.generateAsm2
+                            (System.FilePath.Posix.addExtension
+                               name
+                               Language.FDL.Types.$fShowExt4)))
+                      GHC.IO.IOMode.WriteMode)
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                   GHC.IO.Handle.hClose1
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   (\ hdl :: GHC.IO.Handle.Types.Handle[OneShot]
+                      eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    GHC.IO.Handle.Text.hPutStr2
+                      hdl
+                      (Language.FDL.Compiler.compiler srcF ipv3)
+                      GHC.Types.False
+                      eta1)
+                     `cast`
+                   (<GHC.IO.Handle.Types.Handle>_R
+                    ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                   ipv2 } }) -}
+ebe5a1fbee6426ed7e5ca8c15a9430dc
+  generateAsm2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "output"#) -}
+fc243ee7c2b9e505fa5f060318d64c8d
+  generateAsm3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "input"#) -}
+32419e46cbadc273f38bf8a8c7403703
+  generateSource ::
+    GHC.IO.FilePath -> Language.FDL.Runner.Program -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,1*U><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.generateSource1
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R <Language.FDL.Runner.Program>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+d540241ef948037f054ba9e18ef93be1
+  generateSource1 ::
+    GHC.IO.FilePath
+    -> Language.FDL.Runner.Program
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,1*U><S,1*U><L,U>,
+     Unfolding: (\ ds :: GHC.IO.FilePath
+                   ds1 :: Language.FDL.Runner.Program
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds1 of wild {
+                   Language.FDL.Runner.File -> (# eta, GHC.Tuple.() #)
+                   Language.FDL.Runner.Code pgm
+                   -> Control.Exception.Base.bracket1
+                        @ GHC.IO.Handle.Types.Handle
+                        @ ()
+                        @ ()
+                        (GHC.IO.Handle.FD.openFile1
+                           (System.FilePath.Posix.combine
+                              Language.FDL.Runner.dirExt1
+                              (System.FilePath.Posix.combine
+                                 Language.FDL.Runner.generateAsm3
+                                 (System.FilePath.Posix.addExtension
+                                    ds
+                                    Language.FDL.Types.$fShowExt5)))
+                           GHC.IO.IOMode.WriteMode)
+                          `cast`
+                        (Sym (GHC.Types.NTCo:IO[0] <GHC.IO.Handle.Types.Handle>_R))
+                        GHC.IO.Handle.hClose1
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        (\ hdl :: GHC.IO.Handle.Types.Handle[OneShot] ->
+                         GHC.IO.Handle.Text.hPutStr1 hdl pgm)
+                          `cast`
+                        (<GHC.IO.Handle.Types.Handle>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                        eta }) -}
+5b7a36b1ddd85a7cabc61a0f3cf560bf
+  getSrcFile :: GHC.Types.IO Language.FDL.UX.Text
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.getSrcFile1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <Language.FDL.UX.Text>_R)) -}
+858fd541e0b85c08cdc8ccbe4a51f205
+  getSrcFile1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Language.FDL.UX.Text #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   [] -> Language.FDL.Runner.$wa ipv
+                   : f ds
+                   -> case ds of wild1 {
+                        [] -> (# ipv, f #)
+                        : ipv2 ipv3 -> Language.FDL.Runner.$wa ipv } } }) -}
+7bba3451fd4fcf535dc952f3ba7030b6
+  getTotal ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.IO (GHC.Types.Int, GHC.Types.Int)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                (GHC.STRef.readSTRef1
+                   @ GHC.Prim.RealWorld
+                   @ (GHC.Types.Int, GHC.Types.Int))
+                  `cast`
+                (Sym (GHC.IORef.NTCo:IORef[0]) <(GHC.Types.Int, GHC.Types.Int)>_N
+                 ->_R Sym (GHC.Types.NTCo:IO[0]
+                               <(GHC.Types.Int, GHC.Types.Int)>_R)) -}
+6fdea20d2405ddb0e744c4ce12061d5a
+  initScore :: GHC.Types.IO Language.FDL.Runner.Score
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.initScore1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0]
+                          <GHC.IORef.IORef (GHC.Types.Int, GHC.Types.Int)>_R)) -}
+f5eb57ef20b9a250d144fccea35ae466
+  initScore1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          GHC.IORef.IORef (GHC.Types.Int, GHC.Types.Int) #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Prim.newMutVar#
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        @ GHC.Prim.RealWorld
+                        (GHC.Types.I# 0, GHC.Types.I# 0)
+                        s of ds { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    (GHC.STRef.STRef
+                       @ GHC.Prim.RealWorld
+                       @ (GHC.Types.Int, GHC.Types.Int)
+                       ipv1)
+                      `cast`
+                    (Sym (GHC.IORef.NTCo:IORef[0]) <(GHC.Types.Int,
+                                                     GHC.Types.Int)>_N) #) }) -}
+67b9d4051ed0193d04e38bb1137f81db
+  matchError ::
+    [GHC.Types.Char] -> [GHC.Types.Char] -> GHC.Types.Bool
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ expectE :: [GHC.Types.Char]
+                   resE :: [GHC.Types.Char] ->
+                 Data.OldList.isInfixOf
+                   @ GHC.Types.Char
+                   GHC.Classes.$fEqChar
+                   (GHC.Base.map
+                      @ GHC.Types.Char
+                      @ GHC.Types.Char
+                      GHC.Unicode.toLower
+                      expectE)
+                   (GHC.Base.map
+                      @ GHC.Types.Char
+                      @ GHC.Types.Char
+                      GHC.Unicode.toLower
+                      resE)) -}
+48fa42ebafb22f7191abb7ed648b5ff1
+  mkTest ::
+    Language.FDL.Runner.Score
+    -> GHC.Base.String
+    -> Language.FDL.Runner.Program
+    -> Language.FDL.Runner.Result
+    -> Test.Tasty.Core.TestTree
+  {- Arity: 4, Strictness: <L,U(U)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ sc :: Language.FDL.Runner.Score
+                   name :: GHC.Base.String
+                   pgm :: Language.FDL.Runner.Program
+                   eta :: Language.FDL.Runner.Result ->
+                 Language.FDL.Runner.mkTest'
+                   sc
+                   Language.FDL.Runner.anfTest1
+                   name
+                   (Language.FDL.Runner.exec3 name pgm)
+                     `cast`
+                   (Sym (GHC.Types.NTCo:IO[0] <Language.FDL.Runner.Result>_R))
+                   eta) -}
+c7018e1fa71bd073d4357fa24071040e
+  mkTest' ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Types.IO Language.FDL.Runner.Result
+    -> Language.FDL.Runner.Result
+    -> Test.Tasty.Core.TestTree
+  {- Arity: 5, Strictness: <L,U(U)><L,U(U)><L,U><L,C(U(U,1*U))><L,U>,
+     Unfolding: (\ sc :: Language.FDL.Runner.Score
+                   n :: GHC.Types.Int
+                   name :: GHC.Base.String
+                   act :: GHC.Types.IO Language.FDL.Runner.Result
+                   expect :: Language.FDL.Runner.Result ->
+                 Test.Tasty.Core.SingleTest
+                   @ Test.Tasty.HUnit.TestCase
+                   Test.Tasty.HUnit.$fIsTestTestCase
+                   name
+                   (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                    case sc
+                           `cast`
+                         (GHC.IORef.NTCo:IORef[0] <(GHC.Types.Int,
+                                                    GHC.Types.Int)>_N) of wild { GHC.STRef.STRef var# ->
+                    case GHC.Prim.readMutVar#
+                           @ GHC.Prim.RealWorld
+                           @ (GHC.Types.Int, GHC.Types.Int)
+                           var#
+                           s of ds1 { (#,#) ipv ipv1 ->
+                    case GHC.Prim.writeMutVar#
+                           @ GHC.Prim.RealWorld
+                           @ (GHC.Types.Int, GHC.Types.Int)
+                           var#
+                           (case ipv1 of wild1 { (,) x y -> (x, GHC.Num.$fNumInt_$c+ y n) })
+                           ipv of s2# { DEFAULT ->
+                    case act
+                           `cast`
+                         (GHC.Types.NTCo:IO[0] <Language.FDL.Runner.Result>_R)
+                           s2# of ds2 { (#,#) ipv2 ipv3 ->
+                    case Language.FDL.Runner.mkTest'1
+                           wild
+                             `cast`
+                           (Sym (GHC.IORef.NTCo:IORef[0]) <(GHC.Types.Int, GHC.Types.Int)>_N)
+                           n
+                           ipv3
+                           expect
+                           ipv2 of ds { (#,#) ipv4 ipv5 ->
+                    (# ipv4, GHC.Types.[] @ GHC.Types.Char #) } } } } })
+                     `cast`
+                   (Trans
+                        (Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R))
+                        (Sym (Test.Tasty.HUnit.NTCo:TestCase[0])))) -}
+82eafd163fdd35a6f3e0937f1de6525b
+  mkTest'1 ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.Int
+    -> Data.Either.Either [GHC.Types.Char] GHC.Base.String
+    -> Data.Either.Either [GHC.Types.Char] GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,1*U(U)><L,1*U(U)><S,1*U><S,1*U><L,U>,
+     Unfolding: (\ sc :: Language.FDL.Runner.Score
+                   n :: GHC.Types.Int
+                   ds :: Data.Either.Either [GHC.Types.Char] GHC.Base.String
+                   ds1 :: Data.Either.Either [GHC.Types.Char] GHC.Base.String
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds of wild {
+                   Data.Either.Left resE
+                   -> case ds1 of wild1 {
+                        Data.Either.Left expectE
+                        -> case Language.FDL.Runner.matchError expectE resE of wild2 {
+                             GHC.Types.False
+                             -> Test.Tasty.HUnit.Orig.@?2 Language.FDL.Runner.mkTest'6 eta
+                             GHC.Types.True -> Language.FDL.Runner.mkTest'5 sc n eta }
+                        Data.Either.Right expectV
+                        -> Test.Tasty.HUnit.Orig.@=?2
+                             @ [GHC.Types.Char]
+                             GHC.Classes.$fEq[]_$s$fEq[]1
+                             GHC.Show.$fShow[]_$s$fShow[]1
+                             Language.FDL.Runner.mkTest'4
+                             (GHC.CString.unpackAppendCString# "Value "# expectV)
+                             (GHC.CString.unpackAppendCString# "Error "# resE)
+                             eta }
+                   Data.Either.Right resV
+                   -> case ds1 of wild1 {
+                        Data.Either.Left expectE
+                        -> Test.Tasty.HUnit.Orig.@=?2
+                             @ [GHC.Types.Char]
+                             GHC.Classes.$fEq[]_$s$fEq[]1
+                             GHC.Show.$fShow[]_$s$fShow[]1
+                             Language.FDL.Runner.mkTest'3
+                             (GHC.CString.unpackAppendCString# "Error "# expectE)
+                             (GHC.CString.unpackAppendCString# "Value "# resV)
+                             eta
+                        Data.Either.Right expectV
+                        -> case GHC.Base.eqString
+                                  (Language.FDL.Utils.trim expectV)
+                                  (Language.FDL.Utils.trim resV) of wild2 {
+                             GHC.Types.False
+                             -> Test.Tasty.HUnit.Orig.@?2 Language.FDL.Runner.mkTest'2 eta
+                             GHC.Types.True -> Language.FDL.Runner.mkTest'5 sc n eta } } }) -}
+e77ee7acf461ff6926fe35da6789a515
+  mkTest'2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Wrong result"#) -}
+10dca650aff382789b56de0a66c9a3ff
+  mkTest'3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Unexpected result"#) -}
+19d92ecce84490c12cee732bf102ced1
+  mkTest'4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Unexpected error"#) -}
+b80a2af8567d7776574e977bb3ae681a
+  mkTest'5 ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,1*U(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ sc :: Language.FDL.Runner.Score
+                   n :: GHC.Types.Int
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case sc
+                        `cast`
+                      (GHC.IORef.NTCo:IORef[0] <(GHC.Types.Int,
+                                                 GHC.Types.Int)>_N) of wild { GHC.STRef.STRef var# ->
+                 case GHC.Prim.readMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        var#
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.Prim.writeMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        var#
+                        (case ipv1 of wild1 { (,) x y -> (GHC.Num.$fNumInt_$c+ x n, y) })
+                        ipv of s2# { DEFAULT ->
+                 (# s2#, GHC.Tuple.() #) } } }) -}
+4b75b464debdfd0b6e8cbb341bca44a6
+  mkTest'6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Wrong error"#) -}
+d77c65b1edf9e5e9acd4d2e93c12428e
+  overflowError :: Data.Either.Either [GHC.Types.Char] b
+  {- Strictness: m1,
+     Unfolding: (\ @ b ->
+                 Data.Either.Left
+                   @ [GHC.Types.Char]
+                   @ b
+                   Language.FDL.Runner.overflowError1) -}
+4b3595e42baf071d9afcbad77c498671
+  overflowError1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Error: arithmetic overflow"#) -}
+7b93afcd5d44521903ebe6545b290768
+  rLines :: [GHC.Base.String] -> Data.Either.Either a GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,1*U>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a2 x :: [GHC.Base.String] ->
+                 Data.Either.Right
+                   @ a2
+                   @ GHC.Base.String
+                   (Data.OldList.unlines x)) -}
+68319e1d3c6a89139e365bb15010411a
+  readResult ::
+    GHC.IO.FilePath
+    -> GHC.IO.FilePath
+    -> GHC.IO.Exception.ExitCode
+    -> GHC.Types.IO Language.FDL.Runner.Result
+  {- Arity: 4, Strictness: <L,U><L,U><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.readResult1
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R <GHC.IO.FilePath>_R
+                 ->_R <GHC.IO.Exception.ExitCode>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Language.FDL.Runner.Result>_R)) -}
+7e260eee227c826467c1a32a1850a27e
+  readResult1 ::
+    GHC.IO.FilePath
+    -> GHC.IO.FilePath
+    -> GHC.IO.Exception.ExitCode
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Language.FDL.Runner.Result #)
+  {- Arity: 4, Strictness: <L,U><L,U><S,1*U><L,U>,
+     Unfolding: (\ resF :: GHC.IO.FilePath
+                   ds :: GHC.IO.FilePath
+                   ds1 :: GHC.IO.Exception.ExitCode
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case ds1 of wild {
+                   GHC.IO.Exception.ExitSuccess
+                   -> case GHC.IO.Handle.FD.openFile1
+                             resF
+                             GHC.IO.IOMode.ReadMode
+                             eta of ds2 { (#,#) ipv ipv1 ->
+                      case GHC.IO.Handle.Text.hGetContents1
+                             ipv1
+                             ipv of ds3 { (#,#) ipv2 ipv3 ->
+                      (# ipv2,
+                         Data.Either.Right
+                           @ Language.FDL.UX.Text
+                           @ Language.FDL.UX.Text
+                           ipv3 #) } }
+                   GHC.IO.Exception.ExitFailure ds2
+                   -> case ds2 of wild1 { GHC.Types.I# ds3 ->
+                      case ds3 of ds4 {
+                        DEFAULT
+                        -> case GHC.IO.Handle.FD.openFile1
+                                  ds
+                                  GHC.IO.IOMode.ReadMode
+                                  eta of ds5 { (#,#) ipv ipv1 ->
+                           case GHC.IO.Handle.Text.hGetContents1
+                                  ipv1
+                                  ipv of ds6 { (#,#) ipv2 ipv3 ->
+                           (# ipv2,
+                              Data.Either.Left
+                                @ Language.FDL.UX.Text
+                                @ Language.FDL.UX.Text
+                                ipv3 #) } }
+                        100 -> (# eta, Language.FDL.Runner.readResult2 #) } } }) -}
+4914bba953b9bf4e15c7e4a05f724e87
+  readResult2 ::
+    Data.Either.Either Language.FDL.UX.Text Language.FDL.UX.Text
+  {- Unfolding: (Data.Either.Left
+                   @ Language.FDL.UX.Text
+                   @ Language.FDL.UX.Text
+                   Language.FDL.Runner.readResult3) -}
+ea71b1890a506fcd0c9874d9f1845d4c
+  readResult3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "TIMEOUT!"#) -}
+f6fd10a8b1353a2510f234ce235ccb2e
+  run ::
+    GHC.IO.FilePath
+    -> Language.FDL.Runner.Program
+    -> GHC.Types.IO Language.FDL.Runner.Result
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.exec3
+                  `cast`
+                (<GHC.IO.FilePath>_R
+                 ->_R <Language.FDL.Runner.Program>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Language.FDL.Runner.Result>_R)) -}
+db5a3febe9f459e336ac07ae132dc62b
+  runCompiler :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.runCompiler1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+cd98d45ac169f4c426c514c2d9a044b4
+  runCompiler1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild {
+                   []
+                   -> case Language.FDL.Runner.$wa ipv
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                      of {}
+                   : f ds
+                   -> case ds of wild1 {
+                        [] -> Language.FDL.Runner.runCompiler2 f ipv
+                        : ipv2 ipv3
+                        -> case Language.FDL.Runner.$wa ipv
+                           ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                           of {} } } }) -}
+aa600b72fc75c5d6df50b45f4210d6d8
+  runCompiler2 ::
+    Language.FDL.UX.Text
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><L,U>,
+     Unfolding: (\ f :: Language.FDL.UX.Text
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        f
+                        GHC.IO.IOMode.ReadMode
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (Language.FDL.Compiler.compiler f ipv3)
+                        GHC.Types.True
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 System.Exit.exitSuccess1 @ () ipv4 } } }) -}
+da856e79dc0ca64c6b9685353e99ce7e
+  scoreTest' ::
+    (GHC.Show.Show b, GHC.Classes.Eq b) =>
+    Language.FDL.Runner.Score
+    -> (a -> b, a, b, GHC.Types.Int, GHC.Base.String)
+    -> Test.Tasty.Core.TestTree
+  {- Arity: 4,
+     Strictness: <L,A><L,U(C(C1(U)),A)><L,U(U)><S,1*U(C(U),U,U,U(U),U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ @ a2
+                   @ b
+                   w :: GHC.Show.Show b
+                   w1 :: GHC.Classes.Eq b
+                   w2 :: Language.FDL.Runner.Score
+                   w3 :: (a2 -> b, a2, b, GHC.Types.Int, GHC.Base.String) ->
+                 case w3 of ww { (,,,,) ww1 ww2 ww3 ww4 ww5 ->
+                 Language.FDL.Runner.$wscoreTest'
+                   @ a2
+                   @ b
+                   w1
+                   w2
+                   ww1
+                   ww2
+                   ww3
+                   ww4
+                   ww5 }) -}
+3119675188647b6e5d2587ab7bf076d0
+  scoreTest'1 :: GHC.Exception.SomeException
+  {- Unfolding: (Test.Tasty.HUnit.Orig.$fAssertableBool_$ctoException
+                   Language.FDL.Runner.scoreTest'2) -}
+161f38df5683a2718b82971784a348df
+  scoreTest'2 :: Test.Tasty.HUnit.Orig.HUnitFailure
+  {- Unfolding: (Test.Tasty.HUnit.Orig.HUnitFailure
+                   Language.FDL.Runner.scoreTest'3) -}
+982c8fcd359b0154393b91331f57f9d4
+  scoreTest'3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Wrong Result"#) -}
+03f052d801ba60cfa618cf57ce5e87c4
+  staticError :: a -> Data.Either.Either a b
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m1,
+     Unfolding: InlineRule (0, True, True) Data.Either.Left -}
+213fe99eefb66c1be82eaecb098f9528
+  timeLimit :: GHC.Types.Int
+  {- Unfolding: (case Language.FDL.Runner.$w$s^
+                        Language.FDL.Runner.timeLimit2
+                        Language.FDL.Runner.timeLimit1 of ww { DEFAULT ->
+                 GHC.Types.I# (GHC.Prim.*# 15 ww) }) -}
+62ff1419c94c66e4fee6b788eca802f1
+  timeLimit1 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (__integer 6) -}
+81524df5c96f2e3a088614c84a2d858a
+  timeLimit2 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10) -}
+1ab8e20c1b98e38bce9daa1ec95cf211
+  topMain :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.topMain1
+                  `cast`
+                (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+774ac5855f07a87ff9f005576a6853fc
+  topMain1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.Prim.catch#
+                   @ ()
+                   @ GHC.Exception.SomeException
+                   Language.FDL.Runner.runCompiler1
+                   Language.FDL.Runner.topMain2
+                   eta) -}
+1d0bcf329c1a0054629a627690e46b09
+  topMain2 ::
+    GHC.Exception.SomeException
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2,
+     Unfolding: (\ e1 :: GHC.Exception.SomeException[OneShot]
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case e1 of wild { GHC.Exception.SomeException e100 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e100 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e100>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e100) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case Language.FDL.UX.$fException[]10 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds5 ds6 ds7 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqWord# dt dt2) of wild3 {
+                   GHC.Types.False
+                   -> GHC.Prim.raiseIO# @ GHC.Exception.SomeException @ () wild eta
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqWord# dt1 dt3) of wild4 {
+                        GHC.Types.False
+                        -> GHC.Prim.raiseIO# @ GHC.Exception.SomeException @ () wild eta
+                        GHC.Types.True
+                        -> Language.FDL.Runner.esHandle1
+                             @ ()
+                             GHC.IO.Handle.FD.stderr
+                             (System.Exit.die2 @ ()) `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                             e2
+                               `cast`
+                             (UnivCo mkUnsafeCo representational e100 [Language.FDL.UX.UserError])
+                             eta } } } } }) -}
+d9e2901a078dbe6248fd70e857b4f694
+  updateCurrent ::
+    Language.FDL.Runner.Score -> GHC.Types.Int -> GHC.Types.IO ()
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,1*U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.mkTest'5
+                  `cast`
+                (<Language.FDL.Runner.Score>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+fce269baadd7818c433e443923131bf6
+  updateTotal ::
+    Language.FDL.Runner.Score -> GHC.Types.Int -> GHC.Types.IO ()
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,1*U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.Runner.updateTotal1
+                  `cast`
+                (<Language.FDL.Runner.Score>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+07fbce0c9ac3c5e81ea69326a15ee112
+  updateTotal1 ::
+    Language.FDL.Runner.Score
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,1*U(U)><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ sc :: Language.FDL.Runner.Score
+                   n :: GHC.Types.Int
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case sc
+                        `cast`
+                      (GHC.IORef.NTCo:IORef[0] <(GHC.Types.Int,
+                                                 GHC.Types.Int)>_N) of wild { GHC.STRef.STRef var# ->
+                 case GHC.Prim.readMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        var#
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.Prim.writeMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        var#
+                        (case ipv1 of wild1 { (,) x y -> (x, GHC.Num.$fNumInt_$c+ y n) })
+                        ipv of s2# { DEFAULT ->
+                 (# s2#, GHC.Tuple.() #) } } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

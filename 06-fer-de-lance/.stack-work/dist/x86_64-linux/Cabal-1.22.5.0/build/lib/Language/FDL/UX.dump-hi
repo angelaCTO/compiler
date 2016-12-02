@@ -1,0 +1,1306 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-01 01:48:43.828331 UTC
+
+interface fdl_FOF0zxZGtS19QRevSEc2DZ:Language.FDL.UX 7103
+  interface hash: 2a30c5fb7b9864f76c915246d10e96db
+  ABI hash: 8707e5ca884a685eb036e023b26c987f
+  export-list hash: a77ae1fdfcc531800d4d8c73083201f7
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9f6f33cc5f82b03d8c02264b57e74e20
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Language.FDL.UX.abort
+  Language.FDL.UX.junkSpan
+  Language.FDL.UX.mkError
+  Language.FDL.UX.panic
+  Language.FDL.UX.posSpan
+  Language.FDL.UX.readFileSpan
+  Language.FDL.UX.renderErrors
+  Language.FDL.UX.Located{Language.FDL.UX.sourceSpan}
+  Language.FDL.UX.PPrint{Language.FDL.UX.pprint}
+  Language.FDL.UX.Result
+  Language.FDL.UX.SourceSpan{Language.FDL.UX.SS Language.FDL.UX.ssBegin Language.FDL.UX.ssEnd}
+  Language.FDL.UX.Text
+  Language.FDL.UX.UserError{Language.FDL.UX.eMsg Language.FDL.UX.eSpan}
+module dependencies: Language.FDL.Utils
+package dependencies: array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      base-4.8.2.0 binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi
+                      bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6
+                      cmdargs-0.10.14@cmdar_3X5ZqkX9cRxBIIPeikYpqr
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
+                      directory-1.2.2.0@direc_0hFG6ZxK1nk4zsyOqbNHfm
+                      fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G
+                      filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m ghc-prim-0.4.0.0
+                      hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I integer-gmp-1.0.0.0
+                      megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      process-1.2.3.0@proce_52AgREEfSrnJLlkGV9YZZJ
+                      semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1
+                      tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6
+                      text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+                      unix-2.7.1.0@unix_KZL8h98IqDM57kQSPo1mKx
+                      unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         binary-0.7.5.0@binar_3uXFWMoAGBg0xKP9MHKRwi:Data.Binary.Generic
+         bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Builder
+         hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I:Data.Hashable.Generic
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Show
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntMap.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.IntSet.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Sequence
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.List.NonEmpty
+                         semigroups-0.18.1@semig_LaeT7FLzCl4KIQUoVrPYl1:Data.Semigroup
+                         tagged-0.8.4@tagge_LPeicl3HxVfGUMMwMEsAE6:Data.Tagged
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text
+                         text-1.2.2.1@text_HmqVQnZSpjaC156ABqPhne:Data.Text.Lazy
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
+                         unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
+import  -/  base-4.8.2.0:Control.Exception e9090e246fba030faecf7b81b3e8e320
+import  -/  base-4.8.2.0:Data.Either e8724afd65fd432cfe9a54014f5f762d
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:Data.Functor 5c701b0af1708f0192a25dfe14ce6274
+import  -/  base-4.8.2.0:Data.List 3f0782c8d4bf50eecefcd5ea1798aac8
+import  -/  base-4.8.2.0:Data.Monoid 85b292b52bfd80ed619cddb767d638d3
+import  -/  base-4.8.2.0:Data.OldList d8fd80b0e14aa085ce6219cd89dad356
+import  -/  base-4.8.2.0:Data.Traversable 7576318f4ef8587ad947f87012b65abf
+import  -/  base-4.8.2.0:Data.Typeable c3fcb0780ec05399195ad3277b18d294
+import  -/  base-4.8.2.0:Data.Typeable.Internal 76b09e88499fa4ff7869a34e89976afb
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Exception 18c46fe9c5c0c3a120035f264ef32d41
+import  -/  base-4.8.2.0:GHC.IO bb5b81adcea33b14bd4abe16d7dde45f
+import  -/  base-4.8.2.0:GHC.List 0c736920522bbd14b770342776012ab6
+import  -/  base-4.8.2.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
+import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
+import  -/  Language.FDL.Utils 081ad0bacfa681923d25df14b02a4b0e
+  exports: c216801eb3fe4dad9a12432d9f86632d
+  getRange f8284c4f82bf831d81fc4d70215f3932
+  safeHead 70cffb3e51499481572c2f2574d420f9
+  trimEnd 4fd27b3c26adad60ab74dc8bef3945b5
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec 57878a9baf8576ebbee675ee635c1996
+import  -/  megaparsec-4.4.0@megap_CZCwWw0q7PAKgwOD7BEUuh:Text.Megaparsec.Pos 2540586b968ba7421c57baf3e3177662
+25dbe2033af298b23f6146cc10053d6a
+  $fEqSourceSpan :: GHC.Classes.Eq Language.FDL.UX.SourceSpan
+  DFunId[0]
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.UX.SourceSpan
+                  Language.FDL.UX.$fEqSourceSpan_$c==
+                  Language.FDL.UX.$fEqSourceSpan_$c/= -}
+25dbe2033af298b23f6146cc10053d6a
+  $fEqSourceSpan_$c/= ::
+    Language.FDL.UX.SourceSpan
+    -> Language.FDL.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.FDL.UX.SourceSpan
+                   w1 :: Language.FDL.UX.SourceSpan ->
+                 case w of ww { Language.FDL.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.FDL.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.True
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.True
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.True
+                                       GHC.Types.True
+                                       -> case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.==# ww10 ww21) of wild5 {
+                                            GHC.Types.False -> GHC.Types.True
+                                            GHC.Types.True
+                                            -> GHC.Types.False } } } } } } } } } } } }) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fEqSourceSpan_$c== ::
+    Language.FDL.UX.SourceSpan
+    -> Language.FDL.UX.SourceSpan -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.FDL.UX.SourceSpan
+                   w1 :: Language.FDL.UX.SourceSpan ->
+                 case w of ww { Language.FDL.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.FDL.UX.SS ww12 ww13 ->
+                 case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                 case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                 case GHC.Base.eqString ww4 ww15 of wild {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.==# ww5 ww16) of wild1 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.==# ww6 ww17) of wild2 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.Base.eqString ww8 ww19 of wild3 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww9 ww20) of wild4 {
+                                       GHC.Types.False -> GHC.Types.False
+                                       GHC.Types.True
+                                       -> GHC.Prim.tagToEnum#
+                                            @ GHC.Types.Bool
+                                            (GHC.Prim.==# ww10 ww21) } } } } } } } } } } }) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[] ::
+    GHC.Exception.Exception [Language.FDL.UX.UserError]
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.FDL.UX.UserError]
+                  Language.FDL.UX.$fException[]21
+                  Language.FDL.UX.$fException[]20
+                  Language.FDL.UX.$fException[]_$ctoException
+                  Language.FDL.UX.$fException[]_$cfromException
+                  Language.FDL.UX.$fException[]_$cdisplayException -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]1 :: Language.FDL.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.FDL.UX.UserError
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.FDL.UX.Error ww1 ww2 ->
+                 case ww2 of ww3 { Language.FDL.UX.SS ww4 ww5 ->
+                 Language.FDL.UX.$w$cshowsPrec 0 ww1 ww4 ww5 w1 } }) -}
+3f556758d6b4bc42b806965afd484bb8
+  $fException[]10 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (case Language.FDL.UX.$fException[]_w1 of wild2 {
+                   []
+                   -> Data.Typeable.Internal.TypeRep
+                        __word 17730107610217102821
+                        __word 9866972337190828755
+                        Language.FDL.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   : ipv ipv1
+                   -> case GHC.Fingerprint.fingerprintFingerprints
+                             Language.FDL.UX.$fException[]11 of dt { GHC.Fingerprint.Type.Fingerprint dt1 dt2 ->
+                      Data.Typeable.Internal.TypeRep
+                        dt1
+                        dt2
+                        Language.FDL.UX.$fException[]_wild
+                        (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                        wild2 } }) -}
+d0dcc08af350d4ad3060f39020e8c3bf
+  $fException[]11 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Fingerprint.Type.Fingerprint
+                   Language.FDL.UX.$fException[]13
+                   Language.FDL.UX.$fException[]12) -}
+ac8481ff27d271cac068dd43833de074
+  $fException[]12 :: [GHC.Fingerprint.Type.Fingerprint]
+  {- Unfolding: (Language.FDL.UX.$fException[]_go
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)) -}
+d83e494a618dca19024a574dc1743982
+  $fException[]13 :: GHC.Fingerprint.Type.Fingerprint
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Fingerprint.Type.Fingerprint
+                   __word 17730107610217102821
+                   __word 9866972337190828755) -}
+8435247477d4fe7b9968744f812b2e42
+  $fException[]14 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Types.:
+                   @ Data.Typeable.Internal.TypeRep
+                   Language.FDL.UX.$fException[]15
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+d9c827683ce8cd3c0837616476d7caec
+  $fException[]15 :: Data.Typeable.Internal.TypeRep
+  {- Unfolding: (Data.Typeable.Internal.TypeRep
+                   __word 15095013167072732742
+                   __word 10776111952799598224
+                   Language.FDL.UX.$fException[]16
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+735de07d47f44e3a461a47e3d306e0e5
+  $fException[]16 :: Data.Typeable.Internal.TyCon
+  {- Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 15095013167072732742
+                   __word 10776111952799598224
+                   Language.FDL.UX.$fException[]19
+                   Language.FDL.UX.$fException[]18
+                   Language.FDL.UX.$fException[]17) -}
+ccb830cb0f28f7f98d72565d3aaf3ce8
+  $fException[]17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "UserError"#) -}
+94b3c7aa79289abfd472e35eb857c3a8
+  $fException[]18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Language.FDL.UX"#) -}
+560da887c29ab926f84f8eaf62524db9
+  $fException[]19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "fdl_FOF0zxZGtS19QRevSEc2DZ"#) -}
+323e55ae055f2b2ee85771684bef9c31
+  $fException[]2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]20 :: GHC.Show.Show [Language.FDL.UX.UserError]
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.UX.$fException[]_$s$fShow[] -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]21 ::
+    Data.Typeable.Internal.Typeable [Language.FDL.UX.UserError]
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.UX.$fException[]22
+                  `cast`
+                (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                          <*>_N <[Language.FDL.UX.UserError]>_N)) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]22 ::
+    GHC.Prim.Proxy# [Language.FDL.UX.UserError]
+    -> Data.Typeable.Internal.TypeRep
+  {- Arity: 1, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ wild :: GHC.Prim.Proxy# [Language.FDL.UX.UserError] ->
+                 Language.FDL.UX.$fException[]10) -}
+595ff38c7a4a4faaf2292974a258788f
+  $fException[]3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssEnd = "#) -}
+6af5fb2db68f13a51e31608832bddde9
+  $fException[]4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+65e7a81cc9b49a1dc0a5f4ff7824c8f2
+  $fException[]5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ssBegin = "#) -}
+4591e88fbb794cb2d5f5751109a1ee36
+  $fException[]6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "SS {"#) -}
+c9e395feec1032834d7807aa10894c99
+  $fException[]7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eSpan = "#) -}
+03c27d7df5e841dd45d479a339c1d275
+  $fException[]8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "eMsg = "#) -}
+7d4650aa83e2dfea26425b3dedb59918
+  $fException[]9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Error {"#) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$cdisplayException ::
+    [Language.FDL.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.UX.$fException[]_$s$fShow[]_$cshow -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$cfromException ::
+    GHC.Exception.SomeException
+    -> GHC.Base.Maybe [Language.FDL.UX.UserError]
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ eta :: GHC.Exception.SomeException ->
+                 case eta of wild { GHC.Exception.SomeException e10 $dException1 e2 ->
+                 case (GHC.Exception.$p1Exception @ e10 $dException1)
+                        `cast`
+                      (Data.Typeable.Internal.NTCo:Typeable[0] <*>_N <e10>_N)
+                        (GHC.Prim.proxy#
+                           @ *
+                           @ e10) of wild1 { Data.Typeable.Internal.TypeRep dt dt1 ds2 ds3 ds4 ->
+                 case Language.FDL.UX.$fException[]10 of wild2 { Data.Typeable.Internal.TypeRep dt2 dt3 ds5 ds6 ds7 ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.eqWord# dt dt2) of wild3 {
+                   GHC.Types.False -> GHC.Base.Nothing @ [Language.FDL.UX.UserError]
+                   GHC.Types.True
+                   -> case GHC.Prim.tagToEnum#
+                             @ GHC.Types.Bool
+                             (GHC.Prim.eqWord# dt1 dt3) of wild4 {
+                        GHC.Types.False -> GHC.Base.Nothing @ [Language.FDL.UX.UserError]
+                        GHC.Types.True
+                        -> GHC.Base.Just
+                             @ [Language.FDL.UX.UserError]
+                             e2
+                               `cast`
+                             (UnivCo mkUnsafeCo representational e10 [Language.FDL.UX.UserError]) } } } } }) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$cshowList ::
+    [Language.FDL.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.UX.UserError
+                   Language.FDL.UX.$fException[]1) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$ctoException ::
+    [Language.FDL.UX.UserError] -> GHC.Exception.SomeException
+  {- Arity: 1 -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$s$fShow[] ::
+    GHC.Show.Show [Language.FDL.UX.UserError]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ [Language.FDL.UX.UserError]
+                  Language.FDL.UX.$fException[]_$s$fShow[]_$cshowsPrec
+                  Language.FDL.UX.$fException[]_$s$fShow[]_$cshow
+                  Language.FDL.UX.$fException[]_$s$fShow[]_$cshowList -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$s$fShow[]_$cshow ::
+    [Language.FDL.UX.UserError] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: [Language.FDL.UX.UserError] ->
+                 Language.FDL.UX.$fException[]_$cshowList
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$s$fShow[]_$cshowList ::
+    [[Language.FDL.UX.UserError]] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: [[Language.FDL.UX.UserError]] eta1 :: GHC.Base.String ->
+                 GHC.Show.showList__
+                   @ [Language.FDL.UX.UserError]
+                   Language.FDL.UX.$fException[]_$cshowList
+                   eta
+                   eta1) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fException[]_$s$fShow[]_$cshowsPrec ::
+    GHC.Types.Int -> [Language.FDL.UX.UserError] -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ ds :: GHC.Types.Int
+                   eta :: [Language.FDL.UX.UserError]
+                   eta1 :: GHC.Base.String ->
+                 Language.FDL.UX.$fException[]_$cshowList eta eta1) -}
+aad555d11b05eb9fd4febe0cfb5af70c
+  $fException[]_go ::
+    [Data.Typeable.Internal.TypeRep]
+    -> [GHC.Fingerprint.Type.Fingerprint]
+  {- Arity: 1, Strictness: <S,1*U> -}
+c860fac8d46eb11bd135035bf55f04da
+  $fException[]_w1 :: [Data.Typeable.Internal.TypeRep]
+  {- Unfolding: (GHC.Base.++
+                   @ Data.Typeable.Internal.TypeRep
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                   Language.FDL.UX.$fException[]14) -}
+a3632e7ba3d7a1a1b8c8253e6f97c13d
+  $fException[]_wild :: Data.Typeable.Internal.TyCon
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 17730107610217102821
+                   __word 9866972337190828755
+                   Language.FDL.UX.$fException[]_ww2
+                   Language.FDL.UX.$fException[]_ww3
+                   Language.FDL.UX.$fException[]_ww4) -}
+14cd47c974eacd010d551c130991592c
+  $fException[]_ww2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "ghc-prim"#) -}
+b13848efef4cc61c05e4212eaab7f714
+  $fException[]_ww3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "GHC.Types"#) -}
+0a95256ec6295f7382fa064099a8b443
+  $fException[]_ww4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "[]"#) -}
+6aa77917a2f60fd12659009ee2082e98
+  $fLocatedUserError ::
+    Language.FDL.UX.Located Language.FDL.UX.UserError
+  DFunId[0]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.UX.eSpan
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:Located[0]
+                          <Language.FDL.UX.UserError>_N)) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fMonoidSourceSpan :: GHC.Base.Monoid Language.FDL.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.UX.SourceSpan
+                  Language.FDL.UX.junkSpan
+                  Language.FDL.UX.$fMonoidSourceSpan_$cmappend
+                  Language.FDL.UX.$fMonoidSourceSpan_$cmconcat -}
+25dbe2033af298b23f6146cc10053d6a
+  $fMonoidSourceSpan_$cmappend ::
+    Language.FDL.UX.SourceSpan
+    -> Language.FDL.UX.SourceSpan -> Language.FDL.UX.SourceSpan
+  {- Arity: 2,
+     Strictness: <S(S(SLL)S),1*U(U(U,U,U),U(U,U,U))><S,1*U(U(U,U,U),U(U,U,U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Language.FDL.UX.SourceSpan
+                   w1 :: Language.FDL.UX.SourceSpan ->
+                 case w of ww { Language.FDL.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 case w1 of ww11 { Language.FDL.UX.SS ww12 ww13 ->
+                 case GHC.Base.eqString
+                        ww4
+                        Language.FDL.UX.$fMonoidSourceSpan_dt of wild {
+                   GHC.Types.False
+                   -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                      case GHC.Base.eqString
+                             ww15
+                             Language.FDL.UX.$fMonoidSourceSpan_dt of wild1 {
+                        GHC.Types.False
+                        -> Language.FDL.UX.SS
+                             (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                             ww13
+                        GHC.Types.True
+                        -> case ww16 of wild2 {
+                             DEFAULT
+                             -> Language.FDL.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                  ww13
+                             1
+                             -> case ww17 of wild3 {
+                                  DEFAULT
+                                  -> Language.FDL.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                       ww13
+                                  1
+                                  -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                     case GHC.Base.eqString
+                                            ww19
+                                            Language.FDL.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.FDL.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                            ww18
+                                       GHC.Types.True
+                                       -> case ww20 of wild5 {
+                                            DEFAULT
+                                            -> Language.FDL.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                 ww18
+                                            1
+                                            -> case ww21 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      ww18
+                                                 1
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6)
+                                                      (Text.Megaparsec.Pos.SourcePos
+                                                         ww8
+                                                         ww9
+                                                         ww10) } } } } } } } }
+                   GHC.Types.True
+                   -> case ww5 of wild1 {
+                        DEFAULT
+                        -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                           case GHC.Base.eqString
+                                  ww15
+                                  Language.FDL.UX.$fMonoidSourceSpan_dt of wild2 {
+                             GHC.Types.False
+                             -> Language.FDL.UX.SS
+                                  (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                  ww13
+                             GHC.Types.True
+                             -> case ww16 of wild3 {
+                                  DEFAULT
+                                  -> Language.FDL.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                       ww13
+                                  1
+                                  -> case ww17 of wild4 {
+                                       DEFAULT
+                                       -> Language.FDL.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                            ww13
+                                       1
+                                       -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                          case GHC.Base.eqString
+                                                 ww19
+                                                 Language.FDL.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.FDL.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                 ww18
+                                            GHC.Types.True
+                                            -> case ww20 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 wild1 ww6)
+                                                      ww18
+                                                 1
+                                                 -> case ww21 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           ww18
+                                                      1
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              wild1
+                                                              ww6)
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww8
+                                                              ww9
+                                                              ww10) } } } } } } } }
+                        1
+                        -> case ww6 of wild2 {
+                             DEFAULT
+                             -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                case GHC.Base.eqString
+                                       ww15
+                                       Language.FDL.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> Language.FDL.UX.SS
+                                       (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                       ww13
+                                  GHC.Types.True
+                                  -> case ww16 of wild4 {
+                                       DEFAULT
+                                       -> Language.FDL.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                            ww13
+                                       1
+                                       -> case ww17 of wild5 {
+                                            DEFAULT
+                                            -> Language.FDL.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                 ww13
+                                            1
+                                            -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                               case GHC.Base.eqString
+                                                      ww19
+                                                      Language.FDL.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 wild2)
+                                                      ww18
+                                                 GHC.Types.True
+                                                 -> case ww20 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos
+                                                              ww4
+                                                              1
+                                                              wild2)
+                                                           ww18
+                                                      1
+                                                      -> case ww21 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.FDL.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                ww18
+                                                           1
+                                                           -> Language.FDL.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   wild2)
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww8
+                                                                   ww9
+                                                                   ww10) } } } } } } } }
+                             1
+                             -> case GHC.Base.eqString
+                                       ww8
+                                       Language.FDL.UX.$fMonoidSourceSpan_dt of wild3 {
+                                  GHC.Types.False
+                                  -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                     case GHC.Base.eqString
+                                            ww15
+                                            Language.FDL.UX.$fMonoidSourceSpan_dt of wild4 {
+                                       GHC.Types.False
+                                       -> Language.FDL.UX.SS
+                                            (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                            ww13
+                                       GHC.Types.True
+                                       -> case ww16 of wild5 {
+                                            DEFAULT
+                                            -> Language.FDL.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            1
+                                            -> case ww17 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                    case GHC.Base.eqString
+                                                           ww19
+                                                           Language.FDL.UX.$fMonoidSourceSpan_dt of wild7 {
+                                                      GHC.Types.False
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww18
+                                                      GHC.Types.True
+                                                      -> case ww20 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.FDL.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           1
+                                                           -> case ww21 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.FDL.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> Language.FDL.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww8
+                                                                        ww9
+                                                                        ww10) } } } } } } } }
+                                  GHC.Types.True
+                                  -> case ww9 of wild4 {
+                                       DEFAULT
+                                       -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                          case GHC.Base.eqString
+                                                 ww15
+                                                 Language.FDL.UX.$fMonoidSourceSpan_dt of wild5 {
+                                            GHC.Types.False
+                                            -> Language.FDL.UX.SS
+                                                 (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                 ww13
+                                            GHC.Types.True
+                                            -> case ww16 of wild6 {
+                                                 DEFAULT
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 1
+                                                 -> case ww17 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                         case GHC.Base.eqString
+                                                                ww19
+                                                                Language.FDL.UX.$fMonoidSourceSpan_dt of wild8 {
+                                                           GHC.Types.False
+                                                           -> Language.FDL.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww18
+                                                           GHC.Types.True
+                                                           -> case ww20 of wild9 {
+                                                                DEFAULT
+                                                                -> Language.FDL.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                1
+                                                                -> case ww21 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.FDL.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> Language.FDL.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww8
+                                                                             wild4
+                                                                             ww10) } } } } } } } }
+                                       1
+                                       -> case ww10 of wild5 {
+                                            DEFAULT
+                                            -> case ww12 of ww14 { Text.Megaparsec.Pos.SourcePos ww15 ww16 ww17 ->
+                                               case GHC.Base.eqString
+                                                      ww15
+                                                      Language.FDL.UX.$fMonoidSourceSpan_dt of wild6 {
+                                                 GHC.Types.False
+                                                 -> Language.FDL.UX.SS
+                                                      (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                      ww13
+                                                 GHC.Types.True
+                                                 -> case ww16 of wild7 {
+                                                      DEFAULT
+                                                      -> Language.FDL.UX.SS
+                                                           (Text.Megaparsec.Pos.SourcePos ww4 1 1)
+                                                           ww13
+                                                      1
+                                                      -> case ww17 of wild8 {
+                                                           DEFAULT
+                                                           -> Language.FDL.UX.SS
+                                                                (Text.Megaparsec.Pos.SourcePos
+                                                                   ww4
+                                                                   1
+                                                                   1)
+                                                                ww13
+                                                           1
+                                                           -> case ww13 of ww18 { Text.Megaparsec.Pos.SourcePos ww19 ww20 ww21 ->
+                                                              case GHC.Base.eqString
+                                                                     ww19
+                                                                     Language.FDL.UX.$fMonoidSourceSpan_dt of wild9 {
+                                                                GHC.Types.False
+                                                                -> Language.FDL.UX.SS
+                                                                     (Text.Megaparsec.Pos.SourcePos
+                                                                        ww4
+                                                                        1
+                                                                        1)
+                                                                     ww18
+                                                                GHC.Types.True
+                                                                -> case ww20 of wild10 {
+                                                                     DEFAULT
+                                                                     -> Language.FDL.UX.SS
+                                                                          (Text.Megaparsec.Pos.SourcePos
+                                                                             ww4
+                                                                             1
+                                                                             1)
+                                                                          ww18
+                                                                     1
+                                                                     -> case ww21 of wild11 {
+                                                                          DEFAULT
+                                                                          -> Language.FDL.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               ww18
+                                                                          1
+                                                                          -> Language.FDL.UX.SS
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww4
+                                                                                  1
+                                                                                  1)
+                                                                               (Text.Megaparsec.Pos.SourcePos
+                                                                                  ww8
+                                                                                  1
+                                                                                  wild5) } } } } } } } }
+                                            1
+                                            -> Language.FDL.UX.SS ww12 ww13 } } } } } } } } } }) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fMonoidSourceSpan_$cmconcat ::
+    [Language.FDL.UX.SourceSpan] -> Language.FDL.UX.SourceSpan
+  {- Arity: 1, Strictness: <S,1*U>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: [Language.FDL.UX.SourceSpan] ->
+                 case Language.FDL.UX.$wgo w of ww { (#,#) ww1 ww2 ->
+                 Language.FDL.UX.SS ww1 ww2 }) -}
+84d808c129066835eea5a6a5568488e5
+  $fMonoidSourceSpan_dt :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "unknown"#) -}
+550306f7d7ca122adcca5fc1341331f8
+  $fPPrintSourceSpan ::
+    Language.FDL.UX.PPrint Language.FDL.UX.SourceSpan
+  DFunId[0]
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE (sat-args=0),
+     Unfolding: InlineRule (0, False, True)
+                Language.FDL.UX.$fPPrintSourceSpan_$cpprint
+                  `cast`
+                (Sym (Language.FDL.UX.NTCo:PPrint[0]
+                          <Language.FDL.UX.SourceSpan>_N)) -}
+5881d2a78b9a2741462f624e72b29254
+  $fPPrintSourceSpan_$cpprint ::
+    Language.FDL.UX.SourceSpan -> Language.FDL.UX.Text
+  {- Arity: 1,
+     Strictness: <S(S(SLL)S(SLL)),1*U(U(U,U,U),U(1*H,U,U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: Language.FDL.UX.SourceSpan ->
+                 case w of ww { Language.FDL.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.FDL.UX.$w$cpprint ww4 ww5 ww6 ww8 ww9 ww10 } } }) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fShowSourceSpan :: GHC.Show.Show Language.FDL.UX.SourceSpan
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.UX.SourceSpan
+                  Language.FDL.UX.$fShowSourceSpan_$cshowsPrec
+                  Language.FDL.UX.$fShowSourceSpan_$cshow
+                  Language.FDL.UX.$fShowSourceSpan_$cshowList -}
+25dbe2033af298b23f6146cc10053d6a
+  $fShowSourceSpan1 :: Language.FDL.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ w :: Language.FDL.UX.SourceSpan
+                   w1 :: GHC.Base.String ->
+                 case w of ww { Language.FDL.UX.SS ww1 ww2 ->
+                 case ww1 of ww3 { Text.Megaparsec.Pos.SourcePos ww4 ww5 ww6 ->
+                 case ww2 of ww7 { Text.Megaparsec.Pos.SourcePos ww8 ww9 ww10 ->
+                 Language.FDL.UX.$w$cshowsPrec1
+                   0
+                   ww4
+                   ww5
+                   ww6
+                   ww8
+                   ww9
+                   ww10
+                   w1 } } }) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fShowSourceSpan_$cshow ::
+    Language.FDL.UX.SourceSpan -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U(U,U,U),U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.FDL.UX.SourceSpan ->
+                 Language.FDL.UX.$fShowSourceSpan_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fShowSourceSpan_$cshowList ::
+    [Language.FDL.UX.SourceSpan] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Language.FDL.UX.SourceSpan
+                   Language.FDL.UX.$fShowSourceSpan1) -}
+25dbe2033af298b23f6146cc10053d6a
+  $fShowSourceSpan_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.UX.SourceSpan -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U(U,U,U),U(U,U,U))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.UX.SourceSpan
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.FDL.UX.SS ww3 ww4 ->
+                 case ww3 of ww5 { Text.Megaparsec.Pos.SourcePos ww6 ww7 ww8 ->
+                 case ww4 of ww9 { Text.Megaparsec.Pos.SourcePos ww10 ww11 ww12 ->
+                 Language.FDL.UX.$w$cshowsPrec1
+                   ww1
+                   ww6
+                   ww7
+                   ww8
+                   ww10
+                   ww11
+                   ww12
+                   w2 } } } }) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fShowUserError :: GHC.Show.Show Language.FDL.UX.UserError
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Language.FDL.UX.UserError
+                  Language.FDL.UX.$fShowUserError_$cshowsPrec
+                  Language.FDL.UX.$fShowUserError_$cshow
+                  Language.FDL.UX.$fException[]_$cshowList -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fShowUserError_$cshow ::
+    Language.FDL.UX.UserError -> GHC.Base.String
+  {- Arity: 1, Strictness: <S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: Language.FDL.UX.UserError ->
+                 Language.FDL.UX.$fShowUserError_$cshowsPrec
+                   GHC.Show.shows18
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+cbf9f6458b5acfddf7d6304b825f0bf1
+  $fShowUserError_$cshowsPrec ::
+    GHC.Types.Int -> Language.FDL.UX.UserError -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S,1*U(U)><S(SS),1*U(U,U(U(U,U,U),U(U,U,U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: Language.FDL.UX.UserError
+                   w2 :: GHC.Base.String ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Language.FDL.UX.Error ww3 ww4 ->
+                 case ww4 of ww5 { Language.FDL.UX.SS ww6 ww7 ->
+                 Language.FDL.UX.$w$cshowsPrec ww1 ww3 ww6 ww7 w2 } } }) -}
+db9c328761ced700509ed85a0cbfe475
+  $s$fPrintfArg[]1 :: [GHC.Types.Char] -> Text.Printf.ModifierParser
+  {- Arity: 2, Strictness: <L,A><S,1*U>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ ds1 :: [GHC.Types.Char] ds2 :: [GHC.Types.Char] ->
+                 case ds2 of wild {
+                   [] -> Text.Printf.errorShortFormat @ Text.Printf.FormatParse
+                   : c1 cs
+                   -> Text.Printf.FormatParse
+                        (GHC.Types.[] @ GHC.Types.Char)
+                        c1
+                        cs }) -}
+5e0f3419329eadcef3a5e4dc8407a194
+  $sprintf3 ::
+    GHC.Base.String -> [Text.Printf.UPrintf] -> [GHC.Types.Char]
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ fmts :: GHC.Base.String
+                   args :: [Text.Printf.UPrintf] ->
+                 GHC.Base.map
+                   @ GHC.Types.Char
+                   @ GHC.Types.Char
+                   Text.Printf.$fIsCharChar_$cfromChar
+                   (Text.Printf.uprintfs
+                      fmts
+                      (GHC.List.reverse1
+                         @ Text.Printf.UPrintf
+                         args
+                         (GHC.Types.[] @ Text.Printf.UPrintf))
+                      (GHC.Types.[] @ GHC.Types.Char))) -}
+d054c93f0322f32d2f2bf50350be2a35
+  $w$cpprint ::
+    GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+  {- Arity: 6, Strictness: <S,U><L,U><L,U><S,1*H><L,U><L,U>,
+     Inline: [0] -}
+1c44415e3581348092c1ff9cfd2158de
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Language.FDL.UX.Text
+    -> Text.Megaparsec.Pos.SourcePos
+    -> Text.Megaparsec.Pos.SourcePos
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5, Strictness: <L,U><S,U><L,U(U,U,U)><L,U(U,U,U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: Language.FDL.UX.Text
+                   ww2 :: Text.Megaparsec.Pos.SourcePos
+                   ww3 :: Text.Megaparsec.Pos.SourcePos
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.FDL.UX.$fException[]9
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.FDL.UX.$fException[]8
+                          (GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows6
+                             (GHC.Show.showLitString
+                                ww1
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows6
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      Language.FDL.UX.$fException[]4
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.FDL.UX.$fException[]7
+                                         (case ww2 of ww4 { Text.Megaparsec.Pos.SourcePos ww5 ww6 ww7 ->
+                                          case ww3 of ww8 { Text.Megaparsec.Pos.SourcePos ww9 ww10 ww11 ->
+                                          Language.FDL.UX.$w$cshowsPrec1
+                                            0
+                                            ww5
+                                            ww6
+                                            ww7
+                                            ww9
+                                            ww10
+                                            ww11
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Language.FDL.UX.$fException[]2
+                                               x) } })))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+372bdc997eb09aa6c36b27aecff86a1e
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.Int#
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 8, Strictness: <L,U><L,U><L,U><L,U><L,U><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   ww1 :: GHC.Base.String
+                   ww2 :: GHC.Prim.Int#
+                   ww3 :: GHC.Prim.Int#
+                   ww4 :: GHC.Base.String
+                   ww5 :: GHC.Prim.Int#
+                   ww6 :: GHC.Prim.Int#
+                   w :: GHC.Base.String ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ x :: GHC.Base.String[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Language.FDL.UX.$fException[]6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Language.FDL.UX.$fException[]5
+                          (GHC.Base.++
+                             @ GHC.Types.Char
+                             (Text.Megaparsec.Pos.$w$cshow ww1 ww2 ww3)
+                             (GHC.Base.++
+                                @ GHC.Types.Char
+                                Language.FDL.UX.$fException[]4
+                                (GHC.Base.++
+                                   @ GHC.Types.Char
+                                   Language.FDL.UX.$fException[]3
+                                   (GHC.Base.++
+                                      @ GHC.Types.Char
+                                      (Text.Megaparsec.Pos.$w$cshow ww4 ww5 ww6)
+                                      (GHC.Base.++
+                                         @ GHC.Types.Char
+                                         Language.FDL.UX.$fException[]2
+                                         x))))))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows8 w)) }) -}
+25dbe2033af298b23f6146cc10053d6a
+  $wgo ::
+    [Language.FDL.UX.SourceSpan]
+    -> (# Text.Megaparsec.Pos.SourcePos,
+          Text.Megaparsec.Pos.SourcePos #)
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0] -}
+6aa77917a2f60fd12659009ee2082e98
+  class Located a where
+    sourceSpan :: a -> Language.FDL.UX.SourceSpan
+550306f7d7ca122adcca5fc1341331f8
+  class PPrint a where
+    pprint :: a -> Language.FDL.UX.Text
+8895a0b3bf4fb84b83535c0fa3c17e55
+  type Result a = Data.Either.Either [Language.FDL.UX.UserError] a
+25dbe2033af298b23f6146cc10053d6a
+  data SourceSpan
+    = SS {ssBegin :: !Text.Megaparsec.Pos.SourcePos,
+          ssEnd :: !Text.Megaparsec.Pos.SourcePos}
+36edf686d4c19aef752632644eaef928
+  type Text = GHC.Base.String
+cbf9f6458b5acfddf7d6304b825f0bf1
+  data UserError
+    = Error {eMsg :: !Language.FDL.UX.Text,
+             eSpan :: !Language.FDL.UX.SourceSpan}
+e685a5de69f8514dc89412e2840327f4
+  abort :: Language.FDL.UX.UserError -> b
+  {- Arity: 1, Strictness: <L,U>b -}
+d9c2fe79fe1617387f271c4ef95c24ca
+  eMsg :: Language.FDL.UX.UserError -> Language.FDL.UX.Text
+  RecSel Language.FDL.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U,1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.UX.UserError ->
+                 case ds of wild { Language.FDL.UX.Error ds1 ds2 -> ds1 }) -}
+44dabda1e0c054131bb92621b3c7e20f
+  eSpan :: Language.FDL.UX.UserError -> Language.FDL.UX.SourceSpan
+  RecSel Language.FDL.UX.UserError
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.UX.UserError ->
+                 case ds of wild { Language.FDL.UX.Error ds1 ds2 -> ds2 }) -}
+25dbe2033af298b23f6146cc10053d6a
+  junkSpan :: Language.FDL.UX.SourceSpan
+  {- Strictness: m,
+     Unfolding: (Language.FDL.UX.SS
+                   Language.FDL.UX.junkSpan1
+                   Language.FDL.UX.junkSpan1) -}
+69291f1969484e441ba98dd5447427ff
+  junkSpan1 :: Text.Megaparsec.Pos.SourcePos
+  {- Strictness: m,
+     Unfolding: (Text.Megaparsec.Pos.SourcePos
+                   Language.FDL.UX.$fMonoidSourceSpan_dt
+                   1
+                   1) -}
+0af8d0ed9891f48d3cb8ae96c2f02767
+  mkError ::
+    Language.FDL.UX.Text
+    -> Language.FDL.UX.SourceSpan -> Language.FDL.UX.UserError
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>m,
+     Unfolding: InlineRule (0, True, True) Language.FDL.UX.$WError -}
+300f7c2cd9c122be7c1a5349ddd583fd
+  panic :: GHC.Base.String -> Language.FDL.UX.SourceSpan -> a
+  {- Arity: 2, Strictness: <L,U><L,U>b -}
+9eb244da8f34729d2d59b9aadce095ff
+  posSpan ::
+    Text.Megaparsec.Pos.SourcePos -> Language.FDL.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ p :: Text.Megaparsec.Pos.SourcePos ->
+                 Language.FDL.UX.$WSS p p) -}
+0f58b35daf1010f84e0fe61ae5aaa216
+  readFileSpan ::
+    Language.FDL.UX.SourceSpan -> GHC.Types.IO GHC.Base.String
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.UX.readFileSpan1
+                  `cast`
+                (<Language.FDL.UX.SourceSpan>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <GHC.Base.String>_R)) -}
+69ec0117ea96910e52c783ae19037555
+  readFileSpan1 ::
+    Language.FDL.UX.SourceSpan
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
+  {- Arity: 2, Strictness: <L,U(U(U,U,U),U(1*H,U,U))><L,U> -}
+e93be96692182b03d055b190feed6011
+  renderErrors ::
+    [Language.FDL.UX.UserError] -> GHC.Types.IO Language.FDL.UX.Text
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Language.FDL.UX.renderErrors1
+                  `cast`
+                (<[Language.FDL.UX.UserError]>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <Language.FDL.UX.Text>_R)) -}
+1135fd08da28a9027d02d3f9ee03a310
+  renderErrors1 ::
+    [Language.FDL.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Language.FDL.UX.Text #)
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ es :: [Language.FDL.UX.UserError]
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Language.FDL.UX.renderErrors4 es s of ds1 { (#,#) ipv ipv1 ->
+                 (# ipv,
+                    Data.OldList.intercalate_$spoly_go
+                      @ GHC.Types.Char
+                      Language.FDL.UX.renderErrors3
+                      (Data.OldList.prependToAll
+                         @ [GHC.Types.Char]
+                         Language.FDL.UX.renderErrors2
+                         ipv1) #) }) -}
+6bdd9aa4611e8c495e711ee9827a111b
+  renderErrors2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "\n"#) -}
+5f5b48732bc7c9c5d0e190f649562034
+  renderErrors3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Errors found!"#) -}
+4f9eba9e068cea09d94dbc7aaca8b8be
+  renderErrors4 ::
+    [Language.FDL.UX.UserError]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [Language.FDL.UX.Text] #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+6ff2f64091fd3c72ece40561746c3fa7
+  ssBegin ::
+    Language.FDL.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.FDL.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(U(U,U,U),1*H)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.UX.SourceSpan ->
+                 case ds of wild { Language.FDL.UX.SS ds1 ds2 -> ds1 }) -}
+695bf44d9cc078723910de6884daedc5
+  ssEnd ::
+    Language.FDL.UX.SourceSpan -> Text.Megaparsec.Pos.SourcePos
+  RecSel Language.FDL.UX.SourceSpan
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SS),1*U(1*H,U(U,U,U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Language.FDL.UX.SourceSpan ->
+                 case ds of wild { Language.FDL.UX.SS ds1 ds2 -> ds2 }) -}
+instance GHC.Classes.Eq [Language.FDL.UX.SourceSpan]
+  = Language.FDL.UX.$fEqSourceSpan
+instance GHC.Exception.Exception [[]]
+  = Language.FDL.UX.$fException[]
+instance Language.FDL.UX.Located [Language.FDL.UX.UserError]
+  = Language.FDL.UX.$fLocatedUserError
+instance GHC.Base.Monoid [Language.FDL.UX.SourceSpan]
+  = Language.FDL.UX.$fMonoidSourceSpan
+instance Language.FDL.UX.PPrint [Language.FDL.UX.SourceSpan]
+  = Language.FDL.UX.$fPPrintSourceSpan
+instance GHC.Show.Show [Language.FDL.UX.SourceSpan]
+  = Language.FDL.UX.$fShowSourceSpan
+instance GHC.Show.Show [Language.FDL.UX.UserError]
+  = Language.FDL.UX.$fShowUserError
+"SPEC/Language.FDL.UX $fShow[] @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                        Language.FDL.UX.UserError
+  GHC.Show.$fShow[] @ Language.FDL.UX.UserError $dShow
+  = Language.FDL.UX.$fException[]_$s$fShow[]
+"SPEC/Language.FDL.UX $fShow[]_$cshow @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                               Language.FDL.UX.UserError
+  GHC.Show.$fShow[]_$cshow @ Language.FDL.UX.UserError $dShow
+  = Language.FDL.UX.$fException[]_$s$fShow[]_$cshow
+"SPEC/Language.FDL.UX $fShow[]_$cshowList @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                   Language.FDL.UX.UserError
+  GHC.Show.$fShow[]_$cshowList @ Language.FDL.UX.UserError $dShow
+  = Language.FDL.UX.$fException[]_$s$fShow[]_$cshowList
+"SPEC/Language.FDL.UX $fShow[]_$cshowsPrec @ UserError" [ALWAYS] forall $dShow :: GHC.Show.Show
+                                                                                    Language.FDL.UX.UserError
+  GHC.Show.$fShow[]_$cshowsPrec @ Language.FDL.UX.UserError $dShow
+  = Language.FDL.UX.$fException[]_$s$fShow[]_$cshowsPrec
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

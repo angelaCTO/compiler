@@ -80,7 +80,7 @@ freeVars e = S.toList(go e)
     go (If e e1 e2 _)  = S.unions [go e, go e1, go e2]
     go (App e es _)    = S.unions (map go (e:es))
     go (Let x e1 e2 _) = S.union  (go e1) (S.delete (bindId x) (go e2))
-    go (Lam xs e _)    = S.difference (go e) (S.fromList (map bindId xs)) 
+    go (Lam xs e _)    = S.difference (go e) (S.fromList ((map bindId xs)))
     go (Fun x xs e _)  = S.difference (go e) (S.fromList ((bindId x):(map bindId xs))) 
     go (Prim1 _ v _)   = go v
     go (Prim2 _ e1 e2 _ ) = S.unions [go e1, go e2]
@@ -163,6 +163,13 @@ lambdaBody ys xs e = funInstr maxStack (restore ys ++ compileEnv env e)
     bs       = zip xs  [-2,-3..] ++      --put params into env/stack
                zip ys  [1..]             --then, put free-vars into env/stack
         
+	
+lambdaBodyAnon ys xs e = funInstr maxStack (restore ys ++ compileEnv env e)
+  where
+    maxStack = envMax env + countVars e  -- max stack size
+    env      = fromListEnv bs      
+    bs       = zip xs  [-3,-4..] ++      --put params into env/stack
+               zip ys  [1..]             --then, put free-vars into env/stack
         
 -- | restores: variables onto the stack when function called (access values)
 restore :: [Id] -> [Instruction]
@@ -224,7 +231,7 @@ compileEnv env (App v vs l) = apply l env v vs
 compileEnv env (Lam xs e l) = 
         IJmp   end                      :               
         ILabel start                    :                    
-        lambdaBody ys xs' e              ++            
+        lambdaBodyAnon ys xs' e              ++            
         ILabel end                      :                      
         lamTuple bogusTag arity start env ys      
     where
@@ -245,7 +252,8 @@ compileEnv env (Lam xs e l) =
 - Since it has a name, you can call it recursively. Which means that the function
   should be visible inside the environment of its body.
 -} --error "TBD:compileEnv:Fun"
-compileEnv env (Fun f xs e l) =         IJmp   end                      :               
+compileEnv env (Fun f xs e l) =
+        IJmp   end                      :               
         ILabel start                    :                    
         lambdaBody ys xs' e              ++            
         ILabel end                      :                      
