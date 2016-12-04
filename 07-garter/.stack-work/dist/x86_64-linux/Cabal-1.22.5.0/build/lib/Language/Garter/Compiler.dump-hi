@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-04 04:33:41.471124 UTC
+2016-12-04 05:00:19.164443 UTC
 
 interface garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Compiler [orphan module] 7103
-  interface hash: 952f884a8dea6befbd15974321a7ce3b
-  ABI hash: a95b7c03b60c46aa8f91730c26d81e6a
-  export-list hash: 80eb5a8d3acf08469cbb609b398213eb
+  interface hash: 22d4e0676af3095bbb51641f9aee4fcd
+  ABI hash: 56054ad9493bd2d4cb68962102716938
+  export-list hash: 4de61f695a2afb80ec143a196c2c9a16
   orphan hash: eff22e91a5f7bc0f458aa42eb3b4634c
   flag hash: c91715e69db965320373fbe54581cf65
   sig of: Nothing
@@ -94,9 +94,9 @@ import  -/  containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base 7beac5
 import  -/  Language.Garter.Asm d47fb2dc9f582e8397d6d8e7a35d18eb
   exports: 13da3037209419075ccc3a50dfc7a9e6
   asm cd4221fa1a487fbb942a95dc148eacb5
-import  -/  Language.Garter.Checker 03ef7236791c3b4564d0b5451316ba3a
-  exports: b69f553fc926dba4c86c4ad62bf257f1
-  check e04e04e1eb3753f70ca65680ae2e1fa4
+import  -/  Language.Garter.Checker 9bf49fcd60921a2bfe445d93bbc4d7e4
+  exports: 6fb3f581aa5e59a8aced0874fd6f4055
+  check dc06baa038a6402af8b838bfc72c4775
   errUnboundVar 78f45e4c2b62b1d4f0b956bcad2dac54
 import  -/  Language.Garter.Normalizer 24a9674cfc98766f220ba6104fce2722
   exports: 621cea926e5e5763d7eb1e884a4dbc2e
@@ -562,7 +562,7 @@ afd565329bd4fe95f15d9d6c8e353464
     -> Language.Garter.Compiler.AExp
     -> [Language.Garter.Types.Instruction]
   {- Arity: 2, Strictness: <L,U(U,U)><S,1*U> -}
-fd53ad7c498c65c95b817d6ca2a4ee07
+ab0e5ffbb3fe889ffe9ba1c816f0129b
   compiler ::
     GHC.IO.FilePath
     -> Language.Garter.UX.Text -> Language.Garter.UX.Text

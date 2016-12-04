@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-04 04:33:45.944828 UTC
+2016-12-04 05:00:23.783432 UTC
 
 interface main@main:Main 7103
-  interface hash: 623b478e562088bf3034820bd3b448b0
+  interface hash: 9d64a70b4ba3b90d6a2abd19ec41c521
   ABI hash: 921c701292d76d1188aa0181f9c1522c
   export-list hash: e24aac37137b15f06c86dbf6267e029b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -100,7 +100,7 @@ import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.Exit f5581af4ad998e898da01fdc74c2769b
 import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
-import  -/  garter-0.1.0.0@garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Runner 148cd99c124b0c6c1bf7b171a4c5b48c
+import  -/  garter-0.1.0.0@garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Runner 396d323342acf30599a72ff5fc1be529
 import  -/  garter-0.1.0.0@garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Types 8ca41696149f07f5aa5baf9355e1b055
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
 import  -/  tasty-0.11.0.3@tasty_FmsFvTENszuHfrIIdT9Fyh:Test.Tasty abbde09ca8e64a0ee7c7cf8254d23309

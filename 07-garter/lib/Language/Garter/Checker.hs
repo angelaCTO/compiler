@@ -269,13 +269,13 @@ prim2Poly Greater = Forall [  ] ([TInt, TInt] :=> TBool)
 prim2Poly Equal   = Forall ["a"] (["a", "a"] :=> TBool)
 
 tupPoly, ifPoly :: Poly
-tupPoly           = error "TBD:tupPoly"
+--error "TBD:tupPoly"
+tupPoly           = Forall ["a", "b"] (["a", "b"] :=> (TPair "a" "b"))
 --error "TBD:ifPoly"
-ifPoly            = error "TBD:ifPoly"
---Forall [ ] ([TBool, ["a"] :=> "a", ["b"] :=> "b"] :=> "b") (only works for some cases..need infer?)
+ifPoly            = Forall ["a", "b", "c"] ([TBool, "a", "b"] :=> "c") 
 
 fieldPoly :: Field -> Poly
---error "TBD:fieldPoly:Zero"
+--error "TBD:fieldPoly:Zero" (TODO double check this)
 fieldPoly Zero    = Forall ["a", "b"] ([TPair "a" "b"] :=> "a")
 --error "TBD:fieldPoly:One"
 fieldPoly One     = Forall ["a", "b"] ([TPair "a" "b"] :=> "b")
