@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-02 08:14:22.29276 UTC
+2016-12-04 04:33:43.864145 UTC
 
 interface main@main:Main 7103
-  interface hash: 2e2219bf65d34cb63b37974111a26da6
-  ABI hash: 6491c9c91b3f069b6d1432acae2e1ff1
+  interface hash: 6039b9c545a89235727e29ffe7510a70
+  ABI hash: 9c10aa30fa06d6bf8fd4aa309c1f44a3
   export-list hash: e24aac37137b15f06c86dbf6267e029b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 485a50cc884114d07fc21bba3f611e74
@@ -90,16 +90,16 @@ family instance modules: base-4.8.2.0:Control.Applicative
                          unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashMap.Base
                          unordered-containers-0.2.7.1@unord_5iWC5HdL16JGHXLbsgBJnw:Data.HashSet
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
-import  -/  garter-0.1.0.0@garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Runner 7e4b7e5e28bbacfa06bd1294d6c9a7af
+import  -/  garter-0.1.0.0@garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Runner 148cd99c124b0c6c1bf7b171a4c5b48c
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-e6045b30f4188cf2a24074e11634409c
+9ff05515e506ddd2739d06cbf41a2382
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Language.Garter.Runner.topMain1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-c8820995b2e49325ab97bbf8390c734d
+c2c5f390e687f194c4e15457206af0fd
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

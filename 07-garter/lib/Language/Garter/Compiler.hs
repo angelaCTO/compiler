@@ -152,7 +152,13 @@ compileEnv env (If v e1 e2 l)    = IMov (Reg EAX) (immArg env v)
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
+--error "TBD:compileEnv:tuple"
 compileEnv _env (Tuple _e1 _e2 _)    = error "TBD:compileEnv:tuple"
+{-
+  where
+    i1s                              = compileEnv _env _e1
+    i2s                              = compileEnv _env _e2
+-}
 
 compileEnv _env (GetItem _vE _f _)   = error "TBD:compileEnv:getItem"
 

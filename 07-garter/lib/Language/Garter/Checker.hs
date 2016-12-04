@@ -201,11 +201,19 @@ ti env su (App eF eArgs l) = tiApp (sourceSpan l) sF (apply sF env) tF eArgs
 -- 4. Unify the *expected* output `tOut` with the *actual* `tBody`
 -- 5. Apply the substitutions to infer the function's type `tXs :=> tOut`.
 
+--error "TBD:ti:lam"
 ti _env _su (Lam _xs _body _l) = error "TBD:ti:lam"
+{-
+(su3, apply su3 (tXs :=> tOut)) 
+  where
+    (su1, tXs :=> tOut) = freshFun _su (length _xs)         -- (1)
+    env'                = extTypesEnv _env (zip _xs tXs)    -- (2)
+    (su2, tBody)        = ti env' su1 _body                 -- (3)
+    su3                 = unify su2 tBody (apply su2 tOut)  -- (4)
+-}
 
 -- HINT: this is just like Lam except you have to figure out what
 -- type "f" should have when checking the body "e"
-
 ti _env _su (Fun _f Infer _xs _e _) = error "TBD:ti:fun:infer"
 
 -- HINT: this is hard, super EXTRA CREDIT.
@@ -247,20 +255,30 @@ prim1Poly Sub1  = Forall [   ] ([TInt] :=> TInt)
 prim1Poly Print = Forall ["a"] ([ "a"] :=> "a")
 
 prim2Poly :: Prim2 -> Poly
-prim2Poly Plus    = error "TBD:prim2Poly"
-prim2Poly Minus   = error "TBD:prim2Poly"
-prim2Poly Times   = error "TBD:prim2Poly"
-prim2Poly Less    = error "TBD:prim2Poly"
-prim2Poly Greater = error "TBD:prim2Poly"
-prim2Poly Equal   = error "TBD:prim2Poly"
+--error "TBD:prim2Poly"
+prim2Poly Plus    = Forall [  ] ([TInt, TInt] :=> TInt)
+--error "TBD:prim2Poly" 
+prim2Poly Minus   = Forall [  ] ([TInt, TInt] :=> TInt)
+--error "TBD:prim2Poly"
+prim2Poly Times   = Forall [  ] ([TInt, TInt] :=> TInt)
+--error "TBD:prim2Poly"
+prim2Poly Less    = Forall [  ] ([TInt, TInt] :=> TBool)
+--error "TBD:prim2Poly"
+prim2Poly Greater = Forall [  ] ([TInt, TInt] :=> TBool)
+--error "TBD:prim2Poly"
+prim2Poly Equal   = Forall ["a"] (["a", "a"] :=> TBool)
 
 tupPoly, ifPoly :: Poly
 tupPoly           = error "TBD:tupPoly"
+--error "TBD:ifPoly"
 ifPoly            = error "TBD:ifPoly"
+--Forall [ ] ([TBool, ["a"] :=> "a", ["b"] :=> "b"] :=> "b") (only works for some cases..need infer?)
 
 fieldPoly :: Field -> Poly
-fieldPoly Zero    = error "TBD:fieldPoly:Zero"
-fieldPoly One     = error "TBD:fieldPoly:One"
+--error "TBD:fieldPoly:Zero"
+fieldPoly Zero    = Forall ["a", "b"] ([TPair "a" "b"] :=> "a")
+--error "TBD:fieldPoly:One"
+fieldPoly One     = Forall ["a", "b"] ([TPair "a" "b"] :=> "b")
 
 --------------------------------------------------------------------------------
 unify :: SourceSpan -> Subst -> Type -> Type -> Subst

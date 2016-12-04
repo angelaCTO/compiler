@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-12-02 08:14:19.233349 UTC
+2016-12-04 04:33:42.282994 UTC
 
 interface garte_5443cALaUJ34G7JDhKOcwk:Language.Garter.Runner 7103
-  interface hash: fa860e88d5f7e3547e17b35f84c5f499
-  ABI hash: 7e4b7e5e28bbacfa06bd1294d6c9a7af
-  export-list hash: a011e22e32a56f32de52e959454ccf45
+  interface hash: 62a78083db71b5dcf965d660e1fe07df
+  ABI hash: 148cd99c124b0c6c1bf7b171a4c5b48c
+  export-list hash: 83dddf6615000fcad75b1bf2af0506d1
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 6d0f469d26b87903af226cdae075d6b4
   sig of: Nothing
@@ -148,9 +148,9 @@ import  -/  base-4.8.2.0:System.IO 0248c1e850b7ea124cf7a2e1669ebf67
 import  -/  base-4.8.2.0:Text.Printf 0276d4e7547f991f04a90f6b1e7f1f46
 import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath 6a7eafb8f3ea5de45bf8aaade5c8108e
 import  -/  filepath-1.4.0.0@filep_Ey7a1in9roBAE8bUFJ5R9m:System.FilePath.Posix da2bfc0e51fee241a6f2334547c9597d
-import  -/  Language.Garter.Compiler 8d9beec3ed6ebc135e3c08a5cf6e85d2
-  exports: dd3ed45fdfe09503d0206bf229221e07
-  compiler 042dc22d08323fbc829c5e66c283113c
+import  -/  Language.Garter.Compiler a95b7c03b60c46aa8f91730c26d81e6a
+  exports: 80eb5a8d3acf08469cbb609b398213eb
+  compiler fd53ad7c498c65c95b817d6ca2a4ee07
 import  -/  Language.Garter.Normalizer 24a9674cfc98766f220ba6104fce2722
   exports: 621cea926e5e5763d7eb1e884a4dbc2e
   anormal 21cd44ebea13ae66e385883f91647495
@@ -511,14 +511,14 @@ c22e89d8455ae13214a7453008fb6c61
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           Language.Garter.Runner.Result #)
   {- Arity: 3, Strictness: <L,U><S,1*U><L,U> -}
-5142d80cf5f7cfc122cc2c216401a4c2
+c5ba3295f9e7a4a769dbc1ac33e47265
   generateAsm :: GHC.IO.FilePath -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <L,U><L,U>,
      Unfolding: InlineRule (0, True, True)
                 Language.Garter.Runner.generateAsm1
                   `cast`
                 (<GHC.IO.FilePath>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-1a066409203565fb88bf6a4f4b0c902d
+b8c4c32b2b79ed5763eebbb1ddb589fa
   generateAsm1 ::
     GHC.IO.FilePath
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -974,14 +974,14 @@ ec9543a70e841630630c404eaeb2cc86
                  ->_R <Language.Garter.Runner.Program>_R
                  ->_R Sym (GHC.Types.NTCo:IO[0]
                                <Language.Garter.Runner.Result>_R)) -}
-d8b34d402fc39a3043f99ef00add6089
+cf8edb2f65ce51de20142f772f1d03cf
   runCompiler :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Language.Garter.Runner.runCompiler1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-273a5369d93ac2a807cc690fcf6ff16d
+6e8c8f56c71ea876cb622d712bce3ef2
   runCompiler1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -1000,7 +1000,7 @@ d8b34d402fc39a3043f99ef00add6089
                         -> case Language.Garter.Runner.$wa ipv
                            ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
                            of {} } } }) -}
-d09b4902062a8cec1b43f8bd79a62105
+8153ca87279a896dc51a6588de1826c2
   runCompiler2 ::
     Language.Garter.UX.Text
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -1098,14 +1098,14 @@ bf7a64438866f94139ddd313204d990a
 03bea6106e207edff5aa63c8ce10da46
   timeLimit2 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 10) -}
-a26a9829e213359881df8a5ec6e701d5
+ca44512f231ef16d9927b856ea2d904a
   topMain :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Language.Garter.Runner.topMain1
                   `cast`
                 (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-cd0e05a9235ceb86bcf289fd6fdb91bb
+f03f8cf6192f077d9ed8638c14d15628
   topMain1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
