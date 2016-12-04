@@ -107,7 +107,7 @@ countVars (If v e1 e2 _) = maximum [countVars v, countVars e1, countVars e2]
 countVars _              = 0
 
 
---FIXME
+--FIXME ?
 -- | freeVars takes in an `Expr a` and returns a list of free variables (no dups)
 freeVars :: Expr a -> [Id]
 freeVars e = S.toList(go e)
@@ -123,8 +123,8 @@ freeVars e = S.toList(go e)
     go (Fun x t xs e _)   = S.difference (go e) (S.fromList ((bindId x):(map bindId xs))) 
     go (Prim1 _ v _)      = go v
     go (Prim2 _ e1 e2 _ ) = S.unions [go e1, go e2]
-    go (GetItem e f _)    = go e --TODO what to do about field f?
-    go (Tuple e1 e2 _ )   = S.unions [go e1, go e2] --TODO check
+    go (GetItem e f _)    = go e --FIXME ? 
+    go (Tuple e1 e2 _ )   = S.unions [go e1, go e2] --FIXME ?
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
@@ -152,16 +152,20 @@ compileEnv env (If v e1 e2 l)    = IMov (Reg EAX) (immArg env v)
     i1s                          = compileEnv env e1
     i2s                          = compileEnv env e2
 
---error "TBD:compileEnv:tuple"
-compileEnv _env (Tuple _e1 _e2 _)    = error "TBD:compileEnv:tuple"
-{-
-  where
-    i1s                              = compileEnv _env _e1
-    i2s                              = compileEnv _env _e2
--}
+--error "TBD:compileEnv:tuple" FIXME ?
+--Modify tuple implementation to work for pairs
+compileEnv _env (Tuple _e1 _e2 _)    = tupleAlloc 2                  ++
+                                       tupleWrites [immArg _env _e1] ++
+                                       tupleWrites [immArg _env _e2] ++
+                                       [IOr (Reg EAX) (typeTag TTuple)]
 
-compileEnv _env (GetItem _vE _f _)   = error "TBD:compileEnv:getItem"
-
+--error "TBD:compileEnv:getItem" FIXME ?
+compileEnv _env (GetItem _vE _f _)   = loadAddr (immArg _env _vE) ++
+                                       [IMov (Reg EBX) (getIndex _f),
+                                        IShr (Reg EBX) (Const 1),
+                                        IAdd (Reg EBX) (Const 1),
+                                        IMov (Reg EAX) (RegIndex EAX EBX)]
+                                                                                
 --error "TBD:compileEnv:Lam"
 compileEnv _env (Lam _xs _e _l)      = 
         IJmp   end                                          :               
@@ -198,6 +202,10 @@ compileEnv _env (App _v _vs _l)      =
         call (Reg EAX) (param _env <$> (_v : _vs))
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
+getIndex :: Field -> Arg
+getIndex Zero = (Const 0)
+getIndex One  = (Const 1)
 
 
 --------------------------------------------------------------------------------
