@@ -295,7 +295,8 @@ unify sp su (ls :=> r) (ls' :=> r')
 
 --error "TBD:unify:ctor" FIXME ?
 unify _sp _su (TCtor _c (_t:_ts)) (TCtor _c' (_t':_ts')) = 
-    unifys _sp _su (_t:_ts) (_t':_ts')
+    if (_c == _c') then unifys _sp _su (_t:_ts) (_t':_ts')
+    else abort (errUnify _sp _c _c')
 
 --error "TBD:unify:pair" 
 unify _sp _su (TPair _s1 _s2) (TPair _t1 _t2) = unify _sp su' _s2 _t2
