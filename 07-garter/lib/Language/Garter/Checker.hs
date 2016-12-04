@@ -202,19 +202,23 @@ ti env su (App eF eArgs l) = tiApp (sourceSpan l) sF (apply sF env) tF eArgs
 -- 5. Apply the substitutions to infer the function's type `tXs :=> tOut`.
 
 --error "TBD:ti:lam"
-ti _env _su (Lam _xs _body _l) = error "TBD:ti:lam"
-{-
-(su3, apply su3 (tXs :=> tOut)) 
+ti _env _su (Lam _xs _body _l) = (su3, (apply su3 (tXs :=> tOut))) 
   where
-    (su1, tXs :=> tOut) = freshFun _su (length _xs)         -- (1)
-    env'                = extTypesEnv _env (zip _xs tXs)    -- (2)
-    (su2, tBody)        = ti env' su1 _body                 -- (3)
-    su3                 = unify su2 tBody (apply su2 tOut)  -- (4)
--}
+    (su1, tXs :=> tOut) = freshFun _su (length _xs)                         -- (1)
+    env'                = extTypesEnv _env (zip _xs tXs)                    -- (2)
+    (su2, tBody)        = ti env' su1 _body                                 -- (3)
+    su3                 = unify (sourceSpan _l) su2 tBody (apply su2 tOut)  -- (4)
+
 
 -- HINT: this is just like Lam except you have to figure out what
 -- type "f" should have when checking the body "e"
-ti _env _su (Fun _f Infer _xs _e _) = error "TBD:ti:fun:infer"
+--error "TBD:ti:fun:infer" FIXME ?
+ti _env _su (Fun _f Infer _xs _e _l) = (su3, (apply su3 (tXs :=> tOut))) 
+  where
+    (su1, tXs :=> tOut) = freshFun _su (length _xs)                         -- (1)
+    env'                = extTypesEnv _env (zip _xs tXs)                    -- (2)
+    (su2, tBody)        = ti env' su1 _e                                    -- (3)
+    su3                 = unify (sourceSpan _l) su2 tBody (apply su2 tOut)  -- (4)
 
 -- HINT: this is hard, super EXTRA CREDIT.
 ti _env _su (Fun _f (Check _s) _xs _e _) = error "TBD:ti:fun:check"
