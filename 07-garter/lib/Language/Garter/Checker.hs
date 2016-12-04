@@ -275,7 +275,7 @@ tupPoly           = Forall ["a", "b"] (["a", "b"] :=> (TPair "a" "b"))
 ifPoly            = Forall ["a", "b", "c"] ([TBool, "a", "b"] :=> "c") 
 
 fieldPoly :: Field -> Poly
---error "TBD:fieldPoly:Zero" (TODO double check this)
+--error "TBD:fieldPoly:Zero"
 fieldPoly Zero    = Forall ["a", "b"] ([TPair "a" "b"] :=> "a")
 --error "TBD:fieldPoly:One"
 fieldPoly One     = Forall ["a", "b"] ([TPair "a" "b"] :=> "b")
@@ -289,10 +289,15 @@ unify sp su (ls :=> r) (ls' :=> r')
     s1                                = unifys sp su ls ls'
     s2                                = unify sp s1 (apply s1 r) (apply s1 r')
 
-unify _sp _su (TCtor _c _ts) (TCtor _c' _ts') = error "TBD:unify:ctor"
+--error "TBD:unify:ctor" FIXME ?
+unify _sp _su (TCtor _c (_t:_ts)) (TCtor _c' (_t':_ts')) = 
+    unifys _sp _su (_t:_ts) (_t':_ts')
 
-unify _sp _su (TPair _s1 _s2) (TPair _t1 _t2) = error "TBD:unify:pair"
-
+--error "TBD:unify:pair" 
+unify _sp _su (TPair _s1 _s2) (TPair _t1 _t2) = unify _sp su' _s2 _t2
+  where
+    su' = unify _sp _su _s1 _t1
+                         
 unify sp su (TVar a) t                  = varAsgn sp su a t
 unify sp su t (TVar a)                  = varAsgn sp su a t
 unify _ su TInt TInt                    = su
